@@ -5,3 +5,8 @@ rmc-supply-drop-blocked = Зона высадки заблокирована и�
 rmc-supply-drop-crate-open = Контейнер не закреплён на площадке. Закройте его!
 rmc-supply-drop-crate-load = {$crate} загружен в пусковую трубу. Не приближаться!
 rmc-supply-drop-squad-announcement = Приближается сброс снабжения {$crate}. Внимание!
+
+
+rmc-supply-drop-insufficient-funds = Insufficient funds for supply drop. Cost: ${$cost}.
+
+rmc-supply-drop-cooldown = Supply drop is recharging. Wait for the cooldown to finish before launching again.

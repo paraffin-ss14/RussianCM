@@ -357,3 +357,10 @@ rmc-vehicle-supply-option-VehicleTankRocketLauncherTWE = {ent-VehicleTankRocketL
 rmc-vehicle-supply-option-VehicleBlackfootLaunchers = {ent-VehicleBlackfootLaunchers}
 rmc-vehicle-supply-option-VehicleBlackfootReconSystem = {ent-VehicleBlackfootReconSystem}
 rmc-vehicle-supply-option-VehicleBlackfootSensorArray = {ent-VehicleBlackfootSensorArray-name}
+
+
+rmc-vehicle-powered-demolition-working = The plow bites into the structure. Keep pushing forward!
+
+rmc-vehicle-powered-demolition-indestructible = The plow cannot break through this structure.
+
+rmc-vehicle-enter-pulled-full = There's no room for who you're dragging inside.

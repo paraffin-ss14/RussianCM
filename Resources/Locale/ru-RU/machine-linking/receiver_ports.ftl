@@ -99,3 +99,12 @@ signal-port-description-trigger = Запускает какой-либо мех�
 signal-port-name-timer = Таймер
 
 signal-port-description-timer = Запускает обратный отсчет таймера устройства.
+
+
+signal-port-name-target-receiver = Target receiver
+
+signal-port-description-target-receiver = Receives target information from a target finder.
+
+signal-port-name-target-source = Target Finder
+
+signal-port-description-target-source = Sends target information to a target receiver.

@@ -1,0 +1,18 @@
+au14-threat-ghost-role-name = Угроза
+au14-threat-leader-ghost-role-name = Лидер угрозы
+au14-threat-ghost-role-description = Присоединитесь в качестве незанятого тела угрозы текущего раунда.
+au14-threat-ghost-role-rules = Вы — угроза раунда. Следуйте целям своей угрозы.
+au14-threat-vote-title = Голосование за угрозу
+au14-threat-vote-option-xeno = Угроза ксено
+au14-threat-vote-option-abominations = Угроза мерзостей
+au14-threat-vote-option-cultist-xeno = Угроза культистов + ксено
+au14-threat-vote-option-tribal = Угроза племени
+au14-threat-vote-option-ape = Угроза обезьян
+au14-threat-vote-option-wendigo = Угроза вендиго
+au14-threat-vote-option-generic = {$threat}
+au14-threat-vote-round-join-blocked = Вы были выбраны для распределения угрозы. Вы не можете присоединиться за другую роль, пока назначение угрозы не завершено.
+au14-threat-vote-colony-fall-observer-warning = Угроза запланирована примерно через {$min}–{$max} минут и будет развёрнута, когда достаточное количество игроков проявит интерес. Ваш голос засчитывается как интерес. Вы можете отозвать его в разделе «Угрозы и третьи стороны»; присоединение за другую роль удалит ваш интерес.
+au14-threat-vote-seat-opened = Одно из тел угрозы осталось незанятым и теперь доступно как роль для призраков по принципу «кто первый, того и роль».
+au14-threat-not-selected-return-to-lobby = "Вы не были выбраны угрозой этого раунда. Вы возвращены в лобби и можете присоединиться к уже идущему раунду (JIP)."
+
+cmu-threat-marker-shortfall-announcement = НЕХВАТКА ТОЧЕК СПАВНА {$kind}: у '{$source}' на планете '{$planet}' меньше точек спавна, чем требуется тел ({$short}). Раунд продолжается; тела без точки спавна не появятся.

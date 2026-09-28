@@ -13,24 +13,24 @@ public sealed partial class ChatSystem
 
     private static readonly string[] RunechatPainMessages =
     [
-        "OW!!",
-        "AGH!!",
-        "ARGH!!",
-        "OUCH!!",
-        "ACK!!",
-        "OUF!",
+        "АУ!!",
+        "АГХ!!",
+        "АРГХ!!",
+        "АУЧ!!",
+        "АЙ!!",
+        "УФ!",
     ];
 
     private static readonly string[] RunechatScreamMessages =
     [
-        "FUCK!!!",
-        "AGH!!!",
-        "ARGH!!!",
-        "AAAA!!!",
-        "HGH!!!",
-        "NGHHH!!!",
-        "NNHH!!!",
-        "SHIT!!!",
+        "БЛЯТЬ!!!",
+        "АГХ!!!",
+        "АРГХ!!!",
+        "АААА!!!",
+        "НГХ!!!",
+        "НГХХХХ!!!",
+        "ННХХ!!!",
+        "СУКА!!!",
     ];
 
     private static readonly FrozenSet<string> PainEmoteIds = new[]
@@ -47,7 +47,9 @@ public sealed partial class ChatSystem
         out string? speechBubbleMessage,
         out string? speechStyleClass)
     {
-        if (emote.ID == ScreamEmoteId)
+        // cmu edit start
+        if (emote.ID == ScreamEmoteId || emote.ID == "CMUBurning")
+        // cmu edit end
         {
             speechBubbleMessage = _random.Pick(RunechatScreamMessages);
             speechStyleClass = CMURunechatStyles.Scream;

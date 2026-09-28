@@ -41,3 +41,9 @@ ui-supply-drop-crate-status =
         [true] Supply Pad Status: crate loaded.
        *[false] No crate loaded.
     }
+
+
+# Requisition Invoice
+rmc-requisition-invoice-attach = Attach Invoice
+
+rmc-requisition-invoice-remove = Remove Invoice

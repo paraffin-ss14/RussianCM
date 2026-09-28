@@ -4,3 +4,14 @@ spacevillain-menu-button-attack = АТАКА
 spacevillain-menu-button-heal = ЛЕЧЕНИЕ
 spacevillain-menu-button-recharge = ПЕРЕЗАРЯДКА
 spacevillain-menu-button-new-game = Новая игра
+
+
+spacevillain-menu-label-enemy = Villain
+
+spacevillain-menu-label-health = {$amount} {-spacevillain-health}
+
+spacevillain-menu-label-magic = {$amount} {-spacevillain-magic}
+
+-spacevillain-health = HP
+
+-spacevillain-magic = MP

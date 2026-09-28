@@ -1,0 +1,16 @@
+cmu-stimmaster-injectors = [bold]Хранящиеся автоинъекторы[/bold]
+cmu-stimmaster-none = Автоинъекторы не изготовлены.
+cmu-stimmaster-create = Изготовить инъекторы
+cmu-stimmaster-fill = Заполнить выбранные инъекторы
+cmu-stimmaster-fill-injector = Заполнить
+cmu-stimmaster-injector-volume = {$amount} / {$capacity} ед.
+cmu-stimmaster-fabrication-title = Изготовление автоинъекторов
+cmu-stimmaster-fabrication-header = Выберите тип и количество инъекторов. Каждый инъектор требует 0,2 металла и 0,2 стекла.
+cmu-stimmaster-fabrication-option = {$name} — вместимость {$capacity} ед.
+cmu-stimmaster-fabrication-amount = Количество:
+cmu-stimmaster-fabrication-confirm = Изготовить выбранные инъекторы
+cmu-stimmaster-no-selection-or-chemicals = Выберите хотя бы один хранящийся инъектор и добавьте реагенты в буфер.
+cmu-stimmaster-not-enough-chemicals-for-injector = Недостаточно реагентов, чтобы полностью заполнить следующий выбранный инъектор.
+cmu-stimmaster-not-enough-materials = Для каждого инъектора Stimmaster требуется 0,2 металла и 0,2 стекла.
+cmu-stimmaster-storage-full = В Stimmaster недостаточно места для такого количества инъекторов.
+cmu-stimmaster-eject-material = {$material} ({$sheets} листов)

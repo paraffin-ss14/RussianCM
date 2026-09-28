@@ -53,3 +53,6 @@ job-description-boxer = Пробейтесь на вершину! Бросьте
 job-description-centcomoff = Выступите послом на новейшей современной космической станции флота Нанотрасена.
 
 job-description-zookeeper = Устройте веселую демонстрацию милых животных и космических карпов для всей команды. В настоящее время доступно на Оазисе.
+
+
+job-description-tram-driver = Drive around a tram from stop to stop.

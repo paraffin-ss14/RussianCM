@@ -553,13 +553,15 @@ public abstract partial class SharedXenoHiveSystem : EntitySystem
         RaiseLocalEvent(hive, ref ev, true);
     }
 
-    public bool JoinBurrowedLarva(Entity<HiveComponent> hive, ICommonSession session)
+    public bool JoinBurrowedLarva(Entity<HiveComponent> hive, ICommonSession session, bool ignorePoolGate = false) // CMU14
     {
         if (_net.IsClient)
             return false;
 
-        if (!hive.Comp.BurrowedLarvaEnabled // CMU14
-            || hive.Comp.BurrowedLarva <= 0)
+        // CMU14: presets with the pool disabled (Colony Fall) must still reincarnate sacrificed xenos
+        if (!ignorePoolGate
+            && (!hive.Comp.BurrowedLarvaEnabled
+                || hive.Comp.BurrowedLarva <= 0))
             return false;
 
         if (!TryGetBurrowedLarvaSpawnPosition(hive, out var position))
@@ -584,6 +586,12 @@ public abstract partial class SharedXenoHiveSystem : EntitySystem
 
     private bool TryGetBurrowedLarvaSpawnPosition(Entity<HiveComponent> hive, out EntityCoordinates position)
     {
+        // CMU14: xeno feedback and lifecycle.
+        // Hijack evacuates the hive before the old core finishes being destroyed.
+        if (hive.Comp.HijackSurged &&
+            TryGetBurrowedLarvaSpawnPositionAt<XenoEvolutionGranterComponent>(hive, out position))
+            return true;
+
         if (TryGetBurrowedLarvaSpawnPositionAt<HiveCoreComponent>(hive, out position) ||
             TryGetBurrowedLarvaSpawnPositionAt<XenoEvolutionGranterComponent>(hive, out position) ||
             TryGetBurrowedLarvaSpawnPositionAtXeno(hive, out position))

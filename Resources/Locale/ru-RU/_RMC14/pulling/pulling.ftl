@@ -16,3 +16,18 @@ rmc-pull-break-start-self = Вы пытаетесь вырваться из хв
 rmc-pull-break-start-others = {$pulled} пытается вырваться из хватки {$puller}!
 rmc-pull-break-finish-self = Вам удалось вырваться из хватки {$puller}!
 rmc-pull-break-finish-others = {$pulled} вырвался из хватки {$puller}!
+
+
+rmc-fireman-carry-need-carry-first = You need to carry them first!
+
+rmc-fireman-carry-cant-throw = You can't throw this!
+
+rmc-fireman-carry-need-aggressive-grab = You need to grab them aggressively first!
+
+rmc-fireman-carry-cant-grab-aggressively = You can't grab this aggressively!
+
+rmc-fireman-carry-not-trained-grab = You aren't trained to grab them aggressively!
+
+rmc-fireman-carry-start-loading = You start loading {$targetName} onto your back.
+
+rmc-fireman-carry-not-trained = You aren't trained to carry people!

@@ -25,6 +25,7 @@
     govforinship: false
     opforinship: true
     daycycleenabled: true
+    thirdpartyinterval: 1800
     thirdparties:
     - ICRCReliefParty
     - TimeSharesSalesman
@@ -46,7 +47,7 @@
     - WYHT
     - WYPMCParty
     - WYPMCPartyAlt
-    - abominationThirdParty
+    - biomorphThirdParty
     - tribalThirdParty
     - DrugSmuggler
     - CMBParoleeTransport
@@ -60,14 +61,12 @@
     threats:
     - XenoThreat
     - NeomorphsThreat
-    - AbominationsThreatDS
-    - ApeThreatDS
     # - BadBloodClanThreat
     - XenoThreatCF
     - NeomorphsThreatCF
     - CultistThreatCF
     - WendigoThreatCF
-    - AbominationsThreatCF
+    - BiomorphsThreatCF
     - TribalsThreatCF
     - ApeThreatCF
     joboverrides:
@@ -110,7 +109,7 @@
             AU14JobCivilianFoodServiceWorker: [3, 3]
             AU14JobCivilianWasteManagementSpecialist: [3, 3]
 
-            AU14JobCivilianColonySynthetic: [1, 1]
+            AU14JobCivilianColonySynthetic: [2, 2]
             AU14JobColonyWorkingJoe: [2, 2]
 
             # Colony Command (non department)
@@ -139,6 +138,7 @@
 
             AU14JobCivilianHeadOfEngineering: [1, 1]
             AU14JobCivilianEngineer: [4, 4]
+            CMUJobCivilianAtmosian: [1, 2]
             AU14JobCivilianMiner: [-1, -1]
 
             # Medical

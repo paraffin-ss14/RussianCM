@@ -1,57 +1,57 @@
 ﻿<Document>
-  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]UNITED NATIONS MARINE CORPS[/bold][/head]\n
+  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]КОРПУС МОРСКОЙ ПЕХОТЫ ОБЪЕДИНЁННЫХ НАЦИЙ[/bold][/head]\n
   [color=#5f698a]▀ ▄▀ █ ▀█ [/color]
 
-  #Know your betters
-  ##A guide to command staff and department heads
+  # Знай своё командование
+  ## Руководство по командному составу и начальникам отделов
 
-  So, you're awake, you're fed, you're dressed, and you're armed. You've made it to briefing and now you're wondering who to suck up to for that medal or promotion. Here's a rundown on the brass so you can get to kissing ass:
+  Итак, ты проснулся, поел, оделся, вооружился и добрался до брифинга. Теперь осталось понять, перед кем лучше всего показать себя, если хочешь получить медаль или повышение. Вот краткий обзор командного состава:
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCO"/>
   </Box>
-  -The [bold]Commanding Officer[/bold] (commonly referred to as CO) is running the show. They will tell the other officers what to do so they can tell YOU what to do.
-  -The position of CO is held only by those who have proven their courage, loyalty, and competence. They have supreme authority aboard this vessel, and answer only to High Command.
+  - [bold]Командующий офицер[/bold] (CO) руководит всей операцией. Он отдаёт распоряжения другим офицерам, а те уже доводят приказы до ТЕБЯ.
+  - Должность CO занимают только те, кто доказал свою храбрость, преданность и компетентность. На борту корабля CO обладает высшей властью и подчиняется только Высшему командованию.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleXO"/>
   </Box>
-  -The [bold]Executive Officer[/bold] (or XO) is second to the Commanding Officer. If the CO is the brain, the XO is the hand.
+  - [bold]Исполнительный офицер[/bold] (XO) — второй после командующего офицера. Если CO — мозг корабля, то XO — его рука.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleSO"/>
   </Box>
-  -A [bold]Staff Officer[/bold] (or SO) coordinates with the squad leaders and relays orders and intel to the XO and CO. They run overwatch on the squad and can see through the camera on your helmet (which you ARE wearing, aren't you?).
+  - [bold]Штабной офицер[/bold] (SO) координирует работу с командирами отрядов, передаёт приказы и разведданные от XO и CO. Он ведёт наблюдение за отрядом и может видеть изображение с камеры на твоём шлеме — который на тебе, разумеется, НАДЕТ.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCMP"/>
   </Box>
-  -The [bold]Chief of Military Police[/bold] oversees the Military Police and ensures that Marine Law is observed and enforced.
+  - [bold]Начальник военной полиции[/bold] руководит военной полицией и следит за соблюдением и исполнением Военного права.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCMO"/>
   </Box>
-  -The [bold]Chief Medical Officer[/bold] oversees the Medbay and ensures the medical staff are operating efficiently and that research is being conducted safely and ethically.
+  - [bold]Главный врач[/bold] руководит медицинским отсеком, обеспечивает эффективную работу медперсонала и следит за тем, чтобы исследования проводились безопасно и этично.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleASO"/>
   </Box>
-  -The [bold]Auxiliary Support Officer[/bold] oversees the Hangar, Intel, and Engineering departments. While Engineering has their own section head, the ASO has direct authority over them.
+  - [bold]Офицер вспомогательного обеспечения[/bold] курирует ангар, разведку и инженерный отдел. У инженерного отдела есть собственный начальник, однако ASO имеет над ним прямые полномочия.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleCE"/>
   </Box>
-  -The [bold]Chief Engineer[/bold] oversees the Maintenance and Ordnance Technicians.
+  - [bold]Главный инженер[/bold] руководит техниками технического обслуживания и специалистами по вооружению.
   \n
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookRoleQM"/>
   </Box>
-  -The [bold]Logistics Officer[/bold] operates the requisitions department and oversees the Requisitions Technicians.
+  - [bold]Офицер логистики[/bold] руководит отделом снабжения и техниками снабжения.
   <Box>
-  Refer to the Commander Succession to learn the pecking order and remember:
+  Ознакомься с порядком преемственности командования, чтобы знать, кто за кем стоит в цепи командования. И запомни:
   </Box>
   <Box>
-    [bold]SALUTE![/bold]
+    [bold]ОТДАТЬ ЧЕСТЬ![/bold]
   </Box>
 
-  ### Guide by teatotaltemplar
+  ### Автор руководства: teatotaltemplar
 </Document>

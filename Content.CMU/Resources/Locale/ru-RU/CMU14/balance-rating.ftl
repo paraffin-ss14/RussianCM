@@ -1,0 +1,37 @@
+cmu-balance-rating-title = Отзыв о балансе
+cmu-balance-rating-question-weapon-power = Насколько мощным ощущается это оружие?
+cmu-balance-rating-question-weapon-fun = Насколько интересно пользоваться этим оружием?
+cmu-balance-rating-question-xeno-power = Насколько мощным ощущается этот ксено?
+cmu-balance-rating-question-xeno-fun = Насколько интересно играть за этого ксено?
+cmu-balance-rating-question-map-fun = Насколько интересна эта комбинация карты и игрового режима?
+cmu-balance-rating-question-generic = Как бы вы это оценили?
+cmu-balance-rating-endpoint-weak = Слабое
+cmu-balance-rating-endpoint-powerful = Мощное
+cmu-balance-rating-endpoint-unfun = Неинтересно
+cmu-balance-rating-endpoint-fun = Интересно
+cmu-balance-rating-option-tooltip = Оценка: {$rating} из 5
+cmu-balance-rating-time-left = Осталось времени: {$time}
+
+cmd-startbalancerating-desc = Запускает в предраундовом лобби опрос баланса оружия специалиста, ксено или карты.
+cmd-startbalancerating-help = Использование: {$command} <цель> <power|fun> [длительность в секундах]
+cmd-cancelbalancerating-desc = Отменяет активный опрос баланса.
+cmd-cancelbalancerating-help = Использование: {$command}
+
+cmu-balance-rating-command-lobby-only = Оценку баланса можно запускать только в предраундовом лобби.
+cmu-balance-rating-command-round-unavailable = Текущий раунд недоступен для оценки баланса.
+cmu-balance-rating-command-already-active = Опрос баланса уже активен.
+cmu-balance-rating-command-duration-range = Длительность должна составлять от {$minimum} до {$maximum} секунд.
+cmu-balance-rating-command-invalid-target = Цель оценки баланса с ID «{$target}» не настроена.
+cmu-balance-rating-command-map-fun-only = Карты можно оценивать только по категории интереса.
+cmu-balance-rating-command-no-players = В лобби нет подходящих игроков, которые могли бы оценить эту цель.
+cmu-balance-rating-command-lobby-ended = Предраундовое лобби завершилось до того, как опрос успел открыться.
+cmu-balance-rating-command-start-cancelled = Опрос баланса был отменён до открытия.
+cmu-balance-rating-command-started = Запущена оценка {$metric} для {$target}. Подходящих игроков: {$players}.
+cmu-balance-rating-command-database-error = Не удалось сохранить опрос баланса в базе данных.
+cmu-balance-rating-command-invalid-metric = Категория должна быть либо power, либо fun.
+cmu-balance-rating-command-invalid-duration = Длительность должна быть конечным числом секунд.
+cmu-balance-rating-command-target-hint = Оружие специалиста, ксено или цель карта/режим
+cmu-balance-rating-command-metric-hint = Категория оценки
+cmu-balance-rating-command-duration-hint = Длительность опроса в секундах
+cmu-balance-rating-command-cancelled = Активный опрос баланса отменён.
+cmu-balance-rating-command-none-active = Активного опроса баланса нет.

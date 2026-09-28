@@ -73,3 +73,30 @@ rmc-flare-gun-examine = Последняя выпущенная сигнальн
 expendable-light-starshell-ash-empty-name = пепел потухшей звезды
 
 expendable-light-starshell-ash-empty-desc = Сгоревшие остатки звездной оболочки
+
+
+rmc-sharp-examine = [bold]Press your [color=cyan]unique action[/color] keybind (Spacebar by default) to toggle explosive and incendiary dart direct-hit detonation delay. Current delay: [color=yellow]{TOSTRING($seconds, "F1")} seconds[/color].[/bold]
+
+rmc-sharp-toggle-delay = You set {THE($gun)}'s direct-hit detonation delay to {TOSTRING($seconds, "F1")} seconds.
+
+rmc-vulture-unbraced-user = The recoil from {THE($gun)} hammers through you without a deployed bipod!
+
+rmc-vulture-unbraced-others = {CAPITALIZE(THE($user))} is thrown back by {THE($gun)}'s recoil!
+
+rmc-vulture-bipod-required = You need to deploy {THE($gun)}'s bipod before using its scope.
+
+rmc-vulture-spotter-scope-slot = M707 spotter scope
+
+rmc-vulture-spotter-insert-scope = Mount scope
+
+rmc-vulture-spotter-eject-scope = Remove scope
+
+rmc-vulture-spotter-scope-only = Only an M707 spotter scope fits on the tripod.
+
+rmc-vulture-must-scope = You need to be looking through the M707 Vulture's scope to adjust it.
+
+rmc-vulture-breath-cooldown = You need to catch your breath before stabilizing the scope again.
+
+rmc-examine-text-iff-prevent-friendly-fire = [color=cyan]This gun will not fire if friendlies are in the line of fire.[/color]
+
+rmc-iff-friendly-in-line = IFF lockout: friendly in line of fire.

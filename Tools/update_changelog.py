@@ -59,7 +59,19 @@ def main():
     max_id = max((int(entry.get("id", 0)) for entry in entries_list), default=0)
     existing_urls = {str(entry["url"]) for entry in entries_list if entry.get("url")}
 
-    for partname in sorted(os.listdir(args.parts_dir)):
+    if raw is None:
+        raw = {}
+    current_data: dict[str, Any] = raw
+
+    # Get the existing entries, or an empty list if the key is missing.
+    entries_list: List[Any] = current_data.get("Entries", [])
+    max_id = max(map(lambda e: e["id"], entries_list), default=0)
+
+    # Cancelled runs and the daily cron re-parse the same PR window; a part
+    # already in the file must not append a second copy.
+    existing = {(e.get("author"), e.get("time"), e.get("url")) for e in entries_list}
+
+    for partname in os.listdir(args.parts_dir):
         if not partname.endswith(".yml"):
             continue
 
@@ -82,6 +94,10 @@ def main():
         changes = partyaml["changes"]
         url = partyaml.get("url")
         labels = partyaml.get("labels", [])
+
+        if (author, time, url) in existing:
+            print(f"Skipping: already in changelog ({url})")
+            continue
 
         if not isinstance(changes, list):
             changes = [changes]
@@ -107,6 +123,16 @@ def main():
             if url:
                 existing_urls.add(str(url))
 
+            entries_list.append(
+                {
+                    "author": author,
+                    "time": time,
+                    "changes": changes,
+                    "id": new_id,
+                    "url": url,
+                }
+            )
+            existing.add((author, time, url))
         os.remove(partpath)
 
     entries_list.sort(key=entry_sort_key)

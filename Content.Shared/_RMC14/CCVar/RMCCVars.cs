@@ -129,13 +129,13 @@ public sealed partial class RMCCVars : CVars
         CVarDef.Create("rmc.evolution_points_accumulate_before_minutes", 15, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<bool> RMCAtmosTileEqualize =
-        CVarDef.Create("rmc.atmos_tile_equalize", false, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("rmc.atmos_tile_equalize", true, CVar.REPLICATED | CVar.SERVER); // CMU14: disable for performance gain
+
+    public static readonly CVarDef<bool> RMCGasTileOverlayUpdate =
+        CVarDef.Create("rmc.gas_tile_overlay_update", true, CVar.REPLICATED | CVar.SERVER); // CMU14: tile gas/fire visuals are core feedback
 
     public static readonly CVarDef<int> RMCWithdrawTimerMinutes =
         CVarDef.Create("rmc.withdraw_timer_minutes", 6, CVar.REPLICATED | CVar.SERVER);
-
-    public static readonly CVarDef<bool> RMCGasTileOverlayUpdate =
-        CVarDef.Create("rmc.gas_tile_overlay_update", false, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<bool> RMCActiveInputMoverEnabled =
         CVarDef.Create("rmc.active_input_mover_enabled", true, CVar.REPLICATED | CVar.SERVER);
@@ -287,30 +287,33 @@ public sealed partial class RMCCVars : CVars
     public static readonly CVarDef<float> RMCPlaytimeLarvaRankScaleFactor =
         CVarDef.Create("rmc.playtime_larva_rank_scale_factor", 3.0f, CVar.REPLICATED | CVar.SERVER);
 
-    public static readonly CVarDef<int> RMCPlaytimeBronzeMedalTimeHours =
-        CVarDef.Create("rmc.playtime_bronze_medal_time_hours", 10, CVar.REPLICATED | CVar.SERVER);
+    // CMU14: scales marine medal tiers 4-9 up, xeno keeps raw times
+    public static readonly CVarDef<float> RMCPlaytimeMarineRankScaleFactor =
+        CVarDef.Create("rmc.playtime_marine_rank_scale_factor", 3.5f, CVar.REPLICATED | CVar.SERVER);
 
-    public static readonly CVarDef<int> RMCPlaytimeSilverMedalTimeHours =
-        CVarDef.Create("rmc.playtime_silver_medal_time_hours", 25, CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<int> RMCPlaytimeBronzeMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_bronze_medal_time_hours", 10, CVar.REPLICATED | CVar.SERVER); // RuMC edit
 
-    public static readonly CVarDef<int> RMCPlaytimeGoldMedalTimeHours =
-        CVarDef.Create("rmc.playtime_gold_medal_time_hours", 50, CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<int> RMCPlaytimeSilverMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_silver_medal_time_hours", 25, CVar.REPLICATED | CVar.SERVER); // RuMC edit
 
-    public static readonly CVarDef<int> RMCPlaytimePlatinumMedalTimeHours =
-        CVarDef.Create("rmc.playtime_platinum_medal_time_hours", 70, CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<int> RMCPlaytimeGoldMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_gold_medal_time_hours", 50, CVar.REPLICATED | CVar.SERVER); // Marines: 52.5 // RuMC edit
 
-    public static readonly CVarDef<int> RMCPlaytimeRubyMedalTimeHours =
-        CVarDef.Create("rmc.playtime_ruby_medal_time_hours", 100, CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<int> RMCPlaytimePlatinumMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_platinum_medal_time_hours", 70, CVar.REPLICATED | CVar.SERVER); // Marines: 84 // RuMC edit
 
-    public static readonly CVarDef<int> RMCPlaytimeAmethystMedalTimeHours =
-        CVarDef.Create("rmc.playtime_amethyst_medal_time_hours", 120, CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<int> RMCPlaytimeRubyMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_ruby_medal_time_hours", 100, CVar.REPLICATED | CVar.SERVER); // Marines: 105 // RuMC edit
 
-    public static readonly CVarDef<int> RMCPlaytimeEmeraldMedalTimeHours =
-        CVarDef.Create("rmc.playtime_emerald_medal_time_hours", 1000, CVar.REPLICATED | CVar.SERVER);
+    public static readonly CVarDef<int> RMCPlaytimeAmethystMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_amethyst_medal_time_hours", 120, CVar.REPLICATED | CVar.SERVER); // Marines: 140 // RuMC edit
 
-    public static readonly CVarDef<int> RMCPlaytimePrismaticMedalTimeHours =
-        CVarDef.Create("rmc.playtime_prismatic_medal_time_hours", 1500, CVar.REPLICATED | CVar.SERVER);
-    // For the future coder: 2100, 2800, 3600, 4500
+    public static readonly CVarDef<int> RMCPlaytimeEmeraldMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_emerald_medal_time_hours", 200, CVar.REPLICATED | CVar.SERVER); // Marines: 182 // RuMC edit
+
+    public static readonly CVarDef<int> RMCPlaytimePrismaticMedalTimeHours = // CMU14
+        CVarDef.Create("rmc.playtime_prismatic_medal_time_hours", 500, CVar.REPLICATED | CVar.SERVER); // Marines: 224 // RuMC edit
 
     public static readonly CVarDef<int> RMCPlaytimeXenoPrefixThreeTimeHours =
         CVarDef.Create("rmc.playtime_xeno_prefix_three_time_hours", 0, CVar.REPLICATED | CVar.SERVER);
@@ -506,8 +509,9 @@ public sealed partial class RMCCVars : CVars
     public static readonly CVarDef<float> VolumeGainHijackSong =
         CVarDef.Create("rmc.volume_gain_hijack_song", 0.5f, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
 
+    // CMU14: identity hiding stays off by default, a rebase re-added it (BUG-576)
     public static readonly CVarDef<bool> HidePlayerIdentities =
-        CVarDef.Create("rmc.hide_player_identities", true, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("rmc.hide_player_identities", false, CVar.REPLICATED | CVar.SERVER);
 
     public static readonly CVarDef<bool> RMCQueenBuildingBoost =
     CVarDef.Create("rmc.queen_building_boost", true, CVar.REPLICATED | CVar.SERVER);

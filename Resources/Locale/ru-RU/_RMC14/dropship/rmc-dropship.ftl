@@ -175,3 +175,59 @@ rmc-dropship-nav-lock-starboard = Закрыть правый борт
 rmc-dropship-nav-unlock-starboard = Открыть правый борт
 rmc-dropship-nav-start-alarm = Включить сигнал
 rmc-dropship-nav-stop-alarm = Выключить сигнал
+
+
+rmc-dropship-hijack-queen-call-unknown-location = Unknown
+
+rmc-dropship-hijack-queen-call-announcement = The Queen has commanded the metal bird to the hive at {$location}
+
+rmc-dropship-weapons-view = VIEW
+
+rmc-dropship-weapons-edit = EDIT
+
+rmc-dropship-weapons-delete = DELETE
+
+rmc-dropship-weapons-quick = QUICK
+
+# TODO RMC14 fire missions: restore these labels with fire mission vector controls.
+# rmc-dropship-weapons-north = NORTH
+# rmc-dropship-weapons-south = SOUTH
+# rmc-dropship-weapons-east = EAST
+# rmc-dropship-weapons-west = WEST
+rmc-dropship-weapons-target-mode-quick = QUICK
+
+rmc-dropship-weapons-target-mode-standard = STANDARD
+
+rmc-dropship-fabricator-current = [bold]Current:[/bold] {$item}
+
+rmc-dropship-fabricator-idle = [bold]Current:[/bold] Idle
+
+rmc-dropship-fabricator-queue = [bold]Queue:[/bold] {$count}/{$max}
+
+rmc-dropship-fabricator-queue-empty = No pending orders.
+
+rmc-dropship-fabricator-queue-entry = {$position}. {$item} ({$cost})
+
+rmc-dropship-fabricator-cancel = Cancel
+
+rmc-dropship-fabricator-queue-full = The dropship part fabricator queue is full.
+
+rmc-dropship-fabricator-insufficient-points = You don't have enough points to fabricate that.
+
+rmc-dropship-firemission-invalid-value-admin-announcement = Player {$player} attempted to set a fire mission value that should not be possible through normal gameplay.
+
+rmc-dropship-firemission-vector-North = NORTH
+
+rmc-dropship-firemission-vector-East = EAST
+
+rmc-dropship-firemission-vector-South = SOUTH
+
+rmc-dropship-firemission-vector-West = WEST
+
+rmc-dropship-firemission-started = Firemission underway!
+
+rmc-dropship-firemission-cooldown = Firemission in progress.
+
+rmc-dropship-firemission-edit = Select a weapon.
+
+rmc-dropship-firemission-invalid-ammo = {$ammo} can't be used during a fire mission.

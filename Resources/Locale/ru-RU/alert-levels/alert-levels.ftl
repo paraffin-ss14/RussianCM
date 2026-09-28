@@ -34,3 +34,6 @@ alert-level-delta-instructions = Обратитесь к главе своего
 alert-level-epsilon = Эпсилон
 alert-level-epsilon-announcement = Центральное Командование объявило уровень угрозы «Эпсилон». Все контракты расторгнуты. Спасибо, что выбрали корпорацию Nanotrasen.
 alert-level-epsilon-instructions = Все контракты расторгнуты. Спасибо, что выбрали корпорацию Nanotrasen.
+
+
+alert-level-delta-nuke-announcement = The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information.

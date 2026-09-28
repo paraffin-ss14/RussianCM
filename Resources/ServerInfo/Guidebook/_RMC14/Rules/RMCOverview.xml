@@ -1,37 +1,34 @@
-﻿<Document>
-   # Colonial Marines Universe Rules 
+<Document>
+  <!-- CMU14: Перевод правил AU-14/ColonialMarinesUniverse, a9391b78d00c94b9f5deea1c92b4ae147b908e88. -->
+  # Правила RuCMU
 
-  
 
-  [color=#ff0000][bold]If you are unable to click any links, use the in-game guidebook version, in the escape menu.[/bold][/color] 
 
-  
+  [color=#ff0000][bold]Если вы не можете открыть ссылки, используйте внутриигровую версию руководства через меню Escape.[/bold][/color]
 
-  CMU is a character focused roleplaying game. Combat exists to support the story, not the other way around. 
 
-   
 
-  [italic][color=#57b339][bold]Winning is never more important than roleplay or the story being created.[/bold][/color][/italic] 
+  RuCMU — ролевая игра, сосредоточенная на персонажах. Боевые действия существуют ради истории, а не наоборот.
 
-   
 
-  You are expected to fully embody this in your actions and words at all times. This is the intended experience, and the standard CMU is built upon and will be enforced at all times. 
 
- 
+  [italic][color=#57b339][bold]Победа никогда не важнее ролевой игры или создаваемой истории.[/bold][/color][/italic]
+  От вас ожидается, что вы всегда будете следовать этому принципу в своих действиях и словах. Именно такой игровой опыт является основой RuCMU, и этот стандарт применяется постоянно.
 
-[italic][color=#ffbf00][bold]You are to give staff respect and follow their rulings. If you have issue with a staff member or their ruling, either make an appeal or report the staff member to a Senior moderator or the Head moderator.[/bold][/color][/italic] 
 
- 
 
- 
+  [italic][color=#ffbf00][bold]Относитесь к администрации с уважением и выполняйте её решения. Если у вас возникла проблема с сотрудником администрации или его решением, подайте апелляцию либо пожалуйтесь на этого сотрудника старшему или главному модератору.[/bold][/color][/italic]
+  - Администрация оставляет за собой право принимать любые дополнительные решения, которые она сочтёт необходимыми.
 
-  ###Universal Rules 
 
-  - [textlink="Zero Tolerance Rules." link="AU14RulesZeroTolerance"] 
 
-  - [textlink="General Rules." link="AU14RulesGeneral"] 
+  ### Общие правила
 
-  - [textlink="Roleplay Rules." link="AU14RulesRoleplay"] 
+  - [textlink="Правила нулевой терпимости." link="AU14RulesZeroTolerance"]
 
-  - [textlink="Gamemode Specific Rules." link="AU14GamemodeRulesOverview"]
+  - [textlink="Общие правила." link="AU14RulesGeneral"]
+
+  - [textlink="Правила ролевой игры." link="AU14RulesRoleplay"]
+
+  - [textlink="Правила отдельных игровых режимов." link="AU14GamemodeRulesOverview"]
 </Document>

@@ -1,21 +1,21 @@
 ﻿<Document>
-  # Department Regulations
+  # Ведомственные инструкции
 
-  Regulations of specific departments, excluding non-modifiable regulations are listed here. The head of the department holds responsibility for it and answers directly to the [color=#008000][bold]Commander[/bold][/color].
+  Здесь приведены правила отдельных подразделений, за исключением неизменяемых положений. Ответственность за работу подразделения несёт его глава, который подчиняется непосредственно [color=#008000][bold]Командиру[/bold][/color].
 
-  - Any crew that intend to deploy, including Staff Officers, require permission from either the head of their department or the [color=#008000][bold]Commander[/bold][/color], where the [color=#008000][bold]Commander[/bold][/color] can overrule the department head.
+  - Любому члену экипажа, намеренному отправиться в район операции, включая штабных офицеров, требуется разрешение главы своего подразделения либо [color=#008000][bold]Командира[/bold][/color]. Решение Командира имеет приоритет над решением главы подразделения.
 
-  ## Dropships, Fighters and Aircraft
+  ## Десантные корабли, истребители и прочая авиация
 
-  - The designated [bold]Pilot[/bold]s of these ships are responsible for them and any modifications made to them.
-  - [bold]Pilot[/bold]s may modify or delegate modifications to their ships without requesting permission. These modifications may not be overwritten by the [bold]Commander[/bold].
-  - Dismantling ship parts to utilize materials for operational use is strictly forbidden.
-  - Ship doors must remain intact and easily accessible.
-  - Dropship seating must remain intact and easily accessible.
-  - Some seating may be reduced to accommodate additional ammunition or cargo storage, but it may not be removed entirely. Any remaining seating must remain easily accessible.
-  - If the dropship is inaccessible or otherwise inoperable, any other aircraft must serve as the dropship and be equipped with the necessary seating if possible.
-  - If parachute drops are being utilized, the [bold]Flight Crew[/bold] is responsible for ensuring the drop location is safe (unless directed otherwise by command) and informing the personnel when to exit the ship.
-  - Enlisted personnel (excluding [bold]Flight Crew[/bold]) are not permitted in ship cockpits unless in an emergency.
-  - [bold]Flight Crew[/bold] have the authority to remove personnel from their ship of any rank for any reason. The Flight Crew has final say over who can fly in their aircraft.
+  - Назначенные [bold]Пилоты[/bold] отвечают за свои воздушные суда и за внесённые в них изменения.
+  - [bold]Пилоты[/bold] могут самостоятельно модифицировать свои суда либо поручать модификацию другим без отдельного разрешения. [bold]Командир[/bold] не может отменить такие изменения.
+  - Разбирать части воздушного судна ради получения материалов для иных оперативных нужд строго запрещено.
+  - Двери судна должны оставаться целыми и легко доступными.
+  - Посадочные места десантного корабля должны оставаться целыми и легко доступными.
+  - Часть сидений можно убрать ради дополнительного места под боеприпасы или груз, но полностью удалять все места нельзя. Оставшиеся сиденья должны быть легко доступны.
+  - Если десантный корабль недоступен или неработоспособен, другое воздушное судно должно выполнять его функцию и, по возможности, быть оборудовано необходимыми посадочными местами.
+  - При использовании парашютного десантирования [bold]лётный состав[/bold] обязан убедиться, что место высадки безопасно, если командование не распорядилось иначе, и сообщить личному составу момент выхода из судна.
+  - Рядовой состав, не относящийся к [bold]лётному составу[/bold], не допускается в кабины воздушных судов, кроме чрезвычайных ситуаций.
+  - [bold]Лётный состав[/bold] имеет право удалить с борта своего воздушного судна любого человека независимо от звания и по любой причине. Окончательное решение о том, кто может находиться на борту во время полёта, принимает лётный состав.
 
 </Document>

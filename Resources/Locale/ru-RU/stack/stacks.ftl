@@ -379,3 +379,44 @@ stack-plasma-marble-floor = плазменный мраморный пол
 stack-uranium-marble-floor = урановый мраморный пол
 stack-astro-ironsand-floor = астро-железный песок
 stack-astro-ironsand-floor-borderless = безграничный астро-железный песок
+
+
+stack-xenoborg-crystal = xenoborg {$amount ->
+    [1] crystal
+    *[other] crystals
+}
+
+stack-conveyor-belt = {$amount ->
+    [1] conveyor belt
+    *[other] conveyor belts
+}
+
+stack-plastic-tile = plastic tile
+
+stack-plastic-dark-tile = dark plastic tile
+
+stack-plastic-white-tile = white plastic tile
+
+stack-white-marble-mono-floor = white marble mono floor
+
+stack-dark-marble-mono-floor = dark marble mono floor
+
+stack-exo-hull-floor = exodermis hull floor
+
+stack-exo-viscera-floor = exodermis viscera floor
+
+stack-exo-techmaint-floor = exodermis techmaint floor
+
+stack-exo-horizontal-floor = exodermis horizontal floor
+
+stack-exo-vertical-floor = exodermis vertical floor
+
+stack-exo-corner-ne-floor = exodermis NE corner floor
+
+stack-exo-corner-nw-floor = exodermis NW corner floor
+
+stack-exo-corner-se-floor = exodermis SE corner floor
+
+stack-exo-corner-sw-floor = exodermis SW corner floor
+
+stack-exo-borg-floor = mechadermis floor

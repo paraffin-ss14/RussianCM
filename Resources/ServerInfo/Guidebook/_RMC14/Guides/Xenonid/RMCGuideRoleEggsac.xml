@@ -1,20 +1,20 @@
 <Document>
-  #Eggsac, Tier 2
+  # Яйцевой мешок, штамм уровня 2
   <GuideEntityEmbed Entity="RMCXenoCarrierEggsac"/>
-  ##Playing as a Eggsac
-  You have given up your ability to store parasites. You can store 12 eggs, produce eggs with your eggsac, place 4 eggs off hive weeds that decay slower if you are near, and your pheromones have been strengthened.
+  ## Игра за Яйцевой мешок
+  Вы отказываетесь от способности хранить паразитов. Взамен можете переносить до 12 яиц, самостоятельно производить яйца с помощью яйцевого мешка, размещать до 4 яиц вне ульевой смолы — рядом с вами они разрушаются медленнее — а ваши феромоны становятся сильнее.
 
-  Eggsac Carriers are specialised for egg production and can keep the hive supplied when queen isn't making eggs
+  Носитель с яйцевым мешком специализируется на производстве яиц и способен поддерживать их запас в улье, когда Королева не создаёт новые яйца.
 
-  Your planted eggs are also unique as they can now be placed on regular weeds, however, they will decay if you move away from them. You can use these to make egg traps that hosts may walk into or help Oppressors by placing eggs near where they are going to hook.
+  Размещённые вами яйца уникальны тем, что могут находиться на обычной смоле. Однако если вы отойдёте слишком далеко, они начнут разрушаться. Используйте их как яичные ловушки на пути носителей или помогайте Угнетателям, размещая яйца рядом с местами, куда они собираются притягивать противников.
 
-  ##Abilities:
-  - [bold]Emit Pheromones[/bold]: Emits one of the three pheromones, strength of said pheromone is dependent on caste and does not stack with pheromones of the same type.
+  ## Способности:
+  - [bold]Испускать феромоны[/bold]: испускает один из трёх типов феромонов. Их сила зависит от касты; эффекты феромонов одного типа не складываются.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPheromones"/>
-  - [bold]Plant Weeds[/bold]: Places a resin node which spreads weeds across a large area.
+  - [bold]Посадить смолу[/bold]: размещает смоляной узел, распространяющий смолу на большой площади.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPlantWeeds"/>
-  - [bold]Retrieve Egg[/bold]: Retrieves a egg once the ability is used
+  - [bold]Достать яйцо[/bold]: достаёт одно яйцо из внутреннего хранилища.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoRetrieveEgg"/>
-  - [bold]Generate Eggs[/bold]: Produces eggs over time with a passive plasma consumption
+  - [bold]Производить яйца[/bold]: постепенно создаёт новые яйца, постоянно расходуя небольшое количество плазмы.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoGenerateEggs"/>
 </Document>

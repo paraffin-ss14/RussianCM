@@ -15,3 +15,10 @@ grinder-menu-chamber-content-box-button = Извлечь содержимое
 grinder-menu-beaker-content-box-label = Стакан
 grinder-menu-beaker-content-box-button = Извлечь контейнер
 grinder-menu-beaker-content-box-is-empty = Пусто
+
+
+reagent-grinder-component-chamber-full = The reagent grinder's chamber is full.
+
+reagent-grinder-component-plant-bag-empty = { CAPITALIZE(THE($bag)) } contains no produce that can go in the reagent grinder.
+
+reagent-grinder-component-plant-bag-loaded = Loaded {$count} items from the plant bag into the reagent grinder.

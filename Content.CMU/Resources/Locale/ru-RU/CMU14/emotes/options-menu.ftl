@@ -1,0 +1,9 @@
+ui-options-header-cmu-emotes = Эмоции
+ui-options-function-cmu-emote-slot1 = Слот эмоции 1
+ui-options-function-cmu-emote-slot2 = Слот эмоции 2
+ui-options-function-cmu-emote-slot3 = Слот эмоции 3
+ui-options-function-cmu-emote-slot4 = Слот эмоции 4
+ui-options-function-cmu-emote-slot5 = Слот эмоции 5
+ui-options-function-cmu-emote-slot6 = Слот эмоции 6
+ui-options-function-cmu-emote-slot7 = Слот эмоции 7
+ui-options-function-cmu-emote-slot8 = Слот эмоции 8

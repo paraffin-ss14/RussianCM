@@ -577,7 +577,7 @@ public abstract partial class SharedMoverController : VirtualController
     {
         sound = null;
 
-        if (!CanSound() || !_tags.HasTag(uid, FootstepSoundTag))
+        if (!CanSound())
             return false;
 
         var coordinates = xform.Coordinates;
@@ -611,6 +611,18 @@ public abstract partial class SharedMoverController : VirtualController
             return false;
 
         mobMover.StepSoundDistance -= distanceNeeded;
+
+        // CMU14: water movement overrides footwear, including silent walking.
+        var mobSound = new GetMobFootstepSoundEvent();
+        RaiseLocalEvent(uid, ref mobSound);
+        if (mobSound.Handled)
+        {
+            sound = mobSound.Sound;
+            return sound != null;
+        }
+
+        if (!_tags.HasTag(uid, FootstepSoundTag))
+            return false;
 
         if (FootstepModifierQuery.TryComp(uid, out var moverModifier))
         {
@@ -854,7 +866,23 @@ public abstract partial class SharedMoverController : VirtualController
                 {
                     var previousButtons = tileMovement.CurrentSlideMoveButtons;
                     var previousInitialKeyDownTime = tileMovement.MovementKeyInitialDownTime;
-                    InitializeSlideToCenter(physicsUid, tileMovement);
+
+                    // cmu change
+                    var crossedZLevel = XformQuery.TryGetComponent(tileMovement.Origin.EntityId, out var originParentXform) &&
+                        originParentXform.MapUid != targetTransform.MapUid;
+
+                    if (crossedZLevel && previousButtons != MoveButtons.None)
+                    {
+                        var offset = DirVecForButtons(previousButtons);
+                        offset = inputMover.TargetRelativeRotation.RotateVec(offset);
+                        InitializeSlideToTarget(physicsUid, tileMovement, targetTransform.LocalPosition + offset, previousButtons);
+                    }
+                    else
+                    {
+                        InitializeSlideToCenter(physicsUid, tileMovement);
+                    }
+                    // cmu change
+
                     tileMovement.CurrentSlideMoveButtons = previousButtons;
                     tileMovement.MovementKeyInitialDownTime = previousInitialKeyDownTime;
                     UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);

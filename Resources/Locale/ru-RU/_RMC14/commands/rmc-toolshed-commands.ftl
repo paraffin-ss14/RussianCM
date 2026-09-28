@@ -90,3 +90,8 @@ command-description-vehiclesupply-addstorage = Добавляет прототи
 command-description-vehiclesupply-addstoragelift = Добавляет прототип транспортного средства в определенное хранилище грузовых автомобилей.
 
 # Missing entries synced from en-US
+
+
+command-description-areas-cleanup = Remove saved areas and entities located over empty tiles.
+
+command-description-maprename = changes the MetaData entityName field.

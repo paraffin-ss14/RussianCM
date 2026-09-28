@@ -1,6 +1,8 @@
 using System.Collections.Frozen;
+using System.Linq;
 using Content.Server.Access.Systems;
 using Content.Server.CMU14.Roles;
+using Content.Server.CMU14.Diagnostics.Performance; // CMU14
 using Content.Server.CMU14.Round;
 using Content.Server.Humanoid;
 using Content.Server.Jobs;
@@ -73,6 +75,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private MarkingManager _markingManager = default!;
     [Dependency] private ISharedAdminLogManager _adminLog = default!;
     [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private ICMUServerPerformanceDiagnostics _performance = default!; // CMU14
 
     private static readonly PlatoonJobClass[] PlatoonJobClasses = Enum.GetValues<PlatoonJobClass>();
     private static readonly FrozenDictionary<PlatoonJobClass, string> PlatoonJobClassNames = PlatoonJobClasses.ToFrozenDictionary(v => v, v => v.ToString());
@@ -95,7 +98,10 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         "CMO",
         "ChiefMP",
         "LogisticsOfficer",
-        "EngineeringOfficer"
+        "EngineeringOfficer",
+        "AdjutantDress",
+        "BrigadierGeneral",
+        "VipEscort"
     };
 
     private static readonly HashSet<string> AuxiliarySquadRoundRoles = new(StringComparer.OrdinalIgnoreCase)
@@ -175,6 +181,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         EntityUid? entity = null)
     {
         // --- Platoon job override logic start ---
+        using var operation = _performance.MeasureOperation("player-spawn", job?.Id); // CMU14: retain slow spawn attribution.
         string? jobId = job?.ToString();
         var originalJob = job;
         _prototypeManager.Resolve(originalJob, out JobPrototype? originalPrototype);
@@ -263,7 +270,11 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
 
             // Make sure custom names get handled, what is gameticker control flow whoopy.
             if (loadout != null && loadoutProto != null)
+            {
+                // CMU14: custom job bodies also receive their selected equipment.
+                EquipRoleLoadout(jobEntity, loadout, loadoutProto, applyEffects: false);
                 EquipRoleName(jobEntity, loadout, loadoutProto);
+            }
 
             DoJobSpecials(job, jobEntity);
             if (loadout != null && loadoutProto != null)
@@ -277,7 +288,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             if (originalPrototype != null && TryComp(jobEntity, out MetaDataComponent? metaDataJobEntity))
                 SetPdaAndIdCardData(jobEntity, metaDataJobEntity.EntityName, originalPrototype, station);
 
-            AssignRoundStartSquad(jobEntity, coordinates, job, originalPrototype, jobId, team);
+            AssignRoundStartSquad(jobEntity, coordinates, job, originalPrototype, jobId, team, profile); // CMU14
             return jobEntity;
         }
 
@@ -392,7 +403,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         ApplyRegulationAppearance(entity.Value, profile);
         _identity.QueueIdentityUpdate(entity.Value);
 
-        AssignRoundStartSquad(entity.Value, coordinates, job, originalPrototype, jobId, team);
+        AssignRoundStartSquad(entity.Value, coordinates, job, originalPrototype, jobId, team, profile); // CMU14
 
         ApplyTeamFaction(entity.Value, team);
         return entity.Value;
@@ -404,7 +415,8 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         ProtoId<JobPrototype>? job,
         JobPrototype? originalPrototype,
         string? originalJobId,
-        string? team)
+        string? team,
+        HumanoidCharacterProfile? profile) // CMU14
     {
         if (team == null || !ShouldAssignToSquad(originalPrototype, originalJobId))
             return;
@@ -432,8 +444,26 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
                                    originalJobId?.Contains("rto", StringComparison.OrdinalIgnoreCase) == true ||
                                    originalJobId?.EndsWith("radiotelephoneoperator", StringComparison.OrdinalIgnoreCase) == true;
 
-            // Sergeants: try to place into a squad without a leader where possible (existing behavior)
-            if (isSergeant)
+            // CMU14: Player preference wins over distribution when the squad belongs to this side.
+            // Sergeants still skip a preferred squad that already has a leader so the sitting leader is not demoted.
+            // The menu only offers GovFor squads; force-balanced OpFor players get the mirrored squad by slot.
+            var preferred = profile?.SquadPreference?.Id;
+            if (team == "opfor" && preferred != null)
+            {
+                var mirror = Array.IndexOf(_govforSquads, preferred);
+                if (mirror >= 0)
+                    preferred = _opforSquads[mirror];
+            }
+
+            if (preferred != null // CMU14
+                && Array.IndexOf(candidates, preferred) != -1
+                && (!isSergeant
+                || !_squadSystem.TryEnsureSquad(preferred, out var preferredSquad)
+                || !_squadSystem.TryGetSquadLeader(preferredSquad, out _)))
+                protoId = preferred;
+
+            // CMU14: Sergeants: try to place into a squad without a leader where possible
+            else if (isSergeant)
             {
                 string? chosen = null;
                 foreach (var candidate in candidates)
@@ -866,6 +896,8 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         }
 
         _accessSystem.SetAccessToJob(cardId, jobPrototype, extendedAccess);
+        // CMU14: side-specific specialist access.
+        SetWeaponsSpecialistAccess(cardId, jobPrototype, jobPrototype);
 
         if (pdaComponent != null)
             _pdaSystem.SetOwner(idUid.Value, pdaComponent, entity, characterName);
@@ -914,10 +946,27 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             _accessSystem.SetAccessToJob(cardId, accessJobPrototype, extendedAccess);
         }
 
+        // CMU14: side-specific specialist access.
+        SetWeaponsSpecialistAccess(cardId, titleJobPrototype, accessJobPrototype);
         if (pdaComponent != null)
             _pdaSystem.SetOwner(idUid.Value, pdaComponent, entity, characterName);
     }
 
+    private void SetWeaponsSpecialistAccess(EntityUid card, JobPrototype role, JobPrototype sideJob)
+    {
+        var specialist = role.RoundRole == "WeaponsSpecialist" || sideJob.RoundRole == "WeaponsSpecialist";
+        foreach (var job in new[] { role, sideJob })
+        foreach (var group in job.AccessGroups)
+            specialist |= group.Id is "AU14GovforWeaponsSpecialist" or "AU14OpforWeaponsSpecialist";
+        if (!specialist || !TryComp(card, out AccessComponent? access)) return;
+        var side = _roundJobProfiles.GetRoundSide(sideJob);
+        if (side is not (RoundJobSide.Govfor or RoundJobSide.Opfor)) return;
+        // Platoon equipment jobs can inherit the GOVFOR specialist base even when selected for OPFOR.
+        var tags = new HashSet<ProtoId<AccessLevelPrototype>>(access.Tags);
+        tags.Remove(side == RoundJobSide.Opfor ? "AU14AccessGovforSquadWeaponsSpecialist" : "AU14AccessOpforSquadWeaponsSpecialist");
+        tags.Add(side == RoundJobSide.Opfor ? "AU14AccessOpforSquadWeaponsSpecialist" : "AU14AccessGovforSquadWeaponsSpecialist");
+        _accessSystem.TrySetTags(card, tags, access);
+    }
 
     #endregion Player spawning helpers
 }

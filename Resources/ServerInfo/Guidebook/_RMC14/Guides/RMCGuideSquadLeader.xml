@@ -1,140 +1,138 @@
 <Document>
-  # Squad leading 101
-  [italic]Guide written by UnicornOnLSD on GitHub [/italic]
+  # Командир отряда: основы
+  [italic]Руководство написано UnicornOnLSD на GitHub[/italic]
 
   <Box>
-    [italic]"Alright, alpha, we’re pushing nort- wait, where is everyone? Is my squad only made of 5 people? Did they all get kidnapped? Where did everything go wrong?"[/italic]
+    [italic]«Так, Альфа, наступаем на се- стоп, а где все? В моём отряде только пять человек? Их всех похитили? В какой момент всё пошло не так?»[/italic]
   </Box>
 
-  You might have found yourself in that scenario, wanting to be a charismatic leader and either ending up as one of the first squad casualties or just as lost as every other member of your squad.
+  Возможно, вы уже оказывались в такой ситуации: хотели стать харизматичным командиром, а в итоге либо погибали одним из первых, либо терялись не меньше остальных бойцов своего отряда.
 
-  This guide is here to teach YOU how to become the squad leader you've always dreamt to be.
+  Это руководство научит ВАС быть тем командиром отряда, которым вы всегда хотели стать.
 
-  ## Gear and Features
+  ## Снаряжение и особенности
 
-  As a squad leader, you have access to a lot of limited, better gear and skills for free, contrary to the humble rifleman. Some of note are:
+  В отличие от обычного стрелка, командир отряда бесплатно или очень дёшево получает доступ к ряду ограниченного и улучшенного снаряжения, а также дополнительным навыкам. Особенно полезны:
 
-  - A free B12 armor. Upmost robustness.
+  - Бесплатная броня B12. Максимальная надёжность.
   <GuideEntityEmbed Entity="CMArmorB12"/>
-  - Cheap access to an RTO pack, grab it.
+  - Дешёвый доступ к рюкзаку RTO — берите.
   <GuideEntityEmbed Entity="RMCBackpackRTO"/>
-  - Cheap access to a whistle, grab it.
+  - Дешёвый доступ к свистку — тоже берите.
   <GuideEntityEmbed Entity="RMCWhistle"/>
-  - A 25P cost pair of NVG optics, with a battery of 10 minutes. Rechargeable at any powered recharger, once screwed out of the helmet
+  - Прибор ночного видения за 25 очков с запасом батареи примерно на 10 минут. Его можно снять со шлема отвёрткой и зарядить в любом работающем зарядном устройстве.
   <GuideEntityEmbed Entity="RMCVisorNightVision"/>
-  - A Medical skill of 1, letting you use auto-injectors instantly.
-  - Large pouches for days.
+  - Медицинский навык 1-го уровня, позволяющий мгновенно использовать автоинъекторы.
+  - Доступ к большим подсумкам.
 
-  Along with that, you have the most basic leading skill of one. Which is granted to whoever is assigned as the aSL. These grant minor buffs on use:
+  Кроме того, у вас есть базовый уровень лидерского навыка. Такой же уровень получает назначенный исполняющий обязанности командира отряда (aSL). Приказы дают небольшие временные бонусы:
 
-  - [bold]Issue order - Move[/bold]: grants a small movement speed bonus
+  - [bold]Приказ — Движение[/bold]: небольшой бонус к скорости передвижения.
 
-  - [bold]Issue order - Hold[/bold]: grants a small damage resistance bonus
+  - [bold]Приказ — Удерживать[/bold]: небольшое повышение сопротивления урону.
 
-  - [bold]Issue order - Focus[/bold]: grants a small accuracy bonus
+  - [bold]Приказ — Сосредоточиться[/bold]: небольшой бонус к точности.
 
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookActionMove"/>
     <GuideEntityEmbed Entity="RMCGuidebookActionHold"/>
-	<GuideEntityEmbed Entity="RMCGuidebookActionFocus"/>
+    <GuideEntityEmbed Entity="RMCGuidebookActionFocus"/>
   </Box>
 
-  # How to lead
+  # Как командовать
 
-  Right, all is well, we are geared, what about the actual job, what do we do?
+  Отлично, мы экипированы. Но что теперь делать с самой ролью?
 
-  You're leading a squad of 20 crayon eating maggots that will do their best to ignore you. And thus, the crucial part of being a squad leader is to be heard. Once people listen to you and your orders, everything should go well, normally.
+  Вам предстоит руководить примерно двадцатью любителями восковых мелков, которые будут изо всех сил делать вид, что вас не слышат. Поэтому главное умение командира отряда — добиться, чтобы вас услышали. Если бойцы слышат вас и выполняют приказы, дальше всё обычно складывается намного лучше.
 
-  Good thing is, because you're a leader, you talk BIG. and when I mean BIG. I MEAN IT. You can speak in [bold]ALL CAPS WITH !![/bold] to have better visibility when talking, along with having innately larger text when speaking.
+  Хорошая новость: вы командир, поэтому ваш голос заметнее. И когда мы говорим ЗАМЕТНЕЕ — мы имеем это в виду. Для важных приказов можно использовать [bold]ЗАГЛАВНЫЕ БУКВЫ И !![/bold], а сообщения командира и без того отображаются крупнее обычных.
 
-  ## How to be heard
-  Then, how do we take advantage of our GRAVE voice? Here's how:
+  ## Как сделать так, чтобы вас услышали
+  Как использовать свой командирский голос правильно:
 
-  - Use LOCAL chat. It ensures people see orders easily.
-  - Give SHORT orders, ones that can be [bold]read in a pinch[/bold] and understand, such as the holy SL trinity: "[bold]HOLD[/bold]","[bold]BACK[/bold]" and "[bold]PUSH[/bold]"
-  - Use your whistle as an [bold]audio cue for people to LISTEN[/bold]
-  - Repeat the order if needed. Better twice than never.
+  - Используйте ЛОКАЛЬНЫЙ чат. Так бойцы рядом быстрее замечают приказ.
+  - Отдавайте КОРОТКИЕ приказы, которые можно [bold]прочитать и понять за секунду[/bold]. Святая троица командира отряда: «[bold]ДЕРЖИМ[/bold]», «[bold]НАЗАД[/bold]» и «[bold]ВПЕРЁД[/bold]».
+  - Используйте свисток как [bold]звуковой сигнал: СЛУШАТЬ КОМАНДИРА[/bold].
+  - При необходимости повторяйте приказ. Лучше сказать дважды, чем не быть услышанным вообще.
 
+  Теперь бойцы хотя бы замечают ваши слова. Но как сделать так, чтобы они действительно [bold]СЛУШАЛИСЬ[/bold]?
 
-  Now you know how to make the goons hear what you want. But how do you make them [bold]truly LISTEN[/bold] ?
+  ## Харизма и вы
+  Знать, что говорить, недостаточно. Вам нужен невидимый ресурс — «сплочённость отряда». Представьте его как постоянно убывающую шкалу боевого духа, которую нужно держать как можно ВЫШЕ.
 
-  ## Charisma and You
-  You know what to say, but that's not all. You need to gather an invisible resource called "squad cohesion". Imagine it as a permanently depleting morale bar that you want as HIGH as possible at ALL times.
+  Поддерживать её помогают простые вещи:
 
-  To keep it up you'll can:
+  - Общайтесь со своими бойцами. Не оставляйте их без ответа.
+  - Поднимайте боевой дух перед высадкой. Воодушевлённый отряд — опасный отряд. [bold]Короткий брифинг отряда отлично работает: проведите его до общего брифинга, в десантном корабле или уже на поверхности — но в последнем случае говорите кратко.[/bold]
+  - Хвалите бойцов. Если человек понимает, что хорошо выполняет свою работу, он с большей вероятностью продолжит делать её хорошо.
+  - Постарайтесь, чтобы рядом оставались постоянные бойцы вашего отряда. Это приходит со временем: чем больше людей держатся возле командира, тем охотнее остальные следуют за ними.
 
-  - Talk with your squaddies, don't leave them hanging, ever.
-  - Hype them up pre-drop. A hyped squad is a deadly squad. [bold]A squad brief is perfect for that. Do it before brief, in dropship, or on ground, -but then keep it short.[/bold]
-  - Compliment your squaddies, if they know they're doing a good job, they'll keep doing it.
-  - Have regulars stick to you, that will come with time by sticking to a squad. The more with you, the more will stay, through sheep mentality.
+  А как выглядеть тем самым уверенным и харизматичным командиром?
 
-  Alright, that's cool and all but how to be the bold charismatic guy? Don't worry, I also got you:
+  - Оставайтесь в образе и придерживайтесь характера персонажа. Можно быть холодным ветераном спецопераций, а можно — заботливым «отцом» для ничего не подозревающих пожирателей мелков. Главное — последовательность.
+  - Умение вызывает доверие. Если морпехи видят, что вы хорошо стреляете, грамотно передаёте информацию, вовремя меняете позиции и вообще понимаете свою работу, они естественным образом начинают следовать за вами.
 
-  - Stay in character, stick to a personality (as one should). Be that one cold spec ops dude, or a caring father to his unsuspecting, crayon eating children. You get the idea.
-  - Skill brings trust. If you show marines you are good at your job, be it getting kills, communicating well or doing good rotations, people will naturally follow you.
-
-  ## God's finger (Point spamming)
+  ## Перст божий — спам указателем
 
   <Box>
-    [italic]"I POINT, you KILL, BREACH and MOVE. CLEAR CHARLIE?!"[/italic]
+    [italic]«Я ПОКАЗЫВАЮ — вы УБИВАЕТЕ, ЛОМАЕТЕ и ДВИГАЕТЕСЬ. ПОНЯЛА, ЧАРЛИ?!»[/italic]
   </Box>
 
+  У большинства командных ролей есть особая стрелка-указатель. Обычно она зелёная. У командира отряда стрелка БОЛЬШАЯ и окрашена в цвет его отряда.
 
-  If you never noticed, most "leadership" roles have a special pointing arrow. By base, it's green. As a Squad Leader, yours will be BIG and of the color of your squad.
+  Почему это важно?
 
-  Why is this important, you may ask?
+  Потому что указатель — один из лучших способов заставить людей быстро понять, куда идти, по чему стрелять и что ломать. Этот приём можно скромно назвать «спамом указателем».
 
-  Because this is the biggest tool to make people do what you want, go where you want to go. The tech humbly called "Point spam".
+  Сначала привлеките внимание, затем просто указывайте туда, куда хотите направить людей: на маршрут, цель или объект. Визуальный сигнал часто работает гораздо лучше попыток перекричать бой.
 
-  It consists of getting people's attention, then just pointing where you want to: go, shoot, or destroy. It works all the time, is very visual (WAY better than trying to get people to listen).
+  Видите смолу? Укажите на неё и скажите: ЛОМАТЬ!
 
-  You see resin? Point at it and go CHOP IT!
+  Нужно провести отряд по маршруту? Последовательно показывайте стрелкой путь.
 
-  You want your squad to go there? Point the path nonstop to them.
+  Видите крупного опасного ксенонида, которого пора продавить? Начинайте наступление и указывайте на цель — или наступайте и сразу открывайте огонь.
 
-  You see big evil bad you want to push? Charge and point, or charge and shoot.
+  # Планирование боя
+  Здесь начинается более «стратегическая» часть игры за командира отряда. Всё описанное выше — основа, но именно тактические решения позволяют превратить разваливающуюся операцию в СЛАВНУЮ ПОБЕДУ МОРСКОЙ ПЕХОТЫ. УРА!
 
-  # Strategy planning
-  This part will cover the more "strategic" part of playing squad leader. Whilst than the previously given basics, it is the key to ensuring you're doing your part to turn that crashing operation into a GLORIOUS MARINE MAJOR, OORAH!
+  ## Приказы и вы
 
-  ## Orders and you
+  Один отряд, который самовольно ушёл в сторону и начал наступление вдали от остальных, уже не раз становился причиной провала целой операции.
 
-  A single squad going AWOL and pushing a spot away from others without being ordered to can and has on many occasions ruined operations.
+  Командир отряда — одна из ключевых фигур, способных изменить исход игры в пользу морпехов. Остальные — командиры других отрядов и [bold]командование[/bold].
+  [bold]Командование[/bold] отдаёт вашему отряду приказы исходя из общей обстановки операции. Независимо от личного звания вы ДОЛЖНЫ стараться выполнять их. Исключение — незаконный приказ, например очевидно самоубийственная атака: в таком случае Военное право позволяет отказаться от исполнения, объяснив причину отказа.
 
-  As a squad leader you are one of the five major pillars that may shift game's outcome in the marine's favor. The four others are composed of the other SLs AND the [bold]commander[/bold].
-  Said [bold]commander[/bold] will give your squad orders that are made for the operation's sake. No matter your rank, you SHOULD follow it. Unless it is unlawful, such as a suicide charge, if so per Marine Law you may refuse the unlawful order by stating why.
+  ## Связь — разговаривайте
+  Так же важно, как говорить со своим отрядом, поддерживать связь с глазами всей операции — CIC. Там видят общую картину, по крайней мере большую её часть. Если CIC понимает, что происходит с вашим отрядом, командование сможет скорректировать действия остальных сил и помочь всем вместе уничтожить ксенонидов. Вы не одни: рядом действуют и другие отряды со своими командирами.
 
-  ## Comms - communication? The talk.
-  Just as it is important you talk to your squad, it is important you talk to the eyes in the squad, the CIC. They have the big picture (most of the time), and if they know what you're doing, they will (hopefully) adjust things to ensure that you can kill those dirty bugs, together. Together? As in every marine. Because you're not alone. There are three other squads with three others leaders (not as good as you, because you've read this and they haven't, obviously.) but still.
+  Если связь отключена, используйте телефонный рюкзак. Если связь работает — регулярно передавайте короткие доклады по командному или отрядному каналу. Например, ваши бойцы убили Королеву?
 
-  Use a phonepack if comms are down, else give regular status reports in the command channel or in your squad channel. Hell, Queen's dead thanks to your men?
+  «:v Чарли уничтожила Королеву. Продолжаем наступление.»
 
-  ":v Charlie got the queen kill. Pushing further."
+  От командира отряда также обычно ожидают умения корректировать орбитальную бомбардировку. Вы появляетесь с лазерным целеуказателем, который можно переключить в режим дальномера. Наведите его на район, который требуется накрыть, и передайте координаты.
 
-  Along with this, as the squad leader, you're generally expected to know better how to call Orbital Bombardments. You spawn with a laser designator which when switched mode, can turn into rangefinder mode. Use it where you want the entire area to be flattened and share the coordinates.
+  [bold]БУДЬТЕ КРАЙНЕ ОСТОРОЖНЫ, ЕСЛИ САМОСТОЯТЕЛЬНО КОРРЕКТИРУЕТЕ КООРДИНАТЫ.[/bold]
 
-  [bold]BE VERY CAUTIOUS WHEN ADJUSTING COORDINATES YOURSELF. [/bold]
+  ## Наступать? Отступать? Когда и зачем?
 
-  ## Pushing? Backing? What, how and why.
+  Ксенониды умны, но вы должны быть умнее. Важно понимать, когда действительно пора давить вперёд, а когда лучше сохранить людей. Приказы CIC имеют высокий приоритет, однако выполняйте их так, чтобы без необходимости не уничтожить собственный отряд.
 
-  Those dirty 'nids are smart, but you're smarter. You want to know when it's the right time to go in and fuck shit up. Obviously you have your squad orders given by the CIC. Execute them at priority, but make sure it doesn't wipe your squad.
+  Приказ «Движение» особенно полезен при прямых манёврах и быстрых перемещениях.
 
-  Using your MOVE order is most appropriate when having to do direct maneuvers.
+  В конечном счёте позиция отряда зависит от вас. Чувство того, где находиться, когда наступать и когда останавливаться, приходит с опытом. Но несколько вещей сильно помогают:
 
-  Ultimately, the placement of your squad depends on you. The gut feeling of knowing where to do, when to and not to push will come with time. But a few things can help:
+  - Используйте бинокль перед сменой позиции, чтобы заранее понять, где находится противник, а где путь свободен.
+  - Включайте ПНВ в подходящий момент, чтобы не вбежать в темноту прямо к ожидающему там Охотнику.
+  - Слушайте радио и выделяйте важные сообщения вроде: «БОЖЕ, КОРОЛЕВА НА ДЕЛЬТЕ, [ваш отряд], СРОЧНО ПОМОГИТЕ ИМ С ВОСТОКА!»
+  - ЗНАНИЕ КАРТЫ. Не теряйтесь. Пользуйтесь тактической картой и запоминайте ключевые маршруты.
 
-  - Using your binoculars when rotating to know where the enemy is and isn't
-  - Using your NVGs at appropriate timings (so you don't run into darkness where john lurker is waiting)
-  - Listening to comms, focus on important messages within the lines of "OH GOD QUEEN ON DELTA PLEASE [insert your squad here] GO SAVE THEM EAST"
-  - MAP KNOWLEDGE. Know the place, don't be lost, use tacmap.
+  # Заключение
+  Командир отряда — одновременно сердце, мозг и голос своего подразделения и одна из ролей, сильнее всего влияющих на исход операции. Именно от вас зависит, сможете ли вы грамотной тактикой и построением довести наступление до конца. Не забывайте общаться, держите отряд вместе и адаптируйтесь к угрозам, чтобы сохранить своих любимых стрелков целыми.
 
-  # Conclusion
-  Squad leader is both the heart, brain and voice of the squad, along with one of the most game decisive role. It's up to you to be the ruthless operation finisher through your tactics and formations. Do not forget to communicate, keep your squad together and adjust to threats best you can to keep your lovely gunners in one piece.
+  Командовать способен почти каждый. Эта роль — для тех, кто хочет научиться делать это действительно хорошо.
 
-  Truth is, anyone can lead. But this role is for those who want to shine brighter at it.
+  И всегда помните:
 
-  And always remember.
-
-  [bold]You're here to lead your marines to victory, or peril together. Be humble and always seek to improve.[/bold]
+  [bold]Вы здесь, чтобы вместе привести своих морпехов либо к победе, либо к общей гибели. Не зазнавайтесь и всегда ищите, в чём можно стать лучше.[/bold]
 
 </Document>

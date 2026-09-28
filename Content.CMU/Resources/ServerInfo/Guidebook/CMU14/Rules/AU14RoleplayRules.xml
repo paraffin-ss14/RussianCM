@@ -1,167 +1,399 @@
-﻿<Document>
-  #ROLEPLAY RULES 
+<Document>
+  <!-- Перевод правил AU-14/ColonialMarinesUniverse, a9391b78d00c94b9f5deea1c92b4ae147b908e88. -->
 
-  These rules apply in character and are enforced universally. 
+  #ПРАВИЛА РОЛЕВОЙ ИГРЫ
 
-  
+  Эти правила действуют в рамках персонажа и применяются ко всем без исключения.
 
-  ##Act like an actual character in this setting. 
 
-  - Do not use text speak or emoticons in character, and do not refer to out of character things like admins or rounds in-game. Do not break character at anytime except when using LOOC/OOC. 
 
-  - Do not reference memes in character. 
+  ##Ведите себя как настоящий персонаж этого сеттинга.
 
-  - Do not use emotes or LOOC/OOC to bypass speech filters/accents or muteness. 
+  - Не используйте текстовые сокращения или смайлики в речи персонажа и не упоминайте внутриигровым способом вещи вне персонажа, такие как администраторы или раунды. Не выходите из роли ни при каких обстоятельствах, кроме использования LOOC/OOC.
 
-  - You are not required to write a backstory; however, you are expected to at least make an effort to act like your role and a believable character. 
+  - Не упоминайте мемы от лица персонажа.
 
-  - Some actions have no delay to make gameplay like reloading smoother. Do not abuse this to spam any kind of sounds. 
+  - Не используйте эмоуты или LOOC/OOC для обхода речевых фильтров/акцентов или немоты.
 
-  - Exercise reasonable self preservation. Don't intentionally hurt or kill your character (or other players characters) without good reasoning. 
+  - Не начинайте случайные драки или толкотню без внутриигрового обоснования, поскольку это будет считаться отсутствием ролевого отыгрыша.
 
-  - A (mostly) sane, well-rounded character would not engage in actions that are overly painful, or put themselves in harm's way, without consideration. Exceptions are made for characters in cultist or other overtly insane roles.  
+  - От вас не требуется писать предысторию персонажа; однако ожидается, что вы хотя бы постараетесь соответствовать своей роли и отыгрывать правдоподобного персонажа.
 
-  
+  - Некоторые действия не имеют задержки, чтобы сделать игровой процесс, например перезарядку, более плавным. Не злоупотребляйте этим для спама какими-либо звуками.
 
-  ##Use Realistic Character Names 
+  - Проявляйте разумный инстинкт самосохранения. Не подвергайте своего персонажа намеренному риску получить травмы или погибнуть без веской причины.
+    - В основном здравомыслящий и полноценный персонаж не станет подвергать себя чрезмерно болезненным действиям или опасности, не задумываясь о последствиях. Исключения допускаются для персонажей-культистов и других явно безумных ролей.
 
-  Use a reasonable, unique, lore-friendly character name that could appear on a birth certificate with at least a first and last name. 
+  - Соблюдайте разумную эскалацию.
+    - Это означает, что вы не можете застрелить кого-либо только за то, что он назвал вас идиотом.
+    - Вы можете перевести словесный конфликт в драку с кулаками и толчками.
+    - Намеренно переводить словесный конфликт в физическую драку исключительно ради дальнейшей эскалации до ситуации, в которой вы убьёте противника, запрещено. Если вы всё же убили противника, вы должны хотя бы попытаться обеспечить ему медицинскую помощь.
+    - Некоторые антагонисты и роли освобождены от этих правил.
+      - Например, антагонист Серийный убийца может не соблюдать обычную эскалацию, поскольку его задача — убить как можно больше людей и не быть пойманным.
+      - Например, Корпоративная безопасность может открыть огонь по нарушителям границ практически без эскалации, если это необходимо для предотвращения утечки конфиденциальной информации из лаборатории.
+      - Однако подобные исключения не означают, что такие роли могут полностью игнорировать ролевой отыгрыш: они должны хотя бы сказать одно-два слова.
 
-  - No names or references of people or characters from the real world, alien franchise and/or other forms of media. 
+  - Руководствуйтесь здравым смыслом при определении допустимого отыгрыша, поскольку администрация оставляет за собой право выносить дополнительные решения.
 
-  - Names should not be written in all Caps Lock 
 
-  - No titles/ranks/honorifics. Titles, ranks and honorifics include but are not limited to; Dr/Doctor, Jr/Junior, Major. 
 
-  - Usernames, objects, random characters, very "low effort" names, "meta" names, or otherwise implausible names cannot be used as names. 
+  ##Используйте реалистичные имена персонажей
 
-  - Up to three characters of Roman numerals may be used in the place of a nickname. 
+  - Используйте разумное, уникальное и соответствующее лору имя персонажа, которое могло бы быть указано в свидетельстве о рождении и содержало как минимум имя и фамилию.
+    - Запрещены имена или отсылки к реальным людям, персонажам франшизы «Чужой» и/или другим произведениям.
+    - Имена не должны быть написаны полностью заглавными буквами.
+    - Запрещены титулы/звания/обращения. К ним относятся, помимо прочего: д-р/доктор, мл./младший, майор.
+    - В качестве имён запрещено использовать ники, названия предметов, случайные наборы символов, явно «ленивые» имена, «метовые» имена и иные неправдоподобные варианты.
+    - Вместо прозвища допускается использовать до трёх символов римских цифр.
 
-  
 
-  ###Nicknames 
 
-  - Nicknames may be used in the format of, in single quotes, Firstname 'Nickname' Lastname. 
+  ###Прозвища
 
-  - Nicknames can be at most two words. 
+  - Прозвища могут использоваться в формате: Имя 'Прозвище' Фамилия.
 
-  - Up to three characters of Roman numerals may be used in the place of a nickname. 
+  - Прозвище может состоять максимум из двух слов.
 
-  
+  - Вместо прозвища допускается использовать до трёх символов римских цифр.
 
-  ###Exceptions 
 
-  - Artificial Womb (AW) Soldier characters may have "AW" in the place of a nickname. As an AW Soldier you must have a weapon produced pre-2010 or the name of the weapon's creator as your last name. AW names must not include numbers or symbols and must be a single word (Ex. Joe AW Browning).
 
-  - Synthetic characters may use a single first name as their character name. Synthetic characters may choose to use a normal name alternatively. 
+  ###Исключения
 
-  - A name comprised of extremely common names (I.E John Williams) can be excused for being shared with someone famous, provided the player is not attempting to imitate or overtly reference the linked person. 
+  - Персонажи-солдаты из искусственной утробы (AW) могут использовать «AW» вместо прозвища. Играя за AW-солдата, вы должны использовать в качестве фамилии название оружия, произведённого до 2010 года, или имя создателя этого оружия. Имена AW не должны содержать цифр или символов и должны состоять из одного слова (например: Джо AW Браунинг).
 
-  
+  - Персонажи-синтетики должны использовать в качестве имени только одно имя без фамилии.
 
-  ##Character Memory 
+  - Имя, состоящее из крайне распространённых имён и фамилий (например, Джон Уильямс), может совпадать с именем известного человека, если игрок не пытается имитировать его или явно на него ссылаться.
 
-  Your personal character may remember events that occurred in previous rounds and discuss them, but may not mention or remember their own death or the death of another present character. 
 
-  
 
-  CMU is a "first contact" server. Your character does not retain any knowledge or memories of encountering specific non-human or covert threats/third parties from previous rounds. All rounds involving the threats/third parties listed below should be treated as first contact (your character has no idea they exist) unless explicitly stated otherwise by your role or staff. 
+  ##Память персонажа
 
-  - Death Squads 
+  Ваш личный персонаж может помнить события предыдущих раундов и обсуждать их, однако не может упоминать или помнить собственную смерть либо смерть другого персонажа, присутствующего в текущем раунде.
 
-  - Egregious and/or covert Weyland-Yutani experiments.
+  RuCMU обычно является сервером «первого контакта», поэтому ваш персонаж не сохраняет знания или воспоминания о встречах с конкретными нечеловеческими, скрытыми угрозами или третьими сторонами из предыдущих раундов.
 
-  - Black Goo (Zombies) 
+  Например:
 
-  - Xenomorphs (including xeno cultists) 
+  - Эскадроны смерти
 
-  - Engineers (Alien)
+  - Особо вопиющие и/или секретные эксперименты Weyland-Yutani.
 
-  - Praetomorphs 
+  - Чёрная жижа (Зомби)
 
-  - Fulfremmen 
+  - Ксеноморфы (включая ксенокультистов)
 
-  - Yautja (Predators)
+  - Инженеры (из вселенной «Чужого»)
 
-  - Abominations
+  - Претоморфы
 
-  ##Respawning 
+  - Фульфреммены
 
-  If you die and respawn, you may not return as a character you previously played in the same round. For example, if you played "John Doe," you should not respawn as "John Doe." 
+  - Яутжа (Хищники)
 
-  
+  - Абоминации
 
-  You may use the same character appearance and respawn under a different name, as long as you roleplay as a separate individual and do not use their previous.  
+  Это также означает, что вы никогда не видели и не слышали ни об одном из перечисленных выше примеров, если прямо не указано иное.
 
-  
 
-  ##Suicides 
 
-  - You must have a valid roleplay reason to commit suicide. Your character must truly have no other way out or be faced with a circumstance worse than death (torture, capture by xenos, etc). 
+  ##Респавн
 
-  - Starting and then cancelling a suicide will be treated the same as an actual suicide unless accidental and also requires a valid reason. 
+  Если вы погибли и возродились, вы не можете вернуться в том же раунде за персонажа, которым уже играли. Например, если вы играли за «Джон Доу», вы не должны возрождаться снова как «Джон Доу».
 
-  
+  Вы можете использовать ту же внешность персонажа и возродиться под другим именем, если отыгрываете совершенно другого человека и не используете знания предыдущего персонажа.
 
-  ##High Roleplay Roles 
 
-  Some roles greatly affect the round and require a higher level of roleplay prowess and, as such, have their own rules. [textlink="Click here to read about these roles." link="AU14HighRoleplayRoles"] 
 
-  
+  ##Самоубийства
 
-  ##Military Roles 
+  - Для совершения самоубийства у вас должна быть обоснованная ролевая причина. Ваш персонаж действительно не должен иметь другого выхода либо должен оказаться в ситуации хуже смерти (пытки, плен у ксеноморфов и т. п.).
 
-  A person with a "military role" is defined as any character apart of GOVFOR and/or OPFOR or currently apart of a uniformed force of an established nation (UA, TWE, CCA, UPP, etc). CLF and other insurgents are not considered to be a military role, even if backed by a nation. 
+  - Начатая, а затем отменённая попытка самоубийства рассматривается так же, как фактическое самоубийство, если только она не произошла случайно, и также требует обоснованной причины.
 
-  
 
-  ###Players in military roles must abide by the following: 
 
-  - Don't openly try to cooperate with obvious or known hostile forces except in extreme circumstances where it is the only way to preserve your life (surrender, etc). 
+  ##Роли с повышенными требованиями к отыгрышу
 
-  - All characters in military roles are mentally stable and fit for duty. Some leeway may be provided when it comes to being minorly mentally unstable, however it must not effect your ability to function in your role. 
+  Некоторые роли оказывают значительное влияние на раунд и требуют более высокого уровня ролевой игры, поэтому для них существуют отдельные правила. [textlink="Нажмите здесь, чтобы прочитать об этих ролях." link="AU14HighRoleplayRoles"]
 
-  - All military roles should be following their role objectives and the orders of those above them, except where it would lead to imminent loss of life through obvious negligence or incompetence. 
 
-  - Non-combat support roles (medical, engineering, logistics, aircrew, non-combat synths, military police) should primarily focus on providing support in their role and engage in combat only in self-defense or to protect nearby fellow faction members. 
 
-  - Military Police (except when conducting field arrests), Medical Staff, Aircrew, Logistics Staff and Engineering Staff must follow all deployment regulations. Department personnel must ensure their department remains appropriately staffed before participating in any deployment.
+  ##Военные роли
 
-  
+  Под «военной ролью» понимается любой персонаж, являющийся частью GOVFOR и/или OPFOR либо в настоящее время служащий в военизированной структуре признанного государства (UA, TWE, CCA, UPP и т. д.). CLF и другие повстанцы не считаются военными ролями, даже если их поддерживает какое-либо государство.
 
-  ##Timeline and Lore 
 
-  You are not expected to know every bit of Aliens lore and will not be moderated for it, you are however expected to exercise reasonable judgment with your roleplay. 
 
-  
+  ###Игроки на военных ролях обязаны соблюдать следующие правила:
 
-  The internet as we know it never developed in the Alien setting, so do not use modern internet slang and culture in-character. 
+  - Не пытайтесь открыто сотрудничать с очевидно или заведомо враждебными силами, кроме крайних обстоятельств, когда это является единственным способом сохранить свою жизнь (сдача в плен и т. п.).
 
-  
+  - Все персонажи на военных ролях считаются психически стабильными и пригодными к службе. Допускается небольшая степень психической нестабильности, однако она не должна мешать вам выполнять обязанности своей роли.
 
-  Except where otherwise specified, CMU canon is determined by the following: 
+  - Все военные роли должны следовать задачам своей роли и приказам вышестоящих лиц, за исключением случаев, когда выполнение приказа очевидно приведёт к неминуемой гибели из-за явной халатности или некомпетентности.
 
-  
+  - Небоевые вспомогательные роли (медицинский персонал, инженеры, логистика, экипаж авиации, небоевые синтетики, военная полиция) должны в первую очередь заниматься поддержкой в рамках своей роли и вступать в бой только для самообороны или защиты находящихся рядом членов своей фракции.
 
-  CMU Lore > CM13 Lore > ALIEN The Roleplaying Game > The Films. 
-  
-  ##Xenomorph Roleplay Standards 
+  - Военная полиция (кроме проведения арестов в полевых условиях), медицинский персонал, экипаж авиации, сотрудники логистики и инженеры обязаны соблюдать все правила развёртывания.
 
-  The XX121 Xenomorphs are a highly aggressive, endoparasitoid eusocial species. These creatures have no higher objectives other than propagating their own species and destroying any who may pose a threat.  
+  - Персонал подразделений должен убедиться, что их отдел остаётся надлежащим образом укомплектован, прежде чем участвовать в каком-либо развёртывании.
 
-  ###The Hivemind 
 
-  Being an eusocial species, the Xenomorphs have no free will of their own when connected to a Queen. They act in a Hivemind, and their whole drive is to reproduce and kill. All Xenomorphs may have basic knowledge on human equipment and their workings - what constitutes "basic knowledge" is up to common sense and may be handled by a game admin. In case there is one, Xenomorphs are able to sense there's a GOVFOR ship in the atmosphere and are aware they may be assaulted by a human military unit. As a Xenomorph, you are not friendly to any suitable hosts and will never be. You aren't required to outright kill hosts, and you have some freedom to play with your prey. Xenomorphs may never go against the Queen's orders, direct or indirect, and must abide by her will at all times with absolutely no exceptions. The Queen may banish any unsubordinated Xenomorphs. Unsubordinated Xenomorphs will also be punished OOC accordingly.  
 
-  ###Language 
+  ##Корпоративные роли
 
-  The Hivemind is an english translation of the Xenomorph's communication and thoughts. They may use human terms, such as "landing zone" or "dropship", but not their specific name (e.g. Fallujah). Xenomorphs may not utilize sounds in the Hivemind chat, such as "meow". Mommy talk is also prohibited.  
+  Под «корпоративной ролью» понимается любой персонаж, являющийся частью корпоративной фракции (We-Yu, Prodigy и т. д.).
+  - Это правило не распространяется на фракции GOVFOR/OPFOR, которые одновременно являются корпоративными фракциями.
 
-  ###Synthetic Units 
 
-  Xenomorphs may not act hostile to any synthetic units, tackle them (even if playingly), drag them or any other interaction that may prove negative - all Xenomorphs are obligated to ignore synthetics aside from basic communication, like hisses and growls. The only exception to this is if the synthetic unit prove themselves to be bothersome, such by destroying weeds, recovering dead humans corpses (even if permadead), entering the main Hive or any other suspicious action. 
 
-  ###Larvae 
+  ###Игроки на корпоративных ролях обязаны соблюдать следующие правила:
 
-  Larvae Xenomorphs should avoid any danger whatsoever whenever given possibility, and should stay inside the Hive at all times unless under attack. Larvae who heads to danger, even if they are accompanied and survive, will be punished accordingly.  
+  - Вы обязаны выполнять приказы вышестоящего руководства.
+
+  - Вы лояльны компании несмотря ни на что (вы знали, на что подписываетесь, и оказались на своей должности не просто так).
+    - Это правило не распространяется на роли антагонистов, задача которых требует предать компанию.
+
+  - Все персонажи на корпоративных ролях считаются психически стабильными. Допускается небольшая степень психической нестабильности, однако она не должна мешать вам выполнять обязанности своей роли.
+
+
+
+  ##Правила (само-)антагонистов
+
+  Мы считаем, что не должны ограничивать возможности для интересного отыгрыша, однако необходимо регулировать то, как и когда такие ситуации возникают, чтобы они оставались интересными.
+
+  Мы разрешаем некоторые незначительные формы «само-антагонизма», однако ограничения различаются для каждой роли.
+    - Обратите внимание, что под само-антагонизмом подразумевается отыгрыш определённых преступных действий.
+    - Обратите внимание, что в этом списке перечислены преступления, которые должны быть прямо разрешены для определённых ролей. Если у вас есть вопросы, обратитесь в AHelp за разъяснением администрации.
+      - Именно поэтому в этом списке отсутствуют Мафия и Повстанческие фракции.
+
+
+
+  ###Серверные антагонисты.
+
+  Большинство антагонистов не требуют дополнительных объяснений, однако для некоторых действуют отдельные правила. Антагонисты, для которых дополнительные пункты отсутствуют, должны руководствоваться здравым смыслом и соблюдать памятку по лору. Если у вас есть вопросы о том, что можно и нельзя делать, обратитесь в AHelp за разъяснением.
+
+  Список серверных антагонистов:
+
+  - Поджигатель
+
+  - Охотник за головами
+
+  - Каннибал
+
+  - Диверсант CLF
+    - Когда применимо, соблюдайте правила из [textlink="Правила режима «Восстание»." link="AU14GamemodeRulesInsurgency"/].
+
+  - Спящий агент CLF
+    - Когда применимо, соблюдайте правила из [textlink="Правила режима «Восстание»." link="AU14GamemodeRulesInsurgency"/].
+
+  - Ветеран CLF
+    - Если вы вновь присоединяетесь к CLF, соблюдайте правила повстанцев, изложенные в [textlink="Правила режима «Восстание»." link="AU14GamemodeRulesInsurgency"/]
+
+  - Корпоративный шпион
+
+  - Наркоторговец
+
+  - Беглый синтетик
+    - Прочитайте раздел о независимых синтетиках в [textlink="Нажмите здесь, чтобы прочитать об этих ролях." link="AU14HighRoleplayRoles"] и соблюдайте применимые правила для синтетиков.
+
+  - Серийный убийца
+    - Вы серийный убийца; вы убиваете людей по одному, наслаждаясь извращённым удовольствием от убийства. Вам запрещено устраивать массовую стрельбу по большим группам людей.
+
+  - Организатор забастовки
+
+  - Линчеватель
+
+  - Разыскиваемый беглец
+
+  - Агент Weyland-Yutani
+
+
+
+  ###Само-антагонизм
+
+  - Вы обязаны соблюдать правила ролевой игры независимо от обстоятельств.
+    - Если вам нужно или хочется получить исключение, вы должны обратиться к модератору через AHelp и получить разовое разрешение.
+    - Если у вас есть вопрос, обратитесь в AHelp за разъяснением администрации.
+
+  Как уже было сказано ранее, для каждой роли действуют разные ограничения.
+
+  Они разделены на следующие категории: Колонисты, Военные и Прочие.
+
+
+
+  - Разрешённый само-антагонизм для колонистов.
+
+    - Наркоторговец
+
+    - Вор
+
+    - Грабитель
+
+    - Преступник (в смысле вооружённого ограбления магазина)
+
+    - Ростовщичество
+
+
+
+  - Разрешённый само-антагонизм для военных ролей.
+
+    - Мародёрство
+
+    - Кража
+      - Разница между кражей и мародёрством заключается в том, что кража означает похищение имущества собственной фракции и сослуживцев, а не снятие вещей с трупов противников/гражданских или присвоение имущества колонии во время операции.
+
+    - Продажа снаряжения
+
+    - Получение взяток
+      - Пример: пропустить кого-либо через контрольно-пропускной пункт/проверку, если он предложит вам деньги.
+
+
+
+  - Прочие
+
+  - Эта категория предназначена для Администрации колонии, Правоохранительных органов колонии (и MP), Послов и ролей Военного командования. Под каждым преступлением указаны роли, которым оно разрешено.
+   - Получение взяток
+    - Разрешённые роли: Администрация колонии, Правоохранительные органы колонии (и MP), Послы и Военное командование.
+
+   - Хищение денежных средств
+    - Разрешённые роли: Администрация колонии и Послы.
+
+   - Незаконное лишение свободы
+    - Разрешённые роли: Правоохранительные органы колонии и MP.
+
+  Всё, что отсутствует в этом списке, считается запрещённым. Если вы хотите совершить какое-либо иное действие, обратитесь в AHelp за разрешением.
+
+  Обратите внимание, что администрация всё равно может вызвать вас в AHelp, если посчитает, что вы совершили какое-либо преступление без внутриигрового обоснования или способом, не соответствующим ролевому отыгрышу.
+
+
+
+  ##Хронология и лор
+
+  От вас не ожидается знание каждой детали лора «Чужого», и вас не будут наказывать за их незнание; однако ожидается, что вы будете проявлять разумную рассудительность в своей ролевой игре.
+
+  Интернет в том виде, в котором мы его знаем, никогда не появился во вселенной «Чужого», поэтому не используйте современный интернет-сленг и интернет-культуру в речи персонажа.
+
+  Если не указано иное, канон RuCMU определяется следующим приоритетом:
+
+  Лор RuCMU > лор CM13 > настольная ролевая игра «Чужой» > фильмы.
+
+
+
+  ##Стандарты отыгрыша угроз
+
+  Ксеноморфы XX121 — крайне агрессивный эндопаразитоидный эусоциальный вид. У этих существ нет иных высших целей, кроме размножения собственного вида и уничтожения всех, кто может представлять угрозу.
+
+  - Помните, что мы являемся сервером MRP+, поэтому отыгрывайте соответствующим образом и руководствуйтесь здравым смыслом. Это относится ко всем разновидностям ксеноморфов и другим угрозам.
+
+  - Хотя ксеноморфы и некоторые похожие на них существа не могут общаться с людьми (за исключением культистов), вы всё равно обязаны соблюдать перечисленные ранее правила.
+    - Однако из-за этого допускается определённая свобода, но вы всё равно не должны ссылаться на мемы или чрезмерно шутить до уровня нарушения ролевого отыгрыша.
+
+
+
+  ###Разум улья
+
+  Будучи эусоциальным видом, ксеноморфы не обладают собственной свободой воли, когда связаны с Королевой. Они действуют как единый разум улья, а всё их существование направлено на размножение и убийство.
+
+  - Все ксеноморфы могут обладать базовыми знаниями о человеческом оборудовании и принципах его работы, если такое оборудование существует. Ксеноморфы способны ощущать присутствие корабля GOVFOR в атмосфере и понимают, что могут подвергнуться атаке человеческого военного подразделения.
+    - Под базовыми знаниями о человеческом оборудовании понимается способность определить само оборудование и его назначение.
+
+  - Играя за ксеноморфа, вы никогда не относитесь дружелюбно к подходящим носителям и никогда не будете.
+
+  - Вы не обязаны сразу убивать носителей и имеете определённую свободу в том, как играть со своей добычей.
+
+  - Ксеноморфы никогда не могут идти против приказов Королевы, прямых или косвенных, и обязаны всегда и без исключений следовать её воле, кроме случаев, когда её приказ нарушает правила сервера.
+
+
+
+  ###Язык и речь
+
+  Разум улья представляет собой перевод общения и мыслей ксеноморфов на русский язык. Они могут использовать человеческие термины, такие как «зона высадки» или «десантный корабль», но не конкретные названия объектов (например, «Фаллуджа»).
+
+
+
+  ###Синтетические единицы
+
+  Ксеноморфы могут атаковать синтетиков, однако не обязаны этого делать, поскольку синтетики не подходят в качестве носителей, а Рабочие Джо обычно не проявляют враждебности к ксеноморфам.
+
+
+
+  ##Гриносы
+
+  Ксеноморфы XX121-CR, известные как «Искажённый улей» или получившие прозвище «Гриносы», представляют собой зеленоватую разновидность ксеноморфов. Они были биологически спроектированы корпорацией Weyland-Yutani и являются результатом экспериментов над ксеноморфами XX121 в попытках создать более управляемую и разумную версию этого вида.
+
+  Гриносы должны соблюдать обычные правила ксеноморфов там, где они применимы, а также дополнительные правила, связанные с их способностью взаимодействовать с людьми.
+
+  - Королева Гриносов должна соблюдать правила Королевы ксеноморфов из [textlink="Нажмите здесь, чтобы прочитать об этих ролях." link="AU14HighRoleplayRoles"].
+  - Королева Гриносов может выбирать, с какой фракцией Гриносы будут дружелюбны.
+    - Гриносам разрешено знать, кто является и кто не является частью выбранных фракций.
+
+
+
+  ##Правила других угроз.
+
+  Учитывая наличие большого количества различных менее значительных угроз, создание и постоянное обновление отдельных правил для каждой из них нецелесообразно.
+
+  Там, где это применимо, соблюдайте правила ксеноморфов и руководствуйтесь здравым смыслом.
+
+  - Каждый раз при получении такой роли вы должны получать памятку по лору, из которой можно составить общее представление о вашей цели.
+    - Например, обезьяны просто испытывают голод, который им необходимо утолить, поэтому они не становятся немедленно враждебными по отношению к синтетикам и людям.
+    - Ксеноморфы, утратившие связь с ульем, также подпадают под это правило, поскольку они больше не являются частью какого-либо улья и действуют исключительно на основе инстинктов.
+
+  Там, где это применимо, соблюдайте обычные правила ролевой игры.
+
+  ##Совместная игра разных угроз
+  Если в одном раунде или на одной карте появляются разные угрозы, они не должны сотрудничать друг с другом (например: Абоминации вместе с Ксеноморфами или Дурная кровь вместе с Племенниками). Все угрозы так или иначе мешают друг другу: Племенники являются целями для охоты Дурной крови, а Абоминации крадут носителей у Ксеноморфов, и наоборот.
+  В лучшем случае некоторые угрозы могут относиться друг к другу безразлично и не нападать друг на друга до тех пор, пока одна из них не начнёт мешать достижению целей другой.
+
+
+  ##ПРАВИЛА МЯТЕЖА
+
+  Мятеж — это внутриигровая попытка отстранить от командования человека, который в настоящий момент руководит кораблём, объектом или колонией.
+
+
+
+  Администрация должна быть уведомлена до начала мятежа. Администрация всё равно может запретить мятеж, если причина является недействительной, выбранный момент может разрушить раунд или предоставленное обоснование слишком слабое.
+
+  - Не начинайте мятеж до обращения в AHelp.
+
+
+
+  Восстание или протест колонии против Администрации колонии регулируется менее строго, чем мятеж в военных фракциях, и этот раздел в основном существует для примеров и формальностей.
+
+  - Это означает, что вам не требуется обращаться в AHelp для проведения любого протеста и/или восстания против Администрации колонии, однако у вас должна быть обоснованная ролевая причина.
+
+
+
+  ##Против кого можно поднять мятеж/восстание
+
+  - Военное командование
+
+  - Администрация колонии
+
+
+
+  ##Причины для мятежа/восстания
+
+  К допустимым причинам для мятежа против военного командования относятся, помимо прочего:
+
+  - Командир совершает или допускает серьёзные зверства.
+
+  - Командир приводит людей к гибели из-за очевидной халатности или некомпетентности.
+
+  - Командир отправляет войска в опасность без какого-либо плана или поддержки.
+
+  - Командир отказывается выполнять свои обязанности.
+
+
+
+  К допустимым причинам для свержения Администрации колонии относятся, помимо прочего:
+
+  - Администрация колонии отказывается выплачивать деньги колонистам.
+
+  - Администрация колонии отказывается выполнять свои обязанности.
+
+  - Администрация колонии в целом некомпетентна.
 </Document>

@@ -34,3 +34,10 @@ guidebook-reagent-recipes-mix-info =
 guidebook-reagent-recipes-reagent-display = [bold]{$reagent}[/bold] \[{$ratio}\]
 
 guidebook-reagent-sources-ent-wrapper = [bold]{$name}[/bold] \[1\]
+
+
+guidebook-reagent-effects-metabolism-stage-rate = [bold]{$stage}[/bold] [color=gray]({$rate} units per second)[/color]
+
+guidebook-reagent-effects-metabolite-item = {$reagent} at a rate of { NATURALPERCENT($rate, 2) }
+
+guidebook-reagent-effects-metabolites = Metabolizes into { $items }.

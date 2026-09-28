@@ -78,6 +78,9 @@ public sealed partial class DropshipTacticalLandSystem
     private const float GunshipCursorPanSpeed = 64f;
     private const float GunshipCursorPvsIncrease = 0.5f;
     private const float GunshipPilotPvsScale = 1f + GunshipCursorPvsIncrease;
+    // Panning is client-local: the server still loads around the pilot.
+    // Cover both the 24-tile displacement and the fully zoomed-out viewport.
+    private const float GunshipPilotPanningPvsScale = 2.25f + GunshipCursorMaxOffset / 10f;
     private TimeSpan _nextGunshipAlarmUpdate;
     private TimeSpan _nextGunshipHudUpdate;
     private readonly HashSet<EntityUid> _gunshipHudWearers = new();
@@ -1073,6 +1076,7 @@ public sealed partial class DropshipTacticalLandSystem
                     rotation,
                     boundaryOnly: step < steps,
                     candidatesPrepared: true,
+                    allowUnmappedAir: true,
                     out blockers))
             {
                 completedFraction = (step - 1f) / steps;
@@ -1163,7 +1167,7 @@ public sealed partial class DropshipTacticalLandSystem
         Vector2 targetPosition,
         Angle targetRotation)
     {
-        return IsGunshipFootprintClear(dropship, targetMap, targetPosition, targetRotation, out _);
+        return IsGunshipFootprintClear(dropship, targetMap, targetPosition, targetRotation, false, out _);
     }
 
     private bool IsGunshipFootprintClear(
@@ -1171,10 +1175,11 @@ public sealed partial class DropshipTacticalLandSystem
         EntityUid targetMap,
         Vector2 targetPosition,
         Angle targetRotation,
+        bool allowUnmappedAir,
         out HashSet<EntityUid> blockers)
     {
         return IsGunshipFootprintClear(dropship, targetMap, targetPosition, targetRotation,
-            boundaryOnly: false, candidatesPrepared: false, out blockers);
+            boundaryOnly: false, candidatesPrepared: false, allowUnmappedAir, out blockers);
     }
 
     private bool IsGunshipFootprintClear(
@@ -1184,6 +1189,7 @@ public sealed partial class DropshipTacticalLandSystem
         Angle targetRotation,
         bool boundaryOnly,
         bool candidatesPrepared,
+        bool allowUnmappedAir,
         out HashSet<EntityUid> blockers)
     {
         if (TryComp(dropship.Owner, out DropshipTacticalHoverComponent? hover))
@@ -1228,7 +1234,15 @@ public sealed partial class DropshipTacticalLandSystem
         {
             var sample = targetPosition + rotatedCenter;
             if (!_map.TryGetTileRef(targetMap, targetGrid, sample, out var targetTile))
-                return false;
+            {
+                // Open-air flight levels (generated z-layers) have no tile chunks. Unmapped
+                // sky is flyable while world still exists below the sample; past the lowest
+                // level it is outside the flight zone.
+                if (!allowUnmappedAir || !HasFlightWorldBelow(targetMap, sample))
+                    return false;
+
+                continue;
+            }
 
             var opening = CMUZLevelOpeningCache.IsOpeningTile(targetTile.Tile, _tile);
             if (targetTile.Tile.IsEmpty && !opening)
@@ -1255,6 +1269,17 @@ public sealed partial class DropshipTacticalLandSystem
                              targetTile.GridIndices))
                 {
                     flightHover.FlightTerrainCandidates.Add(anchored);
+                    // Nonblocking terrain (ladders, grates, and other floor
+                    // structures) needs its original pose preserved too. It
+                    // will never enter the hard-fixture loop below.
+                    if (!flightHover.FlightTerrainAnchors.ContainsKey(anchored)
+                        && TryComp(anchored, out TransformComponent? terrainXform)
+                        && terrainXform.ParentUid == targetMap)
+                    {
+                        flightHover.FlightTerrainAnchors.Add(anchored,
+                            new DropshipTerrainAnchorPose(terrainXform.LocalPosition, terrainXform.LocalRotation));
+                    }
+
                     if (IsHardFlightCandidate(anchored, blockMask))
                         candidates.Add(anchored);
                 }
@@ -1345,6 +1370,21 @@ public sealed partial class DropshipTacticalLandSystem
         }
 
         return !blocked;
+    }
+
+    // True while some lower z-network level still has a mapped tile at this position.
+    // Defines the flight zone edge for open-air flight levels.
+    private bool HasFlightWorldBelow(EntityUid mapUid, Vector2 worldPosition)
+    {
+        for (var offset = -1; ; offset--)
+        {
+            if (!_zLevels.TryMapOffset(mapUid, offset, out var lower))
+                return false;
+
+            if (TryComp(lower.Value.Owner, out MapGridComponent? grid)
+                && _map.TryGetTileRef(lower.Value.Owner, grid, worldPosition, out _))
+                return true;
+        }
     }
 
     private bool PrepareGunshipCollisionCandidates(
@@ -1613,7 +1653,13 @@ public sealed partial class DropshipTacticalLandSystem
         var snappedDegrees = Math.Round(currentRotation.Degrees / 90d) * 90d;
         var snappedRotation = Angle.FromDegrees(snappedDegrees);
 
-        var clear = IsGunshipFootprintClear((grid, dropshipGrid), targetMap.Value.Owner, position, snappedRotation, out var blockers);
+        // Landings still demand real floor on the target level. Flight over
+        // unmapped sky is decided inside the footprint check.
+        var landing = offset < 0 &&
+            (hover.GroundMap == targetMap.Value.Owner || hover.GroundMap is null && hover.GroundMapOffset == -1);
+
+        var clear = IsGunshipFootprintClear((grid, dropshipGrid), targetMap.Value.Owner, position, snappedRotation,
+            !landing, out var blockers);
         if (!clear && !CanGunshipCrashThrough(blockers))
         {
             _popup.PopupEntity(Loc.GetString("cmu-gunship-target-level-blocked"), seat, pilot, PopupType.MediumCaution);
@@ -1625,8 +1671,7 @@ public sealed partial class DropshipTacticalLandSystem
         hover.GunshipAngularVelocityDegrees = 0f;
         hover.AltitudeTargetMap = targetMap.Value.Owner;
         hover.AltitudeOffset = offset;
-        hover.AltitudeLanding = offset < 0 &&
-            (hover.GroundMap == targetMap.Value.Owner || hover.GroundMap is null && hover.GroundMapOffset == -1);
+        hover.AltitudeLanding = landing;
         hover.AltitudePilot = pilot;
         hover.AltitudeTransitionAt = _timing.CurTime + GunshipAltitudeTransitionTime;
 
@@ -1704,7 +1749,8 @@ public sealed partial class DropshipTacticalLandSystem
 
         var position = _transform.GetWorldPosition(hover.Owner);
         var rotation = _transform.GetWorldRotation(hover.Owner);
-        var clear = IsGunshipFootprintClear((hover.Owner, dropshipGrid), map, position, rotation, out var blockers);
+        var clear = IsGunshipFootprintClear((hover.Owner, dropshipGrid), map, position, rotation,
+            !landing, out var blockers);
         if (!clear)
         {
             if (!CanGunshipCrashThrough(blockers))
@@ -2055,12 +2101,23 @@ public sealed partial class DropshipTacticalLandSystem
             return;
         }
 
+        // Destination selection owns the eye until its session ends. The
+        // periodic flight-camera update must not replace that preview.
+        if (pilotEye.Target is { } target && HasComp<DropshipPilotEyeComponent>(target))
+            return;
+
         var linked = TryComp(pilot, out GunshipPilotHudComponent? hud) && hud.Dropship == dropship;
         var remote = linked && (seat.Comp.ViewOffset != 0 || seat.Comp.RearView);
 
         _eye.SetTarget(pilot, remote ? eye : null, pilotEye);
         _eye.SetDrawFov(pilot, !remote, pilotEye);
-        _eye.SetPvsScale((pilot, pilotEye), linked ? GunshipPilotPvsScale : seat.Comp.OriginalPvsScale);
+        var panning = linked
+            && seat.Comp.ViewOffset == 0
+            && !seat.Comp.RearView
+            && seat.Comp.PilotPanning;
+        _eye.SetPvsScale((pilot, pilotEye), linked
+            ? panning ? GunshipPilotPanningPvsScale : GunshipPilotPvsScale
+            : seat.Comp.OriginalPvsScale);
 
         if (linked && seat.Comp.ViewOffset == 0 && !seat.Comp.RearView && seat.Comp.PilotPanning)
         {

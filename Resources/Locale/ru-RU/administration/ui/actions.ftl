@@ -12,3 +12,14 @@ admin-player-actions-player-panel = Открыть панель игрока
 admin-player-actions-clone = Клонировать
 admin-player-actions-follow = Следовать
 admin-player-actions-confirm = Вы уверены?
+
+
+admin-player-actions-logs = Player logs
+
+admin-player-actions-respawn-message = Return the player to the lobby, allowing them to respawn as a new character at will.
+
+admin-player-actions-spawn-message = Spawns a new copy of this character and immediately transfers their mind to it.
+
+admin-player-actions-clone-message = Spawn a copy of this character, without transferring their mind.
+
+admin-player-actions-check-afk = Check AFK

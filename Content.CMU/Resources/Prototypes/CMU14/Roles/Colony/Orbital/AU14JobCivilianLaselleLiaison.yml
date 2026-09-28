@@ -1,6 +1,7 @@
 - type: job
-  parent: CMJobBase
+  parent: RMCJobRibbonBase
   id: AU14JobCivilianLaselleLiaison
+  displayWeight: 16
   roundSide: Civilian
   roundForce: LASELLE
   roundRole: CivilianLaselleLiaison

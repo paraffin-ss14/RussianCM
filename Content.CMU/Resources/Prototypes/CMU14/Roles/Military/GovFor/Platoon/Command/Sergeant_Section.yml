@@ -14,7 +14,7 @@
   overwatchSortPriority: -6
   overwatchShowName: true
   canBeAntag: false
-  displayWeight: 7
+  displayWeight: 6
   accessGroups:
   - AU14GovforCommand
 
@@ -27,7 +27,7 @@
   - AU14RoundJobProfileMilitaryBase
   roundComponents:
   - type: AU14CallsignRole
-    suffix: "7"
+    suffix: "03"
     commandElement: true
   - type: ANPRCRadioUser # senior NCO is radio trained, backup manpack operator
   - type: Skills
@@ -199,6 +199,7 @@
   dummyStartingGear: AU14GearopforPlatoonSergantDummy
   accessGroups:
   - AU14OpforCommand
+  useLoadoutOfJob: AU14JobGOVFORSectionSergeant
 
 - type: startingGear
   id: AU14GearopforSectionSergeant

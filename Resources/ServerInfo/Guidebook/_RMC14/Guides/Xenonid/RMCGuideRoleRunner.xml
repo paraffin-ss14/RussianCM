@@ -1,18 +1,18 @@
 <Document>
-  #Runner, Tier 1
+  # Бегун, уровень 1
   <GuideEntityEmbed Entity="CMXenoRunner"/>
-  ##Playing as a Runner
-  You are the fastest and weakest. Use your speed to transport hosts from the frontline and scout the backlines, you can run over window frames and under tables. Use your pounce to slash or begin tackling hosts, however beware of shotguns as they will kill you instantly at close range.
+  ## Игра за Бегуна
+  Вы самая быстрая и самая хрупкая каста. Используйте скорость, чтобы уносить носителей с передовой и разведывать тыл противника. Вы можете перепрыгивать оконные рамы и пробегать под столами. Используйте прыжок, чтобы сразу атаковать когтями или начать сбивать носителя с ног, но берегитесь дробовиков — на близкой дистанции они могут убить вас практически мгновенно.
 
-  If you are new, the easiest way to contribute is focusing on dragging captures from the frontline to backline, remember that if they stab you from the inside you can regurgitate and tackle them down again to devour.
+  Если вы новичок, самый простой способ помочь улью — сосредоточиться на переноске захваченных носителей с передовой в тыл. Если проглоченный пленник ранит вас изнутри, выплюньте его, снова собейте с ног и проглотите повторно.
 
-  ##Abilities:
-  - [bold]Hide[/bold]: Hide under objects such as tables.
+  ## Способности:
+  - [bold]Спрятаться[/bold]: позволяет скрываться под объектами, например под столами.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoHide"/>
-  - [bold]Leap[/bold]: Leap at a target, knocking them down for a brief moment and locking your movement a bit. This can also be used for mobility.
+  - [bold]Прыжок[/bold]: вы прыгаете на цель, ненадолго сбивая её с ног и кратковременно ограничивая собственное движение. Способность также можно использовать просто для быстрого перемещения.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPounce"/>
-  - [bold]Bone Chips[/bold]: Shred some bone chips at your target which will slow them down.
+  - [bold]Костяные осколки[/bold]: выпускает в цель костяные осколки, замедляющие её.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoBoneChips"/>
-  - [bold]Toggle Long-Range Sight[/bold]: Increases your vision.
+  - [bold]Переключить дальнее зрение[/bold]: увеличивает дальность вашего обзора.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoToggleLongRangeSight"/>
 </Document>

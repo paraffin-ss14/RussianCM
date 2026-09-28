@@ -28,3 +28,10 @@ rmc-storage-hand-eject-open = Нажатие на {THE($storage)} теперь �
 # Missing entries synced from en-US
 
 rmc-storage-limit-generic = Хранилище не может вместить больше этого предмета!
+
+
+rmc-storage-limit-two-guns = That is already holding two guns!
+
+rmc-storage-limit-one-gasmask = That is already holding a gas mask!
+
+rmc-storage-limit-max-gasmask-filters = You can't fit more filters in there!

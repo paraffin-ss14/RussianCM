@@ -1,34 +1,34 @@
-﻿<Document>
-  # Dropships and Aircraft
+<Document>
+  # Десантные корабли и авиация
 
-    These regulations govern the authority, modification and operational use of all aircraft and dropships.
+    Эти правила регулируют полномочия, модификацию и эксплуатацию всех летательных аппаратов и десантных кораблей.
 
-  ## Flight Crew Authority
-    - Flight Crew may modify their aircraft with permission from a member of the command, as long as the modifications provide a benefit in mind, not solely for decorative purposes. 
-    - Commander or Adjutant may deny any modifications made to the aircraft.
-    - Flight crew may deny access to personnel onboard their ship unless said personnel are deploying to the area of operations or returning from them.
-    - Flight Crew may remove any personnel, except Command Staff, for any reason unless doing so would breach the previous ruling.
+  ## Полномочия лётного экипажа
+    - Лётный экипаж может модифицировать свой летательный аппарат с разрешения представителя командования, если изменения имеют практическую пользу, а не носят исключительно декоративный характер.
+    - Командир или Адъютант могут запретить любые модификации летательного аппарата.
+    - Лётный экипаж может запрещать персоналу доступ на борт, если этот персонал не направляется в район операций или не возвращается оттуда.
+    - Лётный экипаж может удалить с борта любого человека, кроме командного состава, по любой причине, если это не нарушает предыдущее правило.
 
-  ## Aircraft Integrity
-    - Dismantling aircraft components to obtain materials for other purposes is strictly forbidden.
-    - Ship doors must remain intact at all times.
-    - Ship doors may not be tampered with in a way that causes them to remain INOP in flight (i.e. bolting them open then taking off.)
+  ## Целостность летательного аппарата
+    - Разборка компонентов летательного аппарата ради получения материалов для других целей строго запрещена.
+    - Двери корабля должны всегда оставаться целыми.
+    - Запрещено вмешиваться в работу дверей так, чтобы во время полёта они оставались INOP, например закреплять их открытыми перед взлётом.
 
-  ## Seating and Cargo
-    - Seating capacity may be reduced to accommodate additional ammunition or cargo.
-    - Seating may not be completely removed on the primary dropship; seating may be completely removed on the Gunship if it is NOT the only operable ship.
+  ## Посадочные места и груз
+    - Количество посадочных мест можно уменьшать ради дополнительного боезапаса или груза.
+    - На основном десантном корабле посадочные места нельзя удалять полностью; на Gunship их можно удалить полностью только если он НЕ является единственным исправным кораблём.
 
-  ## Primary Transport Role
-    - If a dropship becomes inaccessible or inoperable, another aircraft must assume the transport role.
-    - The replacement aircraft must be configured with appropriate troop seating whenever possible.
+  ## Основная транспортная роль
+    - Если десантный корабль становится недоступным или неисправным, транспортную роль должен принять другой летательный аппарат.
+    - По возможности замена должна быть оборудована подходящими местами для перевозки личного состава.
 
-  ## Parachute Operations
-    - When conducting parachute drops, the Flight Crew are responsible for:
-      - Ensuring the drop zone is safe.
-      - Notifying personnel when to deploy.
+  ## Парашютные операции
+    - При парашютной высадке лётный экипаж отвечает за:
+      - Безопасность зоны выброски.
+      - Уведомление личного состава о моменте высадки.
 
-  ## Blind Drops
-    - Blind drops may only be authorized by the Commander, XO or acting commander.
-    - Infantry are not required to participate in blind drops, all must be volunteers.
-    - Command Staff and Shipside Staff must never participate in a blind drop.
+  ## Слепые высадки
+    - Слепую высадку может разрешить только Командир, XO или исполняющий обязанности Командира.
+    - Пехота не обязана участвовать в слепой высадке: все участники должны быть добровольцами.
+    - Командный и корабельный персонал никогда не должен участвовать в слепой высадке.
 </Document>

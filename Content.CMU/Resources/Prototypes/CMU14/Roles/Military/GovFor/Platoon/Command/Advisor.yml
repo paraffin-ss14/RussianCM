@@ -1,11 +1,12 @@
 - type: job
   abstract: true
   parent: AU14JobMilitaryBase
+  displayWeight: 7
   id: AU14JobadvisorBaseAbstract
   name: au14-job-name-govforadvisor
   description: au14-job-description-govforadvisor
   icon: "AU14JobIconGovAdvisor"
-  spawnMenuRoleName: Platoon Advisor (GOVFOR)
+  spawnMenuRoleName: au14-spawn-role-name-govfor-platoon-advisor
   startingGear: AU14GearGOVFORadvisor
   dummyStartingGear: AU14GearGOVFORadvisorDummy
   playTimeTracker: AU14JobGOVFORadvisor
@@ -25,7 +26,7 @@
   - AU14RoundJobProfileMilitaryBase
   roundComponents:
   - type: AU14CallsignRole
-    suffix: OPS
+    suffix: "05"
     commandElement: true
   - type: SeeNewPlayers
   - type: ANPRCRadioUser
@@ -126,6 +127,8 @@
   - AU14OpforCommand
 
 # ├──[ Starting Gear ]───────────────────────────────────────────────┤
+  useLoadoutOfJob: AU14JobGOVFORadvisor
+
 - type: startingGear
   id: AU14GearGOVFORadvisor
   equipment:

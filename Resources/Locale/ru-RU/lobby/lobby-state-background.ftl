@@ -33,3 +33,8 @@ lobby-state-background-janishootout-artist = психопсих
 
 lobby-state-background-reclaimernuke-title = Восстановитель Ядерное оружие
 lobby-state-background-reclaimernuke-artist = GetOutМарутак
+
+
+lobby-state-background-invisiblewall-title = Invisible Wall
+
+lobby-state-background-invisiblewall-artist = Vandersloot

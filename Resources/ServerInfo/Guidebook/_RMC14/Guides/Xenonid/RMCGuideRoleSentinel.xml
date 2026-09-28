@@ -1,18 +1,18 @@
 <Document>
-  #Sentinel, Tier 1
+  # Страж, уровень 1
   <GuideEntityEmbed Entity="CMXenoSentinel"/>
-  ##Playing as a Sentinel
-  You are relatively fragile and ranged. Use your spits to disrupt hosts on the frontline and transport hosts.
+  ## Игра за Стража
+  Вы относительно хрупкая дальнобойная каста. Используйте плевки, чтобы мешать носителям на передовой и помогать захватывать их.
 
-  Corner peak around corners and stack scattered spit and slowing spit in the same volley, this lets you spit while minimizing risk to yourself, if any host gets too close then you can paralyzing slash them.
+  Выглядывайте из-за углов и выпускайте замедляющий и рассеянный плевок одной серией. Так вы сможете атаковать, минимально подставляясь под ответный огонь. Если носитель подошёл слишком близко, примените парализующий удар когтями.
 
-  You can also capture hosts that are alone by scatter spitting them and slashing them with paralyzing slash, wait for them to drop and then tackle them.
+  Одиноких носителей также можно захватывать самостоятельно: сначала попадите рассеянным плевком, затем нанесите парализующий удар, дождитесь падения цели и сбейте её захватами.
 
-  ##Abilities:
-  - [bold]Slowing Spit[/bold]: Glob a spit that slows hosts and drains their chemicals, if they have no armor it will stun them down.
+  ## Способности:
+  - [bold]Замедляющий плевок[/bold]: выпускает сгусток, который замедляет носителей и расходует их химические ресурсы. Цель без брони также будет сбита с ног.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoSpit"/>
-  - [bold]Scattered Spit[/bold]: Glob spits in a shotgun like fashion that briefly knocks down hosts, very useful for any hosts that are pushing.
+  - [bold]Рассеянный плевок[/bold]: выпускает несколько сгустков веером, подобно дробовику, на короткое время сбивая носителей с ног. Особенно полезно против наступающих целей.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoScatteredSpit"/>
-  - [bold]Paralyzing Slash[/bold]: Empowers your next attack or tailstab to inject neurotoxin which will make them fall over after a brief period of time.
+  - [bold]Парализующий удар[/bold]: усиливает следующую обычную атаку или удар хвостом, вводя нейротоксин. Через короткое время поражённая цель упадёт.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoCripplingStrike"/>
 </Document>

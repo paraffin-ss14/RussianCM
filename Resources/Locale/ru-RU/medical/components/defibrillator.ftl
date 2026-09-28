@@ -6,3 +6,6 @@ defibrillator-unrevivable = Этот пациент не может быть о�
 # Missing entries synced from en-US
 
 defibrillator-xeno = Почему ты хочешь вернуть эту вещь!?
+
+
+defibrillator-not-living = Warning: Defibrillation target was an inanimate object. Consider retargeting.

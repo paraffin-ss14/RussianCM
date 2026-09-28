@@ -149,3 +149,8 @@ rmc-announcement-preset-misc = Прочие объявления
 
 rmc-dialog-confirm-yes = Да
 rmc-dialog-confirm-no = Нет
+
+
+rmc-ui-audio-voicelines-self-header = Your own sounds
+
+rmc-ui-patreon = Patreon

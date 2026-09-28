@@ -555,7 +555,7 @@ public sealed partial class ANPRCRadioSystem
                 ent.Comp.Planted,
                 ent.Comp.Callsign,
                 GetWearerCallsign(ent.Owner),
-                new List<string>(ent.Comp.CallsignPresets),
+                ent.Comp.CallsignPresets.Select(preset => Loc.TryGetString(preset, out var localized) ? localized : preset).ToList(),
                 _crypto.GetFillDesignation(ent.Owner),
                 _crypto.GetFillFaction(ent.Owner),
                 _crypto.IsFillStale(ent.Owner),

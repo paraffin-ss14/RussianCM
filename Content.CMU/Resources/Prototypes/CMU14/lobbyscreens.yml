@@ -29,3 +29,15 @@
 - type: lobbyBackground
   id: CMU14LobbyXenoWar
   background: /Textures/CMU14/Lobby/XenoWar.png
+
+- type: lobbyBackground
+  id: RuCMU14LobbyWooby
+  background: /Textures/CMU14/Lobby/wooby.png
+
+- type: lobbyBackground
+  id: RuCMU14LobbyRoyalLion
+  background: /Textures/CMU14/Lobby/RoyalLion.png
+
+- type: lobbyBackground
+  id: RuCMU14LobbyTuffGuy
+  background: /Textures/CMU14/Lobby/tuff_guy.png

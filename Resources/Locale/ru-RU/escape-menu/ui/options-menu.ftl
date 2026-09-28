@@ -453,3 +453,112 @@ ui-options-crt-ui-color-red = Красный
 ui-options-crt-ui-color-purple = Фиолетовый
 
 ui-options-crt-ui-color-example = Предварительный просмотр текста
+
+
+ui-options-audio-toggles = Sounds
+
+ui-options-faint-look-up-opacity = Faint Look Up opacity:
+
+ui-options-search-placeholder = Search keybinds...
+
+ui-options-search-by-key = Search by key
+
+ui-options-search-by-key-active = Searching by key:
+
+ui-options-cancel-search-by-key = Cancel
+
+ui-options-function-rotate-camera-with-mouse = Rotate with mouse
+
+ui-options-accessability-header-announcements = Announcements
+
+ui-options-accessability-header-opacity = Opacity
+
+ui-options-accessability-header-highlights = Chat highlights
+
+ui-options-crt-chat-readable-font = Readable chat font
+
+ui-options-crt-chat-readable-font-tooltip = Draws chat in a plain proportional font instead of the terminal one. The rest of the CRT theme is unaffected.
+
+ui-options-crt-chat-big-font = Big chat font
+
+ui-options-crt-chat-big-font-tooltip = Draws chat larger than normal. Chat only - nothing else in the interface changes size. Works with or without the readable font above.
+
+ui-options-crt-chat-big-font-off = Normal
+
+ui-options-crt-chat-big-font-one = Big (+1)
+
+ui-options-crt-chat-big-font-two = Bigger (+2)
+
+ui-options-crt-chat-row-tint = Chat row tint
+
+ui-options-crt-chat-row-tint-tooltip = Tints radio, OOC, dead, admin and server messages by channel so they can be picked out of the log at a glance.
+
+ui-options-crt-chat-row-tint-muted = Muted
+
+ui-options-crt-chat-row-tint-full = Full
+
+ui-options-crt-chat-row-tint-off = None
+
+ui-options-mute-scripted-sounds = Mute scripted sounds from events
+
+ui-options-mute-unfocused = Mute audio when unfocused
+
+ui-options-audio-device = Output device:
+
+ui-options-audio-device-default = System default
+
+ui-options-audio-hrtf = Enable HRTF Audio Processing (Requires Restart)
+
+ui-options-chat-follow-button = As ghost, show a follow button next to chat messages
+
+ui-options-max-fps = Maximum FPS:
+
+ui-options-max-fps-display-rate = Display Rate
+
+ui-options-max-fps-tooltip = Maximum framerate the client should run at. Set to 0 for no limit. This has no effect if VSync is enabled.
+
+ui-options-sharpness = Sharpness:
+
+ui-options-accessibility-header-reduced-motion = Reduced Motion
+
+ui-options-accessibility-header-visuals = Visuals
+
+ui-options-accessibility-header-content = Content
+
+ui-options-reduced-motion-tooltip = Toggle on to show alternative sprites with reduced motion for some items.
+
+ui-options-disable-ai-static = AI camera static
+
+ui-options-disable-ai-static-tooltip = Replaces the AI static camera effect with a plain gradient.
+
+ui-options-disable-blurry-vision = Blurry vision
+
+ui-options-disable-blurry-vision-tooltip = Replaces the movement in the blurry shader with a static effect.
+
+ui-options-disable-drunk-overlay = Drunk overlay
+
+ui-options-disable-drunk-overlay-tooltip = Replaces the movement in the drunk shader with a static offset.
+
+ui-options-disable-flash-effect = Flash
+
+ui-options-disable-flash-effect-tooltip = Replaces the 'flash' effect with a reduced movement equivalent.
+
+ui-options-disable-heat-distortion = Heat distortion
+
+ui-options-disable-heat-distortion-tooltip = Decreases motion on the heat distortion shader.
+
+ui-options-disable-nv-noise = Night vision overlay
+
+ui-options-disable-nv-noise-tooltip = Disables the noise effect on the night vision overlay.
+
+ui-options-disable-rainbow-overlay = Rainbow overlay
+
+ui-options-disable-rainbow-overlay-tooltip = Replaces the movement in the rainbow overlay shader with a static offset.
+
+ui-options-disable-singulo-warp = Singularity
+
+ui-options-disable-singulo-warp-tooltip = Disables the screen warping effect on the singularity.
+
+ui-options-admin-strip-overlay-title = Strip Overlay
+
+ui-options-admin-strip-overlay-setting = Show strip overlay by default

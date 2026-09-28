@@ -1,27 +1,27 @@
 <Document>
-  #Burrower, Tier 2
+  # Бурильщик, уровень 2
 
   <GuideEntityEmbed Entity="CMXenoBurrower"/>
 
-  ##Playing as a Burrower
+  ## Игра за Бурильщика
 
-  Use your resin holes to fill them with a special type of acid that stuns any hosts that enter a tile around it, this can be paired with stomp and multiple traps to easily capture hosts on the frontline and backline. Burrowers can also make tunnels that allow easy transportation of hosts from the frontline to nests, however, they suffer from a low plasma limit. It is suggested to work around recovery pheromones.
+  Используйте смоляные ямы и наполняйте их особой кислотой, которая оглушает носителей, оказавшихся рядом. В сочетании с сотрясением и несколькими ловушками это позволяет легко захватывать цели как на передовой, так и в тылу противника. Бурильщики также могут прокладывать туннели для быстрой перевозки носителей с фронта к гнёздам, однако их максимальный запас плазмы невелик. Старайтесь действовать рядом с восстанавливающими феромонами.
 
-  You can also use your burrow to burrow atop any host on a cadeline which will stun them, allowing you to melt their gun before using tremor and burrow to get away.
+  Способность «Зарыться» можно использовать и прямо на носителе у линии баррикад: появление из-под земли оглушит его, после чего можно растворить оружие кислотой, применить сотрясение и снова уйти под землю.
 
-  ##How to capture
+  ## Как захватывать носителей
 
-  To capture on the backlines, attempt to place your resin holes underneath any debris to hide them and fill them with acid. Once your traps are in place, stand behind a wall near them and lure a host close enough so that you can tremor and drag them into the trap while tackling them.
+  В тылу старайтесь размещать смоляные ямы под мусором или предметами, чтобы скрыть их, а затем наполняйте кислотой. Подготовив ловушки, спрячьтесь за ближайшей стеной и заманите носителя достаточно близко, чтобы применить сотрясение, затащить его в ловушку и сбить с ног.
 
-  ##Abilities:
-  - [bold]Plant Weeds[/bold]: Places a resin node which spreads weeds across a large area.
+  ## Способности:
+  - [bold]Посадить смолу[/bold]: размещает смоляной узел, распространяющий смолу на большой площади.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPlantWeeds"/>
-  - [bold]Plant Resin Hole[/bold]: Places a hole on weeds which can then be filled by burrowers special acid by clicking on it with a empty hand, it can also be hidden under debris such as wooden planks or metal sheets.
+  - [bold]Создать смоляную яму[/bold]: создаёт на смоле яму, которую Бурильщик может наполнить специальной кислотой, нажав по ней пустой рукой. Яму также можно скрыть под предметами, например деревянными досками или листами металла.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPlantResinHole"/>
-  - [bold]Tremor[/bold]: Causes targets in a large area around you to fall to the ground, works through walls and useful for escaping or capturing hosts.
+  - [bold]Сотрясение[/bold]: сбивает с ног цели в большой области вокруг вас. Работает сквозь стены и полезно как для отступления, так и для захвата носителей.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoTremor"/>
-  - [bold]Dig Tunnel[/bold]: Dig a tunnel which can act as a fast travel point, you can also rename tunnels.
+  - [bold]Прокопать туннель[/bold]: создаёт туннель для быстрого перемещения. Туннелям можно давать собственные названия.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoDigTunnel"/>
-  - [bold]Burrow[/bold]: Burrow underground and wait for a short time, after which you can emerge by clicking on any tile around you to start unburrowing, if you unburrow on top of a host it will stun them for a long amount of time allowing you to capture them if alone and behind cades, this ability works through walls and the unburrow time is dependent on how far you click away.
+  - [bold]Зарыться[/bold]: вы уходите под землю и после небольшой задержки можете начать выкапываться на выбранной клетке поблизости. Если появиться прямо под носителем, он будет надолго оглушён, что позволяет захватить одиночную цель даже за баррикадами. Способность работает сквозь стены; время выхода из-под земли зависит от расстояния до выбранной клетки.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoBurrow"/>
 </Document>

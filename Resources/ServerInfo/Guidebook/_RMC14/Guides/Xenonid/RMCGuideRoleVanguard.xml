@@ -1,28 +1,28 @@
 <Document>
-  #Vanguard, Tier 3
+  # Авангард, уровень 3
 
   <GuideEntityEmbed Entity="RMCXenoPraetorianVanguard"/>
 
-  ##Playing as a Vanguard
+  ## Игра за Авангарда
 
-  Firstly let's see what's changed from your Base form. You lose a portion of your health, but you are now slightly faster than your base form. You also trade your corrosive acid and spit to get a regenerating shield that perfectly blocks one attack, which recharges out of combat.
+  По сравнению с базовым Преторианцем вы теряете часть здоровья, но становитесь немного быстрее. Едкая кислота и кислотный плевок заменяются восстанавливающимся щитом, который полностью блокирует одну атаку и перезаряжается вне боя.
 
-  You gain the ability to use Pierce, that penetrates through opponents, and it will also instantly recharge your shield if you hit 2 targets.
+  Вы получаете «Пробитие» — атаку, проходящую сквозь противников. Если она задевает две цели, щит мгновенно восстанавливается.
 
-  You also gain cleave, which has two states: Root, which will immobilise a target and Fling, which will fling a target away from you.
+  Также появляется «Рассечение» с двумя режимами: «Обездвиживание», которое фиксирует цель на месте, и «Отброс», который отбрасывает её от вас.
 
-  Your dash has changed as well, it now has an area slash after you dash. By activating your dash again, you can do the area slash.
+  Рывок тоже изменён: после перемещения можно повторно активировать способность и провести круговую атаку по области.
 
-  Vanguard is similar to an upgraded Warrior, specializing in consistent melee attacks or doing heavy burst damage and having a dash ability. They can combine multiple abilities to deal bursts of damage from around corners or just frontline combat.
+  Авангард похож на усиленного Воина: он специализируется на постоянном ближнем бою или коротких сериях очень высокого урона и имеет способность быстрого рывка. Комбинируйте способности как для внезапных атак из-за углов, так и для прямого боя на передовой.
 
-  ##Abilities:
-  - [bold][color=green]PASSIVE[/color][/bold]: You are granted a shield that perfectly blocks one attack and rapidly decays after you're hit. The shield recharges while out of combat.
-  - [bold]Pierce[/bold]: Stab through your enemies with your tail against hosts. If you hit two people with your pierce, your shield is instantly recharged. This ability does slight extra damage than normal slash. The ability also has slight AP (armor piercing).
+  ## Способности:
+  - [bold][color=green]ПАССИВНО[/color][/bold]: вы получаете щит, полностью блокирующий одну атаку. После попадания щит быстро исчезает и восстанавливается, когда вы некоторое время не участвуете в бою.
+  - [bold]Пробитие[/bold]: пронзает носителей хвостом насквозь. Если способность задевает две цели, щит мгновенно восстанавливается. Наносит немного больше урона, чем обычная атака, и обладает небольшим бронепробитием.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPierce"/>
-  - [bold]Blitz[/bold]: Charge through enemies with a range of 4 tiles. Upon stopping, activate again to do an AoE slash in a 3x3 tile range, otherwise the ability will activate automatically after a 3 second delay. If the AoE slash hits, it will instantly regenerate your shield.
+  - [bold]Блиц[/bold]: рывок сквозь противников на расстояние до 4 клеток. После остановки активируйте способность повторно, чтобы провести атаку по области 3×3 клетки; если этого не сделать, атака сработает автоматически через 3 секунды. Попадание этой атакой мгновенно восстанавливает щит.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoDash"/>
-  - [bold]Root[/bold]: Immobilizes your target shortly, making them a sitting duck. Shares cooldown with Fling.
+  - [bold]Обездвиживание[/bold]: ненадолго фиксирует цель на месте. Делит время восстановления с «Отбросом».
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoCleaveRoot"/>
-  - [bold]Fling[/bold]: Flings your target away from you, sending them flying backwards. Shares cooldown with Root.
+  - [bold]Отброс[/bold]: отбрасывает цель от вас назад. Делит время восстановления с «Обездвиживанием».
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoCleaveFling"/>
 </Document>

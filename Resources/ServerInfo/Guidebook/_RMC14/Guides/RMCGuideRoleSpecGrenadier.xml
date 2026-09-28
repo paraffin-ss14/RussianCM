@@ -1,45 +1,45 @@
 <Document>
-  # Heavy Grenadier Specialist: "Michael Bay Fan"
+  # Тяжёлый гренадер: «Фанат Майкла Бэя»
 
-  ## Ordnance Dominance
-  Difficulty: [color=#FF8C00]Hard[/color]
+  ## Взрывное превосходство
+  Сложность: [color=#FF8C00]высокая[/color]
 
-  When the marines need a rapid, explosive push or fortified positions cleared, the Heavy Grenadier Specialist is the premier choice.
-  Wielding the M83 Grenade Launcher, this specialist delivers a versatile payload of grenades with greater precision and range than standard methods, capable of turning the tide with overwhelming explosive force.
+  Когда морпехам нужно быстро прорвать оборону взрывами или зачистить укреплённую позицию, тяжёлый гренадер — один из лучших вариантов.
+  Вооружённый гранатомётом M83, специалист может с большей дальностью и точностью, чем при обычном броске, доставлять разные типы гранат и переламывать ход боя массированным применением взрывчатки.
 
-  ## Standard Issue Kit
-  The standard issue for a Heavy Grenadier includes:
+  ## Стандартный комплект
+  В стандартный комплект тяжёлого гренадера входит:
   <Box> <GuideEntityEmbed Entity="WeaponLauncherM83"/> </Box>
-  The M83 Grenade Launcher is an advanced ordnance delivery system, distinguished by its [bold]six-shot capacity[/bold] coupled with [color=#00FF00]IFF feature[/color].
-  This IFF system allows grenade projectiles fired from the M83 to [italic]safely pass through friendly marines[/italic] without hitting any, ensuring the ordnance can reach its intended target point even in crowded friendly engagements.
+  Гранатомёт M83 — современная система доставки боеприпасов с [bold]барабаном на шесть выстрелов[/bold] и [color=#00FF00]системой IFF[/color].
+  Благодаря IFF выпущенные из M83 гранаты [italic]безопасно проходят сквозь союзных морпехов[/italic], не сталкиваясь с ними, и достигают заданной точки даже в плотном строю своих сил.
   <Box>  <GuideEntityEmbed Entity="RMCArmorM3G4"/> <GuideEntityEmbed Entity="RMCArmorHelmetM3G4"/></Box>
-  This specialized combat ensemble grants the Grenadier [italic]heavy-class armor protection[/italic], effectively mitigating ballistic, explosive, and general trauma damage.
-  Crucially, it achieves this robust defense while imposing only [italic]medium armor movement speed penalties[/italic], maintaining good battlefield agility. The included Helmet also allows the user to deflect 6 parasites.
+  Специализированный комплект брони обеспечивает гренадеру [italic]защиту тяжёлого класса[/italic], заметно снижая баллистический, взрывной и общий физический урон.
+  При этом штраф к скорости соответствует лишь [italic]средней броне[/italic], поэтому мобильность остаётся хорошей. Шлем комплекта способен также отразить до 6 паразитов.
 
-  ## Tactical Employment: The Resilient Nuisance
+  ## Тактическое применение: живучая заноза
 
-  The  Grenadier operates as a heavily armored point man or a durable fire support element. Your incredible survivability allows you to draw fire and hold positions others cannot, while your Grenade Launcher provides crucial stun and burst damage against priority targets.
+  Гренадер может действовать как хорошо защищённый передовой боец или прочный элемент огневой поддержки. Высокая живучесть позволяет удерживать позиции, на которых другим опасно находиться, а гранатомёт обеспечивает важные оглушения и высокий мгновенный урон по приоритетным целям.
 
-  <Box>[bold]Playing to Your Strengths:[/bold]</Box>
-  -   [bold]Anti-Carrier Operations[/bold]: Leverage your helmet's facehugger resistance to aggressively engage.
-  -   [bold]High-Value Target Disruption[/bold]: Focus your Grenade Launcher fire on high-priority threats like Prae's, Ravagers, or dense packs of warriors. The ability to stunlock these targets can create critical openings for your team.
-  -   [bold]Breaching and Spearheading Pushes[/bold]: Your grenades are not just for engaging hostiles; they are potent tools for reshaping the battlefield. Utilize your explosive ordnance to [italic]breach enemy fortifications, destroy barricades, and blow open new pathways.[/italic] allowing your squad to push through the opening, creating space for your squadmates to follow and exploit the new access point.
-  -   [bold]Resin Clearing Specialist[/bold]: HEDP grenades excel at clearing vast amounts of sticky resin. Use this capability to pave the way for swift marine advances.
+  <Box>[bold]Используйте свои сильные стороны:[/bold]</Box>
+  - [bold]Против Носителей и паразитов[/bold]: используйте защиту шлема от паразитов, чтобы действовать агрессивнее там, где другим морпехам опасно подходить близко.
+  - [bold]Нарушение действий важных целей[/bold]: сосредотачивайте огонь гранатомёта на приоритетных угрозах — Преторианцах, Разрушителях или плотных группах Воинов. Возможность последовательными попаданиями удерживать такие цели в оглушении создаёт для команды критически важные окна атаки.
+  - [bold]Прорыв укреплений и начало наступления[/bold]: гранаты предназначены не только для живых целей. Используйте взрывчатку, чтобы [italic]ломать вражеские укрепления, разрушать баррикады и открывать новые проходы[/italic], через которые отряд сможет продолжить наступление.
+  - [bold]Расчистка смолы[/bold]: гранаты HEDP отлично уничтожают большие участки липкой смолы. Прокладывайте ими путь для быстрого продвижения морпехов.
 
-  <Box>[bold]Mitigating Weaknesses & Conserving Fire:[/bold]</Box>
-  -   [color=#FFD700][bold]HIGH-TIER RESISTANCE[/bold]: Be aware that formidable Xenonids like [bold]Crushers and the Queen possess significant resistance to explosive damage and effects[/bold]. Do not expect standard HEDP spam to be highly effective against these elite threats. They will likely shrug off much of the damage and head for you.[/color]
-  -   [bold]Extreme Ammunition Conservatism[/bold]: Every grenade must count. Do not expend ordnance on trivial targets or situations where other marines can effectively engage. Your grenades are a precious resource best saved for critical moments or high-value targets that *only you* can effectively stun or burst down.
-  -   [bold]Friendly Fire is Critical[/bold]: [color=#FF0000]Your grenades are indiscriminate and can easily wipe out a friendly push.[/color] Never fire into groups of marines. Careful shot placement is paramount.
-  -   [bold]Strategic Combinations[/bold]: Don't rely on a single grenade type. Alternate between HEDP for stuns, HIDP for area denial, and HEFA for specific, clear high-damage opportunities. Stunning xenos with HEDP can create openings for more devastating follow-ups.
-  -   [color=#FF0000][bold]BEWARE GRENADES BOUNCE![/bold][/color] [bold]Always ensure a clear line of sight for your grenades. Firing at an awkward angle near a wall or obstacle can cause your grenade to bounce back towards your position or, even worse, directly into your advancing squadmates. Double-check your trajectory before every shot, especially in confined spaces.[/bold]
+  <Box>[bold]Компенсация слабостей и экономия огня:[/bold]</Box>
+  - [color=#FFD700][bold]УСТОЙЧИВОСТЬ ВЫСШИХ КАСТ[/bold]: помните, что опасные ксенониды вроде [bold]Крушителей и Королевы обладают значительной устойчивостью к взрывному урону и эффектам[/bold]. Не рассчитывайте, что спам обычными HEDP быстро решит проблему: такие цели переживут большую часть воздействия и, скорее всего, пойдут прямо на вас.[/color]
+  - [bold]Жёсткая экономия боеприпасов[/bold]: каждая граната должна приносить пользу. Не тратьте боеприпасы на незначительные цели или ситуации, с которыми обычные морпехи справятся сами. Ваш запас ограничен и нужен для критических моментов и целей, которые именно вы способны эффективно оглушить или быстро добить.
+  - [bold]Дружественный огонь смертельно опасен[/bold]: [color=#FF0000]взрывы гранат не различают своих и чужих и способны уничтожить собственное наступление.[/color] Не стреляйте в плотную группу союзников. Точное размещение выстрела обязательно.
+  - [bold]Комбинируйте боеприпасы[/bold]: не полагайтесь на один тип гранат. HEDP полезны для оглушения, HIDP — для контроля территории, HEFA — для мощного урона в подходящей и чистой от союзников ситуации. Оглушение HEDP часто создаёт окно для более разрушительного продолжения.
+  - [color=#FF0000][bold]ПОМНИТЕ: ГРАНАТЫ РИКОШЕТЯТ![/bold][/color] [bold]Перед каждым выстрелом проверяйте свободную траекторию. Если стрелять под неудобным углом рядом со стеной или препятствием, граната может отскочить обратно к вам — или, что хуже, прямо в наступающих союзников. Особенно внимательно проверяйте линию огня в тесных помещениях.[/bold]
 
-  ## The Enduring Challenge: Vigilance & Adaptability
+  ## Главная сложность: внимательность и адаптация
 
-  The Grenadier's greatest long-term threats are complacency and a static battlefield. While initially feeling god like in your resilience, remember that Xenonids adapt and the nature of warfare evolves.
+  В долгой перспективе главные враги гренадера — самоуверенность и изменяющаяся обстановка. В начале высокая живучесть легко создаёт ощущение почти полной неуязвимости, но ксенониды адаптируются, а фронт постоянно меняется.
 
-  Overconfidence, bred from shrugging off early encounters, can lead to reckless positioning-exposing your known vulnerabilities or underestimating coordinated assaults.
-  True mastery of this kit lies not in its raw tankiness, but in disciplined play, respecting your limitations (especially ammunition) and constantly adapting your tactics.
+  Самоуверенность после нескольких удачных столкновений часто приводит к слишком рискованной позиции, попаданию под известные слабости комплекта или недооценке организованной атаки противника.
+  Настоящее мастерство этой роли определяется не количеством брони, а дисциплиной: уважайте ограничения комплекта, особенно запас гранат, и постоянно меняйте тактику под ситуацию.
 
-  The Grenadier is a powerful role, but even "gods" can fall if they believe their own legend too much and fail to see the shifting sands of the battlefield. Stay vigilant, play smart, and your legend might just endure.
+  Гренадер чрезвычайно силён, но даже «бог» погибнет, если поверит в собственную легенду и перестанет следить за происходящим. Будьте внимательны, играйте разумно — и, возможно, ваша легенда переживёт операцию.
 
 </Document>

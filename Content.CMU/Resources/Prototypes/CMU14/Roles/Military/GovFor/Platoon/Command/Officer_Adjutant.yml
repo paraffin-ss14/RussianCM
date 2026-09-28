@@ -5,7 +5,7 @@
   name: au14-job-name-govforadjutant
   description: au14-job-description-govforadjutant
   icon: "AU14JobIconGovAdjutant"
-  spawnMenuRoleName: Executive Officer (GOVFOR)
+  spawnMenuRoleName: au14-spawn-role-name-govfor-executive-officer
   supervisors: au14-job-supervisors-govforplatco
   startingGear: AU14GearGOVFORAdjutant
   dummyStartingGear: AU14GearGOVFORAdjutantDummy
@@ -28,7 +28,7 @@
   - AU14RoundJobProfileMilitaryBase
   roundComponents:
   - type: AU14CallsignRole
-    suffix: "5"
+    suffix: "02"
     commandElement: true
   - type: CommendationGiver
   - type: InnateCommandSpeech
@@ -64,6 +64,12 @@
     #   prefix: au14-job-prefix-govforadjutantCMBCIU
   requirements:
   - !type:OverallPlaytimeRequirement
+    time: 86400 # 24 hours
+  - !type:TotalDepartmentsTimeRequirement
+    group: CMUDepartmentsMilitary
+    time: 36000 # 10 hours
+  - !type:TotalJobsTimeRequirement
+    group: CMUJobsMilitaryCommand
     time: 18000 # 5 hours
   - !type:AgeRequirement
     requiredAge: 30
@@ -112,6 +118,8 @@
   - AU14OpforCommand
 
   # ├──[ Starting Gear ]───────────────────────────────────────────────┤
+  useLoadoutOfJob: AU14JobGOVFORAdjutant
+
 - type: startingGear
   id: AU14GearGOVFORAdjutant
   equipment:
@@ -209,7 +217,15 @@
   parent: AU14JobAdjutantBase
   id: AU14JobGOVFORAdjutantUPP
   roundForce: UPP
-  requirements: []
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 86400 # 24 hours
+  - !type:TotalDepartmentsTimeRequirement
+    group: CMUDepartmentsMilitary
+    time: 36000 # 10 hours
+  - !type:TotalJobsTimeRequirement
+    group: CMUJobsMilitaryCommand
+    time: 18000 # 5 hours
   name: Executive Officer
   spawnMenuRoleName: Executive Officer (UPP)
   ranks:
@@ -227,7 +243,15 @@
   parent: AU14JobAdjutantBase
   id: AU14JobGOVFORAdjutantWYPMC
   roundForce: WYPMC
-  requirements: []
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 86400 # 24 hours
+  - !type:TotalDepartmentsTimeRequirement
+    group: CMUDepartmentsMilitary
+    time: 36000 # 10 hours
+  - !type:TotalJobsTimeRequirement
+    group: CMUJobsMilitaryCommand
+    time: 18000 # 5 hours
   name: PMC Deputy Director
   spawnMenuRoleName: Executive Officer (WYPMC)
   ranks:

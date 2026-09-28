@@ -335,6 +335,14 @@ public sealed partial class ObjectiveControlSystem : EntitySystem
                     && (x.Comp.ObjectiveLevel != 3 || x.Comp.RollAnyway))
                 .ToList();
 
+            // Hotspot zones always activate: they are the FoF king-of-the-hill backbone, and a
+            // lottery loss silently removes the mode's centerpiece zone for the whole round.
+            var hotspots = neutralCandidates
+                .Where(x => HasComp<HotspotObjectiveComponent>(x.Uid))
+                .ToList();
+            foreach (var hotspot in hotspots)
+                neutralCandidates.Remove(hotspot);
+
             int neutralCap = GetRandomObjectiveCount(master.MaxNeutralObjectives, master.MinNeutralObjectives);
             _logs.Info($"[OBJ-CTRL] Neutral: Found {neutralCandidates.Count} candidates, max allowed = {neutralCap}");
 
@@ -345,6 +353,12 @@ public sealed partial class ObjectiveControlSystem : EntitySystem
             {
                 if (ActivateObjective(uid, obj))
                     _logs.Debug($"[OBJ-CTRL] Activated neutral objective '{obj.ObjectiveDescription}'");
+            }
+
+            foreach (var (uid, obj) in hotspots)
+            {
+                if (ActivateObjective(uid, obj))
+                    _logs.Debug($"[OBJ-CTRL] Activated hotspot objective '{obj.ObjectiveDescription}'");
             }
         }
         catch (Exception ex) { _logs.Error($"[OBJ-CTRL] Failed to activate neutral objectives: {ex.Message}!"); }
@@ -369,8 +383,44 @@ public sealed partial class ObjectiveControlSystem : EntitySystem
             {
                 if (fetchComp.Catalog)
                     TrySpawnCatalogObjective(proto, presetId, bestPlanetGrid, planetMaps, () => _fetch.HasAvailableCatalogSources(primaryMapId, fetchComp));
+                continue;
+            }
+
+            if (proto.TryComp<HotspotObjectiveComponent>(out var hotspotComp, compFactory))
+            {
+                if (hotspotComp.Catalog && proto.TryComp<CMUObjectiveComponent>(out var hotObjComp, compFactory))
+                    TrySpawnHotspotObjective(proto, hotObjComp, presetId, planetMaps);
             }
         }
+    }
+
+    private void TrySpawnHotspotObjective(EntityPrototype proto, CMUObjectiveComponent objComp, string presetId, HashSet<MapId> planetMaps)
+    {
+        var modeMatch = objComp.AllowedPresets.Count == 0
+            || objComp.AllowedPresets.Any(m => m.Equals(presetId, StringComparison.OrdinalIgnoreCase));
+        if (!modeMatch)
+            return;
+
+        if (_allObjectives.Any(o => o.Comp.Id == objComp.Id && Exists(o.Uid) && planetMaps.Contains(Transform(o.Uid).MapID)))
+            return;
+
+        var markers = new List<Entity<TransformComponent>>();
+        var query = EntityQueryEnumerator<CMUObjectiveMarkerComponent, TransformComponent>();
+        while (query.MoveNext(out var marker, out _, out var markerXform))
+        {
+            if (planetMaps.Contains(markerXform.MapID))
+                markers.Add((marker, markerXform));
+        }
+
+        if (markers.Count == 0)
+        {
+            _logs.Warning("[OBJ-CATALOG] Hotspot objective found no objective markers to spawn at.");
+            return;
+        }
+
+        var target = markers[Random.Shared.Next(markers.Count)].Owner;
+        Spawn(proto.ID, Transform(target).Coordinates);
+        _logs.Debug($"[OBJ-CATALOG] Spawned hotspot objective '{proto.ID}' at marker {ToPrettyString(target)}.");
     }
 
     private void TrySpawnCatalogObjective(

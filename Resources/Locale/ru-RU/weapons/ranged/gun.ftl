@@ -78,3 +78,7 @@ gun-ballistic-transfer-cancelled = Ваша перезагрузка была п
 gun-ballistic-transfer-primed = Вы не можете загрузить заряженный {$ammoEntity}!
 
 # CartridgeAmmo
+
+
+# CMU14
+cmu-gun-ballistic-spent = You can't load a spent {$ammoEntity}!

@@ -14,3 +14,6 @@ admin-player-actions-window-title = Панель действий игрока
 admin-player-actions-window-teleport = Телепортироваться
 
 admin-player-actions-window-admin-notes = Заметки администратора
+
+
+admin-player-actions-window-event-log = Event log

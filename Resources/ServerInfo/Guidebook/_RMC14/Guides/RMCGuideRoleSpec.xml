@@ -1,47 +1,47 @@
 <Document>
-  ## Elite Assets of the UNMC
-  Squad Specialists are among the most powerful assets the UNMC deploys. From the outset, these operatives can dramatically influence the outcome of any battle.
+  ## Элитные силы КМП ООН
+  Специалисты отрядов — одни из самых мощных бойцов, которыми располагает КМП ООН. Уже с начала операции они способны заметно повлиять на исход боя.
 
-  While they have access to unique kits and potent squad-supporting weaponry, they are [bold]not[/bold] lone wolves or "rambos" and should operate as integral parts of the team.
-  Understanding each specialist's role is crucial to maximizing their impact on the marine war machine.
+  Они получают уникальные комплекты и мощное оружие поддержки, но [bold]не[/bold] являются одиночками или «Рэмбо». Специалист должен действовать как полноценная часть отряда.
+  Понимание задачи каждого комплекта необходимо, чтобы использовать его возможности с максимальной пользой для морской пехоты.
 
-  This page provides a general tips for new specialists, followed by brief introductions to each specific kit, leading to more detailed individual guides.
+  Ниже приведены общие советы для начинающих специалистов и краткое описание доступных комплектов со ссылками на подробные руководства.
 
-  ## General Tips for All Specialists
+  ## Общие советы для всех специалистов
 
-   <Box>[bold]Ammunition is Precious[/bold]: </Box>
-  - Most specialist ammunition is potent and expensive (in terms of requisition points or rarity). [color=#ffcc00]Conserve it.[/color]
-  - For many kits, consider requesting extra ammo from Requisitions early in the round to avoid running dry at critical moments.
+   <Box>[bold]Боеприпасы бесценны[/bold]: </Box>
+  - Большинство специализированных боеприпасов очень мощные, но дорогие в очках снабжения или просто редкие. [color=#ffcc00]Экономьте их.[/color]
+  - Для многих комплектов стоит запросить дополнительные боеприпасы в снабжении ещё в начале раунда, чтобы не остаться без них в критический момент.
 
-   <Box>[bold]Know Your Gear & Role[/bold]: </Box>
-  - Understand the strengths, weaknesses, and optimal use cases for your specific specialist kit and its weaponry. Don't use an anti-armor rocket on lone drones if your team needs them for a Crusher.
-  - Before deploying, be intimately familiar with every piece of equipment in your kit. Know how to switch ammo types quickly, the effective range of your weapons, and the blast radius or unique properties of your ordnance/abilities.
+   <Box>[bold]Знайте своё снаряжение и свою задачу[/bold]: </Box>
+  - Понимайте сильные и слабые стороны своего комплекта и ситуации, для которых предназначено его оружие. Не тратьте противоброневую ракету на одинокого Дрона, если она может понадобиться отряду против Крушителя.
+  - До высадки разберитесь со всеми предметами комплекта: научитесь быстро менять типы боеприпасов, знайте эффективную дальность оружия, радиус взрыва и особые свойства снаряжения.
 
-   <Box>[bold]Situational Awareness is Key[/bold]: </Box>
-  - As a high-value target, you are prone to being [italic]targeted[/italic] by hostiles. Maintain constant vigilance, especially for flanks.
-  - Wearing standard marine armor instead of your specialist armor can sometimes reduce this, but at the cost of your specialized armor's benefits.
+   <Box>[bold]Контроль обстановки решает[/bold]: </Box>
+  - Вы представляете большую ценность, поэтому противник часто будет [italic]целенаправленно охотиться[/italic] именно на вас. Постоянно следите за окружением и особенно за флангами.
+  - Иногда обычная броня морпеха делает вас менее заметной целью, но за это придётся отказаться от преимуществ специализированной брони.
 
-   <Box>[bold]Stay Alive, You're a Force Multiplier[/bold]: </Box>
-  - While every marine's life is valuable, as a specialist, you bring unique capabilities that can turn the tide. Play smart, don't take unnecessary risks, and prioritize your survival to continue supporting your team. Your loss is often a greater blow to the squad's overall capability.
+   <Box>[bold]Оставайтесь в живых — вы усиливаете весь отряд[/bold]: </Box>
+  - Жизнь каждого морпеха важна, но специалист обладает уникальными возможностями, способными изменить ход боя. Не рискуйте без необходимости и берегите себя, чтобы продолжать поддерживать команду. Потеря специалиста часто сильнее снижает боеспособность отряда, чем потеря обычного бойца.
 
 
-  ## Available Specialist Kits
-  Click on a specialist's name for a detailed guide on their equipment, tactics, and unique capabilities.
+  ## Доступные комплекты специалиста
+  Нажмите на название специализации, чтобы открыть подробное руководство по снаряжению, тактике и уникальным возможностям.
 
-  - [bold][textlink="Heavy Grenadier Specialist" link="RMCGuideRoleGrenadierSpec"][/textlink][/bold] - "Michael Bay Fan"
-  - Wasters of explosive ordnance, Heavy Grenadiers use the multi-shot M83 grenade launcher to deliver a variety of grenades with precision, clearing paths and stunning grouped enemies. Their M3-G4 armor offers substantial protection.
+  - [bold][textlink="Тяжёлый гренадер" link="RMCGuideRoleGrenadierSpec"][/textlink][/bold] — «Фанат Майкла Бэя»
+  - Тяжёлый гренадер расходует огромное количество взрывчатки и использует многозарядный гранатомёт M83 для точной доставки разных типов гранат, расчистки проходов и оглушения групп противника. Броня M3-G4 обеспечивает серьёзную защиту.
   <Box> <GuideEntityEmbed Entity="WeaponLauncherM83" Context=""/> <GuideEntityEmbed Entity="RMCArmorM3G4" Context=""/> <GuideEntityEmbed Entity="CMGrenadeFrag" Context=""/> <GuideEntityEmbed Entity="CMGrenadeHighExplosive" Context=""/> <GuideEntityEmbed Entity="RMCGrenadeIncendiary" Context=""/> </Box>
 
-  - [bold][textlink="Demolitionist Specialist" link="RMCGuideRoleDemoSpec"][/textlink][/bold] - "Anti-Everything"
-  - When something absolutely needs to be obliterated, the Demolitionist brings the M5 Anti-Tank Launcher. Capable of firing HE and AP rockets , they are the bane of heavy targets and fortified positions.
+  - [bold][textlink="Специалист-подрывник" link="RMCGuideRoleDemoSpec"][/textlink][/bold] — «Против всего»
+  - Когда что-то нужно гарантированно уничтожить, специалист-подрывник достаёт противотанковый гранатомёт M5. Фугасные и бронебойные ракеты делают его главным противником тяжёлых целей и укреплений.
   <Box> <GuideEntityEmbed Entity="RMCWeaponLauncherM5ATL" Context="" /> <GuideEntityEmbed Entity="RMCRocket84mm" Context=""/> <GuideEntityEmbed Entity="RMCRocket84mmAntiArmor" Context=""/> <GuideEntityEmbed Entity="RMCExplosivePlastic" Context=""/> </Box>
 
-  - [bold][textlink="Sniper Specialist" link="RMCGuideRoleSniperSpec"][/textlink][/bold] - "Long-Range Deterrent"
-  - Wielding the M96S sniper rifle or the XM43E1 anti-materiel sniper rifle , this specialist provides crucial long-range fire support, capable of slowing key targets and acting as a powerful psychological deterrent to Xenonid advances. Comes with a spotter kit for rifleman.
+  - [bold][textlink="Специалист-снайпер" link="RMCGuideRoleSniperSpec"][/textlink][/bold] — «Дальнобойное сдерживание»
+  - С винтовкой M96S или противоматериальной винтовкой XM43E1 специалист обеспечивает важную дальнюю огневую поддержку, способен замедлять приоритетные цели и психологически сдерживать наступление ксенонидов. В комплект также входит набор корректировщика для стрелка.
   <Box> <GuideEntityEmbed Entity="CMM96SSniperRifle" Context=""/> <GuideEntityEmbed Entity="RMCXM43E1AntiMaterielRifle" Context=""/> <GuideEntityEmbed Entity="RMCKitSpotter" Context=""/> </Box>
 
-  - [bold][textlink="Scout Specialist" link="RMCGuideRoleScoutSpec"][/textlink][/bold] - "Silent Hunter & Intel"
-  - Armed with the hard-hitting M4SPR custom battle rifle and an M68 Thermal Cloak, the Scout excels in reconnaissance, target designation with their Scout Designator, and surgical engagements.
+  - [bold][textlink="Специалист-разведчик" link="RMCGuideRoleScoutSpec"][/textlink][/bold] — «Тихий охотник и разведка»
+  - Вооружённый мощной специальной винтовкой M4SPR и термоплащом M68, разведчик превосходно собирает информацию, обозначает цели своим целеуказателем и проводит точечные атаки.
   <Box> <GuideEntityEmbed Entity="WeaponRifleM4SPRCustom" Context=""/> <GuideEntityEmbed Entity="RMCBackpackScout" Context=""/> <GuideEntityEmbed Entity="RMCLaserDesignatorScout" Context=""/> </Box>
 
 </Document>

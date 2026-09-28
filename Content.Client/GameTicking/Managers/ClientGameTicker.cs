@@ -1,4 +1,5 @@
 using Content.Client.Administration.Managers;
+using Content.Client.CMU14.Hijack;
 using Content.Client.Gameplay;
 using Content.Client.Lobby;
 using Content.Client.RoundEnd;
@@ -24,6 +25,7 @@ namespace Content.Client.GameTicking.Managers
         [Dependency] private IClyde _clyde = default!;
         [Dependency] private IGameTiming _timing = default!;
         [Dependency] private IUserInterfaceManager _userInterfaceManager = default!;
+        [Dependency] private ShipHijackSystem _shipHijack = default!; // CMU14
 
         private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>>  _jobsAvailable = new();
         private Dictionary<NetEntity, string> _stationNames = new();
@@ -35,8 +37,11 @@ namespace Content.Client.GameTicking.Managers
         [ViewVariables] public ProtoId<LobbyBackgroundPrototype>? LobbyBackground { get; private set; }
         [ViewVariables] public bool DisallowedLateJoin { get; private set; }
         [ViewVariables] public string? ServerInfoBlob { get; private set; }
+        public IReadOnlyList<Content.Shared.CMU14.Lobby.LobbyLineupEntry> LobbyLineup { get; private set; } = Array.Empty<Content.Shared.CMU14.Lobby.LobbyLineupEntry>();
         [ViewVariables] public IReadOnlyList<LobbyRoundInfoField> ServerRoundInfo { get; private set; } = Array.Empty<LobbyRoundInfoField>();
         [ViewVariables] public TimeSpan StartTime { get; private set; }
+        public TimeSpan PreloadTime { get; private set; }
+        public bool MapsLoaded { get; private set; }
         [ViewVariables] public new bool Paused { get; private set; }
         [ViewVariables] public string CurrentMapName { get; private set; } = string.Empty;
         [ViewVariables] public string CurrentShipMapName { get; private set; } = string.Empty;
@@ -141,6 +146,9 @@ namespace Content.Client.GameTicking.Managers
         private void LobbyStatus(TickerLobbyStatusEvent message)
         {
             StartTime = message.StartTime;
+            // CMU14: map preload status.
+            PreloadTime = message.PreloadTime;
+            MapsLoaded = message.MapsLoaded;
             RoundStartTimeSpan = message.RoundStartTimeSpan;
             IsGameStarted = message.IsRoundStarted;
             AreWeReady = message.YouAreReady;
@@ -154,6 +162,7 @@ namespace Content.Client.GameTicking.Managers
         {
             ServerInfoBlob = message.TextBlob;
             ServerRoundInfo = message.RoundInfo;
+            LobbyLineup = message.Lineup;
 
             InfoBlobUpdated?.Invoke();
         }
@@ -199,7 +208,9 @@ namespace Content.Client.GameTicking.Managers
             // Force an update in the event of this song being the same as the last.
             RestartSound = message.RestartSound;
 
-            _userInterfaceManager.GetUIController<RoundEndSummaryUIController>().OpenRoundEndSummaryWindow(message);
+            // CMU14: show the summary after the destruction cinematic.
+            if (!_shipHijack.TryDeferRoundEndSummary(message))
+                _userInterfaceManager.GetUIController<RoundEndSummaryUIController>().OpenRoundEndSummaryWindow(message);
         }
     }
 }

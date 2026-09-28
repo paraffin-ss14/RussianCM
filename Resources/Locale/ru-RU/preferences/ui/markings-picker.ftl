@@ -69,3 +69,52 @@ marking-slot-add = Добавить
 marking-slot-remove = Удалить
 marking-slot = Слот { $number }
 
+
+
+markings-layer-Special = Special
+
+markings-layer-Tail = Tail
+
+markings-layer-Tail-Moth = Wings
+
+markings-layer-Hair = Hair
+
+markings-layer-FacialHair = Facial Hair
+
+markings-layer-UndergarmentTop = Undershirt
+
+markings-layer-UndergarmentBottom = Underpants
+
+markings-layer-Chest = Chest
+
+markings-layer-Head = Head
+
+markings-layer-Snout = Snout
+
+markings-layer-SnoutCover = Snout (Cover)
+
+markings-layer-HeadSide = Head (Side)
+
+markings-layer-HeadTop = Head (Top)
+
+markings-layer-Eyes = Eyes
+
+markings-layer-RArm = Right Arm
+
+markings-layer-LArm = Left Arm
+
+markings-layer-RHand = Right Hand
+
+markings-layer-LHand = Left Hand
+
+markings-layer-RLeg = Right Leg
+
+markings-layer-LLeg = Left Leg
+
+markings-layer-RFoot = Right Foot
+
+markings-layer-LFoot = Left Foot
+
+markings-layer-Overlay = Overlay
+
+markings-layer-TailOverlay = Overlay

@@ -26,3 +26,13 @@ store-caregory-spellbook-events = Заклинания событий
 
 # Nukie Delivery
 store-category-nukie-delivery = Предложения
+
+
+store-category-objective = Objective
+
+# Changeling
+store-category-combat = Combat
+
+store-category-utility = Utility
+
+store-category-stealth = Stealth

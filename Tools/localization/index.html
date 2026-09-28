@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Переводная — локализация CMU</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Переводная, главная"><span class="brand-icon">文</span><span>Переводная<small>COLONIAL MARINES UNIVERSE</small></span></a>
+    <div class="locales"><span id="source-locale">en-US</span><span>→</span><strong id="target-locale">ru-RU</strong><i></i></div>
+    <label class="section-label" for="kind">ТИП ЗАПИСЕЙ</label>
+    <select id="kind"><option value="all">Все записи</option><option value="entity">Сущности (entity)</option><option value="message">Обычные строки</option></select>
+    <div class="section-label">РАБОЧАЯ ОБЛАСТЬ</div>
+    <nav id="filters" aria-label="Статус перевода">
+      <button data-status="all">Все записи <span id="count-all">—</span></button>
+      <button data-status="same" class="active">Совпадают с оригиналом <span id="count-same">—</span></button>
+      <button data-status="missing">Отсутствуют <span id="count-missing">—</span></button>
+      <button data-status="different">Отличаются <span id="count-different">—</span></button>
+      <button data-status="extra">Только в переводе <span id="count-extra">—</span></button>
+    </nav>
+    <label class="section-label" for="folder">РАЗДЕЛ ПРОЕКТА</label>
+    <select id="folder"><option value="">Все разделы</option></select>
+    <div class="sidebar-note"><span class="note-dot"></span>Файлы на вашем компьютере<p>Изменения сохраняются в локаль проекта. Проверить их можно через Git.</p></div>
+    <button id="refresh" class="outline">↻ Перечитать файлы</button>
+  </aside>
+  <main>
+    <header><div><div class="eyebrow">ЛОКАЛИЗАЦИЯ / РЕДАКТОР</div><h1>Слова, которые оживляют мир.</h1><p>Оригинал, перевод и контекст — в одном месте.</p></div><span class="local-badge">● Локально</span></header>
+    <div class="workspace-bar"><div><strong id="result-count">Чтение локализации…</strong><span id="filter-label">Совпадают с оригиналом</span></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Ключ, текст или путь к файлу…" aria-label="Поиск по локализации"><kbd>/</kbd></label></div>
+    <div id="catalog-errors" class="error-banner" hidden></div>
+    <div class="workspace">
+      <section class="entry-list" aria-label="Список записей"><div id="rows" aria-live="polite"></div><button id="more" class="outline" hidden>Показать ещё</button></section>
+      <section class="editor" aria-label="Редактор перевода">
+        <div id="empty" class="empty"><span>А ↔ 文</span><h2>Выберите запись слева</h2><p>Сравните оригинал с переводом<br>и сохраните изменения прямо в проект.</p></div>
+        <div id="edit-content" hidden>
+          <div class="entry-heading"><div class="eyebrow">ТЕКУЩАЯ ЗАПИСЬ</div><h2 id="entry-key"></h2><p id="entry-path"></p></div>
+          <div id="entity-context" class="comment" hidden></div>
+          <div id="comment" class="comment" hidden></div>
+          <div class="panes">
+            <div class="pane"><div class="pane-title"><label for="source">ОРИГИНАЛ <span id="source-tag">EN-US</span></label><button id="copy" class="text-button">Взять за основу ↘</button></div><textarea id="source" readonly spellcheck="false" aria-label="Оригинальная запись Fluent"></textarea></div>
+            <div class="pane target-pane"><div class="pane-title"><label for="target">ПЕРЕВОД <span id="target-tag">RU-RU</span></label><span id="dirty">Без изменений</span></div><textarea id="target" spellcheck="false" aria-label="Перевод записи Fluent"></textarea></div>
+          </div>
+          <div class="hints"><span>Сохраните ключ, переменные <code>{ $name }</code> и отступы атрибутов.</span><div id="variables"></div></div>
+          <details><summary>Как редактировать Fluent</summary><p>Переводите текст после <code>=</code>. Строки продолжения и атрибуты (например <code>.desc</code>) начинаются с отступа. Имена ключей, функций, ссылок и переменных не переводятся. Варианты <code>[one]</code>, <code>[few]</code>, <code>[many]</code> можно использовать для русского множественного числа.</p><p>«Совпадает» не всегда означает отсутствие перевода: числа, имена и ссылки могут быть одинаковыми. «Отличается» не подтверждает качество перевода.</p></details>
+          <div id="message" role="status" hidden></div>
+          <footer><button id="reset" class="text-button">Отменить правку</button><div><button id="save-next" class="outline">Сохранить и дальше</button><button id="save" class="primary">Сохранить <kbd>Ctrl ↵</kbd></button></div></footer>
+        </div>
+      </section>
+    </div>
+    <div class="bottom-note">FLUENT · UTF-8 <span>Никаких отправок на внешние сервисы</span></div>
+  </main>
+</body>
+</html>

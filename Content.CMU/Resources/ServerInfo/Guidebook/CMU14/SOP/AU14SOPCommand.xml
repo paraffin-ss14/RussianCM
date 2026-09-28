@@ -1,35 +1,35 @@
-﻿<Document>
-  # Command Regulations
+<Document>
+  # Правила командования
 
-  ## Command Staff
-    Command staff consist of the following ranks and military roles.
-      - The Commander.
-      - The Adjutant.
-      - Staff Officers
-      - Department Heads (CMO, IO, EO, LO, CMP)
-      - Advisors
-      - Anyone with the rank of O6 or higher.
+  ## Командный состав
+    К командному составу относятся следующие звания и военные роли:
+      - Командир.
+      - Адъютант.
+      - Штабные офицеры.
+      - Руководители отделов (CMO, IO, EO, LO, CMP).
+      - Советники.
+      - Любое лицо в звании O6 или выше.
 
-  ## Command Arms
-    Command must abide by the following regulations regarding arming themselves on the ship or in the field:
-      - Command may not take any type of special weapon or heavy weaponry from Req or Vendors, and may only use standard issue arms found in their respective armoury, or rifleman prep. (This does not include magazines)
-      - Command Staff are allowed to operate special weapons only if no one else in the vicinity is doing so, or there is an emergency going on.
+  ## Вооружение командования
+    Командование обязано соблюдать следующие правила вооружения на корабле и в полевых условиях:
+      - Командование не может брать специальное или тяжёлое оружие из снабжения либо торговых автоматов и может использовать только штатное вооружение из своей оружейной или подготовки стрелков. Это ограничение не распространяется на магазины.
+      - Командному составу разрешено использовать специальное оружие только если поблизости никто другой им не пользуется либо идёт чрезвычайная ситуация.
 
-  ## Conduct of Briefing
-    The Commander must ensure that personnel receive a thorough briefing before deployment and operations. If a Commander is not present to ensure a proper briefing is held, the chain of command is to follow.
-      - It must be performed in an area where a proper inspection of personnel can be held and where personnel can hear any orders.
-      - Areas that interfere with non-combat personnel must be avoided, for example, the medbay.
-      - Briefings at a minimum must include all deploying faction command (SLs, SOs, etc).
+  ## Проведение брифинга
+    Командир обязан обеспечить полноценный брифинг личного состава перед развёртыванием и операциями. Если Командир отсутствует, обязанность проведения брифинга переходит далее по цепочке командования.
+      - Брифинг должен проходить в месте, где можно провести надлежащий осмотр личного состава и где все способны услышать приказы.
+      - Следует избегать мест, мешающих работе небоевого персонала, например медблока.
+      - В брифинге как минимум должно участвовать всё высаживающееся командование фракции (SL, SO и т. п.).
 
-  ## Landing Zone
-    A primary landing zone must be chosen and defended throughout the operation. Other insertion methods may be utilized in tandem so long as the primary LZ is defended.
+  ## Посадочная зона
+    Основная посадочная зона должна быть выбрана и обороняться на протяжении всей операции. Дополнительные способы высадки могут использоваться параллельно, пока основная LZ остаётся защищённой.
 
-  ## Command Field Deployment
-    Deployments must be for the sake of the personnel and operation, and not for the personal glory of the Command Staff. At least one member of the Command Staff must remain on the ship/installation to man the CIC at all times.
+  ## Полевое развёртывание командования
+    Высадка должна осуществляться ради интересов личного состава и операции, а не ради личной славы командного состава. На корабле/объекте постоянно должен оставаться как минимум один представитель командного состава для работы в CIC.
 
-  When Deployed:
-    - The deploying Command Staff must still command and communicate frequently with their faction.
-    - Combat should be reserved when assisting personnel in a supporting capacity, in defence of others and self, or directly leading an offensive manoeuvre.
-    - They should avoid unnecessarily putting themselves in danger and remain close to personnel to focus on providing clear orders.
-    - IO's are exempt from the above as their job often entails covert operations for intelligence gathering and distruption of enemy backlines and logistics.
+  После высадки:
+    - Высадившийся представитель командования обязан продолжать командовать своей фракцией и регулярно поддерживать связь.
+    - Вступать в бой следует только при оказании поддержки личному составу, защите себя или других либо непосредственном руководстве наступательным манёвром.
+    - Следует избегать неоправданного риска и оставаться рядом с личным составом, сосредотачиваясь на отдаче ясных приказов.
+    - IO освобождаются от указанных выше ограничений, поскольку их работа часто включает скрытые операции по сбору разведданных и нарушению работы тыла и логистики противника.
 </Document>

@@ -1,19 +1,19 @@
 <Document>
-  #Vampire, Tier 2
+  # Вампир, штамм уровня 2
   <GuideEntityEmbed Entity="RMCXenoLurkerVampire"/>
-  ##Playing as a Vampire
-  You lose all of your abilities, and you forfeit a chunk of your health and damage in exchange for a large amount of armor, a little bit of movement speed, increased attack and brand new abilities that make you an assassin in the backlines, or a frontline demon if you are good enough.
+  ## Игра за Вампира
+  Вы теряете все прежние способности, часть здоровья и урона, но получаете большой запас брони, немного дополнительной скорости передвижения, повышенную скорость атаки и совершенно новый набор способностей. Он превращает вас в убийцу тыла или, при хорошем исполнении, опасного бойца передовой.
 
-  Rush on your opponent to disorient them and Flurry to unleash a forward cleave that can hit and slow three hosts and heal you for every host you hit. Use your special Tail Jab to knock hosts away. You also deal more damage and a stun if they impact a wall. Finally, execute unconscious hosts with a headbite that bypasses armor and heals you for a grand amount of health.
+  Используйте «Натиск», чтобы дезориентировать противника, затем «Шквал» — фронтальную рассекающую атаку, способную задеть и замедлить до трёх носителей и вылечить вас за каждого поражённого. Особый «Укол хвостом» отбрасывает носителей; если цель ударится о стену или другое препятствие, она получит дополнительный урон и оглушение. Наконец, потерявшего сознание носителя можно добить «Укусом в голову», который игнорирует броню и восстанавливает вам большое количество здоровья.
 
-  ##Abilities:
-  - [bold]Rush[/bold]: A four-tile pounce that causes your targets screen to shake. This ability does not stun them.
+  ## Способности:
+  - [bold]Натиск[/bold]: прыжок на 4 клетки, вызывающий сильную дезориентацию экрана цели. Сам по себе не оглушает.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPounce"/>
-  - [bold]Flurry[/bold]: An attack that has a range of 1x3 tiles, dealing moderate damage per target and healing you. A short slow is also applied to you upon landing it.
+  - [bold]Шквал[/bold]: атака по области 1×3 клетки, наносящая умеренный урон каждой цели и восстанавливающая вам здоровье. После успешного применения вы ненадолго замедляетесь.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoFlurry"/>
-  - [bold]Tail Jab[/bold]: An attack dealing high damage to the target, alongside pushing the target back. If they impact an obstacle such as a wall, window, door or barricade, they will take more damage and will temporarily be stunned.
-  - For utility, this can instantly break windows.
+  - [bold]Укол хвостом[/bold]: наносит высокий урон и отбрасывает цель. Если носитель врежется в стену, окно, дверь или баррикаду, он получит дополнительный урон и ненадолго будет оглушён.
+  - Также способность мгновенно разбивает окна, что полезно для мобильности.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPierce"/>
-  - [bold]Headbite[/bold]: A high-damage attack that bypasses all armor, instantly killing your target and healing you greatly. Requires your target to be unconscious and adjacent to you, and has a windup before it will hit them.
+  - [bold]Укус в голову[/bold]: атака с очень высоким уроном, полностью игнорирующая броню, мгновенно убивающая цель и значительно лечащая вас. Требует, чтобы цель находилась без сознания на соседней клетке; перед ударом есть небольшая подготовка.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoHeadbite"/>
 </Document>

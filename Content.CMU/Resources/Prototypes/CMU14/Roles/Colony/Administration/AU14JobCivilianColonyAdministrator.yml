@@ -1,5 +1,5 @@
 - type: job
-  parent: CMJobBase
+  parent: RMCJobRibbonBase
   id: AU14JobCivilianColonyAdministrator
   roundSide: Civilian
   roundForce: COLONY
@@ -63,7 +63,7 @@
   - AU14AccessColonyAdministrator
   - AU14AccessColonyMarshall
   roleWeight: 0.25
-  displayWeight: 10
+  displayWeight: 22
 
 - type: startingGear
   id: AU14GearCivilianColonyAdministrator

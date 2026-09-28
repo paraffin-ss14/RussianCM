@@ -1,5 +1,6 @@
 - type: job
   parent: CMJobBase
+  displayWeight: 18
   id: AU14JobCivilianKellandWarden
   roundSide: Civilian
   roundForce: COLONY
@@ -34,6 +35,8 @@
     RMCRankCivilian: [ ]
   startingGear: AU14GearCivilianKellandWarden
   requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 7200 # 2 hours
   - !type:TraitsRequirement
     inverted: true
     traits:

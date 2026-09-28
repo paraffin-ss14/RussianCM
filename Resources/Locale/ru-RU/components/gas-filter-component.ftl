@@ -15,3 +15,6 @@ comp-gas-filter-ui-filter-status = Статус:
 comp-gas-filter-ui-status-enabled = On
 
 comp-gas-filter-ui-status-disabled = Выкл.
+
+
+comp-gas-filter-filtered-gas-examine = It is filtering [color={$statusColor}]{$filteredGas}[/color].

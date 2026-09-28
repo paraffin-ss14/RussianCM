@@ -38,7 +38,10 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    if: vars.DONT_UPDATE_CHANGELOG != 'true'
+    timeout-minutes: 15
+    if: >
+      vars.DONT_UPDATE_CHANGELOG != 'true'
+      && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     outputs:
       changes_detected: ${{ steps.auto-commit.outputs.changes_detected }}
       commit_hash: ${{ steps.resolve-ref.outputs.commit_hash }}
@@ -90,6 +93,7 @@ jobs:
   discord-webhook:
     name: Discord webhook
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: update
     if: needs.update.outputs.changes_detected == 'true'
     permissions:

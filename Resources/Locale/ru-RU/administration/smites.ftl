@@ -148,3 +148,14 @@ admin-trick-pause-map-description = Ставит выбранную карту �
 admin-trick-snap-joints-description = Удаляет все физические шарниры из объекта. К сожалению, не отщёлкивает все кости в теле.
 admin-trick-minigun-fire-description = Заставляет целевое оружие стрелять как миниган (очень быстро).
 admin-trick-set-bullet-amount-description = Быстро устанавливает значение количества незаспавненных патронов в оружии.
+
+
+admin-smite-tile-movement-prompt = Your feet lock to the tiles beneath you!
+
+admin-smite-tile-movement-name = Tile Movement
+
+admin-smite-make-stinky-name = Make Stinky
+
+admin-smite-tile-movement-description = Forces them to move tile by tile, just like in SS13!
+
+admin-smite-make-stinky-description = Makes the target stinky by making them release ammonia. Ew!

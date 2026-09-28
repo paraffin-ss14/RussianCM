@@ -57,6 +57,7 @@ public sealed partial class ANPRCRadioComponent : Component
     [DataField, AutoNetworkedField]
     public string Callsign = string.Empty;
 
+    // Fluent IDs for built-in presets; literal map-authored presets remain supported.
     [DataField, AutoNetworkedField]
     public List<string> CallsignPresets = new();
 

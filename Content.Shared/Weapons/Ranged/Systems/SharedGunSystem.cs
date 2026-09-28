@@ -549,6 +549,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         var shotEv = new GunShotEvent(user, ev.Ammo, fromCoordinates, toCoordinates.Value);
         RaiseLocalEvent(gun, ref shotEv);
 
+        // cmu edit start
+        var cmuFiredEv = new Content.Shared.CMU14.Hearing.CMUGunFiredEvent(gun, user, fromCoordinates);
+        RaiseLocalEvent(ref cmuFiredEv);
+        // cmu edit end
+
         if (userImpulse && TryComp<PhysicsComponent>(user, out var userPhysics))
         {
             var shooterEv = new ShooterImpulseEvent();
@@ -703,13 +708,15 @@ public abstract partial class SharedGunSystem : EntitySystem
     protected void EjectCartridge(
         EntityUid entity,
         Angle? angle = null,
-        bool playSound = true)
+        bool playSound = true,
+        EntityCoordinates? ejectCoordinates = null) // CMU14
     {
         // TODO: Sound limit version.
         var offsetPos = Random.NextVector2(EjectOffset);
         var xform = Transform(entity);
 
-        var coordinates = xform.Coordinates;
+        // CMU14: Cross-Z shots can spawn cartridges on the target level; casings eject at the gun.
+        var coordinates = ejectCoordinates ?? xform.Coordinates;
         coordinates = coordinates.Offset(offsetPos);
 
         TransformSystem.SetCoordinates(entity, xform, coordinates, rotation: Random.NextAngle());

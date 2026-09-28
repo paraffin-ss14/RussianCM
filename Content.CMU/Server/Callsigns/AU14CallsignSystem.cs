@@ -1,14 +1,16 @@
+using Content.Server.CMU14.Hearing;
 using Content.Server.CMU14.Radio;
 using Content.Server._RMC14.Marines.Roles.Ranks;
 using Content.Server.Chat.Systems;
 using Content.Server.Radio.EntitySystems;
 using Content.Shared.CMU14.CCVar;
 using Content.Shared.CMU14.Callsigns;
+using Content.Shared.CMU14.Hearing;
 using Content.Shared.CMU14.Radio;
 using Content.Shared.CMU14.Threats.Mobs.CLF;
+using Content.Shared._RMC14.Deafness;
 using Content.Shared._RMC14.Marines;
 using Content.Shared._RMC14.Marines.Squads;
-using Content.Shared._RMC14.Tracker.SquadLeader;
 using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
@@ -22,21 +24,21 @@ using Robust.Shared.Timing;
 
 namespace Content.Server.CMU14.Callsigns;
 
-// assigns radio callsigns from job and squad (6 = leader, 5 = 2IC, 7 = senior NCO,
-// ROMEO = RTO, OPS = staff, 1-N = everyone else), masks names with the callsign on
-// faction radio and serves the directory console
+// Assigns word-and-number radio callsigns and serves the directory console.
+// Default words are resolved in the server locale so every listener sees the same identity.
 public sealed partial class AU14CallsignSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IConfigurationManager _config = default!;
     [Dependency] private AU14CommsToggleSystem _comms = default!;
+    [Dependency] private CMUCombatHearingSystem _combatHearing = default!;
 
     private static readonly Dictionary<string, string> DefaultCommandWords = new()
     {
-        ["govfor"] = "HAVOC",
-        ["opfor"] = "VICTOR",
-        ["clf"] = "CELL",
+        ["govfor"] = "cmu-callsign-word-govfor",
+        ["opfor"] = "cmu-callsign-word-opfor",
+        ["clf"] = "cmu-callsign-word-clf",
     };
 
     private readonly Dictionary<string, string> _commandWords = new();
@@ -48,12 +50,12 @@ public sealed partial class AU14CallsignSystem : EntitySystem
     // role sections carry their own element words, renamable per faction
     private static readonly Dictionary<string, string> DefaultCategoryWords = new(StringComparer.OrdinalIgnoreCase)
     {
-        ["AIR"] = "TALON",
-        ["ARMOR"] = "DRAGOON",
-        ["MP"] = "WARDEN",
-        ["MEDICAL"] = "DUSTOFF",
-        ["INTEL"] = "PROPHET",
-        ["SYNTH"] = "APOLLO",
+        ["AIR"] = "cmu-callsign-word-air",
+        ["ARMOR"] = "cmu-callsign-word-armor",
+        ["MP"] = "cmu-callsign-word-mp",
+        ["MEDICAL"] = "cmu-callsign-word-medical",
+        ["INTEL"] = "cmu-callsign-word-intel",
+        ["SYNTH"] = "cmu-callsign-word-synth",
     };
 
     private readonly Dictionary<(string Faction, string Category), string> _categoryWords = new();
@@ -68,7 +70,6 @@ public sealed partial class AU14CallsignSystem : EntitySystem
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
         SubscribeLocalEvent<SquadMemberAddedEvent>(OnSquadMemberAdded);
-        SubscribeLocalEvent<FireteamMemberUpdatedEvent>(OnFireteamMemberUpdated);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
 
         // mid-round CLF recruits (tattoo gun, admin verb) never see PlayerSpawnCompleteEvent
@@ -139,16 +140,11 @@ public sealed partial class AU14CallsignSystem : EntitySystem
         TryAssignSwept(ent.Owner, "clf");
     }
 
-    private void OnFireteamMemberUpdated(ref FireteamMemberUpdatedEvent ev)
-    {
-        if (!_commsEnabled || !TryComp(ev.Member, out AU14CallsignComponent? callsign))
-            return;
-
-        Assign(ev.Member, callsign);
-    }
-
     private void OnHeadsetExamined(Entity<HeadsetComponent> ent, ref ExaminedEvent args)
     {
+        if (!HasComp<RMCEarProtectionComponent>(ent) && !HasComp<CMUCombatEarProtectionComponent>(ent))
+            _combatHearing.PushProtectionExamine(args);
+
         if (!_commsEnabled ||
             !TryComp(args.Examiner, out AU14CallsignComponent? callsign) ||
             string.IsNullOrEmpty(callsign.Callsign))
@@ -259,30 +255,23 @@ public sealed partial class AU14CallsignSystem : EntitySystem
 
         callsign.Squad = squad;
 
-        if (role != null && !string.IsNullOrEmpty(role.Suffix))
+        if (!string.IsNullOrEmpty(callsign.Suffix))
+        {
+            // A station keeps its assigned number across transfers when it is available.
+            callsign.Suffix = MakeUniqueSuffix(callsign.Faction, squad, callsign.Group, callsign.Category, callsign.Suffix, uid);
+        }
+        else if (role != null && !string.IsNullOrEmpty(role.Suffix))
         {
             callsign.Suffix = MakeUniqueSuffix(callsign.Faction, squad, callsign.Group, callsign.Category, role.Suffix, uid);
             callsign.RoleSuffix = true;
         }
-        else if (!callsign.RoleSuffix || string.IsNullOrEmpty(callsign.Suffix))
-        {
-            callsign.Suffix = NextFreeNumber(callsign.Faction, squad, callsign.Group, callsign.Category, FireteamNumber(uid), uid);
-            callsign.RoleSuffix = false;
-        }
         else
         {
-            // manually pinned suffix follows them into the new element
-            callsign.Suffix = MakeUniqueSuffix(callsign.Faction, squad, callsign.Group, callsign.Category, callsign.Suffix, uid);
+            callsign.Suffix = NextFreeNumber(callsign.Faction, squad, callsign.Group, callsign.Category, uid);
+            callsign.RoleSuffix = false;
         }
 
         UpdateFullCallsign(uid, callsign);
-    }
-
-    // fireteam index becomes the first half of the numeric suffix: fireteam 2's
-    // riflemen are "2-1", "2-2"; marines without a fireteam stay in the "1-N" block
-    private int FireteamNumber(EntityUid uid)
-    {
-        return CompOrNull<FireteamMemberComponent>(uid)?.Fireteam + 1 ?? 1;
     }
 
     private void UpdateFullCallsign(EntityUid uid, AU14CallsignComponent callsign)
@@ -314,7 +303,7 @@ public sealed partial class AU14CallsignSystem : EntitySystem
             return word;
 
         return DefaultCommandWords.TryGetValue(faction, out var fallback)
-            ? fallback
+            ? Loc.GetString(fallback)
             : faction.ToUpperInvariant();
     }
 
@@ -324,7 +313,7 @@ public sealed partial class AU14CallsignSystem : EntitySystem
             return word;
 
         return DefaultCategoryWords.TryGetValue(category, out var fallback)
-            ? fallback
+            ? Loc.GetString(fallback)
             : category.ToUpperInvariant();
     }
 
@@ -333,19 +322,19 @@ public sealed partial class AU14CallsignSystem : EntitySystem
         if (_squadWords.TryGetValue(squad, out var word))
             return word;
 
-        // squads carry a color word (RED, YELLOW, PURPLE) so callsigns never collide
-        // with the phonetic alphabet used for everything else on the net
+        // Prototype defaults can be Fluent IDs; explicit/map-authored words remain literal.
         if (CompOrNull<AU14SquadCallsignComponent>(squad)?.Word is { Length: > 0 } squadWord)
-            return squadWord.ToUpperInvariant();
+            return (Loc.TryGetString(squadWord, out var localized) ? localized : squadWord).ToUpperInvariant();
 
         return Name(squad).ToUpperInvariant();
     }
 
-    private string NextFreeNumber(string faction, EntityUid? squad, string? group, string? category, int fireteam, EntityUid exclude)
+    private string NextFreeNumber(string faction, EntityUid? squad, string? group, string? category, EntityUid exclude)
     {
-        for (var n = 1;; n++)
+        // 01-09 are preferred job numbers in the game's radio data, not a military standard.
+        for (var n = 10;; n++)
         {
-            var candidate = $"{fireteam}-{n}";
+            var candidate = n.ToString("D2", System.Globalization.CultureInfo.InvariantCulture);
 
             if (!SuffixTaken(faction, squad, group, category, candidate, exclude))
                 return candidate;
@@ -354,16 +343,11 @@ public sealed partial class AU14CallsignSystem : EntitySystem
 
     private string MakeUniqueSuffix(string faction, EntityUid? squad, string? group, string? category, string wanted, EntityUid exclude)
     {
-        if (!SuffixTaken(faction, squad, group, category, wanted, exclude))
-            return wanted;
+        if (AU14Callsigns.TryNormalizeNumber(wanted, out var number)
+            && !SuffixTaken(faction, squad, group, category, number, exclude))
+            return number;
 
-        for (var n = 2;; n++)
-        {
-            var candidate = $"{wanted} {n}";
-
-            if (!SuffixTaken(faction, squad, group, category, candidate, exclude))
-                return candidate;
-        }
+        return NextFreeNumber(faction, squad, group, category, exclude);
     }
 
     // suffixes are unique within their element: a custom group when set, then the
@@ -439,16 +423,8 @@ public sealed partial class AU14CallsignSystem : EntitySystem
             return;
         }
 
-        // squad leaders and fireteam leaders stay identifiable to new players:
-        // "(SL) ALPHA 6", "(FTL) ALPHA 2-1"
-        var tag = CompOrNull<AU14CallsignRoleComponent>(ent.Owner)?.RadioTag;
-
-        if (tag == null && HasComp<FireteamLeaderComponent>(ent.Owner))
-            tag = "FTL";
-
-        args.VoiceName = tag == null
-            ? ent.Comp.Callsign
-            : $"({tag}) {ent.Comp.Callsign}";
+        // Roles belong in the authorized directory, not in the transmitted station identity.
+        args.VoiceName = ent.Comp.Callsign;
     }
 
 }

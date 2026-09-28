@@ -113,6 +113,9 @@ public abstract partial class SharedOnCollideSystem : EntitySystem
             if (ent.Comp.Acidic)
                 damage = _xeno.TryApplyXenoAcidDamageMultiplier(other, damage);
             _damageable.TryChangeDamage(other, damage, ent.Comp.IgnoreResistances, armorPiercing: ent.Comp.ArmorPenetration);
+            // CMU14: fire can destroy the target before its emote adds components.
+            if (TerminatingOrDeleted(other))
+                return;
             DoEmote(ent, other);
             didEmote = true;
         }
@@ -123,6 +126,11 @@ public abstract partial class SharedOnCollideSystem : EntitySystem
                 damage = _xeno.TryApplyXenoAcidDamageMultiplier(other, damage);
             _damageable.TryChangeDamage(other, damage, ent.Comp.IgnoreResistances);
         }
+
+        // CMU14: the damage above can delete the target outright, and everything after
+        // this point adds components or status effects to it.
+        if (TerminatingOrDeleted(other))
+            return;
 
         _xenoSpit.SetAcidCombo(other, ent.Comp.AcidComboDuration, ent.Comp.AcidComboDamage, ent.Comp.AcidComboParalyze, ent.Comp.AcidComboResists);
 

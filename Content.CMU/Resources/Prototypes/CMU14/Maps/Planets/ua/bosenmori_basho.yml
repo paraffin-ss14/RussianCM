@@ -3,23 +3,18 @@
   name: Bosenmori Basho
   components:
   - type: RMCPlanetMapPrototype
-    votename: "Bosenmori Basho"
+    votename: "Bosenmori Basho Redux"
     mapId: BosenmoriBasho
     inRotation: true
     lorePrimer: AU14PrimerPlanetBosenmoriBasho
-    allegiance: UA
+    allegiance: TWE
     camouflage: Desert
     announcement: "The colony of Bosenmori Basho has gone silent. A response force has been dispatched to investigate the distress signal."
     platoonsGovfor:
-    - LACN
-    - USCM
     - WEYU
-    - CMBCIU
     - RMC
-    - HAZOPS
     platoonsOpfor:
     - UPP
-    - ProdigySF
     - VAIPO
     defaultgovfor: USCM
     defaultopfor: VAIPO
@@ -28,12 +23,27 @@
     daycycleenabled: true
     threats:
     - XenoThreat
+    thirdpartyinterval: 1800
+    thirdparties:
+    - FreeCompanyRaiders
+    - USArmy
+    - USArmyAlt
+    - USArmyAlt2
+    - RMCRRT
+    - LACNSniperteam
+    - WYPMCParty
+    - WYPMCPartyAlt
+    - IPIE
+    - IPIESynth
+    - WYHT
+    - ICRCReliefParty
+    - CMBInvestigationParty
     jobScalingFof: DefaultGovforOpforScale
     jobScalingIns: DefaultInsurgencyScale
 
 - type: lorePrimer
   id: AU14PrimerPlanetBosenmoriBasho
-  planetText: "Date 2181 - Bosenmori Basho, UA controlled."
+  planetText: "Date 2176 - Bosenmori Basho, a TWE controlled 'shake and bake' colony."
 
 - type: entity
   parent: MarkerBase
@@ -47,9 +57,15 @@
 - type: gameMap
   id: BosenmoriBasho
   mapName: "Bosenmori Basho"
-  mapPath: "/Maps/_AU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ0.yml"
-  mapsBelow: []
-  mapsAbove: []
+  mapPath: "/Maps/CMU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ0.yml"
+  mapsBelow:
+  - /Maps/CMU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ-1.yml
+  mapsAbove:
+  - /Maps/CMU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ1.yml
+  - /Maps/CMU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ2.yml
+  - /Maps/CMU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ3.yml
+  - /Maps/CMU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ4.yml
+  - /Maps/CMU14/BosenmoriBashoMultiZ/BosenmoriBashoMultiZ5.yml
   minPlayers: 0
   maxPlayers: 75
   maxRandomOffset: 0

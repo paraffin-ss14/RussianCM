@@ -20,14 +20,24 @@ public sealed partial class CMUZLevelsSystem
         // existing, already initialized maps through mapping/construction tools.
         foreach (var map in maps.Keys)
         {
-            // Only direct map children can use Z physics. Avoid scanning every body
-            // in the world each time construction attaches a new, often empty level.
+            // Visit only this map and opted-in fixed decks, never nested containers
+            // or ordinary shuttle grids.
             var children = Transform(map).ChildEnumerator;
             while (children.MoveNext(out var uid))
             {
                 if (TryComp<CMUZPhysicsComponent>(uid, out var physics) &&
                     Comp<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.MapInitialized)
                     CheckActivation((uid, physics));
+
+                if (!HasComp<CMUZLevelDeckComponent>(uid))
+                    continue;
+                var deckChildren = Transform(uid).ChildEnumerator;
+                while (deckChildren.MoveNext(out var child))
+                {
+                    if (TryComp<CMUZPhysicsComponent>(child, out var deckPhysics) &&
+                        Comp<MetaDataComponent>(child).EntityLifeStage >= EntityLifeStage.MapInitialized)
+                        CheckActivation((child, deckPhysics));
+                }
             }
         }
     }
@@ -112,12 +122,11 @@ public sealed partial class CMUZLevelsSystem
             return false;
 
         var xform = Transform(ent);
-        // Child grids provide their own supporting surface. The Z movement loop
-        // cannot process their children and already stops them explicitly, so do
-        // not give those entities a transient falling marker during activation.
+        // Ordinary shuttles provide their own supporting surface. Linked decks
+        // opt into Z movement so occupants can traverse their boarding ramps.
         if (xform.MapUid is not { } map ||
             !HasComp<CMUZLevelMapComponent>(map) ||
-            xform.ParentUid != map ||
+            !IsZPhysicsParent(xform) ||
             xform.Anchored)
         {
             return false;
@@ -149,13 +158,13 @@ public sealed partial class CMUZLevelsSystem
 
         var xform = Transform(ent);
         if (xform.MapUid is not { } mapUid ||
-            !TryComp<MapGridComponent>(mapUid, out var grid))
+            !TryResolveMovementGrid(mapUid, _transform.GetWorldPosition(ent), out var gridUid, out var grid))
         {
             return false;
         }
 
-        map = mapUid;
-        tile = _map.TileIndicesFor(mapUid, grid, new MapCoordinates(_transform.GetWorldPosition(ent), xform.MapID));
+        map = gridUid;
+        tile = _map.TileIndicesFor(gridUid, grid, new MapCoordinates(_transform.GetWorldPosition(ent), xform.MapID));
         return true;
     }
 

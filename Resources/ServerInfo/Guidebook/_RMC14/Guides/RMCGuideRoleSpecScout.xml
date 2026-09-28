@@ -1,104 +1,104 @@
 <Document>
-  # Scout Specialist: The Silent Hunter
+  # Специалист-разведчик: тихий охотник
 
-  ## Eyes on the Enemy, Precision Fire
-  Difficulty: [color=#FF8C00]Hard[/color]
+  ## Глаза на противнике, точный огонь
+  Сложность: [color=#FF8C00]высокая[/color]
 
-  The Scout Specialist serves as the UNMC’s silent edge, adept at penetrating enemy lines, gathering critical battlefield intelligence, and executing precise takedowns of high-value targets.
-  Utilizing the advanced M68 Thermal Cloak for stealth and the versatile M4SPR Custom Battle Rifle for decisive engagements, the Scout provides unparalleled reconnaissance and surgical strike capabilities.
+  Специалист-разведчик — скрытый клинок КМП ООН. Он способен проникать за линию противника, собирать критически важную информацию и проводить точечные атаки по приоритетным целям.
+  Современный термоплащ M68 обеспечивает скрытность, а специальная боевая винтовка M4SPR — точный и универсальный огонь. Вместе они дают разведчику исключительные возможности по разведке и хирургическим ударам.
 
-  ## Standard Issue Kit
-  The Scout deploys equipped with the following important equipment:
+  ## Стандартный комплект
+  Важнейшее снаряжение разведчика:
   <Box> <GuideEntityEmbed Entity="WeaponRifleM4SPRCustom"/> <GuideEntityEmbed Entity="RMCBackpackScout"/> <GuideEntityEmbed Entity="RMCLaserDesignatorScout"/></Box>
 
-  ## Core Capabilities & Equipment
+  ## Основные возможности и снаряжение
 
-  ### M68 Thermal Cloak: The Art of Invisibility
+  ### Термоплащ M68: искусство невидимости
   <GuideEntityEmbed Entity="RMCBackpackScout" HorizontalAlignment="Left"/>
-  The first thing you'll notice is your [bold]permanent, no-charge cloaking device[/bold]. This is your primary tool for infiltration and survival. Pretty sweet, right? However, it comes with critical limitations:
+  Первое, что вы заметите, — [bold]маскировочное устройство без ограниченного заряда[/bold]. Это ваш главный инструмент проникновения и выживания. Звучит великолепно, но у него есть важные ограничения:
 
-  - [bold]Firing Restriction[/bold]: You are [italic]unable to fire weapons while cloaked[/italic] [color=#FF0000]and for approximately 2-3 seconds immediately after de-cloaking[/color]. Plan your engagements accordingly.
-  - [bold]Grenade Priming Disabled[/bold]: You cannot prime grenades while cloaked.
+  - [bold]Запрет стрельбы[/bold]: вы [italic]не можете стрелять из оружия в маскировке[/italic] [color=#FF0000]и примерно 2–3 секунды после её отключения[/color]. Планируйте атаку заранее.
+  - [bold]Нельзя взводить гранаты[/bold]: находясь в маскировке, вы не можете активировать гранаты.
 
-  - Despite these, your cloak allows for significant interaction:
+  При этом маскировка позволяет выполнять множество других действий:
 
-  - You [bold]can grab items[/bold] while cloaked.
-  - You [bold]can throw items[/bold].
-  - You [bold]can perform melee actions[/bold] (e.g stabbing with your combat knife) on critically wounded Xenonids while cloaked.
-  - You [bold]can laze targets[/bold] for Close Air Support (CAS) or Orbital Bombardment (OB).
+  - Вы [bold]можете поднимать предметы[/bold].
+  - Вы [bold]можете бросать предметы[/bold].
+  - Вы [bold]можете атаковать в ближнем бою[/bold], например добивать критически раненого ксенонида боевым ножом.
+  - Вы [bold]можете подсвечивать цели[/bold] для авиационной поддержки (CAS) и орбитальной бомбардировки (OB).
 
-  ### M4SPR Custom Battle Rifle: The Surgical Tool
+  ### Специальная M4SPR: хирургический инструмент
   <GuideEntityEmbed Entity="WeaponRifleM4SPRCustom" HorizontalAlignment="Left"/>
-  While not necessarily the highest raw damage dealer, the M4SPR Custom Battle Rifle is prized for its accuracy, versatility, and crippling effects. Its unique ammo and attachment compatibility allow for tailored performance.
+  M4SPR не обязательно обладает самым высоким чистым уроном, но ценится за точность, универсальность и сильные ослабляющие эффекты. Особые боеприпасы и совместимые модули позволяют подстраивать винтовку под задачу.
 
-  <Box>[bold]Ammunition Types[/bold]:</Box>
-  <Box>[bold]HV Standard [/bold]: [color=#ADD8E6]Most accurate[/color], with high Armor Piercing capability, for general precision work and consistent damage.</Box>
-  <Box>[bold]HV Impact [/bold]: [color=#FFFF00]Knocks down targets[/color] (effective up to Tier 2 Xenonids), excellent for disruption, halting charges, and creating follow-up opportunities.</Box>
-  <Box>[bold]HV Incendiary [/bold]: [color=#FFA500]Ignites targets[/color], causing damage over time, useful for securing kills on fleeing targets or forcing enemies to disengage/relocate. [italic]Ineffective against flame-immune targets like Queens/Ravagers[/italic].</Box>
-  -   [bold]Crippling Shots[/bold]: Hits from the M4SPR tend to severely damage targets. This makes it exceptionally effective against agile or dangerous foes, even if it doesn't kill them outright in one shot. [color=#FFD700]Mind your fire discipline; friendly fire with this weapon is devastating.[/color]
-  -   [bold]Ammunition Economy[/bold]: Specialized M4SPR ammunition is scarce and costly. Reserve it for targets where its unique effects are most impactful (e.g. high-priority Xenos, dangerous enemy specialists). Use your secondary for lesser threats.
+  <Box>[bold]Типы боеприпасов[/bold]:</Box>
+  <Box>[bold]Стандартные HV[/bold]: [color=#ADD8E6]самые точные[/color], обладают высоким бронепробитием и подходят для обычной точной стрельбы со стабильным уроном.</Box>
+  <Box>[bold]Ударные HV[/bold]: [color=#FFFF00]сбивают цели с ног[/color] — эффект действует до ксенонидов уровня T2. Отлично подходят для срыва атак, остановки рывков и создания окна для добивания.</Box>
+  <Box>[bold]Зажигательные HV[/bold]: [color=#FFA500]поджигают цель[/color] и наносят урон со временем. Полезны для добивания убегающих целей или вынуждения противника отступить и сменить позицию. [italic]Неэффективны против невосприимчивых к огню целей вроде Королевы и Разрушителя.[/italic]</Box>
+  - [bold]Калечащие попадания[/bold]: выстрелы из M4SPR способны сильно ограничивать возможности цели. Это особенно полезно против быстрых или опасных противников, даже если одного попадания недостаточно для убийства. [color=#FFD700]Следите за дисциплиной огня: дружественное попадание из этой винтовки крайне болезненно.[/color]
+  - [bold]Экономия боеприпасов[/bold]: специальные патроны M4SPR редкие и дорогие. Берегите их для целей, где уникальный эффект действительно важен: приоритетных ксенонидов, опасных специалистов противника и подобных угроз. Против мелких целей используйте вторичное оружие.
 
-  ## Gameplay: The Art of Recon
+  ## Игра: искусство разведки
 
-  ### Stealth & Evasion:
+  ### Скрытность и уклонение:
 
-  -   [bold]Mastering the Cloak[/bold]: Your cloak is incredibly difficult for most Xenos to detect, especially amidst weeds or in low light. You can often walk directly past entire enemy forces unnoticed.
-  -   [bold]The Hunter Becomes the Hunted[/bold]: If you suspect a Xenonid is actively and skillfully hunting *you* (not just generally searching), it's often wiser to disengage and relocate rather than waiting for them to leave. Your survival is paramount.
-  -   [bold]Constant Vigilance[/bold]: Always be checking your surroundings. Always have an escape route or a contingency plan.
+  - [bold]Освойте маскировку[/bold]: большинству ксенонидов очень трудно обнаружить разведчика под плащом, особенно среди смолы или в темноте. Нередко можно пройти прямо рядом с крупной группой противника незамеченным.
+  - [bold]Когда охотник становится добычей[/bold]: если вы понимаете, что опытный ксенонид целенаправленно охотится именно на вас, а не просто проверяет район, лучше разорвать контакт и сменить позицию, а не ждать, пока он уйдёт. Ваше выживание важнее.
+  - [bold]Постоянная внимательность[/bold]: непрерывно проверяйте окружение. Всегда заранее продумывайте путь отхода и запасной план.
 
-  ### Intelligence & Fire Support Coordination:
-  -   [bold]The Power of Information[/bold]: Your Scout Designators give you tremendous power if Mortar and CAS assets are responsive.
-  -   [bold]Typical Targeting[/bold]: While Squad Leaders/Fireteam leaders often direct CAS at the frontline, your role is very suited to help fire support like Mortar coordinates or OB's for critical rear-echelon targets like Xenonid Recovery nodes, forcing them to pull back or disrupt their infrastructure.
+  ### Разведка и координация огневой поддержки:
+  - [bold]Сила информации[/bold]: целеуказатель разведчика становится чрезвычайно мощным инструментом, если миномёт и CAS быстро реагируют на запросы.
+  - [bold]Типичные цели[/bold]: командиры отрядов и боевых групп часто вызывают CAS по передовой, а разведчик особенно полезен для передачи координат миномёту или OB по важным объектам в тылу — например узлам восстановления ксенонидов. Уничтожение таких целей заставляет противника отступать и нарушает инфраструктуру улья.
 
-  ##  Strategies: The Art of Sabotage
+  ## Стратегии: искусство саботажа
 
-  There are several effective ways to play the scout. A common and highly impactful approach is focusing on ambushes:
- <Box> The "Burn and Stun" </Box>
-  Execute devastating ambushes by first [italic]tagging your target with a single incendiary shot[/italic] to apply a persistent burn.
-  Immediately following this, [bold]swiftly switch to your HV Impact magazine[/bold] and unleash a volley. This forces the Xenonid to either endure continuous burn damage while being pummeled and stunned by impact rounds, or attempt to roll and extinguish the flames, which self-stuns them for an easy takedown.
-  Crucially, the Impact rounds also [italic]stun targets[/italic], effectively neutralizing their special abilities like Leap or Pounce, leaving them vulnerable and controlled.
+  За разведчика можно играть по-разному. Один из самых эффективных подходов — короткие засады.
+  <Box>«Поджечь и оглушить»</Box>
+  Начните с [italic]одного зажигательного попадания[/italic], чтобы цель загорелась.
+  Сразу после этого [bold]быстро переключитесь на магазин с ударными HV[/bold] и дайте очередь. Ксенониду придётся либо терпеть постоянный урон от огня под оглушающими попаданиями, либо пытаться кататься по земле и тушиться, самостоятельно лишая себя подвижности и становясь лёгкой целью.
+  Ударные боеприпасы также [italic]оглушают и сбивают цели[/italic], что мешает использовать способности вроде прыжка или наскока.
 
-  <Box>Tag, You're It, and On Fire!</Box>
-  This isn't about instant kills, but about being an absolute persistent nuisance, especially to lone Xenos or small, vulnerable groups.
-   - Make sure you've got those HV Incendiary rounds ready. A suppressor on your M4SPR is your best friend here.
-   - Cloak, get close (but not *too* close) to an isolated Xeno or a small group that's a bit separated. De-cloak just long enough to pop one or two incendiary rounds into a target, then immediately re-cloak and *move* Don't stick around to admire your handiwork from that spot.
-   - The Xeno is now on fire, taking damage over time, and probably a bit panicked. They might try to roll, or they might just be annoyed and easier for your frontline to deal with.
-   - Find a new angle, a new target, or even the same target if they haven't learned their lesson. The key is to be unpredictable and not give them a consistent spot to hunt you down. This tactic is great for softening up patrols or making lone flankers regret their life choices without you having to commit to a full-on firefight. It's psychological warfare with a fiery bonus.
+  <Box>«Ты водишь. И горишь!»</Box>
+  Смысл этой тактики не в мгновенном убийстве, а в постоянном раздражении и ослаблении одиночных ксенонидов или небольших уязвимых групп.
+  - Подготовьте зажигательные HV. Глушитель на M4SPR особенно полезен.
+  - Включите маскировку и приблизьтесь к одиночному ксенониду или немного отделившейся группе — но не слишком близко. Отключите плащ ровно настолько, чтобы выпустить один-два зажигательных патрона, затем немедленно снова скройтесь и [italic]смените позицию[/italic]. Не оставайтесь любоваться результатом с того же места.
+  - Цель теперь горит, постепенно теряет здоровье и, скорее всего, начинает нервничать. Она может потратить время на тушение или стать значительно более удобной целью для вашей передовой.
+  - Найдите новый угол, новую цель или вернитесь к той же самой, если она так и не усвоила урок. Главное — оставаться непредсказуемым и не давать противнику постоянную точку, в которой вас можно выследить. Так можно постепенно ослаблять патрули и наказывать одиночных фланкеров, не вступая в полноценную перестрелку. Немного психологической войны с огненным бонусом.
 
-  # Common Mistakes & How to Avoid Them
+  # Частые ошибки и как их избежать
 
-  Becoming an effective scout requires not just knowing what to do, but also what *not* to do. Here are some common pitfalls:
+  Хороший разведчик должен знать не только что делать, но и чего делать [italic]не стоит[/italic].
 
-  <Box>[bold]Over-Reliance on Cloak / "Invincibility Syndrome"[/bold]:</Box>
-  -   [color=#FF0000]Thinking that cloak makes you a literal god. You start strolling through Xeno parties like you own the place or camp one spot for ages.[/color]
-  -   [color=#00FF00] Remember the cloak has limitations (partial visibility to keen eyes). Always assess risk, move purposefully, and be aware that skilled Xenos *can* spot you. Don't get complacent.[/color]
+  <Box>[bold]Чрезмерная вера в плащ — «синдром бессмертия»[/bold]:</Box>
+  - [color=#FF0000]Вы начинаете считать маскировку буквальной неуязвимостью, спокойно гуляете среди ксенонидов или слишком долго сидите в одной точке.[/color]
+  - [color=#00FF00]Помните: внимательный игрок всё ещё способен заметить признаки вашего присутствия. Оценивайте риск, двигайтесь осмысленно и не расслабляйтесь.[/color]
 
-  <Box>[bold]Hotel California Syndrome (No Exit Strategy)[/bold]:</Box>
-  -   [color=#FF0000]You sneak deep into the hive, feeling like a champ, then realize you have no idea how to get out when things go south.[/color]
-  -   [color=#00FF00] Before any risky maneuver, identify multiple escape routes. What's Plan B if a Crusher decides to say hello? Mentally rehearse what you'll do if discovered. Your agility and cloak are for survival, not just infiltration.[/color]
+  <Box>[bold]«Отель Калифорния» — нет пути назад[/bold]:</Box>
+  - [color=#FF0000]Вы пробираетесь глубоко в улей, чувствуете себя героем, а потом понимаете, что совершенно не представляете, как выбраться, когда всё пошло плохо.[/color]
+  - [color=#00FF00]Перед рискованным манёвром определите несколько путей отхода. Что вы будете делать, если вас поприветствует Крушитель? Заранее мысленно проигрывайте обнаружение. Подвижность и плащ нужны не только для проникновения, но прежде всего для выживания.[/color]
 
-  <Box>[bold]Shooting Flies with a Cannon (Ammo Mismanagement)[/bold]:</Box>
-  -   [color=#FF0000]Dumping your precious Impact or Incendiary rounds from the M4SPR into a lone, already-dying Drone[/color]
-  -   [color=#00FF00] Treat your M4SPR ammo as a precious resource. Use it for HVTs, targets requiring specific debuffs, or when its precision is absolutely necessary. Rely on your secondary for lesser engagements.[/color]
+  <Box>[bold]Стрельба из пушки по мухам — расточительство боеприпасов[/bold]:</Box>
+  - [color=#FF0000]Не разряжайте редкие ударные или зажигательные патроны M4SPR в одиночного Дрона, который и так уже почти погиб.[/color]
+  - [color=#00FF00]Относитесь к специализированным патронам как к ценному ресурсу. Используйте их против приоритетных целей, ради нужного ослабляющего эффекта или когда требуется особая точность. Для обычных столкновений есть вторичное оружие.[/color]
 
-  <Box>[bold]The Silent Treatment (But Not in a Good Way)[/bold]:</Box>
-  -   [color=#FF0000]You spot the Queen, three Crushers, and a party bus full of Warriors heading for the FOB... and you tell no one. Or you call in an OB right on top of your buddies.[/color]
-  -   [color=#00FF00] You are the eyes and ears. Effective, concise communication is as critical as your combat skills. Let your team know what you see and what you intend to do, especially if it impacts them.[/color]
+  <Box>[bold]Режим молчания — в плохом смысле[/bold]:</Box>
+  - [color=#FF0000]Вы обнаружили Королеву, трёх Крушителей и целый автобус Воинов, направляющихся к FOB... и никому не сказали. Или вызвали OB прямо на головы своих товарищей.[/color]
+  - [color=#00FF00]Вы глаза и уши команды. Короткая и точная связь не менее важна, чем стрельба. Сообщайте, что видите и что собираетесь делать, особенно если это затронет союзников.[/color]
 
-  <Box>[bold]Fumbling the Ambush (De-Cloak Limitations & Predictability)[/bold]:</Box>
-  -   [color=#FF0000]De-cloaking and instantly mashing the fire button, forgetting about that 2-3 second "wake-up" time for your gun. Or always popping out from behind the *same* rock.[/color]
-  -   [color=#00FF00] Practice the de-cloak-to-fire timing. When ambushing, de-cloak slightly *before* you need to fire. Vary your de-cloak locations to be less predictable.[/color]
+  <Box>[bold]Проваленная засада — ограничения после снятия маскировки[/bold]:</Box>
+  - [color=#FF0000]Вы отключаете плащ и сразу пытаетесь стрелять, забыв о 2–3 секундах, когда оружие ещё недоступно. Или раз за разом выходите из маскировки из-за одного и того же камня.[/color]
+  - [color=#00FF00]Потренируйтесь чувствовать задержку между отключением плаща и выстрелом. При засаде раскрывайтесь немного раньше нужного момента и постоянно меняйте точки атаки.[/color]
 
-  <Box>[bold]The "Look at Me, I'm a Firefly!" Mistake:[/bold]:</Box>
-  -   [color=#FF0000]Accidentally leaving your armor's suitlight on, making your "invisible" silhouette a glowing beacon.[/color]
-  -   [color=#00FF00]Double-check your suitlight status frequently, especially after getting revived or changing gear. It's a simple mistake that can completely negate your stealth.[/color]
+  <Box>[bold]Ошибка «Посмотрите, я светлячок!»[/bold]:</Box>
+  - [color=#FF0000]Вы случайно оставили включённым фонарь брони и превратили «невидимый» силуэт в светящийся маяк.[/color]
+  - [color=#00FF00]Регулярно проверяйте фонарь, особенно после реанимации или смены экипировки. Такая мелочь полностью уничтожает преимущество скрытности.[/color]
 
-  ## Signing Off
+  ## Напоследок
 
-  So there you have it – a glimpse into the shadowy world of the Scout Specialist. It's a demanding role, no doubt about it, one that asks for more than just a quick trigger finger.
-  You're part saboteur, part intelligence operative, part precision killer, and all mind games. Mastering the cloak, your rifle, and the art of not being where the enemy expects you to be is a constant learning curve.
+  Теперь вы представляете, что такое игра специалистом-разведчиком. Роль сложная и требует намного большего, чем просто быстрой реакции на спусковом крючке.
+  Вы одновременно диверсант, разведчик, точный стрелок и специалист по психологической войне. Освоение плаща, винтовки и умения никогда не находиться там, где противник ожидает вас увидеть, занимает время.
 
-  You'll make mistakes – everyone does – but hopefully, knowing some of the common slip-ups will help you sidestep a few. Remember these words: your mind is your greatest weapon. The rest is just gear.
-  Now get out there, stay unseen, and give those Xenos something new to have nightmares about. Good hunting. Try not to get stepped on.
+  Ошибки неизбежны. Но понимание типичных провалов поможет избежать хотя бы части из них. Помните: ваше главное оружие — голова. Всё остальное лишь снаряжение.
+  Выходите на задание, оставайтесь незаметным и дайте ксенонидам новый повод для кошмаров. Удачной охоты. И постарайтесь, чтобы вас не раздавили.
 
 </Document>

@@ -29,3 +29,6 @@ entity-effect-status-effect-RadiationProtection = защита от радиац
 entity-effect-status-effect-Drowsiness = сонливость
 
 entity-effect-status-effect-Adrenaline = адреналин
+
+
+entity-effect-status-effect-Unconscious = unconsciousness

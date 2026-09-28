@@ -125,3 +125,8 @@ alerts-stealthy-desc = Определяет режим скрытой кражи
 
 alerts-prying-name = Вскрытие
 alerts-prying-desc = Вы можете вскрывать двери, используя альтернативное взаимодействие.
+
+
+alerts-changeling-chemicals-name = Chemicals
+
+alerts-changeling-chemicals-desc = The chemicals stored within our glands. We use them for many of our abilities to function. They regenerate over time.

@@ -1,22 +1,22 @@
 ﻿<Document>
-  # NON-Modifiable Command SOP
+  # Неизменяемые командные СОП
 
-  ## Field hospitals
+  ## Полевые госпитали
 
-  - It must be designated as a [bold]Secure Area.[/bold]
-  - The field hospital must be designated as such by the [color=#008000][bold]Commander[/bold][/color].
+  - Полевой госпиталь должен быть обозначен как [bold]охраняемая зона[/bold].
+  - Статус полевого госпиталя назначается [color=#008000][bold]Командиром[/bold][/color].
 
-  ## Primary Landing Zones
+  ## Основные зоны высадки
 
-  - Selected by the [color=#008000][bold]Commander[/bold][/color].
+  - Основная зона высадки выбирается [color=#008000][bold]Командиром[/bold][/color].
 
-  ## Conduct of Briefing
+  ## Проведение брифинга
 
-  The [color=#008000][bold]Commander[/bold][/color] is responsible for ensuring a proper briefing is conducted before any operation begins and personnel are deployed.
+  [color=#008000][bold]Командир[/bold][/color] отвечает за проведение надлежащего брифинга до начала операции и развёртывания личного состава.
 
-  - It must be performed in an area where a proper inspection of personnel can be held and where personnel can hear any orders.
-  - Areas that interfere with non-combat personnel must be avoided, for example the medbay.
-  - Briefings at minimum must include all of faction command.
-  - Failure to adhere to attend the briefing when required as stated above will incur neglect of duty charges.
+  - Брифинг должен проводиться в месте, где можно нормально осмотреть личный состав и где все присутствующие способны слышать приказы.
+  - Следует избегать зон, где брифинг мешает работе небоевого персонала, например медицинского блока.
+  - На брифинге как минимум должен присутствовать весь командный состав фракции.
+  - Неявка на обязательный брифинг может повлечь обвинение в пренебрежении обязанностями.
 
 </Document>

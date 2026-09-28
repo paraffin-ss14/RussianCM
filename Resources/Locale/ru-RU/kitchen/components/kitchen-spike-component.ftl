@@ -94,3 +94,10 @@ comp-kitchen-spike-knife-needed = Для этого вам понадобитс�
 comp-kitchen-spike-remove-meat = Вы удаляете немного мяса из {$victim}.
 
 comp-kitchen-spike-remove-meat-last = Вы убираете последний кусок мяса с {$victim}!
+
+
+comp-kitchen-spike-butcher-empty = { CAPITALIZE(THE($victim)) } has no meat left to butcher!
+
+comp-kitchen-spike-need-tool-quality = { $quality } tool required to butcher { THE($target) }.
+
+comp-kitchen-spike-deny-not-rotten = { CAPITALIZE(THE($victim)) } is not rotten enough to hook onto { THE($this) } yet.

@@ -568,3 +568,37 @@ entity-effect-guidebook-plant-mutate-chemicals =
         [1] Мутирует
         *[other] мутируют
     } растение, чтобы то производило { $name }
+
+
+entity-effect-guidebook-satiate =
+    { $chance ->
+        [1] Satiates
+        *[other] satiate
+    } { $relative ->
+        [1] {$type} averagely
+        *[other] {$type} at {NATURALFIXED($relative, 3)}x the average rate
+    }
+
+entity-effect-guidebook-plant-mutate-exude-gasses =
+    { $chance ->
+        [1] Mutates
+        *[other] mutate
+    } the plant to exude gases between {$minValue} and {$maxValue} moles
+
+entity-effect-guidebook-plant-mutate-consume-gasses =
+    { $chance ->
+        [1] Mutates
+        *[other] mutate
+    } the plant to consume gases between {$minValue} and {$maxValue} moles
+
+entity-effect-guidebook-add-reagent-to-bloodstream =
+    { $chance ->
+        [1] Injects
+        *[other] inject
+    } {$quantity} of {$reagent} directly into the bloodstream
+
+entity-effect-disarm =
+    { $chance ->
+        [1] Disarms
+        *[other] disarms
+    } the entity

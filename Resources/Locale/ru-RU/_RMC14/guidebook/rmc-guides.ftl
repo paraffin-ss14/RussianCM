@@ -1,5 +1,5 @@
 ﻿
-rmc-guide-entry-rmc = Руководство RMC14
+rmc-guide-entry-rmc = Руководство CMU
 rmc-guide-entry-rules = Правила сервера
 rmc-guide-entry-rules-ban-types = Типы и сроки банов
 rmc-guide-entry-rules-zero-tolerance = Нулевая терпимость
@@ -16,19 +16,81 @@ rmc-guide-entry-rules-general-roleplay-standards = Общие стандарты
 rmc-guide-entry-rules-marine-character-names = Имена персонажей морпехов
 rmc-guide-entry-rules-marine-roleplay-standards = Стандарты отыгрыша морпехов
 rmc-guide-entry-rules-command-roleplay = Отыгрыш командного состава
-rmc-guide-entry-rules-xeno-roleplay = Отыгрыш ксеносов
+rmc-guide-entry-rules-xeno-roleplay = Отыгрыш ксенонидов
 rmc-guide-entry-rules-survivor-roleplay = Отыгрыш выживших
 rmc-guide-entry-rules-hostile-faction-roleplay = Отыгрыш враждебных фракций
 rmc-guide-entry-rules-command-chain = Цепь командования
 rmc-guide-entry-rules-core = Основные правила
 rmc-guide-entry-rules-command = Правила для командования
 rmc-guide-entry-rules-roleplay-standards = Стандарты ролевой игры
+rmc-guide-entry-rules-community = Правила сообщества
 
 rumc-guide-entry-rules = Правила
 rumc-guide-entry-rules-core = Основные правила
 rumc-guide-entry-rules-command-chain = Цепь командования
 rumc-guide-entry-rules-marine-law = Устав морской пехоты
 
-# Missing entries synced from en-US
+# Основное руководство
+rmc-guide-entry-new-player = Руководство нового игрока
+rmc-guide-entry-rifleman = Руководство стрелка
+rmc-guide-entry-drone = Руководство дрона
+rmc-guide-entry-humanoid-roles = Роли людей
+rmc-guide-entry-survivor = Выживший
+rmc-guide-entry-medical = Медицина
+rmc-guide-entry-medical-v2 = Медицина V2
+rmc-guide-entry-requisitions = Снабжение
+rmc-guide-entry-intel = Разведка
+rmc-guide-entry-military-police = Военная полиция
+rmc-guide-entry-combat-technician = Боевой техник
+rmc-guide-entry-maintenance-technician = Техник по обслуживанию
+rmc-guide-entry-smart-gun-operator = Оператор смартгана
+rmc-guide-entry-command-roles = Кто командует?
+rmc-guide-entry-specialists = Специалисты по вооружению
+rmc-guide-entry-specialist-demolitionist = Специалист-подрывник
+rmc-guide-entry-specialist-grenadier = Тяжёлый гренадер
+rmc-guide-entry-specialist-scout = Специалист-разведчик
+rmc-guide-entry-specialist-sniper = Снайпер / специалист AMR
+rmc-guide-entry-cas = Десантные корабли и CAS
+rmc-guide-entry-marine-communications = Связь морпехов
+rmc-guide-entry-corporate-liaison = Корпоративный представитель
+rmc-guide-entry-squad-leader = Командир отряда
+rmc-guide-entry-marine-structures = Сооружения морпехов
+rmc-guide-entry-comms-sensors = Связь и сенсоры
+rmc-guide-entry-mortar = Миномёт
 
-rmc-guide-entry-rules-community = Правила сообщества
+# Ксенониды
+rmc-guide-entry-xenonid-castes = Касты ксенонидов
+rmc-guide-entry-xenonid-tier-one = Ксенониды уровня 1
+rmc-guide-entry-defender = Защитник
+rmc-guide-entry-sentinel = Страж
+rmc-guide-entry-runner = Бегун
+rmc-guide-entry-xenonid-tier-two = Ксенониды уровня 2
+rmc-guide-entry-warrior = Воин
+rmc-guide-entry-spitter = Плеватель
+rmc-guide-entry-lurker = Охотник
+rmc-guide-entry-vampire = Вампир
+rmc-guide-entry-hivelord = Лорд улья
+rmc-guide-entry-designer = Архитектор
+rmc-guide-entry-burrower = Бурильщик
+rmc-guide-entry-carrier = Носитель
+rmc-guide-entry-eggsac = Яйценосец
+rmc-guide-entry-xenonid-tier-three = Ксенониды уровня 3
+rmc-guide-entry-crusher = Крушитель
+rmc-guide-entry-praetorian = Преторианец
+rmc-guide-entry-valkyrie = Валькирия
+rmc-guide-entry-oppressor = Угнетатель
+rmc-guide-entry-vanguard = Авангард
+rmc-guide-entry-ravager = Разрушитель
+rmc-guide-entry-boiler = Бойлер
+rmc-guide-entry-sapper = Сапёр
+rmc-guide-entry-queen = Королева
+rmc-guide-entry-parasite = Паразит
+rmc-guide-entry-xenonid-structures = Сооружения ксенонидов
+rmc-guide-entry-hive-structures = Сооружения улья
+rmc-guide-entry-resin-holes = Смоляные ямы
+rmc-guide-entry-xenonid-map = Значки ксенонидов на карте
+
+# Еда и химия
+rmc-guide-entry-cooking = Рецепты блюд
+rmc-guide-entry-drinks = Рецепты напитков
+rmc-guide-entry-ordnance-chemicals = Химия техника по вооружению

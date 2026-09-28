@@ -173,3 +173,8 @@ food-sequence-skewer-gen = шашлык с { $content }
 food-sequence-content-friedegg = жареное яйцо
 
 # BURGERS
+
+
+food-sequence-cotton-burger-content-plushie-sheep = wooly
+
+food-sequence-cotton-burger-content-plushie-sheepspace = cosmicwooly

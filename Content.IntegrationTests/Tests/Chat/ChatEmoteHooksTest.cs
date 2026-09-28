@@ -27,24 +27,24 @@ public sealed class ChatEmoteHooksTest : GameTest
 {
     private static readonly string[] PainMessages =
     [
-        "OW!!",
-        "AGH!!",
-        "ARGH!!",
-        "OUCH!!",
-        "ACK!!",
-        "OUF!",
+        "АЙ!!",
+        "АХ!!",
+        "АРГХ!!",
+        "АУЧ!!",
+        "АУ!!",
+        "УФ!",
     ];
 
     private static readonly string[] ScreamMessages =
     [
-        "FUCK!!!",
-        "AGH!!!",
-        "ARGH!!!",
-        "AAAA!!!",
-        "HGH!!!",
-        "NGHHH!!!",
-        "NNHH!!!",
-        "SHIT!!!",
+        "СУКА!!!",
+        "АЙ!!!",
+        "АРГХ!!!",
+        "АААА!!!",
+        "МЛЯ!!!",
+        "КХХ!!!",
+        "ЫЫЫЫХ!!!",
+        "ЧЁРТ!!!",
     ];
 
     [SidedDependency(Side.Client)]

@@ -1,5 +1,6 @@
 - type: job
-  parent: CMJobBase
+  parent: RMCJobRibbonBase
+  displayWeight: 14
   id: AU14JobCivilianColonySynthetic
   roundSide: Civilian
   roundForce: COLONY

@@ -1,18 +1,18 @@
 <Document>
-  #Lurker, Tier 2
+  # Охотник, уровень 2
   <GuideEntityEmbed Entity="CMXenoLurker"/>
-  ##Playing as a Lurker
-  What you lose in speed is gained in health and invisibility, being capable to quickly drag off hosts from the frontline and backline to capture.
+  ## Игра за Охотника
+  Потерю скорости вы компенсируете большим запасом здоровья и невидимостью. Охотник способен быстро похищать носителей как с передовой, так и из тыла противника.
 
-  To execute the Lurker combo, you must first be invisible then leap onto your target. Time your slash to hit after your leap connects and then use Crippling Strike to drag them off and tackle. You can also otherwise continue with a burst of damage.
+  Для основной комбинации Охотника сначала войдите в невидимость, затем прыгните на цель. Рассчитайте момент обычной атаки так, чтобы удар пришёлся сразу после приземления, после чего примените калечащий удар и утащите цель для захвата. Вместо захвата комбинацию можно продолжить серией атак для быстрого нанесения урона.
 
-  Remember to monitor your invisibility, as it could run out at a inopportune time. You are also not entirely invisible so stick to low light conditions.
+  Следите за временем невидимости — она может закончиться в самый неподходящий момент. Кроме того, вы не становитесь полностью невидимым, поэтому старайтесь действовать в плохо освещённых местах.
 
-  ##Abilities:
-  - [bold]Pounce[/bold]: Leap at a target pinning them to the ground only if invisible, this stun is longer than a runner but will root you onto your target unless you slash after.
+  ## Способности:
+  - [bold]Прыжок[/bold]: прыжок на цель. Если вы невидимы, цель оказывается прижата к земле. Оглушение длится дольше, чем у Бегуна, но после прыжка вы сами ненадолго фиксируетесь рядом с целью, если сразу не нанесёте удар когтями.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoPounce"/>
-  - [bold]Turn Invisible[/bold]: Become partially invisible, your movement speed is increased but if you attack or pounce your invisibility will wear off.
+  - [bold]Стать невидимым[/bold]: делает вас частично невидимым и увеличивает скорость передвижения. Атака или прыжок снимают невидимость.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoTurnInvisible"/>
-  - [bold]Crippling Strike[/bold]: The next target you slash will do more damage and slow them down.
+  - [bold]Калечащий удар[/bold]: следующая атака когтями наносит повышенный урон и замедляет цель.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoCripplingStrike"/>
 </Document>

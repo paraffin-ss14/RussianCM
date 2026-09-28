@@ -35,3 +35,10 @@ verb-common-close = Закрыть
 verb-common-open = Открыть
 verb-common-close-ui = Закрыть UI
 verb-common-open-ui = Открыть UI
+
+
+verb-categories-select-target = Set Target
+
+verb-common-enter = Enter
+
+verb-common-exit = Exit

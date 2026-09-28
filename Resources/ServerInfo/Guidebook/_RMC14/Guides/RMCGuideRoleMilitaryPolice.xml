@@ -1,21 +1,21 @@
 <Document>
   <Box>
-    [color=goldenrod][head=2]MILITARY POLICE GUIDEBOOK[/head][/color]
+    [color=goldenrod][head=2]РУКОВОДСТВО ВОЕННОЙ ПОЛИЦИИ[/head][/color]
   </Box>
   <Box>
     [color=white]✧✧✦✧✧[/color]
   </Box>
   <Box>
-    [bolditalic][head=2]As Written by The Provost Marshall Office Police Academy  [/bolditalic]
+    [bolditalic][head=2]Подготовлено Полицейской академией Офиса провост-маршала[/head][/bolditalic]
   </Box>
   <Box>
     [color=#134975]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
   </Box>
 
-  ## What do Military Police do?
+  ## Чем занимается военная полиция?
 
 
-  Military police are the role that is entrusted in-game to enforce [textlink="Marine Law" link="RMCMarineLaw"] and [textlink="SOP (Standard Operating Procedure)" link="RMCMarineSOP"]. [bold]The goal of being a MP is not to brig as many marines as you can.[/bold] That is frowned upon. The goal of [color=#ff000d][bold]MP[/bold][/color] is to make the server a more immersive and enjoyable place for everyone. Do your best to uphold that goal, by mediating conflicts and assisting the crew and marines with their needs with the minimal force required.
+  Военная полиция отвечает за соблюдение [textlink="Единого кодекса военной юстиции" link="AU14UCMJ"] и [textlink="СОП — стандартных операционных процедур" link="AU14SOP"]. [bold]Цель игры за ВП — не посадить в бриг как можно больше морпехов.[/bold] Такое поведение не приветствуется. Задача [color=#ff000d][bold]ВП[/bold][/color] — делать игру более погружающей и приятной для всех. Старайтесь разрешать конфликты, помогать экипажу и морпехам и применять только минимально необходимую силу.
 
 
   <Box>
@@ -23,146 +23,145 @@
     <GuideEntityEmbed Entity="AU14GuidebookSOP"/>
   </Box>
 
-  ## The various members of the Military Police on the Almayer
+  ## Состав военной полиции на «Альмайере»
 
 
   <Box Orientation="Vertical">
-    [bold]Chief of Military Police[/bold]
+    [bold]Начальник военной полиции[/bold]
     <GuideEntityEmbed Entity="RMCGuidebookRoleCMP" Caption=""/>
   </Box>
   <Box>
-    [color=#8B0000][bold]The Chief of Military Police[/bold][/color], referred to as the [color=#8B0000][bold]Chief MP[/bold][/color] is the head of the Military police aboard the UNS Almayer. They are the second-highest authority on the ship regarding [textlink="Marine Law" link="RMCMarineLaw"], second only to a whitelisted [color=#00CBFE][bold]Commanding Officer[/bold][/color]. They are tasked with ensuring that Marine Law and [textlink="SOP" link="RMCMarineSOP"] are enforced correctly, and that [color=#ff000d][bold]MP[/bold][/color]s are doing their jobs well. The [color=#8B0000][bold]Chief MP[/bold][/color] is typically a more experienced [color=#ff000d][bold]MP[/bold][/color] so they can help answer questions and concerns. [color=#8B0000][bold]The Chief of Military Police[/bold][/color] can rank from Second Lieutenant (O1), up to First Lieutenant (O2)
+    [color=#8B0000][bold]Начальник военной полиции[/bold][/color] — руководитель отдела ВП на борту UNS «Альмайер». В вопросах [textlink="Единого кодекса военной юстиции" link="AU14UCMJ"] он обладает второй по величине властью на корабле, уступая только [color=#00CBFE][bold]командующему офицеру[/bold][/color] из вайтлиста. Начальник ВП следит за правильным применением кодекса и [textlink="СОП" link="AU14SOP"], а также за качеством работы [color=#ff000d][bold]военной полиции[/bold][/color]. Обычно это опытный сотрудник ВП, способный отвечать на вопросы и разбирать спорные ситуации. Начальник ВП может иметь звание от второго лейтенанта (O1) до первого лейтенанта (O2).
   </Box>
 
 
   <Box Orientation="Vertical">
-    [bold]Military Warden[/bold]
+    [bold]Военный надзиратель[/bold]
     <GuideEntityEmbed Entity="RMCGuidebookRoleMW" Caption=""/>
   </Box>
   <Box>
-    [bold]The Military Warden,[/bold] referred to as the [bold]Warden[/bold] is the person responsible for managing the brig, sentencing prisoners, and doing most of the paperwork. They do the bookkeeping and desk work that keeps the brig functioning smoothly. Military [bold]Warden[/bold]'s can rank from Sergeant (E5), up to Gunnery Sergeant (E7)
+    [bold]Военный надзиратель[/bold] отвечает за работу брига, назначение сроков заключения и большую часть документации. Именно он ведёт учёт и выполняет административную работу, необходимую для нормальной работы брига. Военный надзиратель может иметь звание от сержанта (E5) до комендор-сержанта (E7).
   </Box>
 
 
   <Box Orientation="Vertical">
-    [bold]Military Police[/bold]
+    [bold]Военная полиция[/bold]
     <GuideEntityEmbed Entity="RMCGuidebookRoleMP" Caption=""/>
   </Box>
   <Box>
-    [bold]The Military Police[/bold], or [color=#ff000d][bold]MP[/bold][/color]s, are the majority of the department and do all the legal work. This includes arrests, searches, patrols, and anything else you are required to do. [bold]Listen to the [bold]Warden[/bold] and [color=#8B0000][bold]Chief MP[/bold][/color].[/bold] Standard members of the military police can rank from Corporal (E4), up to Staff Sergeant (E6)
+    [bold]Сотрудники военной полиции[/bold] составляют основную часть отдела и выполняют повседневную правоохранительную работу: аресты, обыски, патрулирование и любые другие необходимые задачи. [bold]Подчиняйтесь [bold]военному надзирателю[/bold] и [color=#8B0000][bold]начальнику ВП[/bold][/color].[/bold] Рядовой сотрудник военной полиции может иметь звание от капрала (E4) до штаб-сержанта (E6).
   </Box>
 
 
-  ## Who do MPs answer to? It's Provost!
+  ## Кому подчиняется ВП? Провосту!
   <Box Orientation="Vertical">
-    [bold]Provost Marshal[/bold]
+    [bold]Провост-маршал[/bold]
     <GuideEntityEmbed Entity="CMUGuidebookRolePvM" Caption=""/>
   </Box>
-  [color=#ffa500][bold]Provost Marshal Office,[/bold][/color] often shortened to just "Provost", is the organization that ensures the law is interpreted correctly and writes the law itself. [bold]If you see a member of the Provost aboard the Almayer, give them the utmost respect.[/bold]
+  [color=#ffa500][bold]Офис провост-маршала[/bold][/color], часто сокращаемый до «Провост», — организация, которая обеспечивает правильное толкование закона и сама участвует в его разработке. [bold]Если на борту «Альмайера» находится представитель Провоста, проявляйте к нему максимальное уважение.[/bold]
 
-  ## Security Alert Levels
-  The ship has multiple alert levels, which can be changed in the C.I.C. They are as follows.
+  ## Уровни тревоги
+  На корабле существует несколько уровней тревоги, которые можно менять в CIC. Их требования определяют, какое снаряжение и какие меры допустимы в текущей обстановке.
 
-  ## M.P Equipment
-  Military police have a large assortment of specialized equipment provided to perform their duties. They are listed below, color coded to their alert restrictions for [color=#ff000d][bold]MP[/bold][/color]s.
+  ## Снаряжение ВП
+  Военная полиция располагает большим набором специализированного оборудования. Ниже перечислены основные предметы; их применение должно соответствовать ограничениям текущего уровня тревоги.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCHandcuffs"/>
   </Box>
-  [bold]Handcuffs are a core tool for [color=#ff000d][bold]MP[/bold][/color]s which allow you to retrain somebody by clicking on them with the cuffs in your hand.[/bold] The do-after is canceled if they move, so make sure to stun non compliant marines first. While they are handcuffed, they cannot move when you are holding on to them.
+  [bold]Наручники — основной инструмент ВП. Чтобы заковать человека, нажмите на него, держа наручники в руке.[/bold] Действие прервётся, если цель начнёт двигаться, поэтому активно сопротивляющегося морпеха сначала необходимо обездвижить. Закованный человек не может самостоятельно двигаться, пока вы его тащите.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCZipties"/>
   </Box>
-  Zip-Ties work identically to handcuffs, [bold]except when you remove them from somebody, they break and become unusable.[/bold] This is useful if you do not want to worry about leaving handcuffs laying around. [bold]One time use, so zip and forget![/bold]
-
+  Пластиковые стяжки работают так же, как наручники, [bold]но после снятия ломаются и становятся непригодны.[/bold] Это удобно, если не хочется следить за возвращением наручников. [bold]Одноразовые: затянул и забыл.[/bold]
 
   <Box>
     <GuideEntityEmbed Entity="CMStunbaton"/>
   </Box>
-  [bold]The Stun baton is a short range Melee stun implement which will stun a marine with a single hit.[/bold] It must be activated (by pressing [keybind="ActivateItemInHand"]) to stun someone. You can tell when its on by inspecting it, or looking for the sprite to be lit up. Can be charged by inserting it into a recharger.
+  [bold]Шоковая дубинка — ближнее нелетальное оружие, способное оглушить морпеха одним ударом.[/bold] Чтобы оглушать, дубинку необходимо включить клавишей [keybind="ActivateItemInHand"]. Проверить состояние можно осмотром или по светящемуся спрайту. Заряжается в зарядном устройстве.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCWeaponTaser"/>
   </Box>
-  The Disabler is a Sidearm style stun tool that fires electric bolts. With consecutive hits it will stun a target from range and allow you to close the distance. Be aware the stun is slightly shorter than the baton, so you may need to stun them again once you reach them depending on the distance. Can be charged at a recharger. [bold]The Disabler can also be used as a stun buton by meleeing the suspect.[/bold]
+  Дизейблер — оружие формата пистолета, стреляющее электрическими импульсами. Несколько последовательных попаданий оглушают цель на расстоянии и позволяют безопасно сблизиться. Оглушение немного короче, чем от дубинки, поэтому после подхода может понадобиться оглушить цель повторно. Заряжается в зарядном устройстве. [bold]Дизейблер также можно использовать как шоковую дубинку, ударив подозреваемого в ближнем бою.[/bold]
 
 
   <Box>
     <GuideEntityEmbed Entity="CMFlash"/>
   </Box>
-  The Flash Is a handheld device which can be used in two ways.
-  - With harm mode active, you can click directly on somebody with it to flash them directly. This will apply a stun and knock them down
-  - You can also press [keybind="ActivateItemInHand"] while holding it to produce a small radius flash that will disorient and slow down, but not stun. Cannot be recharged at a recharger, but it will slowly recharge uses over time.
+  Вспышка — ручное устройство с двумя режимами применения.
+  - При включённом боевом режиме нажмите устройством непосредственно на человека: он будет оглушён и сбит с ног.
+  - Держа вспышку в руке, нажмите [keybind="ActivateItemInHand"], чтобы создать вспышку небольшого радиуса. Она дезориентирует и замедляет цели, но не оглушает. В зарядном устройстве вспышка не заряжается, однако её заряды постепенно восстанавливаются самостоятельно.
 
 
   <Box>
     <GuideEntityEmbed Entity="CMArmorM2MP"/>
   </Box>
-  The standard Armor for the Military Police. It is adequately armored and lighter than its standard marine counterpart. [bold]It has very well rounded protection, and does decent in all categories though it is not the best in any of them.[/bold]
+  Стандартная броня военной полиции. Она достаточно хорошо защищает и легче обычной брони морской пехоты. [bold]Защита сбалансирована по всем основным категориям, хотя ни в одной из них броня не является лучшей.[/bold]
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCArmorVestMP"/>
   </Box>
-  A lightweight armor that [color=#ff000d][bold]MP[/bold][/color]s can elect to take from their equipment vendor. [bold]It Provides no slowdown effect and is very fast to run in, however it also provides very minimal protection and will not protect you at all against acid or biological threats in any way.[/bold]
+  Лёгкая броня, доступная [color=#ff000d][bold]ВП[/bold][/color] в автомате с экипировкой. [bold]Она совершенно не замедляет и позволяет быстро бегать, но почти не защищает и вообще не обеспечивает защиты от кислоты или биологических угроз.[/bold]
 
 
   <Box>
     <GuideEntityEmbed Entity="CMArmorRiot"/>
   </Box>
-  [bold]This heavy and bulky armor will take some heavy punishment from conventional threats like knives, bullets, and the like. In exchange you will be slowed down quite a lot while wearing it.[/bold] Do note that It is not helpful against acid or biological threats in any way whatsoever. (A total of 6 sets can be found in the brig armory)
+  [bold]Тяжёлая и громоздкая противобунтовая броня хорошо выдерживает обычные угрозы: ножи, пули и подобное оружие. Взамен она сильно замедляет владельца.[/bold] Она не помогает против кислоты и биологических угроз. В оружейной брига находится всего 6 комплектов.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCGrenadeFlashBang"/>
   </Box>
-  Flashbangs are a very effective tool for large areas or crowds. Once thrown they will detonate, stunning targets within a large radius for a very long time. [bold][color=#ff000d][bold]MP[/bold][/color]s are also stunned by this, so make sure you either throw it around cover or move away from it once thrown.[/bold] They may be carried on green alert. But only for self defense or defense of others. Do not throw them needlessly!
+  Светошумовые гранаты очень эффективны против групп и толпы. После броска граната взрывается и надолго оглушает цели в большом радиусе. [bold][color=#ff000d][bold]Сотрудники ВП тоже получают оглушение, поэтому бросайте гранату из-за укрытия или сразу отходите от неё.[/bold][/color] Их разрешается носить при зелёном уровне тревоги, но только для самообороны или защиты других лиц. Не бросайте их без необходимости.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCVendorSecArmory"/>
   </Box>
-  Rubber Rounds are [bold]Less-Lethal bullets[/bold] which can be fired from most standard issue weapons. After a certain number of shots on target, they will be stunned for a short duration. Be very careful to keep track of your ammo types! Useful for Prisoners of War, and other non marines who might be resistant to the disabler.
+  Резиновые пули — [bold]боеприпасы пониженной летальности[/bold] для большинства стандартных видов оружия. После нескольких попаданий цель ненадолго оглушается. Внимательно следите, какие именно боеприпасы заряжены в оружие. Особенно полезны против военнопленных и других неморпехов, устойчивых к дизейблеру.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCBoxShotgunBeanbag"/>
   </Box>
-  Bean Bag shells are an effective riot control tool that can stun targets in a few shots. They are fired specifically out of the Riot Shotgun found in the armory. Useful for Prisoners of War, and other non marines who might be resistant to the disabler.
+  Патроны с мешочками — эффективное средство подавления беспорядков, способное оглушить цель несколькими попаданиями. Используются только в противобунтовом дробовике из оружейной. Полезны против военнопленных и других неморпехов, устойчивых к дизейблеру.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCWeaponShotgunM890Riot"/>
   </Box>
-  The tactical riot shotgun is an eight (8) shot semi automatic shotgun found in the brig armory. It is capable of firing the bean bag shells found in armory, but cannot load standard shells like buckshot or slugs.
+  Тактический противобунтовый дробовик — восьмизарядное полуавтоматическое оружие из оружейной брига. Он использует патроны с мешочками, но не принимает стандартную картечь или пулевые патроны.
 
 
   <Box>
     <GuideEntityEmbed Entity="RMCWeaponLauncherM81"/>
   </Box>
-  The riot grenade launcher is a single shot launcher capable of loading Non lethal grenades (like the flashbang) into its breach, though is not capable of loading other grenades like HEDP or HIDP. [bold]Use [keybind="CMUniqueAction"] to open the breach while holding it then insert the grenade and close the breach. Note it has to be wielded to fire.[/bold] A total of 2 can be found in the brig armory
+  Противобунтовый гранатомёт — однозарядное оружие, способное принимать нелетальные гранаты, например светошумовые. Боевые HEDP и HIDP в него не заряжаются. [bold]Держа гранатомёт, нажмите [keybind="CMUniqueAction"], чтобы открыть казённик, вставьте гранату и закройте его. Для стрельбы оружие необходимо держать двумя руками.[/bold] В оружейной брига находится 2 гранатомёта.
 
 
   <Box>
     <GuideEntityEmbed Entity="WeaponShotgunM890"/>
   </Box>
-  The tactical shotgun is a semi automatic lethal firearm found in the brig armory. It cannot load bean bag rounds, but CAN load buckshot, flechette, and slugs. The underslung grenade launcher can load standard HEDP, HIDP, and HEFA (a total of 9 can be found in the brig armory)
+  Тактический дробовик — полуавтоматическое летальное оружие из оружейной брига. Он не принимает патроны с мешочками, но может использовать картечь, флешетты и пулевые патроны. Подствольный гранатомёт принимает стандартные HEDP, HIDP и HEFA. Всего в оружейной находится 9 таких дробовиков.
 
 
   <Box>
     <GuideEntityEmbed Entity="WeaponRifleM4SPR"/>
   </Box>
-  Two M4SPR lockers can be found in the brig armory, containing lethal ammunition and M4SPRs. These are identical to the standard issue rifles that the marines can obtain. Lethal ammo is found in the locker, as well as Rubber ammunition in the Riot-Tech. A total of 8 rifles can be found in the brig armory.
+  В оружейной брига находятся два шкафа M4SPR с летальными боеприпасами и винтовками M4SPR. Это те же стандартные винтовки, которые используют морпехи. Летальные магазины находятся в шкафах, а резиновые боеприпасы — в Riot-Tech. Всего доступно 8 винтовок.
 
 
   <Box>
     <GuideEntityEmbed Entity="WeaponSMGM63"/>
   </Box>
-  Two M63 lockers can be found in the brig armory, containing lethal ammunition and 4x  M63s. These are identical to the standard issue SMGs that the marines can obtain. Lethal ammo is found in the locker, as well as Rubber ammunition in the Riot-Tech. A total of 8 SMGs can be found in the brig armory.
+  В оружейной брига находятся два шкафа M63, содержащие летальные боеприпасы и по четыре M63. Это те же стандартные пистолеты-пулемёты, доступные морпехам. Летальные магазины находятся в шкафах, а резиновые боеприпасы — в Riot-Tech. Всего доступно 8 M63.
 
-  ### Guide made by WithinElysium
+  ### Автор руководства: WithinElysium
 </Document>

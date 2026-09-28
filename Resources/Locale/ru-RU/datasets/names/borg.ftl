@@ -44,3 +44,20 @@ names-borg-dataset-42 = Промозглый бот
 # Missing entries synced from en-US
 
 names-borg-dataset-43 = сырой бот
+
+
+names-borg-dataset-44 = Stooge
+
+names-borg-dataset-45 = Tour Guide-otron
+
+names-borg-dataset-46 = Taffy
+
+names-borg-dataset-47 = Toaster
+
+names-borg-dataset-48 = Twin
+
+names-borg-dataset-49 = Vector
+
+names-borg-dataset-50 = Whitley
+
+names-borg-dataset-51 = Xenos

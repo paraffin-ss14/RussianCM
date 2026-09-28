@@ -96,6 +96,41 @@ public static partial class PoolManager
         PoolSettings settings,
         TextWriter testOut)
     {
+        const int maxAttempts = 3;
+        for (var attempt = 1; ; attempt++)
+        {
+            try
+            {
+                return await GenerateServerOnce(settings, testOut);
+            }
+            catch (Exception e) when (attempt < maxAttempts && IsPrototypeVariantFreezeFailure(e))
+            {
+                // RT v290 registers variant collections from parallel YAML loaders into one dictionary.
+                // Retry only this startup race, before any test assertions or gameplay have run.
+                await testOut.WriteLineAsync(
+                    $"Prototype variant startup failed ({attempt}/{maxAttempts}); retrying with a fresh server.\n{e}");
+            }
+        }
+    }
+
+    private static bool IsPrototypeVariantFreezeFailure(Exception exception)
+    {
+        if (exception is AggregateException aggregate)
+        {
+            return aggregate.InnerExceptions.Count > 0 &&
+                   aggregate.InnerExceptions.All(IsPrototypeVariantFreezeFailure);
+        }
+
+        return exception is ArgumentNullException { ParamName: "key" } &&
+               exception.StackTrace?.Contains(
+                   "Robust.Shared.Prototypes.PrototypeManager.KindData.Freeze()",
+                   StringComparison.Ordinal) == true;
+    }
+
+    private static async Task<(RobustIntegrationTest.ServerIntegrationInstance, PoolTestLogHandler)> GenerateServerOnce(
+        PoolSettings settings,
+        TextWriter testOut)
+    {
         var options = new RobustIntegrationTest.ServerIntegrationOptions
         {
             LoadTestAssembly = false,
@@ -128,10 +163,19 @@ public static partial class PoolManager
         };
 
         var server = new RobustIntegrationTest.ServerIntegrationInstance(options);
-        await server.WaitIdleAsync();
-        server.Resolve<ILogManager>().GetSawmill("loc").Level = LogLevel.Error;
-        server.CfgMan.OnValueChanged(RTCVars.FailureLogLevel, value => logHandler.FailureLevel = value, true);
-        return (server, logHandler);
+        try
+        {
+            await server.WaitIdleAsync();
+            server.Resolve<ILogManager>().GetSawmill("loc").Level = LogLevel.Error;
+            server.CfgMan.OnValueChanged(RTCVars.FailureLogLevel, value => logHandler.FailureLevel = value, true);
+            return (server, logHandler);
+        }
+        catch
+        {
+            // The caller cannot dispose a server that failed before it was returned.
+            server.Dispose();
+            throw;
+        }
     }
 
     public static void Startup(params Assembly[] extra)

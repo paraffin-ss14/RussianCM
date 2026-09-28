@@ -15,6 +15,27 @@
     currentLanguage: Yautja
     defaultLanguage: Yautja
   - type: Yautja
+    xenoTackleSuccessChance: 0.75
+    xenoTackleSuccessesRequired: 3
+    xenoTackleExpireAfter: 10
+  - type: YautjaLimbRegeneration
+    requiredSeverAttempts: 2
+    severAttemptWindow: 30
+    regrowDelay: 300
+  - type: TacticalMapTracked
+    trackDead: true
+  - type: YautjaMapTracked
+  - type: TacticalMapIcon
+    icon:
+      sprite: /Textures/_RMC14/Interface/map_blips.rsi
+      state: leader
+  - type: TacticalMapUser
+    actionId: CMUActionYautjaOpenTacticalMap
+    liveUpdate: true
+  - type: UserInterface
+    interfaces:
+      enum.TacticalMapUserUi.Key:
+        type: TacticalMapUserBui
   - type: YautjaHeatResistance
   - type: IgnoreXenoWeedsSlowdown
   - type: Skills

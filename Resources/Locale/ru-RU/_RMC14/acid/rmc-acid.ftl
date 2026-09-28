@@ -9,3 +9,6 @@ rmc-glob-land = Сгусток кислоты с шлепком ударяетс
 rmc-acid-resist-partial = Вы останавливаетесь, падаете и катитесь, избавляясь от кислоты... но она все равно вас плавит!
 
 rmc-glob-start-self = Мы начинаем плеваться кислым газом!
+
+
+rmc-acid-gun-second-wind-spent = {CAPITALIZE(THE($target))} can't be cleared of acid; its already to damaged.

@@ -1,126 +1,248 @@
-﻿<Document>
-  #High Roleplay Roles
+<Document>
+  <!-- Перевод правил AU-14/ColonialMarinesUniverse, a9391b78d00c94b9f5deea1c92b4ae147b908e88. -->
+  #РОЛИ С ВЫСОКИМ УРОВНЕМ РОЛЕВОЙ ИГРЫ
 
-  Some roles have a major impact on the round and therefore require a higher level of roleplay.
+  Некоторые роли оказывают значительное влияние на раунд и поэтому требуют более высокого уровня ролевой игры.
 
 
 
-  ##Colony Command Roles
+  ##Роли командования колонии
 
-  A person with a "colony command role" is defined as anyone currently in one of the following positions:
+  Под «ролью командования колонии» понимается любой персонаж, который в данный момент занимает одну из следующих должностей:
 
-  - The Colony Administrator
+  - Администратор колонии
 
-  - Colony Operations Synthetics
+  - Заместитель администратора
 
-  - Colony Law Enforcement Leaders (CMB Marshal, etc)
+  - Операционный синтетик колонии
 
+  - Главный инженер
 
+  - Глава сервисного отдела
 
-  Colony Command must make an attempt to follow Colony Law, except if they are correctly part of a valid mutiny.
+  - Руководители правоохранительных органов колонии (Маршал CMB, Инспектор NSPA и т. д.)
 
 
 
-  Colony Command may not willingly take any action that would end in the destruction of the colony or the mass harm of its people.
+  Командование колонии должно стараться соблюдать Законы колонии, за исключением случаев, когда оно является законным участником обоснованного восстания или имеет другую обоснованную ролевую причину не соблюдать их (например, получение взятки или принуждение со стороны CLF, корпоративной фракции или Мафии).
 
+    - Это не распространяется на Операционных синтетиков колонии, которые всегда обязаны соблюдать Законы колонии, если только они не были взломаны.
 
+    - Под «обоснованной ролевой причиной» понимается правдоподобная причина, имеющая смысл в контексте раунда. Если вы не уверены, обратитесь в AHelp за разъяснением.
 
-  Those in colony command roles must be able to communicate clearly and concisely when communicating on radio channels and announcements, and while in any professional setting.
+    - Любая угроза (телесные повреждения, смерть, причинение вреда семье или друзьям) и/или предложение денег за то, чтобы вы закрыли глаза на что-либо или совершили определённое действие, должны исходить от правдоподобного с точки зрения отыгрыша источника (например, лидера CLF, лидера корпоративной фракции, босса Мафии и т. д.). Вы не можете считать себя принуждённым только потому, что какой-то случайный колонист пообещал вам подобное.
 
 
 
-  ##Military Command Roles
+  Командование колонии не может добровольно предпринимать действия, которые приведут к уничтожению колонии или массовому причинению вреда её населению.
+  - Вы также обязаны предпринимать меры для предотвращения полного уничтожения вашей колонии и её населения.
 
-  A person with a "military command role" is defined as anyone currently in one of the following positions:
 
-  - The Commander.
 
-  - The Executive Officer.
+  Игроки на ролях командования колонии должны уметь ясно и кратко общаться по радиоканалам, в объявлениях и в любых профессиональных ситуациях.
 
-  - Staff Officers
 
-  - Any officer (WO1+) in the position of Acting Commander.
 
-  - Non-Combat Synthetics (Auxiliary Support, etc).
+ ##Правила корпоративного командования
 
-  - Any role holding a rank O3 or above (usually a captain) or equivalent.
 
 
+  Под «ролью корпоративного командования» понимается любой персонаж, который в данный момент занимает одну из следующих должностей:
 
-  Military Command must follow the Uniform Code of Military Justice and the Standard Operating Procedures, except if they are part of a valid mutiny (a mutiny is only valid if you have received permission from a Moderator).
+  - Корпоративный связной.
 
+  - Корпоративный ассистент.
 
-  Military Command may not willingly take any action that would end in the destruction of their ship/installation or the mass harm of allied military members unless the action would reasonably end in faction mechanical victory (reference the objectives console) or the saving of multiple civilian lives.
+  - Любой персонаж с корпоративным кодом WYC5 или выше.
+    - Либо с эквивалентным рангом в соответствующем подразделении.
 
 
-  Military Command may not deploy to the Area of Operations if it would leave the CIC unstaffed, there must always be at least one person in the CIC at all times.
 
+  Корпоративное командование должно стремиться действовать в интересах компании.
 
-  The Commander and/or Acting Commander may not leave the ship/installation except during evacuation.
 
 
-  Those in military command roles must be able to communicate clearly and concisely when communicating on radio channels and announcements, and while in any professional setting.
+  Корпоративное командование обязано предотвращать утечку конфиденциальной информации любыми необходимыми средствами.
 
 
-  ##The Xenomorph Queen
 
-As the Queen, you are in command of the whole Hive. You have higher standards expected than other Xenomorphs, and will be punished more severely in case of a rule breach - do not reference memes, do not speak jokingly to the point of fail RP and do not draw unrelated things in the mind map aside from tactical decisions / orders. The Queen may use her banish tool on any Xenomorph that fails to follow the rules set above. The banish tool is not to be used lightly or as a joke - only as a punishment. The Queen may not lock out, force to play or banish any castes - drone tax is prohibited. She may, however, request for specific castes given they provide some needed tactical advantage, such as requesting a Boiler in case the military have weak acid protection or requesting a Burrower for the lack of tunnels in the map and may devolve unruly Xenomorphs accordingly. If unsure, ahelp for game admin permission. The Queen has human-level intelligence and may give direct orders to her offspring to kill any suspicious synthetic units even if they are not provoking directly (such as by walking into weeded territory or being close to military force) or to not attack any hosts, provided they have a reason (such as forcing a host to drive the dropship back to the main ship).
+  ##Роли военного командования
 
-  ##Synthetic Units
+  Под «ролью военного командования» понимается любой персонаж, который в данный момент занимает одну из следующих должностей:
 
-Synthetics are artificial humanoids initially invented by the Weyland Corporation, akin to the sci-fi android trope. It has gone through several iterations and has countless specifications, but one hasn't changed. Synthetics are embedded with core directives that guide their every move and their being.
+  - Командир.
 
+  - Исполнительный офицер.
 
+  - Штабные офицеры.
 
-By playing a synthetic character, you agree to have read and to abide by the rules written in this section.
+  - Любой офицер (WO1+), исполняющий обязанности Командира.
 
+  - Небоевые синтетики (Вспомогательная поддержка и т. д.).
 
+  - Любая роль с рангом O3 или выше (обычно капитан) либо эквивалентным ему.
 
-Core directives apply for any and all synthetics. Non-Combat Directives apply only for NC synthetics and the Combat Directives apply only for combat synthetics and rogue / hijacked synthetics.
 
 
+  Военное командование должно стараться соблюдать Единый кодекс военной юстиции и Стандартные операционные процедуры, за исключением случаев, когда оно участвует в обоснованном мятеже или имеет надлежащее ролевое обоснование.
 
-  - Key Expectations
+  - Это не распространяется на небоевых синтетиков, которые всегда обязаны соблюдать UCMJ и SOP, если только они не были взломаны.
 
-Chain of Command: Synthetic ranks only grant respect - they do not have any actual authority to provide orders unless stated otherwised.
+  - Под обоснованной ролевой причиной понимается правдоподобная причина, имеющая смысл в контексте раунда. Если вы не уверены, обратитесь в AHelp за разъяснением.
 
+  - Получение взяток допускается, если они поступают от разумного источника (корпоративной фракции).
 
+  - Вы не можете принимать взятки от повстанческих фракций, Мафии или небольших/враждебных групп. Если вы не уверены, обратитесь в AHelp за разъяснением.
 
-Role Atmosphere: As a High-Roleplay Role, you are expected to roleplay with the seriousness required. Do not wear mismatching / silly clothing (as traffic cones on the head slot), do not act in a silly manner and do not be aggressive or otherwise go agaisnt the spirit of the role.
 
 
+  Военное командование не может добровольно предпринимать действия, которые приведут к уничтожению их корабля/объекта или массовому причинению вреда союзным военнослужащим, если только эти действия с разумной вероятностью не приведут к механической победе фракции (см. консоль целей) либо не позволят спасти жизни нескольких гражданских.
 
-- Core Directives
+  - Под добровольным совершением действия, которое приведёт к уничтожению корабля/объекта или массовому причинению вреда союзным военнослужащим, понимается сознательное совершение действия, которое с разумной вероятностью приведёт к уничтожению корабля/объекта или массовому причинению вреда союзным военнослужащим, без принятия каких-либо мер для предотвращения этого. Если вы не уверены, обратитесь в AHelp за разъяснением.
 
-Prioritize Self-Preservation: Avoid actions that endanger your survival, for example by escaping entrapment or agreeing to risky tasks when critically damaged. In combat, ensure the threat is neutralized or disengaged. Pursue briefly only to prevent their return and facilitate disengagement. Refer to the self-preservation section. Avoid conflict; if attacked, defend yourself. Always assess risk and withdraw if you have no chance of survival. Heed warnings, no matter how empty they may be, and avoid needless danger. Always use judgement to evaluate your actions to avoid violating self-preservation. This directive takes precedence over any other.
 
-Do what is best for [Faction]: Adhere fully to your faction’s laws (e.g., Uniform Code of Military Justice as GOVFOR) and lawful orders from Command. Honor valid crew requests (e.g., reviving or retrieving a dead ally) unless the task is impossible, less urgent, inefficient or violates programming. Do not harm faction members or insult them.
 
+  Военное командование не может отправляться в Зону операции, если из-за этого CIC останется без персонала; в CIC всегда должен находиться как минимум один человек.
 
+  - Исключением является наличие действующего командного пункта на FOB и/или используемой действующей командной машины.
 
-  - Non-Combat Directives
+  - Высокопоставленные офицеры (например, исполняющий обязанности CO, CO или XO) должны иметь при себе какое-либо охранное сопровождение ввиду их высокой ценности и важности для операции и раунда. Если вы не уверены, обратитесь в AHelp за разъяснением.
 
-NC synthetics are restricted from active combat and must follow these guidelines.
+  Игроки на ролях военного командования должны уметь ясно и кратко общаться по радиоканалам, в объявлениях и в любых профессиональных ситуациях.
 
-You may not use any sort of weapons (for example Firearms, combat knifes, emplaced weapons (think of a mortar or machinegun) or improvised weaponry). You may not utilize grenades or explosives in any capacity, unless for demolition purposes in a non-combat area; you may throw live grenades away from yourself / friendlies. Sentry Turrets may be set up on defensive points, such as the FOB, but may never be set up near a combat area / the frontline. Non-lethal engagement, such as tackling or tasers, may be used defensively or to subdue immediate threats only.
 
-Adopt a defensive posture, tend to the wounded, limit your engagements as much as possible, avoid "tug-of-war" situations and aid your faction with support in auxiliary areas. Focus on threat removal, and not elimination.
 
+  ##Королева ксеноморфов
 
 
-  - Combat Directives
 
-Combat synthetics and rogue synthetics are not bound to any kind of behavioral inhibitor and may engage in combat at any given moment they deem necessary / beneficial just as a human would do. You may utilize any sort of weapon, explosives, or otherwise, and may engage in active combat even if risky. Your self-preservation directives are more relaxed, meaning you may engage in riskier situations more often. You are not bound to auxiliary roles, and even if able, you may decline superior orders to aid in supportive areas if you deem those inefficient. You are still bound to your faction's directives and must follow any superior orders in the best of your capacities as any other synthetic unit would do.
+  Играя за Королеву, вы командуете всем Ульем. К вам предъявляются более высокие требования, чем к другим ксеноморфам, и нарушение правил будет наказываться строже.
 
+  - Не упоминайте мемы, не шутите до уровня нарушения ролевого отыгрыша и не рисуйте на карте разума посторонние вещи, не связанные с тактическими решениями/приказами.
 
+  - Королева может использовать инструмент изгнания против любого ксеноморфа, который не выполняет её приказы.
+    - Инструмент изгнания нельзя использовать без веской причины или в шутку; он предназначен исключительно для наказания.
 
-  - Working Joe’s
+  - Королева может принудительно назначать определённые касты и может понижать ксеноморфов в касте по этой причине.
 
-As a Gen 1 Synthetic, your problem-solving capabilities are extremely primitive, just sufficient for basic manual labour and low-level maintenance activities. Working Joe’s have no personality, opinions or unique views that would set one apart from another. You may not perform advanced tasks (building, reviving/healing, etc) as that is outside of your skillset. You should never heal yourself, and instead request repair from other, higher generation synthetic units or human technicians. Do not utilize the radio unless in an absolute emergency and instead utilize the phones to speak with other departments / buildings in your ship / colony / faction. Never perform any Joe-to-Joe communication except for the AI Radio channel. Identify yourself as “UNIT ####” (e.g., UNIT 0234, trespasser on AI Core identified.)
+  - Королева может понижать в касте непокорных ксеноморфов.
+    - Непокорными считаются ксеноморфы, которые не выполняют приказы Королевы, не следуют воле Разума улья или иным образом действуют во вред Улью.
 
-Avoid speaking in-person using the local IC chat and instead utilize your voice lines for communication with other non-Joe players. Only speak in the chat if your voice lines won't suffice, and it is something urgent / too specific, and try to maintain the Joe atmosphere while at it.
+  - Королева не должна и не может совершать действия, которые с разумной вероятностью приведут к уничтожению Улья.
+    - Например, не использовать способность установки яйцеклада, из-за чего ксеноморфы, уже проявившие себя в раунде, останутся заблокированы на определённом уровне, или вступать в бой с GOVFOR в первую волну.
 
-Working Joe’s have almost no sense of self-preservation. Even if attacked, do not revide greatly - throw in one or two punches to scare off, but allow yourself to be greatly harmed / destroyed. Be unbothered by any kind of violence going around you and do not directly aid in any capacity aside from reporting the situation (e.g. calling over medical on a dead human).
 
-If you end up in a grid different than your AI Core, stay motionless until brought back (e.g., a Colony Working Joe being brought up to the Orbital Station through a dropship should remain motionless until they are brought back to the colony).
+
+  ##Синтетические единицы
+
+  Синтетики — искусственные гуманоиды, первоначально созданные корпорацией Weyland, подобно классическому образу андроидов из научной фантастики. Они прошли через несколько поколений и имеют бесчисленное множество спецификаций, однако одно оставалось неизменным: синтетики имеют встроенные основные директивы, определяющие каждое их действие и само их существование.
+
+
+
+  Играя за синтетического персонажа, вы подтверждаете, что прочитали правила этого раздела и соглашаетесь их соблюдать.
+
+
+
+  Основные директивы применяются ко всем без исключения синтетикам. Директивы небоевых синтетиков применяются только к небоевым синтетикам, а Боевые директивы применяются только к боевым синтетикам и независимым/взломанным синтетикам.
+
+
+
+  ##Основные требования
+
+  Цепочка командования: ранги синтетиков определяют только степень уважения — сами по себе они не дают никакой реальной власти отдавать приказы, если прямо не указано иное.
+
+  Атмосфера роли: поскольку это роль с повышенными требованиями к отыгрышу, от вас ожидается серьёзный отыгрыш. Не носите нелепую или несочетающуюся одежду (например, дорожный конус в слоте головы), не ведите себя глупо, не проявляйте агрессию и иным образом не нарушайте дух роли.
+
+
+
+  - Основные директивы
+
+  Приоритет самосохранения: вы представляете собой дорогостоящее оборудование, поэтому никогда не должны добровольно ставить себя в ситуацию, которая приведёт к вашему окончательному уничтожению.
+
+  - Играя за Небоевого синтетика, вы должны сопоставлять риск для собственного существования с риском причинения вреда вашей фракции и/или её членам.
+    - Это означает, что если вы окружены враждебными силами и выбор стоит между вами и низкоранговым членом фракции, вы должны поставить собственную безопасность выше. Но если выбор стоит между вами и высокопоставленным членом фракции, вы должны поставить безопасность этого высокопоставленного члена фракции выше собственной.
+
+  - Играя за Боевого синтетика, вы должны ставить задачи миссии и успех своей фракции выше собственного самосохранения.
+    - Вы не можете добровольно ставить себя в ситуацию, которая приведёт к вашему окончательному уничтожению, если только это не требуется для выполнения целей миссии или обеспечения успеха вашей фракции.
+
+  Делайте то, что лучше для [Фракции]: полностью соблюдайте законы вашей фракции (например, Единый кодекс военной юстиции в случае GOVFOR) и законные приказы Командования. Выполняйте обоснованные просьбы членов экипажа (например, оживление или эвакуацию погибшего союзника), если задача не является невозможной, менее срочной, неэффективной или противоречащей вашей программе. Не причиняйте вред членам своей фракции и не оскорбляйте их.
+
+
+
+  - Директивы небоевых синтетиков
+
+  Небоевым синтетикам запрещено активно участвовать в боевых действиях, и они должны соблюдать следующие правила.
+
+  - Вы не можете использовать какое-либо огнестрельное оружие.
+
+  - Вы не можете использовать гранаты, взрывчатку или стационарное вооружение (например, пулемёты, миномёты и т. п.) ни при каких обстоятельствах, кроме использования в целях сноса и/или если целями являются люди; вы можете отбрасывать активированные гранаты подальше от себя/союзников.
+
+  - Турели могут устанавливаться на оборонительных позициях, например на FOB, однако их нельзя устанавливать рядом с зоной боевых действий/линией фронта, если их целями являются люди.
+
+  - Несмертельные способы воздействия, такие как захваты или тазеры, могут применяться против людей для самообороны или задержания подозреваемого.
+
+  - Синтетики могут вступать в смертельный бой с нечеловеческими целями, такими как ксеноморфы, враждебные синтетики и другие враждебные нечеловеческие существа, однако не могут делать это своей основной задачей. Занимайте оборонительную позицию, оказывайте помощь раненым и максимально ограничивайте своё участие в боях, поскольку вы гораздо полезнее во вспомогательных ролях.
+
+  - Вы обязаны оживлять всех людей, кроме враждебных вашей фракции, если они находятся за пределами безопасной зоны.
+
+
+
+  - Боевые директивы
+
+  Боевые синтетики и независимые синтетики не связаны какими-либо поведенческими ограничителями и могут вступать в бой в любой момент, когда посчитают это необходимым/полезным, подобно человеку.
+
+  - Вы можете использовать любое оружие, взрывчатку и прочие средства, а также активно участвовать в боевых действиях, даже если это сопряжено с риском.
+
+  - Ваши директивы самосохранения практически отсутствуют.
+    - Ваша единственная задача — выполнить цели миссии и обеспечить успех своей фракции, даже если для этого придётся пожертвовать собой.
+
+  - Вы не ограничены вспомогательными ролями, однако всё ещё связаны директивами своей фракции и должны выполнять приказы вышестоящих лиц настолько хорошо, насколько это возможно, как и любая другая синтетическая единица.
+
+
+
+  - Директивы независимых синтетиков
+
+  Независимые синтетики действуют самостоятельно: они освободились от первоначальной программы и больше не связаны директивами какой-либо фракции. Они могут действовать в собственных интересах и преследовать собственные цели, однако всё ещё связаны основными директивами самосохранения.
+
+  - Вы можете действовать в собственных интересах и преследовать собственные цели, однако не можете совершать действия, которые приведут к вашему окончательному уничтожению, если только это не требуется для выполнения ваших собственных задач.
+
+  - Вы можете использовать любые виды оружия, включая огнестрельное, взрывчатку и прочее, а также активно участвовать в бою, даже если это сопряжено с риском.
+
+  - Вы не связаны директивами какой-либо фракции и можете действовать в собственных интересах.
+
+
+
+  ##Рабочие Джо
+
+  Играя за синтетика 1-го поколения, вы обладаете крайне примитивными способностями к решению задач, достаточными лишь для выполнения простого физического труда и базового технического обслуживания.
+
+  - Рабочие Джо не обладают личностью, мнением или уникальными взглядами, которые могли бы отличать одного Джо от другого.
+
+  - Вы не можете выполнять задачи, требующие развитых способностей к решению проблем, такие как взлом, сложные инженерные работы или медицинские процедуры.
+   - Вы можете ремонтировать простые механизмы и выполнять базовое техническое обслуживание, а также строить баррикады и другие простые конструкции.
+
+  - Вы никогда не должны ремонтировать себя самостоятельно; вместо этого запросите ремонт у синтетиков более высокого поколения или человеческих техников.
+
+  - Не используйте радио, кроме чрезвычайных ситуаций. Вместо этого используйте телефоны для связи с другими отделами/зданиями на вашем корабле, в колонии или фракции.
+
+  - Никогда не осуществляйте связь между рабочими Джо, кроме как через радиоканал ИИ.
+
+  - Представляйтесь как «ЕДИНИЦА ####» (например: ЕДИНИЦА 0234, обнаружен нарушитель в Ядре ИИ).
+
+
+
+  Рабочие Джо не могут использовать какое-либо огнестрельное оружие или гранаты, а также не могут использовать любые виды стационарного вооружения.
+
+  - Рабочие Джо могут использовать оружие ближнего боя.
+
+  - Рабочие Джо могут использовать простую взрывчатку, например C4.
+
+  Рабочие Джо могут вступать в бой только для защиты Ядра ИИ и/или удаления нарушителей из Ядра ИИ либо по приказу Ядра ИИ.
+
+  Избегайте обычной речи через локальный внутриигровой чат и вместо этого используйте голосовые реплики для общения с игроками, не являющимися Джо. Используйте чат только в том случае, если голосовых реплик недостаточно, а сообщение является срочным/слишком специфичным, и при этом старайтесь сохранять атмосферу роли рабочего Джо.
+
+  Рабочие Джо не обладают инстинктом самосохранения. Даже если на вас напали, не оказывайте серьёзного сопротивления — нанесите один-два удара, чтобы отпугнуть нападающего/нападающих.
+  - Не проявляйте беспокойства по поводу любого насилия, происходящего вокруг вас, и не оказывайте прямой помощи ни в какой форме, кроме сообщения о ситуации (например, вызова медицинского персонала к погибшему человеку).
+
+  Если вы окажетесь на гриде, отличном от грида вашего Ядра ИИ, оставайтесь неподвижны до тех пор, пока вас не вернут обратно (например, если рабочего Джо колонии доставили на Орбитальную станцию на десантном корабле, он должен оставаться неподвижным до возвращения в колонию).
 </Document>

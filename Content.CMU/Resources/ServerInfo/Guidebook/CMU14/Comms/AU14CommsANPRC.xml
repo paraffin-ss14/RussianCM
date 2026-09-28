@@ -1,752 +1,510 @@
 <Document>
-  # AN/PRC-117G Radio
+  # Радиостанция AN/PRC-117G
 
-  The AN/PRC-117G is a manpack radio used by trained radio operators. It can store several nets, transmit over long distances, and relay nearby friendly headset traffic while powered.
+  AN/PRC-117G — носимая ранцевая радиостанция для подготовленных радиооператоров. Она хранит несколько радиосетей, передаёт на большие расстояния и при включённом питании ретранслирует трафик находящихся рядом дружественных гарнитур.
 
   <Box>
     <GuideEntityEmbed Entity="ANPRC117GRadio" Caption="AN/PRC-117G"/>
-    <GuideEntityEmbed Entity="ANPRCFillCardGOVFOR" Caption="COMSEC Fill Card"/>
+    <GuideEntityEmbed Entity="ANPRCFillCardGOVFOR" Caption="Карта ключей COMSEC"/>
   </Box>
 
-  ## Quick Setup
+  ## Быстрая настройка
 
-  Before leaving the staging area:
+  Перед выходом из зоны подготовки:
 
-  - Wear the radio in your [bold]back slot[/bold].
-  - Alt-click the radio or open its verb menu.
-  - Select [bold]Open Radio Panel[/bold].
-  - Select [bold]+ ADD NET[/bold].
-  - Give the slot a short label, such as [bold]CMD[/bold].
-  - Select [bold]TUNE[/bold].
-  - Choose a named net from the [bold]NET[/bold] tab, or enter a direct frequency.
-  - Select the slot row to make it active.
-  - Insert a matching COMSEC fill card when required.
-  - Check the callsign shown on the radio panel.
+  - Наденьте радиостанцию в [bold]слот спины[/bold].
+  - Нажмите Alt+ЛКМ по радиостанции либо откройте её меню действий.
+  - Выберите [bold]Open Radio Panel[/bold].
+  - Выберите [bold]+ ADD NET[/bold].
+  - Задайте слоту короткую метку, например [bold]CMD[/bold].
+  - Выберите [bold]TUNE[/bold].
+  - На вкладке [bold]NET[/bold] выберите именованную сеть либо введите прямую частоту.
+  - Нажмите на строку слота, чтобы сделать его активным.
+  - При необходимости вставьте соответствующую карту ключей COMSEC.
+  - Проверьте позывной, показанный на панели радиостанции.
 
-  Transmit through the active slot with:
+  Передача через активный слот:
 
-  [color=#a4885c]:r Message here.[/color]
+  [color=#a4885c]:r Текст сообщения.[/color]
 
-  A worn radio normally transmits using the wearer's assigned callsign. If no callsign is assigned, it transmits as [bold]UNKNOWN STATION[/bold].
+  Надетая радиостанция обычно использует назначенный носителю позывной. Если позывной не назначен, передача идёт как [bold]НЕИЗВЕСТНАЯ СТАНЦИЯ[/bold].
 
-  ## Operator Access
+  ## Допуск оператора
 
-  Only trained operators can open the radio panel and transmit directly through the radio.
+  Открывать панель радиостанции и передавать непосредственно через неё могут только подготовленные операторы.
 
-  A worn radio relays traffic only when it is carried by a trained operator. A deployed retransmission station continues relaying without a wearer.
+  Надетая радиостанция ретранслирует трафик только если её несёт подготовленный оператор. Развёрнутая ретрансляционная станция продолжает работать без носителя.
 
-  ### GOVFOR and OPFOR trained roles
+  ### Подготовленные роли GOVFOR и OPFOR
 
-  Both regular factions field the same set of trained roles.
+  Обе регулярные фракции используют одинаковый список подготовленных ролей:
 
-  - Commander
-  - Adjutant
-  - Staff officers
-  - Engineering officers
-  - Intelligence officers
-  - Synthetics
-  - Squad leaders
-  - Fireteam Leaders
-  - Radio Traffic Operators
+  - Командир.
+  - Адъютант.
+  - Штабные офицеры.
+  - Инженерные офицеры.
+  - Офицеры разведки.
+  - Синтетики.
+  - Командиры отрядов.
+  - Командиры боевых групп.
+  - Операторы радиосвязи.
 
-  ### CLF trained roles
+  ### Подготовленные роли CLF
 
-  - Cell Leader
-  - Radio Operator
+  - Лидер ячейки.
+  - Радист.
 
-  An untrained character can also be trained in the field by reading a [bold]field radio operator's pamphlet[/bold]. This is permanent and works regardless of role.
+  Неподготовленный персонаж также может обучиться в полевых условиях, прочитав [bold]памятку полевого радиооператора[/bold]. Обучение постоянно и не зависит от роли.
 
-  Nearby headset users do not need radio training. They only need to be within range of a powered radio carrying their net.
+  Находящимся рядом пользователям гарнитур специальная радиоподготовка не требуется. Им достаточно находиться в радиусе включённой радиостанции, несущей их сеть.
 
-  ## Handset
+  ## Телефонная трубка
 
-  Any nearby person can use the radio's handset without radio training.
+  Любой находящийся рядом человек может воспользоваться трубкой радиостанции без подготовки радиста.
 
-  Alt-click the [bold]wearer[/bold], or a deployed radio, and select [bold]Take Handset[/bold]. The handset transmits over the radio's active slot with [color=#a4885c]:r[/color].
+  Нажмите Alt+ЛКМ по [bold]носителю[/bold] или развёрнутой радиостанции и выберите [bold]Take Handset[/bold]. Трубка работает через активный слот радиостанции с использованием [color=#a4885c]:r[/color].
 
-  The handset:
+  Трубка:
 
-  - Reaches about two and a half tiles.
-  - Disconnects when the user moves out of range.
-  - Uses the handset user's own callsign.
-  - Can be used by one person at a time.
+  - Работает примерно в радиусе двух с половиной тайлов.
+  - Отключается, если пользователь выходит из зоны действия.
+  - Использует собственный позывной пользователя трубки.
+  - Одновременно может использоваться только одним человеком.
 
-  Alt-click again to return the handset.
+  Нажмите Alt+ЛКМ повторно, чтобы вернуть трубку.
 
-  A squad leader can use an attached Fireteam Leader's handset to reach a command net that is not available through the squad leader's headset.
+  Командир отряда может воспользоваться трубкой прикреплённого Командира боевой группы, чтобы выйти в командную сеть, отсутствующую в гарнитуре командира отряда.
 
-  ## Slots
+  ## Слоты
 
-  The radio can store up to [bold]four[/bold] slots.
+  Радиостанция может хранить до [bold]четырёх[/bold] слотов.
 
-  Each slot can contain a named net or a direct frequency. Slot labels are only shown on that radio and do not change the selected net.
+  Каждый слот может содержать именованную сеть либо прямую частоту. Метка слота отображается только на конкретной радиостанции и сама по себе не изменяет выбранную сеть.
 
-  Select a slot row to make it active. [color=#a4885c]:r[/color] always transmits through the active slot.
+  Нажмите на строку слота, чтобы сделать его активным. [color=#a4885c]:r[/color] всегда передаёт через активный слот.
 
   <Table Columns="3" MinForcedColumnWidth="80">
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Control[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Function[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Details[/bold]</Box>
-    </ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Элемент[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Функция[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Подробности[/bold]</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]NET[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Select a named faction net.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Used for normal net setup.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]NET[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Выбор именованной сети фракции.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Используется для обычной настройки сети.</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]FREQ[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Enter a direct frequency.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Can also be used to monitor enemy frequencies.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]FREQ[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Ввод частоты напрямую.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Также позволяет прослушивать частоты противника.</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]CLEAR[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Remove the selected net or frequency.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Keeps the slot and its label.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]CLEAR[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Удаление выбранной сети или частоты.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Слот и его метка сохраняются.</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]DEL[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Delete the slot.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Another slot becomes active when necessary.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]DEL[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Удаление слота.</Box></ColorBox>
+    <ColorBox><Box Margin="4">При необходимости активным становится другой слот.</Box></ColorBox>
   </Table>
 
-  Frequencies can be entered with or without a decimal point.
+  Частоты можно вводить с десятичной точкой или без неё.
 
-  [color=#a4885c]1606[/color] and [color=#a4885c]1.606[/color] select the same frequency.
+  [color=#a4885c]1606[/color] и [color=#a4885c]1.606[/color] задают одну и ту же частоту.
 
-  ## Callsigns
+  ## Позывные
 
-  Faction radio traffic is identified by callsign.
+  Радиообмен фракции идентифицируется позывными.
 
-  The sender's character name and role are not transmitted over headsets or manpack radios. Friendly and hostile listeners see the sender's callsign instead.
+  Имя и роль отправителя не передаются через гарнитуры или ранцевые радиостанции. Дружественные и враждебные слушатели вместо этого видят позывной.
 
-  Face-to-face speech is unaffected.
+  Обычная речь лицом к лицу не меняется.
 
-  Faction members receive callsigns automatically when they deploy.
+  Участники фракции автоматически получают позывные при развёртывании.
 
   <Table Columns="2" MinForcedColumnWidth="100">
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Example[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Station[/bold]</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">HAVOC 6</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Commanding officer</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">HAVOC 5</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Executive officer or second-in-command</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">HAVOC 7</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Senior non-commissioned officer</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">HAVOC ROMEO</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Command radio operator</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">HAVOC OPS</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Staff officers</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">SABRE ACTUAL</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Sabre (Alpha) squad leader</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">SABRE ROMEO</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Radio operator attached to Sabre (Alpha)</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">SABRE 1-1 ... 1-N</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Sabre (Alpha) squad members</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]Позывной[/bold]</Box></ColorBox><ColorBox><Box Margin="4">[bold]Начальное назначение[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">ХАОС 01</Box></ColorBox><ColorBox><Box Margin="4">Командир взвода.</Box></ColorBox>
+    <ColorBox><Box Margin="4">ХАОС 02</Box></ColorBox><ColorBox><Box Margin="4">Заместитель командира.</Box></ColorBox>
+    <ColorBox><Box Margin="4">ХАОС 03</Box></ColorBox><ColorBox><Box Margin="4">Старший сержант.</Box></ColorBox>
+    <ColorBox><Box Margin="4">ХАОС 04</Box></ColorBox><ColorBox><Box Margin="4">Радист командной группы.</Box></ColorBox>
+    <ColorBox><Box Margin="4">ХАОС 05</Box></ColorBox><ColorBox><Box Margin="4">Первый назначенный штабной офицер.</Box></ColorBox>
+    <ColorBox><Box Margin="4">САБЛЯ 01</Box></ColorBox><ColorBox><Box Margin="4">Командир отряда Альфа.</Box></ColorBox>
+    <ColorBox><Box Margin="4">САБЛЯ 04</Box></ColorBox><ColorBox><Box Margin="4">Радист отряда Альфа.</Box></ColorBox>
+    <ColorBox><Box Margin="4">САБЛЯ 10, САБЛЯ 11…</Box></ColorBox><ColorBox><Box Margin="4">Остальные станции отряда Альфа.</Box></ColorBox>
+    <ColorBox><Box Margin="4">СОКОЛ 01 / СОКОЛ 02</Box></ColorBox><ColorBox><Box Margin="4">Пилот / борттехник.</Box></ColorBox>
   </Table>
 
-  [bold]ACTUAL[/bold] identifies the person in charge speaking personally rather than an operator transmitting on their behalf.
+  Это игровые начальные назначения, а не таблица должностных позывных из военного руководства. При занятости предпочтительного номера выдаётся свободный номер начиная с 10. Проверяйте актуальные назначения в справочнике. Номер не кодирует огневую группу.
 
-  Squad leaders answer as their element's ACTUAL station, for example [bold]SABRE ACTUAL[/bold]. At platoon level, [bold]HAVOC 6 ACTUAL[/bold] means the commander has taken the handset personally instead of the RTO.
+  ### Справочник радиосети
 
-  ### Comms Net Directory
+  [bold]Справочник радиосети[/bold] показывает, какой человек назначен на каждый позывной. Он доступен на ноутбуках командного пункта и консолях Overwatch.
 
-  The [bold]Comms Net Directory[/bold] shows which person is assigned to each callsign. It is available on command-post laptops and overwatch consoles.
+  Уполномоченный персонал связи может:
 
-  Authorized radio personnel can:
+  - Переименовывать словесные обозначения подразделений.
+  - Переназначать номера станций.
+  - Просматривать текущие назначения позывных.
 
-  - Rename element words.
-  - Reassign individual suffixes.
-  - Review current callsign assignments.
+  Надетая AN/PRC обычно следует позывному владельца. На панели это отображается как [bold]АВТО[/bold].
 
-  A worn AN/PRC normally follows the wearer's assigned callsign. The panel displays this as [bold]AUTO[/bold].
+  Позывной радиостанции автоматически обновляется, когда:
 
-  The radio updates automatically when:
+  - Радиостанцию передают другому человеку.
+  - Меняется позывной носителя.
+  - Носитель переходит в другой отряд.
 
-  - It is given to another person.
-  - The wearer's callsign is changed.
-  - The wearer changes squads.
+  ### Переопределение позывного
 
-  ### Callsign override
+  На панели можно задать фиксированный позывной станции.
 
-  A fixed station callsign can be set from the radio panel.
+  - Выберите позывной в меню [bold]ШАБЛОНЫ[/bold] либо введите его вручную.
+  - Ручной позывной может содержать до 16 символов.
+  - Нажмите [bold]ЗАДАТЬ[/bold], чтобы применить переопределение.
+  - Очистите поле и нажмите [bold]ЗАДАТЬ[/bold], чтобы снять его.
 
-  - Select a callsign from the [bold]PRESETS[/bold] menu, or enter one manually.
-  - Manual callsigns can contain up to 16 characters.
-  - Select [bold]SET[/bold] to apply the override.
-  - Clear the field and select [bold]SET[/bold] to remove it.
+  Фиксированные позывные можно использовать для командных пунктов, ретрансляционных позиций и других постоянных станций.
 
-  Fixed callsigns can be used for command posts, retransmission sites, or other permanent stations.
+  Формат сообщений, процедурные слова и примеры см. в разделе [textlink="Регламент радиообмена" link="AU14CommsVoiceProcedure"].
 
-  For message format, prowords, and examples, see [textlink="Voice Procedure" link="AU14CommsVoiceProcedure"].
+  ## Прямые частоты
 
-  ## Direct Frequencies
+  Слот с частотой без именованной сети называется слотом прямой частоты.
 
-  A slot containing a frequency without a named net is a direct-frequency slot.
+  [textlink="Настроенная гарнитура" link="AU14CommsHeadsets"] может работать на той же частоте с помощью [color=#a4885c]:x[/color].
 
-  A [textlink="tuned headset" link="AU14CommsHeadsets"] can communicate on the same frequency with [color=#a4885c]:x[/color].
+  Без ретранслятора:
 
-  Without a relay:
+  - Сигнал чистый в пределах [bold]30 тайлов[/bold].
+  - До [bold]50 тайлов[/bold] сигнал может слегка ухудшаться.
+  - За пределами [bold]50 тайлов[/bold] сигнал не принимается.
 
-  - Traffic is clear within [bold]30 tiles[/bold].
-  - Traffic may be lightly degraded up to [bold]50 tiles[/bold].
-  - Traffic is not received beyond [bold]50 tiles[/bold].
+  При наличии включённой AN/PRC, несущей эту частоту:
 
-  With a powered AN/PRC carrying the frequency:
+  - Радиостанция ретранслирует трафик между находящимися рядом пользователями.
+  - Оба пользователя должны находиться в пределах [bold]50 тайлов[/bold] от радиостанции.
 
-  - The radio relays traffic between nearby users.
-  - Both users must be within [bold]50 tiles[/bold] of the radio.
+  Используйте [color=#a4885c]:r[/color], если на радиостанции активен слот прямой частоты.
 
-  Use [color=#a4885c]:r[/color] when the direct-frequency slot is active on the radio.
+  Используйте [color=#a4885c]:x[/color] на настроенной гарнитуре.
 
-  Use [color=#a4885c]:x[/color] from a tuned headset.
+  ## Режимы работы
 
-  ## Operating Modes
-
-  Select [bold]MODE[/bold] to cycle the radio's operating mode.
+  Нажмите [bold]MODE[/bold], чтобы переключить режим работы радиостанции.
 
   <Table Columns="4" MinForcedColumnWidth="75">
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Mode[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Purpose[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Benefits[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Limitations[/bold]</Box>
-    </ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Режим[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Назначение[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Преимущества[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Ограничения[/bold]</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]FH[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Frequency-hopping traffic.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Reduces jamming by one tier.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Uses 1.5× battery and creates a small direction-finding signature.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]FH[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Связь с перестройкой частоты.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Снижает уровень глушения на одну ступень.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Расходует 1,5× заряда и создаёт небольшую сигнатуру радиопеленгации.</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]SC[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Normal secured traffic.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Efficient. Secured traffic creates no direction-finding signature.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Provides no jamming resistance.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]SC[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Обычная защищённая связь.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Экономичен. Защищённый трафик не создаёт сигнатуру радиопеленгации.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Не защищает от глушения.</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]CT[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Cipher traffic between AN/PRC radios.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Hidden and unreadable without matching fill. No direction-finding signature.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Requires fill. Standard headsets cannot receive it.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]CT[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Шифрованная связь между AN/PRC.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Скрыта и нечитаема без совпадающего ключа. Не создаёт сигнатуру радиопеленгации.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Требует ключ. Обычные гарнитуры не принимают этот трафик.</Box></ColorBox>
 
-    <ColorBox>
-      <Box Margin="4">[bold]PT[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Plain-text broadcast.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Uses 0.5× battery.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Readable by any compatible receiver and creates the largest direction-finding risk.</Box>
-    </ColorBox>
+    <ColorBox><Box Margin="4">[bold]PT[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Передача открытым текстом.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Расходует 0,5× заряда.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Читается любым совместимым приёмником и создаёт наибольший риск радиопеленгации.</Box></ColorBox>
   </Table>
 
-  ## Jamming
+  ## Радиоэлектронное подавление
 
-  FH reduces jamming by one tier.
+  Режим FH снижает уровень глушения на одну ступень:
 
-  - Heavy jamming becomes medium.
-  - Medium jamming becomes light.
-  - Light jamming is ignored.
+  - Сильное глушение становится средним.
+  - Среднее становится лёгким.
+  - Лёгкое игнорируется.
 
-  Unlike a normal headset, the AN/PRC can transmit while inside a jammer field. The message may be degraded instead of being blocked completely.
+  В отличие от обычной гарнитуры, AN/PRC может передавать внутри поля помех. Сообщение может ухудшиться, но не обязательно будет полностью заблокировано.
 
-  ## MON, SCAN, and SQL
+  ## MON, SCAN и SQL
 
   ### MON
 
-  [bold]MON[/bold] enables receive-only monitoring.
+  [bold]MON[/bold] включает приём без передачи.
 
-  While MON is enabled:
+  Пока MON включён:
 
-  - The radio receives traffic on its loaded nets.
-  - [color=#a4885c]:r[/color] transmission is blocked.
-  - Headset channel keys remain usable.
+  - Радиостанция принимает трафик загруженных сетей.
+  - Передача через [color=#a4885c]:r[/color] блокируется.
+  - Клавиши каналов гарнитуры продолжают работать.
 
   ### SCAN
 
-  [bold]SCAN[/bold] listens to all loaded nets.
+  [bold]SCAN[/bold] прослушивает все загруженные сети.
 
-  When traffic is received, the radio changes its active slot to the slot that received the message. It does not automatically return to the previous slot.
+  При получении сообщения радиостанция переключает активный слот на тот, который его принял. Автоматического возврата к предыдущему слоту нет.
 
   ### SQL
 
-  [bold]SQL[/bold] controls squelch. Squelch filters degraded signals and static, but does not block clear traffic.
+  [bold]SQL[/bold] управляет шумоподавлением. Оно фильтрует ухудшенные сигналы и статический шум, но не блокирует чистый трафик.
 
   <Table Columns="2" MinForcedColumnWidth="90">
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]SQL[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Filtering[/bold]</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]0[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Passes all traffic, including heavy static.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]1[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Blocks heavy static.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]2[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Blocks medium jammer garble.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]3[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Default. Blocks normal jammer garble.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]4[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Maximum filtering. Weak relay traffic may also be suppressed.</Box>
-    </ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]SQL[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Фильтрация[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]0[/bold]</Box></ColorBox><ColorBox><Box Margin="4">Пропускает весь трафик, включая сильный шум.</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]1[/bold]</Box></ColorBox><ColorBox><Box Margin="4">Блокирует сильный статический шум.</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]2[/bold]</Box></ColorBox><ColorBox><Box Margin="4">Блокирует среднее искажение от глушения.</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]3[/bold]</Box></ColorBox><ColorBox><Box Margin="4">Значение по умолчанию. Блокирует обычное искажение от глушения.</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]4[/bold]</Box></ColorBox><ColorBox><Box Margin="4">Максимальная фильтрация. Может подавлять и слабый ретранслированный трафик.</Box></ColorBox>
   </Table>
 
-  Lowering SQL allows more degraded traffic to pass through.
+  Чем ниже SQL, тем больше ухудшенного трафика проходит.
 
-  ## COMSEC Fill
+  ## Ключи COMSEC
 
-  COMSEC fill is stored on a physical card inserted into the radio.
+  Ключи COMSEC хранятся на физической карте, вставляемой в радиостанцию.
 
-  The radio accepts one fill card at a time. The COMSEC panel displays [bold]SECURED[/bold] when the loaded card matches the traffic being used.
+  Одновременно принимается одна карта. Панель COMSEC показывает [bold]SECURED[/bold], когда загруженная карта соответствует используемому трафику.
 
-  Faction headsets contain their own net keys. The AN/PRC requires a matching fill card to participate securely.
+  Гарнитуры фракции содержат собственные сетевые ключи. AN/PRC для защищённой работы требуется соответствующая карта.
 
-  Transmitting on a secured faction net without matching fill:
+  Передача в защищённой сети фракции без соответствующего ключа:
 
-  - Displays a warning.
-  - Still sends the message.
-  - Sends the message in the clear.
+  - Показывает предупреждение.
+  - Всё равно отправляет сообщение.
+  - Передаёт сообщение открытым текстом.
 
-  A radio can accept another faction's fill card. A current captured card allows compatible secured traffic from that faction to be read.
+  Радиостанция может принять карту другой фракции. Захваченная актуальная карта позволяет читать совместимый защищённый трафик этой фракции.
 
-  ## ZEROIZE, DESTROY, and RECRYPTO
+  ## ZEROIZE, DESTROY и RECRYPTO
 
   ### ZEROIZE
 
-  [bold]ZEROIZE[/bold] ejects the loaded fill card.
+  [bold]ZEROIZE[/bold] извлекает загруженную карту ключей.
 
-  The card is placed in a free hand. If no hand is available, it is dropped nearby.
+  Карта помещается в свободную руку. Если свободной руки нет, она падает рядом.
 
   ### DESTROY
 
-  [bold]DESTROY[/bold] permanently removes the loaded fill card.
+  [bold]DESTROY[/bold] безвозвратно уничтожает загруженную карту.
 
   ### RECRYPTO
 
-  [bold]RECRYPTO[/bold] advances the active fill generation for the card's faction.
+  [bold]RECRYPTO[/bold] переводит фракцию на следующее поколение активных ключей.
 
-  Older cards from that faction become [bold]STALE[/bold], including captured cards.
+  Все более старые карты этой фракции становятся [bold]STALE[/bold], включая захваченные.
 
-  A stale card:
+  Устаревшая карта:
 
-  - Remains identifiable.
-  - Cannot secure current traffic.
-  - Cannot decode current secured traffic.
-  - Is marked [bold]STALE[/bold] when examined or viewed in the radio panel.
+  - Остаётся опознаваемой.
+  - Не может защищать текущий трафик.
+  - Не может расшифровывать текущий защищённый трафик.
+  - Помечается [bold]STALE[/bold] при осмотре или на панели радиостанции.
 
-  Newly issued cards use the faction's current generation. Replacement cards are obtained through the normal supply system.
+  Новые карты выдаются уже с текущим поколением ключей. Замены получают через обычную систему снабжения.
 
-  ## Transmit Power
+  ## Мощность передачи
 
-  Select [bold]TX[/bold] to change transmit power.
+  Нажмите [bold]TX[/bold], чтобы изменить мощность передатчика.
 
   <Table Columns="4" MinForcedColumnWidth="75">
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Power[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Relay range[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Battery use[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]DF signature[/bold]</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]LO[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">60% of standard range.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Half.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Half.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]MED[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Standard range.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Standard.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Standard.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">[bold]HI[/bold]</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Approximately 150% of standard range.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Double.</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Double.</Box>
-    </ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Мощность[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Дальность ретрансляции[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Расход заряда[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Сигнатура пеленгации[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]LO[/bold]</Box></ColorBox><ColorBox><Box Margin="4">60% стандартной дальности.</Box></ColorBox><ColorBox><Box Margin="4">Половина.</Box></ColorBox><ColorBox><Box Margin="4">Половина.</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]MED[/bold]</Box></ColorBox><ColorBox><Box Margin="4">Стандартная дальность.</Box></ColorBox><ColorBox><Box Margin="4">Стандартный.</Box></ColorBox><ColorBox><Box Margin="4">Стандартная.</Box></ColorBox>
+    <ColorBox><Box Margin="4">[bold]HI[/bold]</Box></ColorBox><ColorBox><Box Margin="4">Около 150% стандартной дальности.</Box></ColorBox><ColorBox><Box Margin="4">Двойной.</Box></ColorBox><ColorBox><Box Margin="4">Двойная.</Box></ColorBox>
   </Table>
 
-  ## Direction Finding
+  ## Радиопеленгация
 
-  Enemy electronic-warfare equipment can locate transmissions that create a direction-finding signature.
+  Средства радиоэлектронной разведки противника могут обнаруживать передачи, создающие сигнатуру радиопеленгации.
 
-  A signature can be produced by:
+  Сигнатуру создают:
 
-  - PT mode.
-  - Faction-net traffic sent without matching fill.
-  - FH mode, including secured FH traffic.
-  - Higher transmit power.
-  - Repeated transmissions from the same location.
-  - Transmitting near enemy jamming.
+  - Режим PT.
+  - Трафик фракционной сети без соответствующего ключа.
+  - Режим FH, включая защищённый FH-трафик.
+  - Высокая мощность передачи.
+  - Повторные передачи из одного места.
+  - Передача рядом с вражеским глушением.
 
-  Secured SC and CT traffic do not create a direction-finding signature.
+  Защищённый SC- и CT-трафик сигнатуру радиопеленгации не создаёт.
 
-  ## Radio Check
+  ## Проверка связи
 
-  Select [bold]RADIO CHECK[/bold] to test coverage on the active net.
+  Нажмите [bold]ПРОВЕРКА СВЯЗИ[/bold], чтобы проверить покрытие активной сети.
 
-  The radio transmits:
+  Радиостанция передаст:
 
-  [bold]RADIO CHECK, HOW COPY, OVER[/bold]
+  [bold]ВСЕМ СТАНЦИЯМ, Я САБЛЯ 04, ПРОВЕРКА СВЯЗИ, ПРИЁМ[/bold]
 
-  The operator receives a private report listing stations in clear or degraded coverage. Every station on the net counts: other packs, headsets, and clipped earpieces alike.
+  Оператор получит личный отчёт со станциями, которые принимают сеть чисто или с ухудшением. Учитываются все станции: ранцевые радиостанции, гарнитуры и закреплённые скрытые наушники.
 
-  When performed inside enemy jamming, the report also includes a bearing to the strongest jammer.
+  Если проверка выполняется внутри зоны вражеского глушения, отчёт также содержит направление на самый мощный источник помех.
 
-  ## Retransmission Stations
+  ## Ретрансляционные станции
 
-  A trained operator can deploy a radio with [bold]Set Up Retrans[/bold].
+  Подготовленный оператор может развернуть радиостанцию через [bold]Set Up Retrans[/bold].
 
-  A retransmission station:
+  Развёрнутая ретрансляционная станция:
 
-  - Relays its loaded faction nets.
-  - Continues recording traffic.
-  - Consumes battery power.
-  - Retains its presets.
-  - Retains its fill card.
-  - Allows nearby users to take its handset.
+  - Ретранслирует загруженные фракционные сети.
+  - Продолжает записывать трафик.
+  - Расходует заряд аккумулятора.
+  - Сохраняет предустановки.
+  - Сохраняет карту ключей.
+  - Позволяет находящимся рядом пользователям брать телефонную трубку.
 
-  Any user can select [bold]Pack Up Radio[/bold], including hostile personnel.
+  Любой пользователь, включая противника, может выбрать [bold]Pack Up Radio[/bold].
 
-  A captured retransmission station can therefore provide access to its radio, handset, and loaded fill card.
+  Поэтому захваченная ретрансляционная станция может дать противнику доступ к радиостанции, трубке и загруженной карте ключей.
 
-  ## Fixed Infrastructure
+  ## Стационарная инфраструктура
 
-  Powered shipboard [bold]communications arrays[/bold] anchor faction nets across the ship, including every deck.
+  Включённые корабельные [bold]коммуникационные массивы[/bold] обеспечивают работу фракционных сетей по всему кораблю, включая все палубы.
 
-  Command-post [bold]antenna masts[/bold] provide local coverage without electrical power. Masts, worn radios, and retransmission stations reach one level above or below their own; only an array covers a whole site vertically.
+  [bold]Антенные мачты[/bold] командных пунктов обеспечивают локальное покрытие без электрического питания. Мачты, носимые радиостанции и ретрансляционные станции работают на один уровень выше и ниже своего; только корабельный массив покрывает весь объект по вертикали.
 
-  Combat nets require coverage from at least one of the following:
+  Боевая сеть требует покрытия хотя бы от одного из следующих источников:
 
-  - A worn AN/PRC.
-  - A deployed retransmission station.
-  - A communications array.
-  - A command-post antenna mast.
+  - Надетая AN/PRC.
+  - Развёрнутая ретрансляционная станция.
+  - Коммуникационный массив.
+  - Антенная мачта командного пункта.
 
-  If all available relays are disabled or removed, the affected net loses coverage.
+  Если все доступные ретрансляторы отключены или удалены, соответствующая сеть теряет покрытие.
 
-  ## CLF Nets and Base Station
+  ## Сети CLF и базовая станция
 
-  The CLF have two combat nets:
+  У CLF есть две боевые сети:
 
-  - [bold]CLF[/bold] - the cell net, carried by every CLF earpiece.
-  - [bold]CLF Command[/bold] - carried only on AN/PRC sets, not on any earpiece. The cell leader reaches it through a set's handset or panel.
+  - [bold]CLF[/bold] — сеть ячейки, доступная каждому скрытому наушнику CLF.
+  - [bold]CLF Command[/bold] — доступна только AN/PRC и отсутствует в скрытых наушниках. Лидер ячейки выходит в неё через трубку или панель радиостанции.
 
-  Both nets are relay-gated. The CLF have no fixed array or command-post mast, so coverage comes from CLF AN/PRC sets: the operator's manpack in the field and the cell's base station at the safehouse.
+  Обе сети требуют ретрансляции. У CLF нет стационарного массива или штатной мачты командного пункта, поэтому покрытие обеспечивается AN/PRC: носимой радиостанцией оператора в поле и базовой станцией ячейки в убежище.
 
-  The issued CLF manpack is not a bare set. It comes up with both nets already in its slots, labelled [bold]CELL[/bold] and [bold]CMD[/bold], because a militia has no schoolhouse and whoever picks the pack up cannot afford to be learning the panel at H-hour. A captured GOVFOR or OPFOR set comes up empty as usual.
+  Выданная CLF ранцевая радиостанция уже содержит обе сети в слотах с метками [bold]CELL[/bold] и [bold]CMD[/bold]. Повстанческая ячейка не имеет времени обучаться панели в момент начала операции. Захваченная GOVFOR/OPFOR радиостанция, как обычно, будет пустой.
 
-  Both the Cell Leader and the Radio Operator draw the cell's comms kit, and both can stake down the base station and the relays. Most rounds nobody takes the operator slot, and a cell that had its only radios gated behind a man who never spawned is a cell that spends the round shouting.
+  И Лидер ячейки, и Радист получают комплект связи ячейки и могут закреплять базовую станцию и ретрансляторы. Это позволяет ячейке сохранять связь даже если роль Радиста никто не занял.
 
-  Losing all coverage does not silence the cell. The [bold]Colony[/bold] channel on every CLF earpiece is not gated, so a cell cut off its own nets drops back to colony chatter - which is unencrypted and can be found and read by anyone sweeping the band.
+  Полная потеря покрытия не делает ячейку немой. Канал [bold]Colony[/bold] в каждом наушнике CLF не требует ретранслятора, поэтому без собственных сетей ячейка может перейти на колониальный канал — однако он не зашифрован и доступен любому, кто найдёт частоту.
 
-  ### Clandestine base station
+  ### Подпольная базовая станция
 
-  The base station is a CLF AN/PRC set too heavy to wear. It only works set up, so it is carried by hand to a hiding place and deployed there.
+  Базовая станция — слишком тяжёлая для ношения AN/PRC. Она работает только после установки, поэтому её переносят вручную и разворачивают в скрытом месте.
 
-  - It comes tuned to both CLF nets, so it works the moment it is set up without opening the panel.
-  - Fitted with a mast antenna, a deployed station anchors both CLF nets across a wide radius - enough to cover a safehouse and its approaches.
-  - The cell leader mans it on the handset while the operator takes the manpack forward. The two sets hold the cell together across the map.
-  - It is the cell's only fixed coverage. Destroying or capturing it collapses the cell onto whatever the forward manpack still reaches.
+  - Сразу настроена на обе сети CLF и работает после установки без открытия панели.
+  - Благодаря мачтовой антенне обеспечивает обе сети на большой площади, достаточной для убежища и подходов к нему.
+  - Лидер ячейки может работать с ней через трубку, пока Радист уносит носимую радиостанцию вперёд.
+  - Это единственный постоянный источник покрытия ячейки. Уничтожение или захват станции оставляет ячейке только зону действия полевой AN/PRC.
 
-  ## Battery and Antenna
+  ## Аккумулятор и антенна
 
-  The radio uses a battery in its internal battery slot.
+  Радиостанция использует аккумулятор во внутреннем слоте.
 
-  Power is consumed:
+  Заряд расходуется:
 
-  - Slowly while the radio is idle.
-  - More quickly while transmitting.
-  - More quickly while performing radio checks.
-  - According to the selected operating mode and transmit power.
+  - Медленно в режиме ожидания.
+  - Быстрее во время передачи.
+  - Быстрее при проверке связи.
+  - В зависимости от режима работы и мощности передачи.
 
-  The standard [bold]whip antenna[/bold] supports mobile operation.
+  Стандартная [bold]штыревая антенна[/bold] предназначена для мобильной работы.
 
-  A [bold]mast antenna[/bold]:
+  [bold]Мачтовая антенна[/bold]:
 
-  - Provides greater range while stationary.
-  - Provides less range than the whip while moving.
-  - Is intended for command posts and retransmission sites.
+  - Даёт большую дальность в неподвижном состоянии.
+  - При движении имеет меньшую дальность, чем штыревая.
+  - Предназначена для командных пунктов и ретрансляционных позиций.
 
-  ## SEARCH (Band Sweep)
+  ## SEARCH — сканирование диапазона
 
-  Intercepting a net requires knowing its frequency. Frequencies are reassigned every operation, so a captured frequency card is one way to learn them and the search receiver is the other.
+  Для перехвата сети необходимо знать её частоту. Частоты переназначаются каждую операцию, поэтому узнать их можно с захваченной карточки частот либо при помощи поискового приёмника.
 
-  [bold]START SEARCH[/bold] walks the radio's receiver across the band hunting for anyone transmitting.
+  [bold]START SEARCH[/bold] проводит приёмник радиостанции по диапазону в поиске чужих передач.
 
-  Searching takes the set out of service entirely:
+  Во время поиска радиостанция полностью выводится из обычной работы:
 
-  - The radio drops off [bold]every[/bold] loaded net. You hear nothing.
-  - Transmit is inhibited. You cannot answer traffic while searching.
-  - Battery drain continues for as long as the search runs.
+  - Она отключается от [bold]всех[/bold] загруженных сетей. Вы ничего не слышите.
+  - Передача блокируется. Ответить в эфир во время поиска нельзя.
+  - Заряд продолжает расходоваться весь период поиска.
 
-  A single pass rarely finds anything. The receiver only registers a frequency if somebody transmitted on it very recently at the moment the sweep head happened to pass over it, and the contact must be within intercept range.
+  Один проход редко даёт результат. Приёмник фиксирует частоту только если на ней совсем недавно кто-то передавал именно в момент прохождения сканера и источник находится в радиусе перехвата.
 
-  Contacts build up over repeated catches:
+  Контакты накапливают уверенность при повторных обнаружениях:
 
-  - Below half confidence a contact is not shown at all.
-  - Above half confidence the panel shows an approximate frequency only, as [bold]~1.60X MHz[/bold].
-  - At full confidence the contact resolves to an exact frequency and net name, and can be tuned into the active slot with [bold]TUNE[/bold].
+  - Ниже половины уверенности контакт вообще не отображается.
+  - Выше половины показывается только примерная частота вида [bold]~1.60X MHz[/bold].
+  - При полной уверенности определяется точная частота и имя сети; её можно загрузить в активный слот кнопкой [bold]TUNE[/bold].
 
-  Partial contacts decay. A fix requires a net that keeps talking and an operator willing to stay deaf and silent nearby while it does. Sitting near the enemy is not enough on its own.
+  Неполные контакты постепенно исчезают. Для уверенного определения сеть должна продолжать передавать, а оператор — оставаться рядом, не слыша собственные сети и не передавая. Самого нахождения рядом с противником недостаточно.
 
-  A resolved fix is permanent for the operation.
+  Полностью определённая частота остаётся известной до конца операции.
 
-  Custom direct frequencies are found the same way. A squad net that is off the published plan is not hidden from a search receiver: the set only accepts direct frequencies inside the searchable [bold]1.000-2.999 MHz[/bold] military band or in the colonist softwave band ([bold]30.000+ MHz[/bold]). Softwave sits outside the search receiver's coverage, but it is short-ranged, unencrypted and shared with every handheld on the colony.
+  Пользовательские прямые частоты обнаруживаются так же. Сеть вне опубликованного плана не скрыта от поискового приёмника: AN/PRC принимает прямые частоты только внутри военного диапазона [bold]1.000–2.999 MHz[/bold] либо в колониальном softwave-диапазоне [bold]30.000+ MHz[/bold]. Softwave находится вне диапазона поиска, но имеет малую дальность, не зашифрован и доступен всем совместимым колониальным устройствам.
 
-  ## Intercepting Enemy Traffic
+  ## Перехват вражеского трафика
 
-  Enter another faction's frequency with [bold]FREQ[/bold], or tune a resolved [bold]SEARCH[/bold] contact directly.
+  Введите частоту другой фракции через [bold]FREQ[/bold] либо загрузите полностью определённый контакт [bold]SEARCH[/bold].
 
-  When the signal reaches the radio, intercepted traffic appears in [color=#FF6B6B]red[/color] and is recorded in the net log.
+  Когда сигнал достигает радиостанции, перехваченный трафик отображается [color=#FF6B6B]красным[/color] и записывается в журнал сети.
 
-  What can be received depends on the transmitting radio's mode and COMSEC state.
+  Возможность прочитать сообщение зависит от режима передающей радиостанции и состояния COMSEC.
 
   <Table Columns="2" MinForcedColumnWidth="110">
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Traffic[/bold]</Box>
-    </ColorBox>
-    <ColorBox Color="#263238">
-      <Box Margin="4">[bold]Without matching fill[/bold]</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">Headset traffic</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Received as static.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">Secured AN/PRC traffic</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Received as static.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">Unfilled AN/PRC traffic</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Readable.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">PT traffic</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Readable.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">FH traffic</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Readable when sent in the clear, with light interference.</Box>
-    </ColorBox>
-
-    <ColorBox>
-      <Box Margin="4">CT traffic</Box>
-    </ColorBox>
-    <ColorBox>
-      <Box Margin="4">Not displayed.</Box>
-    </ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Трафик[/bold]</Box></ColorBox>
+    <ColorBox Color="#263238"><Box Margin="4">[bold]Без совпадающего ключа[/bold]</Box></ColorBox>
+    <ColorBox><Box Margin="4">Трафик гарнитуры</Box></ColorBox><ColorBox><Box Margin="4">Принимается как статический шум.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Защищённый трафик AN/PRC</Box></ColorBox><ColorBox><Box Margin="4">Принимается как статический шум.</Box></ColorBox>
+    <ColorBox><Box Margin="4">Незащищённый трафик AN/PRC</Box></ColorBox><ColorBox><Box Margin="4">Читается.</Box></ColorBox>
+    <ColorBox><Box Margin="4">PT-трафик</Box></ColorBox><ColorBox><Box Margin="4">Читается.</Box></ColorBox>
+    <ColorBox><Box Margin="4">FH-трафик</Box></ColorBox><ColorBox><Box Margin="4">При передаче открытым текстом читается с лёгкими помехами.</Box></ColorBox>
+    <ColorBox><Box Margin="4">CT-трафик</Box></ColorBox><ColorBox><Box Margin="4">Не отображается.</Box></ColorBox>
   </Table>
 
-  A current fill card from the transmitting faction allows compatible secured traffic to be read until that faction performs recrypto.
+  Актуальная карта ключей передающей фракции позволяет читать совместимый защищённый трафик до тех пор, пока фракция не выполнит RECRYPTO.
 
-  Intercepted traffic is identified by callsign. It does not reveal the sender's character name or role.
+  Перехваченный трафик определяется только по позывному и не раскрывает имя или роль персонажа.
 
-  The radio relays only its own faction's nets. Tuning another faction's frequency allows reception, but does not extend that faction's coverage.
+  Радиостанция ретранслирует только сети собственной фракции. Настройка на частоту другой фракции позволяет принимать её, но не расширяет её покрытие.
 
-  ## Net Log
+  ## Журнал сети
 
-  The radio stores the last [bold]50[/bold] entries while powered.
+  Пока радиостанция включена, она хранит последние [bold]50[/bold] записей.
 
-  The log records:
+  В журнал попадают:
 
-  - Transmissions sent with [color=#a4885c]:r[/color].
-  - The wearer's headset transmissions.
-  - Incoming traffic on the active net.
-  - Incoming traffic on all loaded nets while MON or SCAN is enabled.
+  - Передачи через [color=#a4885c]:r[/color].
+  - Передачи гарнитуры носителя.
+  - Входящий трафик активной сети.
+  - Входящий трафик всех загруженных сетей при включённом MON или SCAN.
 
-  The log can be used to review missed traffic or confirm that a message was transmitted.
+  Журнал позволяет просматривать пропущенный трафик и подтверждать факт отправки сообщения.
 
-  Traffic on another faction's net is flagged [bold]INTERCEPT[/bold] in the log.
+  Трафик другой фракции помечается в журнале как [bold]INTERCEPT[/bold].
 
-  ### Printing the log
+  ### Печать журнала
 
-  The log rolls over at 50 entries and dies with the radio. [bold]PRINT LOG[/bold] transcribes it onto paper so it can be carried, handed over or cached.
+  После 50 записей старые сообщения вытесняются, а при уничтожении радиостанции журнал теряется. [bold]PRINT LOG[/bold] переносит журнал на бумагу, которую можно передать или сохранить.
 
-  [bold]PRINT INTERCEPTS[/bold] prints only the intercepted traffic, which is usually what command actually wants.
+  [bold]PRINT INTERCEPTS[/bold] печатает только перехваченный трафик — обычно именно это нужно командованию.
 
-  Printing is how a radio operator turns listening into something the rest of the cell can act on.
+  Печать превращает результаты прослушивания в информацию, которой может воспользоваться остальная группа.
 
-  ## Status Display
+  ## Индикация состояния
 
-  The top of the radio panel shows its current status.
+  В верхней части панели отображается текущее состояние радиостанции.
 
-  - [bold]PWR[/bold] shows the power state.
-  - [bold]LINK[/bold] shows the current link state.
-  - [bold]MODE[/bold] shows the selected operating mode.
-  - [bold]BIT[/bold] shows built-in test status.
-  - [bold]FAULT[/bold] shows detected problems.
+  - [bold]PWR[/bold] — питание.
+  - [bold]LINK[/bold] — состояние соединения.
+  - [bold]MODE[/bold] — выбранный режим.
+  - [bold]BIT[/bold] — состояние встроенной самопроверки.
+  - [bold]FAULT[/bold] — обнаруженные неисправности.
 
-  [bold]READY[/bold] means the radio is worn and has an active net.
+  [bold]READY[/bold] означает, что радиостанция надета и имеет активную сеть.
 
-  [bold]NO NET[/bold], [bold]STBY[/bold], and [bold]NOT WORN[/bold] indicate that part of the setup is incomplete.
+  [bold]NO NET[/bold], [bold]STBY[/bold] и [bold]NOT WORN[/bold] означают, что часть настройки ещё не завершена.
 </Document>

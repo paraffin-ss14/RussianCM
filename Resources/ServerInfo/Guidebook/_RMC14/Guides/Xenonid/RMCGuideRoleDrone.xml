@@ -1,21 +1,21 @@
 ﻿<Document>
 
-  #So you've just been born into the hive!
-  #Now what?
+  # Ты только что появился в улье!
+  # Что делать дальше?
 
-  - Rejoice! We've just joined our hive as a larva. We can't do very much right now, but our potential is limitless!
+  - Радуйся! Мы только что присоединились к своему улью в виде личинки. Пока мы почти ничего не умеем, но наши возможности безграничны!
   <Box>
     <GuideEntityEmbed Entity="CMXenoLarva"/>
   </Box>\n
-  - It's time to get to work! As soon as we can, we should try to evolve. This will require us to gain some age by waiting however.
-  - For beginners, becoming a drone is recommended. Drones are responsible for building the hive defenses.
+  - Пора за работу! Как только станет возможно, нужно эволюционировать. Для этого придётся немного подождать и набрать возраст.
+  - Новичкам рекомендуется выбрать дрона. Дроны отвечают за строительство и укрепление улья.
 
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookActionXenoEvolve"/>
     <GuideEntityEmbed Entity="CMXenoDrone"/>
   </Box>\n
 
-  - Here are a few of the things we can construct!
+  - Вот лишь некоторые сооружения, которые мы можем создавать!
 
   <Box>
     <GuideEntityEmbed Entity="WallXenoResin"/>
@@ -23,9 +23,9 @@
     <GuideEntityEmbed Entity="DoorXenoResin"/>
   </Box>\n
 
-  - Another important job of the Drone is to plant weeds.
-  - Weeds allow us to rest to regain our health and energy!
-  - We can also only construct the hive on weeds.
+  - Ещё одна важная задача дрона — выращивать смолу.
+  - На смоле мы можем отдыхать, восстанавливая здоровье и энергию!
+  - Большинство сооружений улья также можно строить только на смоле.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoRest"/>
   <Box>
     <GuideEntityEmbed Entity="XenoWeeds"/>
@@ -33,9 +33,9 @@
     <GuideEntityEmbed Entity="XenoWeeds"/>
   </Box>\n
 
-  - Our final goal is to protect the Queen and plant her eggs so our hive may grow!
-  - Eggs can be placed on hive weeds, and contain parasites.
-  - Parasites can be extracted from the eggs, but be wary that parasites have short lifespans away from the weeds!
+  - Наша конечная цель — защищать Королеву и размещать её яйца, чтобы улей рос!
+  - Яйца можно размещать на ульевой смоле. Внутри них находятся паразиты.
+  - Паразитов можно извлекать из яиц, но помни: вдали от смолы они живут недолго!
 
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookXenoQueen"/>
@@ -44,13 +44,13 @@
     <GuideEntityEmbed Entity="CMXenoParasite"/>
   </Box>\n
 
-  - We can also devour captures and transport them to the hive for nesting!
-  - Find a tall and tackle them by right clicking on them with harm mode enabled.
-  - Once they are restrained, click and drag their sprite into yours to start devouring them, remember to keep tackling after!
-  - After devouring, walk to the closest hive to infect them on a egg, then to nest them do the same motion onto a wall.
+  - Мы также можем проглатывать захваченных людей и переносить их в улей для заражения и размещения в гнезде!
+  - Найди человека и сбей его с ног захватами: нажимай по нему правой кнопкой мыши при включённом боевом режиме.
+  - Когда цель обездвижена, перетащи её спрайт на своего ксенонида, чтобы начать проглатывание. Не забывай продолжать удерживать пленника!
+  - После этого отнеси пленника в ближайший улей, зарази его у яйца, а затем таким же перетаскиванием закрепи на смоляной стене.
 
-  - When a parasite is placed on a living host, a new larva will be born! Rejoice!
-  - Hosts that hold the growing larva are very precious, and should be secured to a resin wall supported by hive weeds as soon as possible.
+  - Когда паразит заражает живого носителя, рождается новая личинка! Радуйся!
+  - Носители с развивающейся личинкой чрезвычайно ценны. Как можно скорее закрепляй их на смоляной стене, находящейся на ульевой смоле.
   <Box>
     <GuideEntityEmbed Entity="RMCGuidebookCorpseColonistBurst"/>
     <GuideEntityEmbed Entity="CMXenoLarva"/>

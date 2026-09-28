@@ -37,3 +37,6 @@ loadout-group-points-insufficient = У вас недостаточно очко�
 # Missing entries synced from en-US
 
 rmc-loadout-group-govfordoctor-uniform = Скрабы
+
+
+rmc-loadout-group-watches = Watches

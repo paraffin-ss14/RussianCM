@@ -484,9 +484,19 @@
     - name: Headgear
       choices: { CMUPlatoonAirCrewHeadgear: 1 }
       entries:
+      - id: AU14JungleM50Helmet
+      - id: AU14CamoM50Helmet
       - id: AU14ProdigyBeret
       - id: AU14ProdigyCap
       - id: RMCM5CameraGear
+    - name: Flight Visor
+      choices: { CMUPlatoonAirCrewFlightVisor: 1 }
+      entries:
+      - id: AU14GogglesLAH99VisorHighTech
+    - name: Flight Mask
+      choices: { CMUPlatoonAirCrewFlightMask: 1 }
+      entries:
+      - id: AU14MaskUSASFPilotOxygen
     - name: Webbings
       choices: { CMUPlatoonAirCrewWebbings: 1 }
       entries:
@@ -648,10 +658,6 @@
       - id: CMU14ProdigySuitGreySkirt
         amount: 5
       - id: CMU14ProdigySuitBlackSkirt
-        amount: 5
-    - name: Backpack
-      entries:
-      - id: RMCBackpackRTO
         amount: 5
     - name: Pouches
       entries:
@@ -1150,6 +1156,8 @@
       - id: AU14ProdigyLaptop
         amount: 4
       - id: AU14SynthResetKeyProdigy
+        amount: 2
+      - id: MineDetector
         amount: 2
     - name: RTO Packs
       entries:

@@ -236,6 +236,7 @@ namespace Content.Server.GameTicking
             }
 
             LoadAdminFaxHubMap();
+            SendStatusToAll();
         }
 
         private static readonly ResPath AdminFaxHubMapPath = new("/Maps/CMU14/Admin/adminfaxhub.yml");
@@ -595,6 +596,11 @@ namespace Content.Server.GameTicking
         public void EndRound(string text = "")
         {
             if (DummyTicker) return;
+            // CMU14: allow the destruction cinematic to delay round end.
+            var cinematic = new Content.Shared.CMU14.Hijack.CMUShipRoundEndAttemptEvent();
+            RaiseLocalEvent(ref cinematic);
+            if (cinematic.Cancelled)
+                return;
             if (RunLevel != GameRunLevel.InRound)
             {
                 _sawmill.Warning($"EndRound has been called while RunLevel is already {RunLevel}, ignoring re-run.");

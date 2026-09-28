@@ -406,3 +406,47 @@ rmc-xeno-psychic-target-invalid = Тот разум больше вне наше
 rmc-xeno-psychic-ghost-whisper = [color=#921992][font size=14][bold]Мысленный шёпот ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
 rmc-xeno-psychic-ghost-radiance = [color=#921992][font size=14][bold]Мысленное излучение ({$queen}, получателей: {$count}):[/bold] "{$message}"[/font][/color]
 rmc-xeno-psychic-ghost-order = [color=#921992][font size=14][bold]Мысленный приказ ({$queen} -> {$target}):[/bold] "{$message}"[/font][/color]
+
+
+rmc-xeno-evolution-failed-marines-dropped = The sky talls have already landed, we can no longer evolve into this form.
+
+rmc-xeno-evolution-failed-queen-exists = The hive already has a Queen!
+
+rmc-xeno-corruptedevolution-failed-insufficient-hours = You do not have enough playtime to evolve into a Corrupted Queen.
+
+rmc-xeno-weeds-no-nearby-node = We require weeds to be closer!
+
+rmc-xeno-queen-eye-no-weeds = We can't move our eye there, there are no weeds!
+
+rmc-xeno-queen-eye-expand-weeds-name = Expand Weeds (50)
+
+rmc-xeno-queen-eye-expand-weeds-desc = Expand existing weeds or turn a weed tile into a node.
+
+rmc-acid-pickup-blocked = {CAPITALIZE(THE($target))} is covered in corrosive acid!
+
+rmc-acid-hole-already-weakened = It's already been weakened.
+
+rmc-acid-hole-only-small-xenos = Only sisters small enough can fit through this hole.
+
+rmc-acid-hole-too-large-non-xeno = You are too large to squeeze through this hole.
+
+rmc-acid-hole-wrong-side = We need to approach the hole from the entrance side!
+
+rmc-acid-hole-entrance-blocked = Something is blocking this side of the hole.
+
+rmc-acid-hole-no-exit = There's no space to crawl through there.
+
+rmc-acid-hole-blocked = Something is blocking the other side.
+
+rmc-acid-hole-repair-blocked = The wall is breached and must be patched first.
+
+rmc-acid-hole-repair-requires-nailgun = You need a nailgun to fix this breach.
+
+# Charger Jockey
+rmc-xeno-jockey-verb = Ride
+
+rmc-xeno-jockey-start-self = We start climbing onto {$charger}.
+
+rmc-xeno-jockey-start-others = {$rider} starts climbing onto {$charger}.
+
+rmc-xeno-jockey-mount = {$rider} climbs onto {$charger}.

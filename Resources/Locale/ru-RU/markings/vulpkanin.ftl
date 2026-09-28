@@ -133,3 +133,56 @@ marking-VulpPointsSharpFootRight-points_sharp-foot-r = Острые
 # Hair
 
 marking-VulpFacialHairGoatee = Борода (Козлиная на морде)
+
+
+marking-VulpHairAdhara-adhara = Adhara
+
+marking-VulpHairAnita-anita = Anita
+
+marking-VulpHairApollo-apollo = Apollo
+
+marking-VulpHairBelle-belle = Belle
+
+marking-VulpHairBraided-braided = Braided Hair
+
+marking-VulpHairBun-bun = Bun
+
+marking-VulpHairCleanCut-clean_cut = Clean Cut
+
+marking-VulpHairCurl-curl = Curl
+
+marking-VulpHairHawk-hawk = Hawk
+
+marking-VulpHairJagged-jagged = Jagged
+
+marking-VulpHairJeremy-jeremy = Jeremy
+
+marking-VulpHairKajam-kajam = Kajam
+
+marking-VulpHairKeid-keid = Keid
+
+marking-VulpHairKleeia-kleeia = Kleeia
+
+marking-VulpHairMizar-mizar = Mizar
+
+marking-VulpHairPunkBraided-punkbraided = Punk Braided
+
+marking-VulpHairRaine-raine = Raine
+
+marking-VulpHairRough-rough = Rough
+
+marking-VulpHairShort-short = Short Hair
+
+marking-VulpHairShort2-short2 = Short Hair 2
+
+marking-VulpHairSpike-spike = Spike
+
+marking-VulpFacialHairRuff-ruff = Ruff
+
+marking-VulpFacialHairElder-elder = Elder
+
+marking-VulpFacialHairElderChin-elder_chin = Elder Chin
+
+marking-VulpFacialHairKita-kita = Kita
+
+marking-VulpFacialHairGoatee-goatee = Beard (Snout Goatee)

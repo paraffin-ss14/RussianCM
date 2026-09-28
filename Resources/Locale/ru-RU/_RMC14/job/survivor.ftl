@@ -500,3 +500,6 @@ rmc-job-greeting-shivas-panic-room-engineer = Вы — инженер в кол�
 # Missing entries synced from en-US
 
 rmc-job-name-survivor-cec-researcher = Исследователь Корпуса Космической Эксплорации
+
+
+rmc-job-name-iasf = Rifleman

@@ -117,3 +117,22 @@ JobTechnicalAssistant = Технический ассистент
 JobVisitor = Посетитель
 JobWarden = Тюремный надзиратель
 JobZookeeper = Зоотехник
+
+job-name-centcommoff = CentComm Official
+
+job-name-tram-driver = Tram Driver
+
+job-name-sus = Sus
+
+# antagonist jobs
+job-name-ninja = Ninja
+
+job-name-syndicate-commander = Syndicate Commander
+
+job-name-syndicate-corpsman = Syndicate Corpsman
+
+job-name-syndicate-operative = Syndicate Operative
+
+job-name-pirate = Pirate
+
+job-name-wizard = Wizard

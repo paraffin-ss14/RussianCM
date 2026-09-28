@@ -1,21 +1,21 @@
 <Document>
-  ### Xenonid Castes
+  ### Касты ксенонидов
 
-  Strain guides can be found attached to their parent caste.
+  Руководства по штаммам находятся в разделах соответствующих основных каст.
 
-  - [textlink="Defender" link="RMCGuideRoleDefender"]
-  - [textlink="Sentinel" link="RMCGuideRoleSentinel"]
-  - [textlink="Runner" link="RMCGuideRoleRunner"]
-  - [textlink="Lurker" link="RMCGuideRoleLurker"]
-  - [textlink="Warrior" link="RMCGuideRoleWarrior"]
-  - [textlink="Hivelord" link="RMCGuideRoleHivelord"]
-  - [textlink="Carrier" link="RMCGuideRoleCarrier"]
-  - [textlink="Burrower" link="RMCGuideRoleBurrower"]
-  - [textlink="Ravager" link="RMCGuideRoleRavager"]
-  - [textlink="Praetorian" link="RMCGuideRolePraetorian"]
-  - [textlink="Boiler" link="RMCGuideRoleBoiler"]
-  - [textlink="Crusher" link="RMCGuideRoleCrusher"]
-  - [textlink="Queen" link="RMCGuideRoleQueen"]
-  - [textlink="Parasite" link="RMCGuideRoleParasite"]
+  - [textlink="Защитник" link="RMCGuideRoleDefender"]
+  - [textlink="Страж" link="RMCGuideRoleSentinel"]
+  - [textlink="Бегун" link="RMCGuideRoleRunner"]
+  - [textlink="Охотник" link="RMCGuideRoleLurker"]
+  - [textlink="Воин" link="RMCGuideRoleWarrior"]
+  - [textlink="Лорд улья" link="RMCGuideRoleHivelord"]
+  - [textlink="Носитель" link="RMCGuideRoleCarrier"]
+  - [textlink="Бурильщик" link="RMCGuideRoleBurrower"]
+  - [textlink="Разрушитель" link="RMCGuideRoleRavager"]
+  - [textlink="Преторианец" link="RMCGuideRolePraetorian"]
+  - [textlink="Бойлер" link="RMCGuideRoleBoiler"]
+  - [textlink="Крушитель" link="RMCGuideRoleCrusher"]
+  - [textlink="Королева" link="RMCGuideRoleQueen"]
+  - [textlink="Паразит" link="RMCGuideRoleParasite"]
 
 </Document>

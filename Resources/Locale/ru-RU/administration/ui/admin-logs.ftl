@@ -21,3 +21,14 @@ admin-logs-include-non-player = Включая не-игроков
 admin-logs-search-logs-placeholder = Поиск по логам...
 admin-logs-refresh = Обновить
 admin-logs-next = Далее
+
+
+admin-logs-filters = Filters
+
+admin-logs-impact = Impact
+
+# Types
+admin-logs-types = Types
+
+# Players
+admin-logs-players = Players

@@ -123,7 +123,8 @@ namespace Content.Server.GameTicking
         ///     If the selected profile doesn't match, searches other profiles.
         ///     Returns null if no matching profile is found and the player isn't ignoring allegiance.
         /// </summary>
-        private HumanoidCharacterProfile? ResolveProfileForAllegiance(NetUserId userId,
+        // CMU14: Force on Force roles, hijacking, announcements and identification.
+        internal HumanoidCharacterProfile? ResolveProfileForAllegiance(NetUserId userId,
             HumanoidCharacterProfile selectedProfile,
             string? jobId)
         {
@@ -692,6 +693,23 @@ namespace Content.Server.GameTicking
             if (jobBans != null)
                 restrictedRoles.UnionWith(jobBans);
 
+            /* CMU14: the joint FoF roll owns fallback choices; direct late joins keep the
+             * selected job and use the capacity check below. Retain the old hooks here
+             * for upstream merge context, but never silently replace that job or side.
+            // CMU14: confirm before the FoF balancer sends a joiner to the opposite side.
+            if (lateJoin
+                && _fof.TryOpenBalanceConfirm(player, station, jobId))
+                return;
+
+            // CMU14: ForceOnForce faction lock and mid-round balance.
+            if (lateJoin
+                && _fof.TryDecideSpawn(player, station, jobId, character, restrictedRoles, out var fofJob, out var fofStation))
+            {
+                jobId = fofJob;
+                station = fofStation;
+            }
+            */
+
             // Pick best job best on prefs.
             string? presetId = CurrentPreset?.ID ?? Preset?.ID;
             jobId ??= _stationJobs.PickBestAvailableJobWithPriority(station,
@@ -713,7 +731,34 @@ namespace Content.Server.GameTicking
                 return;
             }
 
-            DoSpawn(player, character, station, jobId, silent, out var mob, out var jobPrototype, out var jobName);
+            if (lateJoin && CurrentPreset?.ID.Equals("ForceOnForce", StringComparison.OrdinalIgnoreCase) == true)
+            {
+                var respawn = EntityManager.System<Content.Server.CMU14.ForceOnForce.ForceOnForceRespawnSystem>();
+                if (_prototypeManager.TryIndex<JobPrototype>(jobId, out var respawnJob) &&
+                    !respawn.CanJoinSide(player.UserId, respawnJob.RoundSide))
+                {
+                    _chatManager.DispatchServerMessage(player, Loc.GetString("cmu-fof-respawn-side-locked"));
+                    return;
+                }
+                var remaining = respawn.Remaining(player.UserId);
+                if (remaining > TimeSpan.Zero)
+                {
+                    _chatManager.DispatchServerMessage(player,
+                        Loc.GetString("cmu-fof-respawn-wait", ("seconds", (int) Math.Ceiling(remaining.TotalSeconds))));
+                    return;
+                }
+                if (!_stationJobs.CanJoinForceOnForceSide(jobId))
+                {
+                    // CMU14: faction gameplay fixes.
+                    _chatManager.DispatchServerMessage(player, Loc.GetString(respawn.HasLockedSide(player.UserId)
+                        ? "cmu-fof-locked-side-full" : "cmu-fof-side-full"));
+                    return;
+                }
+            }
+
+            // CMU14: DoSpawn can fail when no spawn point exists; skip this player, not the round.
+            if (!DoSpawn(player, character, station, jobId, silent, out var mob, out var jobPrototype, out var jobName))
+                return;
 
 /*
             // Deadcode
@@ -743,6 +788,9 @@ namespace Content.Server.GameTicking
             }
 */
 
+            // CMU14: give back the player's old role slots before the new assignment takes
+            // one, so respawning reopens closed roles instead of burning a slot per death.
+            _stationJobs.RefundPlayerJobs(player.UserId);
             _stationJobs.TryAssignJob(station, jobPrototype, player.UserId);
 
             if (lateJoin)
@@ -795,7 +843,7 @@ namespace Content.Server.GameTicking
         /// <summary>
         /// Creates a mob on the specified station, creates the new mind, equips job-specific starting gear and loadout
         /// </summary>
-        public void DoSpawn(
+        public bool DoSpawn(
             ICommonSession player,
             HumanoidCharacterProfile character,
             EntityUid station,
@@ -814,8 +862,26 @@ namespace Content.Server.GameTicking
             jobPrototype = ProtoMan.Index<JobPrototype>(jobId);
 
             var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, jobId, character);
-            DebugTools.AssertNotNull(mobMaybe);
-            mob = mobMaybe!.Value;
+            // CMU14 Begin: a missing spawn point used to throw here and abort round start.
+            // DebugTools.AssertNotNull(mobMaybe);
+            // mob = mobMaybe!.Value;
+            if (mobMaybe is not { } spawned || !spawned.IsValid())
+            {
+                mob = EntityUid.Invalid;
+                jobName = jobPrototype.Name;
+
+                if (LobbyEnabled)
+                    PlayerJoinLobby(player);
+                else
+                    JoinAsObserver(player);
+
+                _chatManager.DispatchServerMessage(player,
+                    Loc.GetString("game-ticker-player-no-spawn-point-when-joining", ("job", jobName)));
+                return false;
+            }
+
+            mob = spawned;
+            // CMU14 End
 
             // Apply origin effects (components, accents, items) after the character exists.
             _originSystem.ApplyOrigin(mob, character);
@@ -830,6 +896,7 @@ namespace Content.Server.GameTicking
             _roles.MindAddJobRole(newMind, silent: silent, jobPrototype: jobId);
             jobName = _jobs.MindTryGetJobName(newMind);
             _admin.UpdatePlayerList(player);
+            return true; // CMU14
         }
 
         public void Respawn(ICommonSession player)

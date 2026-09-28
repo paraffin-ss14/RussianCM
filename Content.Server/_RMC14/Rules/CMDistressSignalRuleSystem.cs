@@ -50,6 +50,7 @@ using Content.Shared._RMC14.Item;
 using Content.Shared._RMC14.Light;
 using Content.Shared._RMC14.Map;
 using Content.Shared._RMC14.Marines;
+using Content.Shared.CMU14.Marines; // CMU14
 using Content.Shared._RMC14.Marines.HyperSleep;
 using Content.Shared._RMC14.Marines.Squads;
 using Content.Shared._RMC14.Rules;
@@ -634,12 +635,17 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
 
             // don't open shitcode inside
             spawnedDropships = true;
+            // CMU14: use the same platoon roster and spawn record as the Govfor round path.
+            var almayerDropships = EntityManager.System<PlatoonSpawnRuleSystem>();
+            almayerDropships.TryInitializeAlmayerDropships("govfor");
             _mapSystem.CreateMap(out var dropshipMap);
             var dropshipPoints = EntityQueryEnumerator<DropshipDestinationComponent, TransformComponent>();
             var ships = new[] { new ResPath("/Maps/_RMC14/alamo.yml"), new ResPath("/Maps/_RMC14/normandy.yml") };
             var shipIndex = 0;
             while (dropshipPoints.MoveNext(out var destinationId, out _, out var destTransform))
             {
+                if (almayerDropships.IsAlmayerLanding(destinationId)) // CMU14
+                    continue;
                 if (_mapSystem.TryGetMap(destTransform.MapID, out var destinationMapId) &&
                     comp.XenoMap == destinationMapId)
                 {
@@ -779,7 +785,7 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
                 if (TryComp(spawner, out TransformComponent? xform) &&
                     xform.GridUid != null)
                 {
-                    EnsureComp<AlmayerComponent>(xform.GridUid.Value);
+                    EnsureComp<WarshipComponent>(xform.GridUid.Value); // CMU14
                 }
 
                 if (comp.SetHunger && TryComp(ev.SpawnResult, out SatiationComponent? satiation))
@@ -869,6 +875,11 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
 
     private void OnDropshipHijackStart(ref DropshipHijackStartEvent ev)
     {
+        // CMU14: other presets own their cleanup and larva accounting in CMUHijackExtrasSystem.
+        var activeRules = QueryActiveRules();
+        if (!activeRules.MoveNext(out _, out _, out _) || ev.HijackerType == DropshipHijackerType.Other)
+            return;
+
         // For human hijacks, build a set of map IDs belonging to the hijacker's faction ship(s).
         // For xeno hijacks, keep legacy behavior (Almayer maps).
         var targetShipMaps = new HashSet<MapId>();
@@ -886,7 +897,7 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
             }
 
             // Also include Almayer maps as fallback
-            var almayerQuery = EntityQueryEnumerator<AlmayerComponent, TransformComponent>();
+            var almayerQuery = EntityQueryEnumerator<WarshipComponent, TransformComponent>(); // CMU14
             while (almayerQuery.MoveNext(out _, out var aXform))
             {
                 AddShipMapAndConnectedZLevelMapIds(targetShipMaps, aXform.MapUid);
@@ -904,19 +915,21 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
             var hiveStructures = EntityQueryEnumerator<HiveConstructionLimitedComponent, TransformComponent>();
             while (hiveStructures.MoveNext(out var id, out _, out var xform))
             {
-                EnsureComp<HiveConstructionSuppressAnnouncementsComponent>(id);
-
-                if (xform.ParentUid != ev.Dropship && _rmcPlanet.IsOnPlanet(id.ToCoordinates()))
+                if ((ev.Dropship == null || xform.GridUid != ev.Dropship) && _rmcPlanet.IsOnPlanetLevel(xform)) // CMU14
+                {
+                    EnsureComp<HiveConstructionSuppressAnnouncementsComponent>(id);
                     _destruction.DestroyEntity(id);
+                }
             }
 
             var xenoLimitedStructures = EntityQueryEnumerator<XenoSecretionLimitedComponent, TransformComponent>();
             while (xenoLimitedStructures.MoveNext(out var id, out _, out var xform))
             {
-                EnsureComp<HiveConstructionSuppressAnnouncementsComponent>(id);
-
-                if (xform.ParentUid != ev.Dropship && _rmcPlanet.IsOnPlanet(id.ToCoordinates()))
+                if ((ev.Dropship == null || xform.GridUid != ev.Dropship) && _rmcPlanet.IsOnPlanetLevel(xform)) // CMU14
+                {
+                    EnsureComp<HiveConstructionSuppressAnnouncementsComponent>(id);
                     _destruction.DestroyEntity(id);
+                }
             }
 
             var xenos = EntityQueryEnumerator<XenoComponent, MobStateComponent, TransformComponent>();
@@ -928,7 +941,7 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
                 if (_mobState.IsDead(xeno))
                     continue;
 
-                if (transformComp.ParentUid != ev.Dropship && _rmcPlanet.IsOnPlanet(xeno.ToCoordinates()))
+                if ((ev.Dropship == null || transformComp.GridUid != ev.Dropship) && _rmcPlanet.IsOnPlanetLevel(transformComp)) // CMU14
                 {
                     if (comp.CountedInSlots)
                         larva++;
@@ -1002,8 +1015,15 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
             //Get the maximum of either remaining marines or minimum amount
             var surgeAmount = Math.Max((int)Math.Ceiling(totalHostWeights * _hijackShipWeight) - xenoAmount, _hijackMinBurrowed);
             var rules = QueryActiveRules();
-            while (rules.MoveNext(out _, out var rule, out _))
+            // CMU14: hijack rewards apply once per round, a repeat hijack must not refund larva or refill the surge
+            while (rules.MoveNext(out var ruleUid, out _, out var rule, out _))
             {
+                if (rule.HijackBoostsApplied)
+                    continue;
+
+                rule.HijackBoostsApplied = true;
+                Dirty(ruleUid, rule);
+
                 // Reset Hivecore Cooldown
                 var hiveComp = EnsureComp<HiveComponent>(rule.Hive);
                 // Add all the stranded xenos up.
@@ -1180,6 +1200,11 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
 
     private void CheckRoundShouldEnd()
     {
+        // CMU14: let the destruction cinematic finish before ending the round.
+        var cinematic = new Content.Shared.CMU14.Hijack.CMUShipRoundEndAttemptEvent();
+        RaiseLocalEvent(ref cinematic);
+        if (cinematic.Cancelled)
+            return;
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var distress, out var gameRule))
         {
@@ -1904,6 +1929,11 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
 
     private void EndRound(CMDistressSignalRuleComponent rule, DistressSignalRuleResult result, LocId? customMessage = null)
     {
+        // CMU14: let the destruction cinematic finish before ending the round.
+        var hijack = new Content.Shared.CMU14.Hijack.CMUShipRoundEndAttemptEvent();
+        RaiseLocalEvent(ref hijack);
+        if (hijack.Cancelled)
+            return;
         if (!rule.AutoEnd)
             return;
 
@@ -2103,7 +2133,7 @@ public sealed partial class CMDistressSignalRuleSystem : GameRuleSystem<CMDistre
 
     private void AddAllShipMapIds(ICollection<MapId> shipMaps)
     {
-        var almayerQuery = EntityQueryEnumerator<AlmayerComponent, TransformComponent>();
+        var almayerQuery = EntityQueryEnumerator<WarshipComponent, TransformComponent>(); // CMU14
         while (almayerQuery.MoveNext(out _, out var xform))
         {
             AddShipMapAndConnectedZLevelMapIds(shipMaps, xform.MapUid);

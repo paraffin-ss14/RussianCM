@@ -193,6 +193,16 @@ public sealed partial class CMUZLevelShootingSystem : EntitySystem
 
         var fromMap = _transform.ToMapCoordinates(fromCoordinates);
         var toMap = _transform.ToMapCoordinates(toCoordinates);
+
+        // Open air between shooter and target: nothing to shoot through, so skip the
+        // opening hunt and range clamp (straight shots at hovering dropships).
+        if (_zLevels.IsZShotPathOpen(offset < 0 ? shooterMap.Value : targetMap.Value, fromMap.Position, toMap.Position))
+        {
+            adjustedFromCoordinates = _transform.ToCoordinates(new MapCoordinates(fromMap.Position, map.MapId));
+            adjustedToCoordinates = _transform.ToCoordinates(new MapCoordinates(toMap.Position, map.MapId));
+            return true;
+        }
+
         var clampedTo = ClampCrossZShotTarget(fromMap.Position, toMap.Position);
         if (!_zLevels.TryFindZShotOpening(
                 shooterMap.Value,
@@ -232,7 +242,8 @@ public sealed partial class CMUZLevelShootingSystem : EntitySystem
         MapCoordinates fromCoordinates,
         MapCoordinates toCoordinates,
         out MapCoordinates adjustedFromCoordinates,
-        out MapCoordinates adjustedToCoordinates)
+        out MapCoordinates adjustedToCoordinates,
+        float? maximumRange = null)
     {
         adjustedFromCoordinates = fromCoordinates;
         adjustedToCoordinates = toCoordinates;
@@ -251,7 +262,16 @@ public sealed partial class CMUZLevelShootingSystem : EntitySystem
             return false;
         }
 
-        var clampedTo = ClampCrossZShotTarget(fromCoordinates.Position, toCoordinates.Position);
+        // Open air between shooter and target: nothing to shoot through, so skip the
+        // opening hunt and range clamp (straight shots at hovering dropships).
+        if (_zLevels.IsZShotPathOpen(offset < 0 ? shooterMap.Value : targetMap.Value, fromCoordinates.Position, toCoordinates.Position))
+        {
+            adjustedFromCoordinates = new MapCoordinates(fromCoordinates.Position, map.MapId);
+            adjustedToCoordinates = new MapCoordinates(toCoordinates.Position, map.MapId);
+            return true;
+        }
+
+        var clampedTo = ClampCrossZShotTarget(fromCoordinates.Position, toCoordinates.Position, maximumRange ?? CrossZShotRange);
         if (!_zLevels.TryFindZShotOpening(
                 shooterMap.Value,
                 targetMap.Value,
@@ -278,7 +298,8 @@ public sealed partial class CMUZLevelShootingSystem : EntitySystem
             out var projectileTo);
 
         adjustedFromCoordinates = new MapCoordinates(projectileFrom, map.MapId);
-        adjustedToCoordinates = new MapCoordinates(projectileTo, map.MapId);
+        // Lobbed bombard shots retain their aimed landing point beyond the opening.
+        adjustedToCoordinates = new MapCoordinates(maximumRange != null ? clampedTo : projectileTo, map.MapId);
         return true;
     }
 
@@ -332,7 +353,8 @@ public sealed partial class CMUZLevelShootingSystem : EntitySystem
 
         // Keep the projectile physics on the opening path, but shift its sprite to
         // the barrel position in the compensated Z render pass.
-        visualOffset = sourceFromCoordinates.Position - GetCrossZRenderOffset(offset) - projectileFromCoordinates.Position;
+        var renderOffset = new Vector2(0f, _zLevels.GetZLevelVisualOffset(Transform(shooter).MapUid) * offset);
+        visualOffset = sourceFromCoordinates.Position - renderOffset - projectileFromCoordinates.Position;
         return visualOffset.LengthSquared() > 0.001f;
     }
 
@@ -414,11 +436,6 @@ public sealed partial class CMUZLevelShootingSystem : EntitySystem
         projectileTo = projectileFrom + Vector2.Normalize(direction) * distance;
     }
 
-    private static Vector2 GetCrossZRenderOffset(int offset)
-    {
-        return new Vector2(0f, CMUSharedZLevelsSystem.ZLevelVisualOffset * offset);
-    }
-
     private static Vector2 NudgeOpeningTowardSource(Vector2 opening, Vector2 source)
     {
         var sourceDirection = source - opening;
@@ -428,15 +445,15 @@ public sealed partial class CMUZLevelShootingSystem : EntitySystem
         return opening + Vector2.Normalize(sourceDirection) * CrossZOpeningSourceNudge;
     }
 
-    private static Vector2 ClampCrossZShotTarget(Vector2 from, Vector2 to)
+    private static Vector2 ClampCrossZShotTarget(Vector2 from, Vector2 to, float range = CrossZShotRange)
     {
         var delta = to - from;
         var distance = delta.Length();
 
-        if (distance <= CrossZShotRange || distance <= 0.001f)
+        if (distance <= range || distance <= 0.001f)
             return to;
 
-        return from + delta / distance * CrossZShotRange;
+        return from + delta / distance * range;
     }
 
     private void PopupSelf(EntityUid user, string message)

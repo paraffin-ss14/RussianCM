@@ -1,37 +1,37 @@
 <Document>
 
-  # Medical V2
+  # Медицина V2
 
-  ## Overview
-  - The medical system has heavily changed.
-  - Patients now suffer specific wounds on their limbs.
-  - Untreated wounds reduce the maximum health of the affected limb.
-  - Trauma kits, gauze, burn kits, ointment, and hemostatic gauze treat wounds normally.
-  - Once every wound on a limb is treated, the wounds passively recover and the limb can return to full health.
+  ## Обзор
+  - Медицинская система была значительно переработана.
+  - Теперь пациенты получают отдельные раны на конкретных конечностях.
+  - Необработанные раны уменьшают максимальный запас здоровья поражённой конечности.
+  - Наборы для травм, марля, наборы для ожогов, мазь и гемостатическая марля обрабатывают раны обычным способом.
+  - После обработки всех ран на конечности они начинают восстанавливаться самостоятельно, а конечность со временем может вернуться к полному запасу здоровья.
 
-  ## Field treatment crafting
-  - Use [keybind="CMUOpenMedicalCraftingMenu"] to fast craft medical treatments.
-  - Crafting uses one ingredient and one packed trauma kit.
-  - Coagulant powder and a packed trauma kit create a normal trauma kit.
-  - Burn gel and a packed trauma kit create a normal burn kit.
+  ## Создание средств лечения в полевых условиях
+  - Используйте [keybind="CMUOpenMedicalCraftingMenu"], чтобы быстро создавать медицинские средства.
+  - Для создания требуется один ингредиент и один упакованный набор для травм.
+  - Коагулирующий порошок и упакованный набор для травм создают обычный набор для травм.
+  - Гель от ожогов и упакованный набор для травм создают обычный набор для ожогов.
 
-  ## Ingredients
+  ## Ингредиенты
   <Box>
     <GuideEntityEmbed Entity="CMUCoagulantPowder1"/>
     <GuideEntityEmbed Entity="CMUBurnGel1"/>
   </Box>\n
 
-  ## Base items
+  ## Основные предметы
   <Box>
     <GuideEntityEmbed Entity="CMUPlainTraumaDressing10"/>
     <GuideEntityEmbed Entity="CMTraumaKit10"/>
     <GuideEntityEmbed Entity="CMBurnKit10"/>
   </Box>
 
-  ## Surgical line and synth graft
-  - Surgical line now heals limb health only.
-  - Synth graft now heals limb health only.
-  - Neither item treats wounds or restores maximum limb health by itself.
-  - Treat wounds first, then use line or graft when the limb still needs health.
+  ## Хирургическая нить и синтетический трансплантат
+  - Хирургическая нить теперь восстанавливает только здоровье конечности.
+  - Синтетический трансплантат теперь восстанавливает только здоровье конечности.
+  - Ни один из этих предметов сам по себе не обрабатывает раны и не восстанавливает максимальный запас здоровья конечности.
+  - Сначала обработайте раны, а затем используйте нить или трансплантат, если конечности всё ещё требуется лечение.
 
 </Document>

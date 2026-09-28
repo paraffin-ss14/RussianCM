@@ -1,22 +1,22 @@
 <Document>
-  #Crusher, Tier 3
+  # Крушитель, уровень 3
   <GuideEntityEmbed Entity="RMCXenoCrusher"/>
-  ##Playing as a Crusher
-  Make use of your high armor pool and explosion resistance to protect sisters and walk enemies down. Crushers become immune to grenade stuns and get multiple passives.
+  ## Игра за Крушителя
+  Используйте высокий запас брони и сопротивление взрывам, чтобы прикрывать сестёр и теснить противника. Крушители не оглушаются гранатами и обладают несколькими пассивными эффектами.
 
-  Never charge into a horde of hosts with no knowledge, you are very slow and will be vulnerable to the demolitions specialist as you have no escape abilities, this means you must play crusher with lots of info.
+  Никогда не врывайтесь вслепую в толпу носителей. Вы очень медлительны и особенно уязвимы для специалиста-подрывника, поскольку у вас нет способностей для быстрого отхода. Крушителю необходима хорошая информация о положении противника.
 
-  To push in, you should first start with a charge and defensive shield at the start, so that your slashes can regenerate the cooldown. Use stomp to disrupt hosts while you slash them and then disengage.
+  Для наступления начинайте с рывка и защитного щита. Обычные атаки затем будут сокращать время восстановления способностей. Используйте топот, чтобы нарушить строй носителей, наносите удары и после этого отходите.
 
-  Your slashes will slow targets and deal adjacent damage to any targets nearby, they also reduce ability cooldowns.
+  Ваши атаки замедляют цели, наносят дополнительный урон стоящим рядом противникам и сокращают время восстановления способностей.
 
-  ##Abilities:
-  - [bold][color=green]PASSIVE[/color][/bold]: Your slashes cleave targets, allowing them to hit multiple enemies at once in its direction for a lessened damage amount.
-  - [bold][color=green]PASSIVE[/color][/bold]: Your slashes reduce ability cooldowns and slow down enemies.
-  - [bold]Charge[/bold]: Click on a tile to charge at. after a delay, you will bash anybody in the way dealing massive damage to them and reduce your charge cooldown.
+  ## Способности:
+  - [bold][color=green]ПАССИВНО[/color][/bold]: ваши атаки рассекают цель и могут задевать нескольких противников по направлению удара, нанося дополнительным целям уменьшенный урон.
+  - [bold][color=green]ПАССИВНО[/color][/bold]: обычные атаки сокращают время восстановления способностей и замедляют противников.
+  - [bold]Рывок[/bold]: выберите клетку для рывка. После небольшой задержки вы устремитесь вперёд, протаранив всех на пути, нанеся им большой урон и сократив время восстановления следующего рывка.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoCharge"/>
-  - [bold]Stomp[/bold]: Stomp on the ground in a AOE that stuns all targets nearby briefly. When used directly atop a downed target, it will inflict heavy damage.
+  - [bold]Топот[/bold]: удар по земле, ненадолго оглушающий все цели поблизости. Если применить непосредственно поверх лежащей цели, наносит ей большой урон.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoStomp"/>
-  - [bold]Defensive Shield[/bold]: Gain a temporary shield that blocks and reduces damage, it also has a short timer of high explosive invulnerability.
+  - [bold]Защитный щит[/bold]: временно создаёт щит, блокирующий и уменьшающий входящий урон. Сразу после активации также ненадолго даёт высокую защиту от взрывов.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoDefensiveShield"/>
 </Document>

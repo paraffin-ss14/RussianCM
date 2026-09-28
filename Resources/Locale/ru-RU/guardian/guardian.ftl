@@ -22,3 +22,12 @@ guardian-host-death-warn = ВЫ ПЕРЕСТАЁТЕ СУЩЕСТВОВАТЬ
 guardian-death-warn = ВАШЕ ТЕЛО ПРОНЗАЕТ СУБАТОМНАЯ БОЛЬ, КОГДА ОНО РАСПАДАЕТСЯ!
 guardian-attack-host = Вы не можете атаковать своего хозяина.
 
+
+
+guardian-injector-empty-invalid-creation = The injector is spent.
+
+guardian-injector-empty-examine = [color=#ba1919]The injector is spent.[/color]
+
+guardian-deck-invalid-creation = The deck can only provide one guardian at a time!
+
+guardian-deck-used-examine = [color=#ba1919]The deck's magic has been used up.[/color]

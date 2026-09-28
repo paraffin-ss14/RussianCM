@@ -78,3 +78,14 @@ names-xenoborg-dataset-77 = ДЕСТРО-НИАК
 names-xenoborg-dataset-78 = Машина Индиго
 names-xenoborg-dataset-79 = МАРК.ИЛЛЕР-1
 names-xenoborg-dataset-80 = Боевой борг
+
+
+names-xenoborg-dataset-81 = The Finishnator
+
+names-xenoborg-dataset-82 = Toaster of Doom
+
+names-xenoborg-dataset-83 = Ultraviolent
+
+names-xenoborg-dataset-84 = W.A.R Unit
+
+names-xenoborg-dataset-85 = Will Literally Kill You And Turn You Into A Xenoborg

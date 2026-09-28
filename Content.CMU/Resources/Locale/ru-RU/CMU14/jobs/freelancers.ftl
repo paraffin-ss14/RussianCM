@@ -1,0 +1,10 @@
+cmu-freelancer-name-rifleman = Стрелок-наёмник
+cmu-freelancer-name-medic = Медик-наёмник
+cmu-freelancer-name-leader = Командир наёмников
+cmu-freelancer-description = Наёмник с оружием. Кто платит кредиты — тот получает пули в нужную сторону, а всем остальным остаётся надеяться на удачу.
+cmu-freelancer-prefix-rifleman = FRFN
+cmu-freelancer-prefix-medic = FMED
+cmu-freelancer-prefix-leader = FSL
+cmu-freelancer-leader = командир группы наёмников
+cmu-freelancer-rules = Вы наёмник, солдат удачи. Вы нейтральны ко всем, если условия вашего контракта не предписывают иное. Ведите себя профессионально, соблюдайте контракт и получите свою плату.
+cmu-freelancer-greeting = Вы наёмник. Ваша группа взяла контракт в этом районе боевых действий. Следуйте за своим командиром, соблюдайте условия контракта и выберитесь отсюда богатыми — или не выбирайтесь вовсе.

@@ -104,3 +104,20 @@ ghost-roles-window-rules-footer = Кнопка станет доступна ч�
 
 ghost-return-to-body-title = Вернуться в тело
 ghost-return-to-body-text = Вас воскрешают! Вернуться в своё тело?
+
+
+ghost-target-window-group-filter = Group
+
+ghost-target-window-role-filter = Role
+
+ghost-target-window-tab-govfor = GOVFOR
+
+ghost-gui-toggle-lighting-manager-popup-half-bright = Half-Bright.
+
+ghost-target-window-warp-to-title = [bold]Quick Warp[/bold]
+
+ghost-target-window-warp-to-random = Random
+
+ghost-target-window-warp-to-most-followed-tooltip = Warp to the most followed player
+
+ghost-target-window-warp-to-random-tooltip = Warp to a random player

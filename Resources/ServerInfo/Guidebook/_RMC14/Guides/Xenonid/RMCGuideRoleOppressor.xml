@@ -1,26 +1,26 @@
 <Document>
-  #Oppressor, Tier 3
+  # Угнетатель, уровень 3
   <GuideEntityEmbed Entity="RMCXenoPraetorianOppressor"/>
-  ##Playing as an Oppressor
-  You are now specialized in being the Queen of Fishing. Firstly let's see what's changed from your Base form. You trade a portion of your speed, a bit of slash damage, slight loss in armor, and acid abilities to become a bulwark of the Queen that gains stun resistance from grenades. Your slashes deal increased damage to prone targets, and you gain a lash that knocks over and flings opponents in front of you as well as two abilities that can pull in hosts.
+  ## Игра за Угнетателя
+  Теперь вы специализируетесь на вытягивании целей из строя противника. По сравнению с базовым Преторианцем вы жертвуете частью скорости, небольшим количеством урона когтями и брони, а также кислотными способностями. Взамен получаете повышенную устойчивость к оглушению гранатами, дополнительный урон по лежащим целям, удар хвостом, который сбивает и отбрасывает противников перед вами, и две способности для притягивания носителей.
 
-  Oppressor is unique in its playstyle, specializing in capturing hosts from afar and keeping them there to them to be captured.
+  Угнетатель обладает необычным стилем игры: он захватывает носителей с расстояния, перемещает их в неудобную позицию и удерживает там до полноценного захвата.
 
-  Your dislocation abilities can become very lethal when used in the right way. The usual combo is to first abduct, dislocate them, then walking behind them to tail lash them towards the hive, and tackling if it's safe to do so.
+  Способности перемещения целей особенно опасны при правильной комбинации. Обычно сначала применяется похищение, затем вывих, после чего вы заходите за цель и ударом хвоста отбрасываете её в сторону улья. Если ситуация безопасна, закончите захватом и сбиванием с ног.
 
-  Remember to use fire to your advantage by hooking hosts into them, by either standing behind the fire and abducting or tail seizing.
+  Используйте огонь против самих носителей: становитесь с противоположной стороны пламени и притягивайте противника через него «Похищением» или «Захватом хвостом».
 
-  ##Abilities:
-  - [bold][color=green]PASSIVE[/color][/bold]: Your slashes deal additional damage to prone/knock targets.
-  - [bold]Abduct[/bold]: Landing this long ranged ability on:
-  - 1 person will drag them in front of you and slow them.
-  - 2 people will drag them in front of you, slow them, daze them and briefly root them.
-  - 3 or more people will drag them in front of you, slow them and briefly stun them.
+  ## Способности:
+  - [bold][color=green]ПАССИВНО[/color][/bold]: ваши атаки когтями наносят дополнительный урон лежащим или сбитым с ног целям.
+  - [bold]Похищение[/bold]: дальнобойная способность, эффект которой зависит от числа задетых целей:
+  - 1 цель — притягивается прямо перед вами и замедляется.
+  - 2 цели — притягиваются перед вами, замедляются, получают дезориентацию и ненадолго обездвиживаются.
+  - 3 и более целей — притягиваются перед вами, замедляются и ненадолго оглушаются.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoAbduct"/>
-  - [bold]Dislocate[/bold]: A powerful punch, similar to the warrior's punch. Deals armor piercing damage, more if your enemy is slowed. Will also root slowed targets. Reduces other ability cooldowns.
+  - [bold]Вывих[/bold]: мощный удар, похожий на удар Воина. Наносит бронебойный урон, который увеличивается по замедленной цели; замедленная цель также обездвиживается. Сокращает время восстановления других способностей.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoDislocate"/>
-  - [bold]Tail Lash[/bold]: Knock hosts back in a 2x3 area in front of you and slow them. Take note that this ability has a wind up.
+  - [bold]Удар хвостом[/bold]: после небольшой подготовки отбрасывает и замедляет носителей в области 2×3 клетки перед вами.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoTailLash"/>
-  - [bold]Tail Seize[/bold]: The Oppressor has a unique tail stab, instead called Tail Seize. It has a range of 3 tiles - dealing 40 damage, pulling the target in towards you and slowing them upon their arrival.
+  - [bold]Захват хвостом[/bold]: уникальная замена обычного удара хвостом. Имеет дальность 3 клетки, наносит 40 урона, притягивает цель к вам и замедляет её после притягивания.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoTailSeize"/>
 </Document>

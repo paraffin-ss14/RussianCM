@@ -25,3 +25,6 @@ rmc-laser-designator-to-switch = [color=cyan]Alt + ЛКМ для смены ре
 rmc-laser-designator-target-name = {$id} лазер
 
 rmc-laser-designator-signal-flare-examine-id = Эта цель имеет обозначение: [color=#ad3b98][bold]{$id}[/bold][/color].
+
+
+rmc-laser-designator-signal-flare-name = {$baseName} [{$id}]

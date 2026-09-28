@@ -26,10 +26,10 @@ accent-cowboy-words-9 = arrested
 accent-cowboy-replacement-9 = lassoed
 
 accent-cowboy-words-10 = bomb
-accent-cowboy-replacement-10 = dynamite
+accent-cowboy-replacement-10 = динамит
 
 accent-cowboy-words-11 = borg
-accent-cowboy-replacement-11 = tin man
+accent-cowboy-replacement-11 = жестянщик
 
 accent-cowboy-words-12 = bye
 accent-cowboy-replacement-12 = so long

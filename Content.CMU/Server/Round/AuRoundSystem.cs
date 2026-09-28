@@ -63,6 +63,7 @@ namespace Content.Server.CMU14.Round
         [Dependency] private IRobustRandom _random = default!;
         [Dependency] private ItemCamouflageSystem _camo = default!;
         [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private GameTicker _gameTicker = default!;
 
         [ViewVariables]
         public string? SelectedPlanetMapName => SelectedPlanetMap?.Announcement;
@@ -118,8 +119,17 @@ namespace Content.Server.CMU14.Round
             set => _state.SelectedOpforShip = value;
         }
 
-        public void SetOpforShip(string shipId) => _selectedOpforShip = shipId;
-        public void SetGovforShip(string shipId) => _selectedGovforShip = shipId;
+        public void SetOpforShip(string shipId)
+        {
+            _selectedOpforShip = shipId;
+            _gameTicker.UpdateInfoText();
+        }
+
+        public void SetGovforShip(string shipId)
+        {
+            _selectedGovforShip = shipId;
+            _gameTicker.UpdateInfoText();
+        }
         public void SetPreset(GamePresetPrototype? preset) => _selectedPreset = preset;
         public void SetSelectedThreat(ThreatPrototype? threat)
         {
@@ -319,6 +329,7 @@ namespace Content.Server.CMU14.Round
                         _state.SetPlanet(planet.Id, planet.Planet);
                         AnnounceVoteResult(args, Loc.GetString("au14-vote-name-planet"),
                             string.IsNullOrWhiteSpace(planet.Planet.VoteName) ? planet.Planet.MapId : planet.Planet.VoteName);
+                        _gameTicker.UpdateInfoText();
                     }
                 };
 
@@ -332,6 +343,7 @@ namespace Content.Server.CMU14.Round
                         if (_selectedPlanet == null && planetProtos.Count > 0)
                         {
                             _state.SetPlanet(planetProtos[0].Id, planetProtos[0].Planet);
+                            _gameTicker.UpdateInfoText();
                         }
                         SetCamoType();
                         StartPlatoonVotes(sequenceId);
@@ -763,13 +775,26 @@ namespace Content.Server.CMU14.Round
                     : 0;
             }
 
+            // Distress Signal promises survivors: spend the budget on them first so a group is
+            // scheduled whenever the population supports one, then let the weighted lottery fill
+            // whatever capacity is left with the planet's other third parties.
             List<ThirdPartyPrototype> selected = SelectThirdPartiesWithinBodyBudget(
-                candidates,
+                candidates.Where(party => party.RoundStart && party.AnnounceAsSurvivors).ToList(),
                 maxThirdParties,
                 bodyBudget,
                 PickWeightedThirdParty,
                 party => bodyCounts[party],
                 out var selectedBodyCount);
+
+            selected.AddRange(SelectAdditionalDistressSignalThirdParties(
+                candidates,
+                selected,
+                maxThirdParties,
+                bodyBudget,
+                PickWeightedThirdParty,
+                party => bodyCounts[party],
+                out _,
+                out var additionalBodyCount));
 
             SetSelectedThirdPartiesInSpawnOrder(selected);
             survivorCount = CalculateAnnouncedSurvivorCount(selected, party => bodyCounts[party]);
@@ -779,7 +804,7 @@ namespace Content.Server.CMU14.Round
 
             _sawmill.Info(
                 $"[AuRoundSystem] Locked Distress Signal third parties before round start: selected={
-                    selected.Count}, bodies={selectedBodyCount}/{bodyBudget}, survivors={survivorCount}, eligibleThreats=[{
+                    selected.Count}, bodies={selectedBodyCount + additionalBodyCount}/{bodyBudget}, survivors={survivorCount}, eligibleThreats=[{
                         string.Join(", ", eligibleThreatIds)}].");
 
             return true;
@@ -862,6 +887,13 @@ namespace Content.Server.CMU14.Round
                     return;
                 }
 
+                // One ship is no choice, skip the vote window
+                if (possibleShips.Count == 1)
+                {
+                    onShipSelected(possibleShips[0]);
+                    return;
+                }
+
                 var shipOptions = possibleShips.Select(id => (id, (object)id)).ToList();
                 var voteopt = new VoteOptions
                 {
@@ -929,6 +961,7 @@ namespace Content.Server.CMU14.Round
                         args.ResolveWinner(winnerId);
                         platoonSpawnRuleSystem.SelectedGovforPlatoon = winnerId;
                         AnnounceVoteResult(args, Loc.GetString("au14-vote-name-govfor"), winnerId.Name);
+                        _gameTicker.UpdateInfoText();
 
                         // If this platoon declares a tech-tree, apply it immediately to the IntelSystem as a runtime override.
                         var intelSys = _entityManager.EntitySysManager.GetEntitySystem<Content.Shared._RMC14.Intel.IntelSystem>();
@@ -946,10 +979,10 @@ namespace Content.Server.CMU14.Round
                                     if (!IsCurrentVoteSequence(sequenceId))
                                         return;
 
-                                    StartShipVote(winnerId.PossibleShips,
+                                    StartShipVote(winnerId.GovforShips ?? winnerId.PossibleShips,
                                         "Govfor Ship Vote",
                                         Loc.GetString("au14-vote-name-govfor-ship"),
-                                        shipId => _selectedGovforShip = shipId);
+                                        SetGovforShip);
                                 });
                         }
                     }
@@ -988,6 +1021,7 @@ namespace Content.Server.CMU14.Round
                         args.ResolveWinner(winnerId);
                         platoonSpawnRuleSystem.SelectedOpforPlatoon = winnerId;
                         AnnounceVoteResult(args, Loc.GetString("au14-vote-name-opfor"), winnerId.Name);
+                        _gameTicker.UpdateInfoText();
 
                         // If this platoon declares a tech-tree, apply it immediately to the IntelSystem as a runtime override.
                         var intelSys = _entityManager.EntitySysManager.GetEntitySystem<Content.Shared._RMC14.Intel.IntelSystem>();
@@ -1008,7 +1042,7 @@ namespace Content.Server.CMU14.Round
                                     StartShipVote(winnerId.PossibleShips,
                                         "Opfor Ship Vote",
                                         Loc.GetString("au14-vote-name-opfor-ship"),
-                                        shipId => _selectedOpforShip = shipId);
+                                        SetOpforShip);
                                 });
                         }
                     }
@@ -1042,6 +1076,11 @@ namespace Content.Server.CMU14.Round
             StartFullVoteSequence();
             onFinished?.Invoke();
         }
+
+        /// <summary>
+        /// Stops the vote sequence and cancels its active votes.
+        /// </summary>
+        public void StopVoteSequence() => _voteSequence.Restart();
 
         public RMCPlanetMapPrototypeComponent? GetSelectedPlanet()
         {
@@ -1109,6 +1148,7 @@ namespace Content.Server.CMU14.Round
             {
                 _state.SetPlanet(planetId, planetComp);
                 SetCamoType();
+                _gameTicker.UpdateInfoText();
                 return true;
             }
 

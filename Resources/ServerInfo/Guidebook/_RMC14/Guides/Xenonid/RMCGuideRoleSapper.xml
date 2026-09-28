@@ -1,26 +1,26 @@
 ﻿<Document>
-  #Boiler, Tier 3
+  # Сапёр, штамм Бойлера уровня 3
   <GuideEntityEmbed Entity="RMCXenoBoilerSapper"/>
-  ##Playing as a Sapper
-  Become a supportive damage-dealer, trading greater area damage potential for shorter cooldowns and tools for setting up and executing ambushes. Catch marines that venture too far from safety with your Deploy Traps, blast any who get too close with your Acid Shotgun or Acid Tail Stab, and quickly chip away at the durability of the marine frontline with your Acid Mine.
+  ## Игра за Сапёра
+  Вы превращаетесь в бойца поддержки, наносящего урон: жертвуете большим потенциалом урона по площади ради более короткого времени восстановления и инструментов для подготовки и проведения засад. Ловите морпехов, слишком далеко ушедших от безопасной позиции, с помощью «Развернуть ловушки», расстреливайте подошедших слишком близко «Кислотным дробовиком» или кислотным ударом хвоста и постепенно разрушайте оборону передовой «Кислотной миной».
 
-  You inherit the weaknesses of the Boiler, so beware of fire and stay far from green flares and red dots that may call skyfire down on you.
+  Вы сохраняете слабости Бойлера, поэтому опасайтесь огня и держитесь подальше от зелёных сигнальных огней и красных точек, которые могут навести на вас огонь с воздуха.
 
-  Due to high acid reserves, the Sapper glows in the dark making it seen by any host easily, this also makes the Sapper incredibly vulnerable to [color=red]fire[/color].
+  Из-за большого запаса кислоты Сапёр светится в темноте и хорошо заметен носителям. Это также делает его чрезвычайно уязвимым к [color=red]огню[/color].
   <GuideEntityEmbed Entity="RMCTileFire"/>
 
-  ##Abilities:
-  - [bold][color=#E61919]PASSIVE[/color][/bold]: Vulnerable to fire and glows in the dark.
-  - [bold][color=#E61919]PASSIVE[/color][/bold]: You gain Insight when you hit mobs with your Acid Shotgun. These will empower your next Deploy Traps if you gain 10. Hitting a mob stuck in your traps will instantly grant you 10 stacks.
-  - [bold]Strong Corrosive Acid[/bold]: Secretes a glob of acid on items to be dissolved.
+  ## Способности:
+  - [bold][color=#E61919]ПАССИВНО[/color][/bold]: вы уязвимы к огню и светитесь в темноте.
+  - [bold][color=#E61919]ПАССИВНО[/color][/bold]: попадания по мобам «Кислотным дробовиком» дают заряды Проницательности. При 10 зарядах следующая установка ловушек усиливается. Попадание по мобу, уже находящемуся в вашей ловушке, сразу даёт 10 зарядов.
+  - [bold]Сильная едкая кислота[/bold]: выделяет кислоту на предмет, постепенно растворяя его.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoCorrosiveAcid"/>
-  - [bold]Toggle Long Range Sight[/bold]: See further in all directions.
+  - [bold]Переключить дальнее зрение[/bold]: позволяет видеть дальше во всех направлениях.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoToggleLongRangeSight"/>
-  - [bold]Acid Shotgun[/bold]: A short ranged blast of nine acid pellets that can deal significant damage to mobs and grants a stack of Insight per pellet that hits. Deals more damage to trapped mobs and maxes stacks of Insight.
+  - [bold]Кислотный дробовик[/bold]: выпускает на небольшую дистанцию девять кислотных снарядов, способных нанести значительный урон. За каждый попавший снаряд вы получаете один заряд Проницательности. По целям в ловушках способность наносит больше урона и сразу заполняет запас Проницательности.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoScatteredSpit"/>
-  - [bold]Deploy Traps[/bold]: Deploy a line of traps that will snare any mobs that step on them and increase the damage your abilities do while they are snared. If it is cast while empowered, it snares for longer and also empowers your next Acid Mine.
+  - [bold]Развернуть ловушки[/bold]: создаёт линию ловушек, которые обездвиживают наступивших на них мобов и увеличивают урон ваших способностей по пойманным целям. Усиленная версия удерживает дольше и дополнительно усиливает следующую «Кислотную мину».
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoDeployTraps"/>
-  - [bold]Acid Mine[/bold]: Trigger a remote detonation that will explode after a moment of delay, dealing damage to mobs, structures and emplacements. If it is empowered, it deals more damage and applies a lingering acid to mobs.
+  - [bold]Кислотная мина[/bold]: устанавливает дистанционный заряд, который через короткую задержку взрывается и повреждает мобов, конструкции и стационарные позиции. Усиленная версия наносит больше урона и оставляет на мобах продолжительный кислотный эффект.
   <GuideEntityEmbed Entity="RMCGuidebookActionXenoAcidMine"/>
 
 </Document>

@@ -16,6 +16,8 @@
 - type: vendingMachineInventory
   id: AU14VendorKoorCigs
   startingInventory:
+    PackPaperRolling: 20
+    PackPaperRollingFilters: 10
     AU14CigaretteKoorlander: 50
     AU14CigaretteLadyFingers: 20
     RMCMatchboxFull: 15
@@ -501,5 +503,6 @@
   - type: AccessReader
     access:
     - [ "AU14AccessGovforSquadWeaponsSpecialist" ]
+    - [ "AU14AccessOpforSquadWeaponsSpecialist" ]
   - type: Sprite
     sprite: _RMC14/Structures/Machines/VendingMachines/ColMarTech/specialist_gear.rsi

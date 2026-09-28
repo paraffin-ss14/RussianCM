@@ -1,47 +1,47 @@
 <Document>
-  Guide by Kynthos on Discord
+  Руководство подготовлено Kynthos в Discord
 
-  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]UNITED NATIONS MARINE CORPS[/bold][/head]\n
+  [color=#5f698a]█    █ █▄ █[/color] [head=2][bold]КОРПУС МОРСКОЙ ПЕХОТЫ ОБЪЕДИНЁННЫХ НАЦИЙ[/bold][/head]\n
   [color=#5f698a]▀ ▄▀ █ ▀█ [/color]
 
-  #Telecommunication and Sensor Towers
+  # Башни связи и сенсорные башни
 
-  On the Colony there are stationary towers that Marines will need to repair in order to bolster their communication and intelligence gathering capabilities. These are vital objectives that must be repaired and protected to maintain their functionality. To repair this vital equipment, you will need to be specifically trained. Only dedicated Engineers, [textlink="Combat Technicians" link="RMCGuideRoleCombatTechnician"], or Fireteam Leaders have such training.
+  На колонии находятся стационарные башни, которые морпехам необходимо ремонтировать для восстановления связи и расширения возможностей разведки. Это важные объекты: после ремонта их необходимо защищать, чтобы они продолжали работать. Для обслуживания такого оборудования требуется специальная подготовка. Ею обладают только инженеры, [textlink="боевые техники" link="RMCGuideRoleCombatTechnician"] и командиры огневых групп.
 
-  ##Telecommunication Towers
+  ## Телекоммуникационные башни
 
-  Radio communication between Marines on the planet and the staff onboard the Almayer cannot be conducted until one of the two TC-3T Static Telecommunications Tower in the Colony has been repaired to boost the connection.
+  Радиосвязь между морпехами на планете и персоналом на борту «Альмайера» невозможна, пока не будет отремонтирована хотя бы одна из двух стационарных телекоммуникационных башен TC-3T на колонии.
 
   <Box>
     <GuideEntityEmbed Entity="AU14CommunicationsTower"/>
   </Box>
 
-The location of the Telecommunication Towers vary between Operations. The CIC will know their exact location, so ensure you communicate with Command to be informed of which towers need to be repaired.
+  Расположение телекоммуникационных башен меняется от операции к операции. CIC знает их точные координаты, поэтому поддерживайте связь с командованием и уточняйте, какие башни требуется восстановить.
 
-[bold]Repairing a Telecommunications Tower[/bold] is as simple as [bold]using a blowtorch[/bold] to weld all the panels back together. You may need to repeat this multiple times, so inspect the tower to see if more damage needs to be repaired.
+  [bold]Ремонт телекоммуникационной башни[/bold] прост: [bold]используйте сварочный аппарат[/bold], чтобы восстановить повреждённые панели. Возможно, действие придётся повторить несколько раз — осматривайте башню, чтобы понять, остались ли повреждения.
 
-[bold]Once the tower is repaired[/bold], you will need to [bold]use a Security Access Tuner[/bold] to [bold]add your faction’s frequencies[/bold] to the network. Once this is done, the tower will begin broadcasting those radio frequencies to planetary and extra-planetary locations.
+  [bold]После ремонта башни[/bold] необходимо [bold]использовать настройщик доступа[/bold], чтобы [bold]добавить частоты вашей фракции[/bold] в сеть. После этого башня начнёт ретранслировать эти радиочастоты по планете и за её пределы.
 
-[bold]The Telecommunication Tower will not function if it is not powered[/bold], so you will also need to repair the local APC and potentially the Colony’s Power grid.
+  [bold]Телекоммуникационная башня не работает без питания[/bold], поэтому также потребуется восстановить местный APC и, при необходимости, энергосеть колонии.
 
-Once the Telecommunication Tower is repaired, tuned, and powered, radio communications will resume. The Tower becoming destroyed or depowered in any way will halt communications until the problem is fixed.
+  Когда башня отремонтирована, настроена и получает питание, радиосвязь восстанавливается. Если башню уничтожат или она потеряет питание, связь прервётся до устранения проблемы.
 
-##Sensor Tower
+  ## Сенсорная башня
 
-The Experimental Sensor Tower found in each colony has been adjusted to track unknown biosignatures in the nearby area. With it repaired, the CIC will be able to [bold]track the exact location of all unknown biosignatures on their TACMAP[/bold] for as long as it is operational.
+  Экспериментальная сенсорная башня на каждой колонии настроена на обнаружение неизвестных биосигнатур поблизости. Пока отремонтированная башня работает, CIC может [bold]видеть точное местоположение всех неизвестных биосигнатур на тактической карте[/bold].
 
-The location of the Sensor Tower is predetermined for each AO, remaining the same between operations.
+  Положение сенсорной башни заранее задано для каждой зоны операции и не меняется между операциями.
 
   <Box>
     <GuideEntityEmbed Entity="AU14SensorTower"/>
   </Box>
 
-  If you are unsure on the next step for repairs, make sure to inspect the tower, but the steps are as follows:
-  -First, use a [bold]blowtorch[/bold] to weld the plates back together.
-  -Next, use [bold]wire cutters[/bold] to repair the wires.
-  -Then, use a [bold]wrench[/bold] to realign the tower properly.
-  -Finally, power the Sensor tower on to begin scanning.
+  Если вы не уверены, что делать дальше, осмотрите башню. Порядок ремонта следующий:
+  - Сначала используйте [bold]сварочный аппарат[/bold], чтобы восстановить металлические пластины.
+  - Затем используйте [bold]кусачки[/bold], чтобы починить проводку.
+  - После этого используйте [bold]гаечный ключ[/bold], чтобы правильно выровнять башню.
+  - Наконец, включите питание сенсорной башни, чтобы начать сканирование.
 
-  Once the Sensor Tower has been repaired, it will stay operational for a small while until it [bold]randomly breaks down[/bold]. When this happens, the Sensor Tower must be repaired again to continue tracking unknown biosignatures.
+  После ремонта сенсорная башня проработает некоторое время, а затем [bold]может случайным образом выйти из строя[/bold]. В таком случае её необходимо отремонтировать снова, чтобы продолжить отслеживание неизвестных биосигнатур.
 
 </Document>

@@ -1,15 +1,16 @@
 <Document>
-  # Xenonid Tactical Map Icons
-  Every Xenonid got their own respective map icon, each having a specific color depending on their Tier.
-  - [color=Purple][bold]Purple[/bold][/color] is given to Tier 0 Xenonids.
-  - [color=Green][bold]Green[/bold][/color] is given to Tier 1 Xenonids.
-  - [color=Yellow][bold]Yellow[/bold][/color] is given to Tier 2 Xenoninds.
-  - [color=Red][bold]Red[/bold][/color] is given to Tier 3 Xenonids.
+  # Значки ксенонидов на тактической карте
+  У каждого ксенонида есть собственный значок на карте. Его цвет зависит от уровня касты.
+  - [color=Purple][bold]Фиолетовый[/bold][/color] — ксенониды уровня 0.
+  - [color=Green][bold]Зелёный[/bold][/color] — ксенониды уровня 1.
+  - [color=Yellow][bold]Жёлтый[/bold][/color] — ксенониды уровня 2.
+  - [color=Red][bold]Красный[/bold][/color] — ксенониды уровня 3.
 
-  ## Leader Crown
-  Xenonids appointed as a [color=lightblue]Leader[/color] by the [textlink="Queen" link="RMCGuideRoleQueen"], will have a blue crown added to their map icon.
+  ## Корона лидера
+  Ксенонид, которого [textlink="Королева" link="RMCGuideRoleQueen"] назначила [color=lightblue]лидером[/color], получает синюю корону поверх значка на карте.
   <GuideEntityEmbed Entity="RMCLeaderMapIcon"/>
-  ## Xenonid Icons
+
+  ## Значки ксенонидов
   <Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoLesserDrone" Caption=""/>
@@ -17,14 +18,14 @@
     </Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoParasite" Caption=""/>
-      <GuideEntityEmbed Entity="RMCParasiteMapIcon" Caption="Child / Parasite"/>
+      <GuideEntityEmbed Entity="RMCParasiteMapIcon" Caption="Дитя / Паразит"/>
     </Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoLarva" Caption=""/>
       <GuideEntityEmbed Entity="RMCLarvaMapIcon"/>
     </Box>
   </Box>
-  - Drone Castes
+  - Касты дронов
   <Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoDrone" Caption="" Margin="0 40 0 0"/>
@@ -43,7 +44,7 @@
       <GuideEntityEmbed Entity="RMCCarrierMapIcon"/>
     </Box>
   </Box>
-  - Defender Castes
+  - Касты защитников
   <Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoDefender" Caption=""/>
@@ -58,7 +59,7 @@
       <GuideEntityEmbed Entity="RMCCrusherMapIcon"/>
     </Box>
   </Box>
-  - Sentinel Castes
+  - Касты стражей
   <Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoSentinel" Caption="" Margin="0 25 0 0"/>
@@ -73,7 +74,7 @@
       <GuideEntityEmbed Entity="RMCBoilerMapIcon"/>
     </Box>
   </Box>
-  - Runner Castes
+  - Касты бегунов
   <Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoRunner" Caption=""/>
@@ -88,7 +89,7 @@
       <GuideEntityEmbed Entity="RMCRavagerMapIcon"/>
     </Box>
   </Box>
-  - Special Castes
+  - Особые касты
   <Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="CMXenoPraetorian" Caption=""/>
@@ -99,7 +100,8 @@
       <GuideEntityEmbed Entity="RMCQueenMapIcon"/>
     </Box>
   </Box>
-  ## Xenonid Structure Icons
+
+  ## Значки сооружений улья
   <Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="HiveCoreXeno" Caption=""/>
@@ -125,7 +127,7 @@
     </Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="HivePlasmaTreeXeno" Caption="" Margin="35 20 0 0"/>
-      <GuideEntityEmbed Entity="RMCRecovNodeMapIcon" Caption="Plasma Tree" Margin="35 4 0 0"/>
+      <GuideEntityEmbed Entity="RMCRecovNodeMapIcon" Caption="Плазменное дерево" Margin="35 4 0 0"/>
     </Box>
     <Box Orientation="Vertical">
       <GuideEntityEmbed Entity="HivePylonXeno" Caption=""/>

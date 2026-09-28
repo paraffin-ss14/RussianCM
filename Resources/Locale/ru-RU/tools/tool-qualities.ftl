@@ -42,3 +42,8 @@ tool-quality-brushing-tool-name = Проволочная щётка
 tool-quality-vehicle-servicing-name = Автосервис
 
 tool-quality-vehicle-servicing-tool-name = Ремонтный домкрат
+
+
+tool-quality-shearing-name = Shearing
+
+tool-quality-shearing-tool-name = Wirecutter

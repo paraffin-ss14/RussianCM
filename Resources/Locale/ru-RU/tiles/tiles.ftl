@@ -167,3 +167,36 @@ tiles-ironsand-concrete-slab = железопесчаная бетонная п�
 tiles-ironsand-concrete-smooth = гладкий бетонный пол из железного песка
 tiles-ironsand-packed = утрамбованный железный песок
 tiles-ironsand-paved = асфальтированный железный песок
+
+
+tiles-au14-scab-resin = scab resin
+
+tiles-uranium-glass-floor = uranium glass floor
+
+tiles-plasma-glass-floor = plasma glass floor
+
+tiles-plastitanium-glass-floor = plastitanium glass floor
+
+tiles-white-marble-mono = white marble mono tile
+
+tiles-dark-marble-mono = dark marble mono tile
+
+tiles-exo-viscera = exodermis viscera floor
+
+tiles-exo-hull = exodermis hull floor
+
+tiles-exo-techmaint = exodermis techmaint floor
+
+tiles-exo-horizontal = exodermis horizontal floor
+
+tiles-exo-vertical = exodermis vertical floor
+
+tiles-exo-corner-ne = exodermis NE corner floor
+
+tiles-exo-corner-nw = exodermis NW corner floor
+
+tiles-exo-corner-se = exodermis SE corner floor
+
+tiles-exo-corner-sw = exodermis SW corner floor
+
+tiles-exo-borg = mechadermis floor
