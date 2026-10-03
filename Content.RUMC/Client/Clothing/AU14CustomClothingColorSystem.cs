@@ -10,6 +10,7 @@ using Robust.Shared.Serialization.Manager;
 
 namespace Content.Client.CMU14.Clothing;
 
+// Applies the custom color to the item sprite and to the worn clothing layers.
 public sealed class AU14CustomClothingColorSystem : EntitySystem
 {
     [Dependency] private ISerializationManager _serialization = default!;

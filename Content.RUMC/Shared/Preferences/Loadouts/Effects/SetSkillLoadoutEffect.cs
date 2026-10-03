@@ -7,6 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Preferences.Loadouts.Effects;
 
+// Gives the character a skill at a fixed level when they spawn.
 public sealed partial class SetSkillLoadoutEffect : LoadoutEffect
 {
     [DataField(required: true)]

@@ -4,6 +4,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Preferences.Loadouts.Effects;
 
+// Marks a loadout as a free clothing choice for one inventory slot.
 public sealed partial class CustomClothingLoadoutEffect : LoadoutEffect
 {
     [DataField(required: true)]

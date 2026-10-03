@@ -5,6 +5,7 @@ using Robust.Shared.GameStates;
 namespace Content.Shared.CMU14.Clothing;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+// Tints an item (and how it looks when worn) with a custom color.
 public sealed partial class AU14CustomClothingColorComponent : Component
 {
     [DataField, AutoNetworkedField]

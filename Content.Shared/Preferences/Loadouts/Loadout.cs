@@ -12,6 +12,7 @@ public sealed partial class Loadout : IEquatable<Loadout>
     [DataField]
     public ProtoId<LoadoutPrototype> Prototype;
 
+    // Player-chosen item, name and color, used by loadouts that allow a free choice.
     [DataField]
     public string? CustomEntity;
 

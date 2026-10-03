@@ -10,6 +10,7 @@ using Content.Shared.Physics;
 
 namespace Content.Server.CMU14.Logistics;
 
+// Opens deploy boxes: spawns their contents in front of the user and removes the box.
 public sealed class AU14DeployBoxSystem : EntitySystem
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -61,6 +62,7 @@ public sealed class AU14DeployBoxSystem : EntitySystem
         QueueDel(uid);
     }
 
+    // Picks a spot in front of the user, or the user's own tile if it is blocked.
     private EntityCoordinates FindSpawnPoint(EntityUid user, float distance)
     {
         var forward = _transform.GetWorldRotation(user).ToWorldVec() * distance;

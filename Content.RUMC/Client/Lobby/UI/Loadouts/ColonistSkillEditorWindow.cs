@@ -21,6 +21,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Lobby.UI.Loadouts;
 
+// Lobby window for colonist skills: one slider per skill plus the special loadout list.
 public sealed class ColonistSkillEditorWindow : DefaultWindow
 {
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutPressed;
@@ -31,6 +32,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
 
     public event Action? OnClothingEditorRequested;
 
+    // Skills every colonist starts with by default.
     private static readonly (ProtoId<LoadoutGroupPrototype> Group, ProtoId<LoadoutPrototype> Loadout)[] VanillaDefaults =
     {
         ("AU14ColonistSkillGroupFireman", "AU14ColonistSkillFireman1"),
@@ -48,6 +50,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
         "combat", "medical", "engineering", "command", "transport", "survival", OtherCategory,
     };
 
+    // Which category each skill is shown under.
     private static readonly Dictionary<string, string> CategoryByGroup = new()
     {
         ["AU14ColonistSkillGroupFirearms"] = "combat",
@@ -248,6 +251,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
         OnClothingEditorRequested?.Invoke();
     }
 
+    // Selects the default skills the first time the window is opened.
     public void ApplyVanillaDefaultsIfUntouched(RoleLoadout loadout)
     {
         var alreadyTouched = VanillaDefaults.Any(entry =>
@@ -260,6 +264,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
             OnLoadoutPressed?.Invoke(group, loadoutId);
     }
 
+    // Shows only skills whose name contains the text.
     public void SetSearchFilter(string text)
     {
         var filter = text.Trim();
@@ -299,6 +304,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
             OnLoadoutPressed?.Invoke(group, loadoutId);
     }
 
+    // Builds the skill sliders and the special loadout checkboxes from the prototypes.
     private void BuildRows(RoleLoadoutPrototype roleProto, RoleLoadoutPrototype specialLoadoutProto)
     {
         _skillsBox.RemoveAllChildren();
@@ -475,6 +481,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
         return sliderRow;
     }
 
+    // Moving a slider picks the matching skill level and drops the others.
     private void OnSliderChanged(SliderRow row)
     {
         var target = (int)MathF.Round(row.Slider.Value);
@@ -573,6 +580,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
             .Concat(source.Storage.Values.SelectMany(list => list)));
     }
 
+    // Makes small icons of the items a loadout gives.
     private List<Control> BuildItemIcons(LoadoutPrototype loadoutProto)
     {
         var icons = new List<Control>();
@@ -606,6 +614,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
         return icons;
     }
 
+    // Updates points, slider values and which entries are available.
     public void RefreshLoadouts(
         HumanoidCharacterProfile profile,
         RoleLoadout loadout,

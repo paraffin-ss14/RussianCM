@@ -391,6 +391,7 @@ public sealed partial class RoleLoadout : IEquatable<RoleLoadout>
         return true;
     }
 
+    // Adds a loadout with player-chosen data, replacing an earlier pick of the same loadout.
     public bool SetCustomLoadout(ProtoId<LoadoutGroupPrototype> selectedGroup, Loadout selected, IPrototypeManager protoManager)
     {
         if (!SelectedLoadouts.TryGetValue(selectedGroup, out var groupLoadouts))

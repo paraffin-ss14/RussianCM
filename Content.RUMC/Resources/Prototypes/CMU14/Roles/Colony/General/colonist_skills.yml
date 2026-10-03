@@ -1,3 +1,5 @@
+# Colonist skills: each skill is a group, each level is a loadout that sets the skill.
+
 - type: loadoutGroup
   id: AU14ColonistSkillGroupConstruction
   name: loadout-group-au14-colonist-skill-construction
@@ -338,6 +340,7 @@
   cost: 3
   effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillVehicles, level: 2 } ]
 
+# Empty groups kept so the editor sections stay in place.
 - type: loadoutGroup
   id: AU14ColonistSkillGroupSpecial
   name: loadout-group-au14-colonist-skill-special
@@ -354,6 +357,7 @@
   maxLimit: 1
   loadouts: []
 
+# Special loadout: its own points pool for gear, boxes and clothing.
 - type: roleLoadout
   id: AU14ColonistSpecialLoadout
   points: 20

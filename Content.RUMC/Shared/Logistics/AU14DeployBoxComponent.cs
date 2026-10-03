@@ -8,6 +8,7 @@ using Robust.Shared.Serialization.Manager.Attributes;
 namespace Content.Shared.CMU14.Logistics;
 
 [RegisterComponent]
+// A box that unpacks machines or vehicles when used in hand.
 public sealed partial class AU14DeployBoxComponent : Component
 {
     [DataField(required: true)]
@@ -24,6 +25,7 @@ public sealed partial class AU14DeployBoxComponent : Component
 }
 
 [DataDefinition]
+// One thing to spawn when the box is opened.
 public sealed partial class DeployBoxEntry
 {
     [DataField(required: true)]

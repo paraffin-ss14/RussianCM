@@ -17,6 +17,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Lobby.UI.Loadouts;
 
+// Window where the player picks clothing, a name and a color for each slot.
 public sealed class ColonistClothingWindow : DefaultWindow
 {
     public event Action<ProtoId<LoadoutGroupPrototype>, Loadout>? OnApply;
@@ -327,6 +328,7 @@ public sealed class ColonistClothingWindow : DefaultWindow
         return string.IsNullOrWhiteSpace(proto.Name) ? proto.ID : proto.Name;
     }
 
+    // Fills the item list for the current slot, filtered by the search text.
     private void PopulateList()
     {
         _listBox.RemoveAllChildren();
@@ -413,6 +415,7 @@ public sealed class ColonistClothingWindow : DefaultWindow
         _applyButton.Disabled = false;
     }
 
+    // Saves the current pick for this slot.
     private void ApplySlot()
     {
         if (_current == null || _picked == null)
@@ -430,6 +433,7 @@ public sealed class ColonistClothingWindow : DefaultWindow
         _clearButton.Disabled = false;
     }
 
+    // Removes the custom clothing for this slot.
     private void ClearSlot()
     {
         if (_current == null)

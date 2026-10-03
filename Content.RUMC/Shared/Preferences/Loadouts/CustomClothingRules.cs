@@ -8,12 +8,16 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Preferences.Loadouts;
 
+// Rules for which clothing a player may pick in the custom clothing menu.
 public static class CustomClothingRules
 {
+    // Longest custom item name that is kept.
     public const int MaxNameLength = 64;
 
+    // Plain uniforms have a little armor, so small values are allowed.
     private const int MaxToleratedArmor = 10;
 
+    // Inventory slots that can be customized.
     public static readonly IReadOnlyDictionary<string, SlotFlags> Slots = new Dictionary<string, SlotFlags>
     {
         ["head"] = SlotFlags.HEAD,
@@ -26,6 +30,7 @@ public static class CustomClothingRules
         ["shoes"] = SlotFlags.FEET,
     };
 
+    // Items with any of these components give a real bonus or cannot be taken off, so they are not offered.
     private static readonly string[] ForbiddenComponents =
     {
         "Armor", "CMHardArmor", "CMArmorPiercing", "SquadArmor", "SmartGunArmor", "RMCArmorModifier",
@@ -54,8 +59,10 @@ public static class CustomClothingRules
         "RequiresSkill", "Scope", "CursorOffsetRequiresWield", "Handcuff", "RMCDefibrillatorBlocked",
     };
 
+    // Items whose id contains one of these words are test or admin items.
     private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking" };
 
+    // Items that are always hidden (head cloaks and a few special items).
     private static readonly HashSet<string> ForbiddenIds = new()
     {
         "ClothingNeckCloakCap", "ClothingNeckCloakCapFormal", "ClothingNeckCloakPirateCap", "ClothingNeckCloakCe",
@@ -69,6 +76,7 @@ public static class CustomClothingRules
         return Slots.TryGetValue(slot, out flags);
     }
 
+    // True if the item may be picked for this slot.
     public static bool IsEligible(EntityPrototype proto, string slot, IComponentFactory factory)
     {
         if (proto.Abstract || proto.HideSpawnMenu || ForbiddenIds.Contains(proto.ID))
@@ -104,6 +112,7 @@ public static class CustomClothingRules
         return true;
     }
 
+    // Trims the name, removes control characters and cuts it to the max length.
     public static string? SanitizeName(string? name)
     {
         if (name == null)
@@ -122,6 +131,7 @@ public static class CustomClothingRules
         return effect != null;
     }
 
+    // Checks and cleans the custom data of a loadout. False means it must be dropped.
     public static bool Validate(Loadout loadout, LoadoutPrototype proto, IDependencyCollection collection)
     {
         if (!TryGetEffect(proto, out var effect))

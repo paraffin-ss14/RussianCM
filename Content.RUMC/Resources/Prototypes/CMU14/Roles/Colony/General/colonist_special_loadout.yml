@@ -1,3 +1,5 @@
+# Special loadout entries: gear, boxed machines and vehicles. Each one needs skill levels.
+
 - type: loadoutGroup
   id: AU14ColonistSpecialGroupCqc
   name: loadout-group-au14-colonist-special-cqc
@@ -561,6 +563,7 @@
     skill: RMCSkillVehicles
     minLevel: 2
 
+# Base for boxes that unpack a machine or vehicle when used in hand.
 - type: entity
   abstract: true
   parent: BaseItem
@@ -802,6 +805,7 @@
     entries:
     - prototype: VehicleHumveeTransport
 
+# Free clothing choice: one loadout per inventory slot.
 - type: loadoutGroup
   id: AU14ColonistClothingGroup
   name: loadout-group-au14-colonist-clothing

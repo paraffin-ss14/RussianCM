@@ -849,6 +849,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             $"{ToPrettyString(uid):player} has skin tone {NamedColorHelper.NearestColorName(profile.Appearance.SkinColor)}");
     }
 
+    // Finds the special loadout the player picked for this job, if the job has one.
     private bool TryGetSpecialLoadout(
         HumanoidCharacterProfile? profile,
         RoleLoadoutPrototype? jobLoadoutProto,
@@ -865,11 +866,13 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
                _prototypeManager.TryIndex(specialId, out specialProto);
     }
 
+    // Clothing slots where a special loadout item may replace what is already worn.
     private static readonly HashSet<string> SpecialLoadoutReplaceSlots = new()
     {
         "shoes", "jumpsuit", "outerClothing", "eyes", "gloves", "head", "mask",
     };
 
+    // Gives the character everything they picked in the special loadout.
     private void EquipSpecialLoadout(EntityUid entity, HumanoidCharacterProfile? profile, RoleLoadoutPrototype? jobLoadoutProto)
     {
         if (!TryGetSpecialLoadout(profile, jobLoadoutProto, out var special, out var specialProto))
@@ -890,6 +893,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         }
     }
 
+    // Spawns the clothing the player chose, with their name and color, and wears it in place of the old item.
     private void GiveCustomClothing(EntityUid entity, string slot, Loadout selected)
     {
         if (selected.CustomEntity == null ||
@@ -911,13 +915,44 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             Dirty(item, tint);
         }
 
-        if (InventorySystem.TryUnequip(entity, slot, out var replaced, silent: true, force: true))
-            QueueDel(replaced);
+        // Slots like pockets depend on the uniform and get emptied when it is taken off, so remember them.
+        var dependents = new List<(string Slot, EntityUid Item)>();
+        if (InventorySystem.TryGetSlots(entity, out var slotDefinitions))
+        {
+            foreach (var definition in slotDefinitions)
+            {
+                if (definition.DependsOn == slot && InventorySystem.TryGetSlotEntity(entity, definition.Name, out var held))
+                    dependents.Add((definition.Name, held.Value));
+            }
+        }
 
-        if (!InventorySystem.TryEquip(entity, item, slot, silent: true, force: true))
+        EntityUid? replaced = null;
+        if (InventorySystem.TryUnequip(entity, slot, out var old, silent: true, force: true))
+            replaced = old;
+
+        if (InventorySystem.TryEquip(entity, item, slot, silent: true, force: true))
+        {
+            if (replaced != null)
+                QueueDel(replaced);
+        }
+        else
+        {
             QueueDel(item);
+
+            // Put the old item back if the new one did not fit.
+            if (replaced != null)
+                InventorySystem.TryEquip(entity, replaced.Value, slot, silent: true, force: true);
+        }
+
+        // Put back whatever was dropped from the dependent slots.
+        foreach (var (dependentSlot, heldItem) in dependents)
+        {
+            if (!InventorySystem.TryGetSlotEntity(entity, dependentSlot, out _))
+                InventorySystem.TryEquip(entity, heldItem, dependentSlot, silent: true, force: true);
+        }
     }
 
+    // Spawns the items of one loadout entry and equips or holds them.
     private void GiveSpecialLoadoutEntry(EntityUid entity, LoadoutPrototype loadout)
     {
         var coordinates = Transform(entity).Coordinates;
@@ -933,6 +968,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             PickUpOrLeave(entity, Spawn(protoId, coordinates));
     }
 
+    // Equips into the slot (pockets use either one). Other slots keep what is already worn unless they may be replaced.
     private bool TryEquipSpecialItem(EntityUid entity, EntityUid item, string slot)
     {
         var candidates = slot switch
@@ -955,6 +991,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
                InventorySystem.TryEquip(entity, item, slot, silent: true, force: true);
     }
 
+    // Puts the item in a free hand, otherwise leaves it on the floor.
     private void PickUpOrLeave(EntityUid entity, EntityUid item)
     {
         if (TryComp(entity, out Content.Shared.Hands.Components.HandsComponent? hands) &&

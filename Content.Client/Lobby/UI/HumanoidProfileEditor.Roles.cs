@@ -121,6 +121,7 @@ public sealed partial class HumanoidProfileEditor
         UpdateJobPriorities();
     }
 
+    // Opens the colonist skills window and saves every change to the profile.
     private void OpenColonistSkillEditor(JobPrototype jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)
     {
         _colonistSkillWindow?.Dispose();
@@ -202,6 +203,7 @@ public sealed partial class HumanoidProfileEditor
         UpdateJobPriorities();
     }
 
+    // Opens the custom clothing window for the special loadout.
     private void OpenColonistClothingEditor(RoleLoadout specialLoadout, RoleLoadoutPrototype specialLoadoutProto, IDependencyCollection collection)
     {
         _colonistClothingWindow?.Dispose();

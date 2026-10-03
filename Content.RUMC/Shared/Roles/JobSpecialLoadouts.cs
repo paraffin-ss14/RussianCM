@@ -2,6 +2,7 @@
 // Copyright (c) 2026 wray-git
 namespace Content.Shared.CMU14.Roles;
 
+// Links a job's role loadout to its extra special loadout.
 public static class JobSpecialLoadouts
 {
     public const string ColonistRoleLoadout = "JobAU14JobCivilianColonist";

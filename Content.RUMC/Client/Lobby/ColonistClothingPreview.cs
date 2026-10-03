@@ -9,6 +9,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Lobby;
 
+// Puts the chosen custom clothing on the lobby preview character.
 public static class ColonistClothingPreview
 {
     public static void Apply(

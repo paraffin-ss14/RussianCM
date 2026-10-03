@@ -7,6 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Preferences.Loadouts.Effects;
 
+// A loadout with this effect can only be chosen if the character has the skill at this level.
 public sealed partial class SkillRequirementLoadoutEffect : LoadoutEffect
 {
     [DataField(required: true)]
