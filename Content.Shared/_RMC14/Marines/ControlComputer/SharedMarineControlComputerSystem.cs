@@ -304,13 +304,14 @@ public abstract partial class SharedMarineControlComputerSystem : EntitySystem
             return;
 
         ent.Comp.LastShipAnnouncement = _timing.CurTime;
+        var map = _warship.TryGetWarshipMap(ent, out var warshipMap) ? warshipMap : _transform.GetMapId(ent.Owner);
         var faction = SharedMarineAnnounceSystem.ResolveAnnouncementFaction(ent.Comp.Faction);
         _marineAnnounce.AnnounceSigned(
             user,
             args.Message,
             Loc.GetString("rmc-announcement-author-shipside"),
             sound: SharedMarineAnnounceSystem.AresAnnouncementSound,
-            filter: GetShipAnnouncementFilter(ent), // CMU14: include every deck of this ship.
+            filter: Filter.BroadcastMap(map).RemoveWhereAttachedEntity(e => !IsShipAnnouncementRecipient(e, faction)),
             excludeSurvivors: false,
             faction: faction
         );

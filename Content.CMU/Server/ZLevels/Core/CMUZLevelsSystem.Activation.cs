@@ -20,24 +20,14 @@ public sealed partial class CMUZLevelsSystem
         // existing, already initialized maps through mapping/construction tools.
         foreach (var map in maps.Keys)
         {
-            // Visit only this map and opted-in fixed decks, never nested containers
-            // or ordinary shuttle grids.
+            // Only direct map children can use Z physics. Avoid scanning every body
+            // in the world each time construction attaches a new, often empty level.
             var children = Transform(map).ChildEnumerator;
             while (children.MoveNext(out var uid))
             {
                 if (TryComp<CMUZPhysicsComponent>(uid, out var physics) &&
                     Comp<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.MapInitialized)
                     CheckActivation((uid, physics));
-
-                if (!HasComp<CMUZLevelDeckComponent>(uid))
-                    continue;
-                var deckChildren = Transform(uid).ChildEnumerator;
-                while (deckChildren.MoveNext(out var child))
-                {
-                    if (TryComp<CMUZPhysicsComponent>(child, out var deckPhysics) &&
-                        Comp<MetaDataComponent>(child).EntityLifeStage >= EntityLifeStage.MapInitialized)
-                        CheckActivation((child, deckPhysics));
-                }
             }
         }
     }
@@ -67,7 +57,7 @@ public sealed partial class CMUZLevelsSystem
 
     private void OnZPhysicsMove(Entity<CMUZPhysicsComponent> ent, ref MoveEvent args)
     {
-        OnZPhysicsMoveGroundSnap(ent, ref args);
+        OnZPhysicsMoveGroundSnap(ent, ref args, out var unchangedGround);
 
         if (!TryGetFallCheckTile(ent, out var map, out var tile))
             return;
@@ -81,7 +71,7 @@ public sealed partial class CMUZLevelsSystem
 
         ent.Comp.LastFallCheckMap = map;
         ent.Comp.LastFallCheckTile = tile;
-        CheckActivation(ent);
+        CheckActivation(ent, unchangedGround);
     }
 
     private void OnZPhysicsTileChanged(ref TileChangedEvent args)
@@ -99,7 +89,7 @@ public sealed partial class CMUZLevelsSystem
         }
     }
 
-    private void CheckActivation(Entity<CMUZPhysicsComponent> ent)
+    private void CheckActivation(Entity<CMUZPhysicsComponent> ent, ZGroundContact? unchangedGround = null)
     {
         if (!CanUseZPhysics(ent))
         {
@@ -107,7 +97,7 @@ public sealed partial class CMUZLevelsSystem
             return;
         }
 
-        SetActiveStatus(ent, true);
+        SetActiveStatus(ent, true, unchangedGround);
     }
 
     private bool CanUseZPhysics(Entity<CMUZPhysicsComponent> ent)
@@ -141,10 +131,10 @@ public sealed partial class CMUZLevelsSystem
         return true;
     }
 
-    private void SetActiveStatus(EntityUid ent, bool active)
+    private void SetActiveStatus(EntityUid ent, bool active, ZGroundContact? unchangedGround = null)
     {
         if (active)
-            WakeZPhysics(ent);
+            WakeZPhysics(ent, unchangedGround);
         else
         {
             RemCompDeferred<CMUZFallingComponent>(ent);
@@ -164,7 +154,7 @@ public sealed partial class CMUZLevelsSystem
         }
 
         map = gridUid;
-        tile = _map.TileIndicesFor(gridUid, grid, new MapCoordinates(_transform.GetWorldPosition(ent), xform.MapID));
+        tile = _map.TileIndicesFor(gridUid, grid, new MapCoordinates(_transform.GetWorldPosition(xform), xform.MapID));
         return true;
     }
 

@@ -28,9 +28,6 @@
     - /Maps/CMU14/Vehicles/Dropships/ud_6.yml
   possibleships:
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   techTree: CMUIntelTechTree_GOVFOR # CMUIntelTechTree_UA (TODO)
 
 - type: platoon
@@ -355,9 +352,6 @@
 
   possibleships:
     - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   #platoonflag: uaflag
   CompatibleDropships:
   - /Maps/CMU14/ShuttlesDropships/Mohawk/midway_deployment.yml
@@ -681,9 +675,6 @@
 
   possibleships:
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   # jobClassOverride:
   #   SquadRifleman: AU14JobGOVFORSquadRiflemanUPP
   #   PlatCo: AU14JobGOVFORPlatCoUPP
@@ -1026,9 +1017,6 @@
   - /Maps/_RMC14/Shuttles/dynamic_gunship.yml
   possibleships:
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   compatibleFighters:
   - /Maps/CMU14/Vehicles/Dropships/f84owl.yml
   - /Maps/CMU14/Vehicles/Dropships/ud_6.yml
@@ -1043,6 +1031,10 @@
   - AU14VehicleCivVan
   - AU14VehicleCivEMSAmbulance
   - VehicleBlackfootTransport
+  - VehicleAPC
+  - VehicleAPCMed
+  - VehicleHumvee
+  - VehicleBlackfootDoorGunVariant
   name: CMB Crisis Intervention
   lorePrimer: AU14PrimerPlatoonCMBCIU
   Allegiance: UA
@@ -1251,9 +1243,6 @@
 #    SectionSergeant: 1
   possibleships:
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   CompatibleDropships:
   - /Maps/CMU14/Shuttles/alamo.yml
   - /Maps/_RMC14/Shuttles/dynamic_gunship.yml
@@ -1281,9 +1270,6 @@
   platoonPatch: /Textures/CMU14/Clothing/Patches/hazops_patch.rsi/icon.png
   possibleships:
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   CompatibleDropships:
   - /Maps/CMU14/Shuttles/osprey.yml
   - /Maps/CMU14/ShuttlesDropships/Mohawk/midway_deployment.yml
@@ -1578,9 +1564,6 @@
     - /Maps/CMU14/Vehicles/Dropships/ud_6.yml
   possibleships:
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   techTree: CMUIntelTechTree_GOVFOR
 
 - type: platoon
@@ -1772,9 +1755,6 @@
     - /Maps/CMU14/Vehicles/Dropships/ud_6.yml
   possibleships:
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   techTree: CMUIntelTechTree_GOVFOR
 
 - type: platoon
@@ -2101,9 +2081,6 @@
     - /Maps/CMU14/Vehicles/Dropships/ud_6.yml
   possibleships: #TODO: RMC Ship
       - USSBushRedux
-  govforShips:
-  - USSBushRedux
-  - Almayer
   techTree: CMUIntelTechTree_GOVFOR
 
 # Add more platoons as needed

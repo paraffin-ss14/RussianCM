@@ -150,6 +150,7 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
             });
 
         SubscribeLocalEvent<WithdrawFactionHijackLockEvent>(OnWithdrawHijackLock);
+        SubscribeLocalEvent<Content.Shared._RMC14.WeedKiller.WeedKillerDeployAttemptEvent>(OnForceOnForceWeedKillerAttempt);
 
         Subs.CVar(_config, RMCCVars.RMCLandingZonePrimaryAutoMinutes, v => _lzPrimaryAutoDelay = TimeSpan.FromMinutes(v), true);
         Subs.CVar(_config, RMCCVars.RMCDropshipFlyByTimeSeconds, v => _flyByTime = TimeSpan.FromSeconds(v), true);
@@ -545,6 +546,12 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
     public override bool FlyTo(Entity<DropshipNavigationComputerComponent> computer, EntityUid destination, EntityUid? user, bool hijack = false, float? startupTime = null, float? hyperspaceTime = null, bool offset = false)
     {
         // CMU14: Force on Force roles, hijacking, announcements and identification.
+        if (!hijack && user is { } actor && !CanUseNavigation(computer, actor))
+        {
+            _popup.PopupEntity(Loc.GetString("cmu-dropship-navigation-access-denied"), computer, actor);
+            return false;
+        }
+
         if (!hijack && !CanLandAt(computer, destination))
         {
             if (user is { } pilot)
@@ -553,15 +560,14 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
         }
 
         if (TryComp(computer.Owner, out WhitelistedShuttleComponent? whitelistComp) &&
-            IsStrictThirdPartyFaction(whitelistComp.Faction) &&
             TryComp(destination, out DropshipDestinationComponent? destinationComp) &&
             !HasComp<EphemeralDropshipDestinationComponent>(destination) &&
-            !IsThirdPartyDestination(destinationComp))
+            !CanUseDestination(whitelistComp.Faction, destinationComp))
         {
             if (user != null)
-                _popup.PopupEntity("This shuttle can only land at third party dropship destinations.", computer.Owner, user.Value, PopupType.MediumCaution);
+                _popup.PopupEntity("This shuttle cannot land at that faction's dropship destination.", computer.Owner, user.Value, PopupType.MediumCaution);
 
-            Log.Warning($"{ToPrettyString(user)} tried to launch thirdparty whitelisted shuttle {ToPrettyString(computer.Owner)} to non-thirdparty destination {ToPrettyString(destination)}");
+            Log.Warning($"{ToPrettyString(user)} tried to launch whitelisted shuttle {ToPrettyString(computer.Owner)} to a faction-incompatible destination {ToPrettyString(destination)}");
             return false;
         }
 
@@ -745,10 +751,10 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
         Dirty(dropshipId.Value, dropship);
 
         if (TryComp(dropshipId, out PhysicsComponent? physics))
-        {
             _physics.SetLocalCenter(dropshipId.Value, physics, Vector2.Zero);
-            destCoords = destCoords.Offset(-physics.LocalCenter);
-        }
+
+        if (newDestination is { } landingDestination)
+            destCoords = destCoords.Offset(landingDestination.LandingOffset);
 
         if (hijack)
         {
@@ -756,17 +762,15 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
             RaiseLocalEvent(dropshipId.Value, ref hijackFlight);
         }
 
-        // CMU14: Almayer's decks are separate grids. Grid-relative FTL targets are
-        // treated as docking requests and fall back to a random point outside the
-        // hull when no docking port exists; dropships must land on the exact marker.
-        if (EntityManager.System<Content.Server.CMU14.Hijack.ShipHijackSystem>()
-                .TryGetShip(destination, out _) && destTransform.MapUid is { } destinationMap)
-        {
-            destCoords = new EntityCoordinates(destinationMap, _transform.ToMapCoordinates(destCoords).Position);
-            rotation = _transform.GetWorldRotation(destination);
-        }
+        RemComp<Content.Server.CMU14.ForceOnForce.ForceOnForceLaunchComponent>(dropshipId.Value);
+        var coordinated = TryGetForceOnForceLaunchWindow(computer, destination, hijack,
+            out var opposingFaction, out var departureAt, out var newLaunchWindow);
+        if (coordinated)
+            startupTime = (float) (departureAt - _timing.CurTime).TotalSeconds;
 
         _shuttle.FTLToCoordinates(dropshipId.Value, shuttleComp, destCoords, rotation, startupTime: startupTime, hyperspaceTime: hyperspaceTime);
+        if (coordinated)
+            FinishForceOnForceLaunchWindow(dropshipId.Value, departureAt, opposingFaction, newLaunchWindow);
         if (reroutingFromTacticalHover)
             _tacticalLand.EndTacticalHoverForReroute(dropshipId.Value);
         ResetThirdPartyAutoReturnCountdown(dropshipId.Value);
@@ -993,25 +997,6 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
         _ui.SetUiState(computer.Owner, DropshipNavigationUiKey.Key, travelState);
     }
 
-    /// <summary>CMU14: return flights already inbound when a mainship jumps or starts falling.</summary>
-    public void DivertIncomingHijackFlights()
-    {
-        var hijack = EntityManager.System<Content.Shared.CMU14.Hijack.CMUShipHijackSystem>();
-        var query = EntityQueryEnumerator<DropshipComponent, FTLComponent>();
-        while (query.MoveNext(out var uid, out var dropship, out var ftl))
-        {
-            if (dropship.Destination is not { } destination || hijack.CanArrive(destination) ||
-                dropship.DepartureLocation is not { } departure || TerminatingOrDeleted(departure) ||
-                !hijack.CanArrive(departure))
-                continue;
-            dropship.Destination = departure;
-            ftl.TargetCoordinates = Transform(departure).Coordinates;
-            ftl.TargetAngle = Transform(departure).LocalRotation;
-            Dirty(uid, ftl);
-            Dirty(uid, dropship);
-        }
-    }
-
     /// <summary>
     /// Determines the shuttle type for a navigation console. Defaults to Dropship if not set.
     /// </summary>
@@ -1033,6 +1018,18 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
     private static bool IsThirdPartyDestination(DropshipDestinationComponent destination)
     {
         return string.Equals(destination.FactionController, "thirdparty", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static bool CanUseDestination(string? whitelistFaction, DropshipDestinationComponent destination)
+    {
+        if (IsStrictThirdPartyFaction(whitelistFaction))
+            return IsThirdPartyDestination(destination);
+
+        if (string.IsNullOrEmpty(destination.FactionController))
+            return true;
+
+        return !string.IsNullOrEmpty(whitelistFaction) &&
+               string.Equals(destination.FactionController, whitelistFaction, StringComparison.OrdinalIgnoreCase);
     }
 
     private void ArmThirdPartyAutoReturn(EntityUid dropship, EntityUid destination)
@@ -1552,10 +1549,6 @@ public sealed partial class DropshipSystem : SharedDropshipSystem
                 Dirty(uid, dropship);
 
                 Audio.PlayGlobal(dropship.CrashSound, destinationFilter, true);
-                // CMU14: the ship hijack sequence owns its impact effects.
-                if (EntityManager.System<Content.Server.CMU14.Hijack.ShipHijackSystem>()
-                    .TryApplyDropshipImpact(uid, destination))
-                    continue;
                 _rmcFlammable.SpawnFireDiamond(
                     dropship.FireId,
                     destinationEntityCoords,

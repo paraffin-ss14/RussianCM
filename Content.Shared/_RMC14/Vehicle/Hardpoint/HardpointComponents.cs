@@ -258,9 +258,11 @@ public sealed partial class HardpointRemoveDoAfterEvent : DoAfterEvent
 [Serializable, NetSerializable]
 public sealed partial class HardpointRepairDoAfterEvent : DoAfterEvent
 {
+    public float RepairAmount;
+
     public override DoAfterEvent Clone()
     {
-        return new HardpointRepairDoAfterEvent();
+        return new HardpointRepairDoAfterEvent { RepairAmount = RepairAmount };
     }
 }
 

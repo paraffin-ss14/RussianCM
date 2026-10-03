@@ -254,7 +254,7 @@ public sealed partial class ScalingViewport
             LastZRenderDebugStats.ViewportWorldArea = GetArea(viewportWorldAabb);
         }
         var zRenderRotation = -fallbackEye.Rotation;
-        var zRenderOffsetPerDepth = zRenderRotation.ToWorldVec() * _zLevels.GetZLevelVisualOffset(viewXform.MapUid);
+        var zRenderOffsetPerDepth = zRenderRotation.ToWorldVec() * CMUClientZLevelsSystem.ZLevelOffset;
         if (_zRenderDiagnostics)
             LastZRenderDebugStats.ZRenderOffsetPerDepth = zRenderOffsetPerDepth;
 
@@ -403,7 +403,8 @@ public sealed partial class ScalingViewport
                     if (!_zLevels.TryMapOffset(viewXform.MapUid.Value, depth, out _, out var mapComp))
                         continue;
 
-                    var offset = zRenderOffsetPerDepth * depth;
+                    Angle rotation = fallbackEye.Rotation * -1;
+                    var offset = rotation.ToWorldVec() * CMUClientZLevelsSystem.ZLevelOffset * depth;
                     var renderPosition = fallbackEye.Position.Position;
                     var fovPosition = renderPosition;
                     var eyeOffset = fallbackEye.Offset + offset;
@@ -870,7 +871,7 @@ public sealed partial class ScalingViewport
             return;
 
         Angle rotation = fallbackEye.Rotation * -1;
-        var offset = rotation.ToWorldVec() * _zLevels.GetZLevelVisualOffset(mapUid);
+        var offset = rotation.ToWorldVec() * CMUClientZLevelsSystem.ZLevelOffset;
 
         _zEye.LowestDepth = lowestDepth;
         _zEye.Depth = 1;

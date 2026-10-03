@@ -156,37 +156,37 @@ humanoid-profile-editor-threat-xeno = Ксеноморфы
 humanoid-profile-editor-threat-ape = Обезьяны
 humanoid-profile-editor-threat-cultist = Культисты
 humanoid-profile-editor-threat-wendigo = Вендиго
-humanoid-profile-editor-threat-abomination = Мерзости
+humanoid-profile-editor-threat-abomination = Биоморфы
 humanoid-profile-editor-threat-tribal = Дикари
 
 
 
-humanoid-profile-editor-randomize = Randomize
+humanoid-profile-editor-randomize = Рандомизировать
 
-humanoid-profile-editor-randomize-unlocked-button = Randomize unlocked
+humanoid-profile-editor-randomize-unlocked-button = Случайно для разблокированных
 
-humanoid-profile-editor-randomize-name-button = Name
+humanoid-profile-editor-randomize-name-button = Имя
 
-humanoid-profile-editor-randomize-species-button = Species
+humanoid-profile-editor-randomize-species-button = Вид
 
-humanoid-profile-editor-randomize-age-button = Age
+humanoid-profile-editor-randomize-age-button = Возраст
 
-humanoid-profile-editor-randomize-sex-button = Sex
+humanoid-profile-editor-randomize-sex-button = Пол
 
-humanoid-profile-editor-randomize-skin-button = Skin color
+humanoid-profile-editor-randomize-skin-button = Цвет кожи
 
-humanoid-profile-editor-randomize-eye-button = Eye color
+humanoid-profile-editor-randomize-eye-button = Цвет глаз
 
-humanoid-profile-editor-randomize-markings-button = Markings
+humanoid-profile-editor-randomize-markings-button = Отметины
 
-humanoid-profile-editor-voice-label = Voice:
+humanoid-profile-editor-voice-label = Голос:
 
-humanoid-profile-editor-randomizer-lock-tooltip = Prevents the value from being randomized
+humanoid-profile-editor-randomizer-lock-tooltip = Запрещает случайное изменение этого значения
 
-humanoid-profile-editor-voice-masculine = Masculine
+humanoid-profile-editor-voice-masculine = Мужской
 
-humanoid-profile-editor-voice-feminine = Feminine
+humanoid-profile-editor-voice-feminine = Женский
 
-humanoid-profile-editor-voice-neutral = Neutral
+humanoid-profile-editor-voice-neutral = Нейтральный
 
-humanoid-profile-editor-voice-none = Unnamed Voice
+humanoid-profile-editor-voice-none = Безымянный голос

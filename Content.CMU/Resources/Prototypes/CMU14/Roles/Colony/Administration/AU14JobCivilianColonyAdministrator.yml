@@ -76,6 +76,7 @@
     pocket2: AU14StampAdmin
   inhand:
   - RMCRadioHandheldColonyOff
+  - CMUMobilePhone
 
 - type: entity
   parent: CMSpawnPointJobBase

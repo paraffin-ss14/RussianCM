@@ -24,7 +24,7 @@ public sealed class MohawkLandingAudioTest
 
     [TestCase("omaha", true, 0.5f)]
     [TestCase("midway", true, 0.5f)]
-    [TestCase("midway", true, 10f)]
+    [TestCase("midway", true, 20f)]
     [TestCase("midway", false, 0.5f)]
     public async Task FlightCuesFollowPhasesForPassengersAndLandingZone(string variant, bool customCue, float startupTime)
     {
@@ -70,11 +70,11 @@ public sealed class MohawkLandingAudioTest
             Assert.That(startup.FileName, Is.EqualTo(expectedTakeoff));
             Assert.That(startup.Params.Volume, Is.EqualTo(6));
             Assert.That(startup.Flags.HasFlag(AudioFlags.GridAudio), Is.True);
-            Assert.That(startup.Params.Loop, Is.EqualTo(customCue && startupTime > 6.36f));
+            Assert.That(startup.Params.Loop, Is.EqualTo(customCue && startupTime > 15.836f));
         });
-        if (startupTime > 6.36f)
+        if (startupTime > 15.836f)
         {
-            await pair.RunSeconds(7);
+            await pair.RunSeconds(17);
             await pair.Server.WaitAssertion(() =>
             {
                 var entities = pair.Server.EntMan;
@@ -83,7 +83,7 @@ public sealed class MohawkLandingAudioTest
                 Assert.That(entities.EntityExists(flight.StartupStream!.Value), Is.True,
                     "The takeoff cue must continue after its first playback until the countdown finishes.");
             });
-            await pair.RunSeconds(startupTime - 7);
+            await pair.RunSeconds(startupTime - 17);
         }
         await pair.RunSeconds(1);
         await pair.Server.WaitAssertion(() =>
@@ -101,7 +101,7 @@ public sealed class MohawkLandingAudioTest
             Assert.That(tail.Flags.HasFlag(AudioFlags.NoOcclusion), Is.True,
                 "The departure point must keep the chosen takeoff tail, not switch to the stock cue.");
             Assert.That(tail.Params.Loop, Is.False, "The departure point must not loop forever.");
-            if (startupTime > 6.36f)
+            if (startupTime > 15.836f)
                 Assert.That(entities.GetComponent<FTLComponent>(ship).StartupStream, Is.Null,
                     "The onboard takeoff loop stops when the flight loop starts.");
             if (customCue)
