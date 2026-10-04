@@ -94,7 +94,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 1
-  loadouts: [ AU14ColonistSkillFirearms1, AU14ColonistSkillFirearms2, AU14ColonistSkillFirearms3 ]
+  loadouts: [ AU14ColonistSkillFirearms1, AU14ColonistSkillFirearms2 ]
 - type: loadout
   id: AU14ColonistSkillFirearms1
   cost: 2
@@ -103,10 +103,6 @@
   id: AU14ColonistSkillFirearms2
   cost: 5
   effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillFirearms, level: 2 } ]
-- type: loadout
-  id: AU14ColonistSkillFirearms3
-  cost: 9
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillFirearms, level: 3 } ]
 
 - type: loadoutGroup
   id: AU14ColonistSkillGroupFireman
@@ -371,7 +367,6 @@
   - AU14ColonistSpecialGroupEngineer
   - AU14ColonistSpecialGroupConstruction
   - AU14ColonistSpecialGroupEngConstruction
-  - AU14ColonistSpecialGroupFirearmsEngineer
   - AU14ColonistSpecialGroupResearch
   - AU14ColonistSpecialGroupLeadership
   - AU14ColonistSpecialGroupJtac

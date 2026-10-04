@@ -59,8 +59,8 @@ public static class CustomClothingRules
         "RequiresSkill", "Scope", "CursorOffsetRequiresWield", "Handcuff", "RMCDefibrillatorBlocked",
     };
 
-    // Items whose id contains one of these words are test or admin items.
-    private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking" };
+    // Items whose id contains one of these words are test, admin or donor items.
+    private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor" };
 
     // Items that are always hidden (head cloaks and a few special items).
     private static readonly HashSet<string> ForbiddenIds = new()

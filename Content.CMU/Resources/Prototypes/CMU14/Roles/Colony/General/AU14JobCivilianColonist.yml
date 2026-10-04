@@ -59,7 +59,7 @@
 # ├──[ colony ]──────────────────────────────────────────────────────┤
 - type: roleLoadout
   id: JobAU14JobCivilianColonist
-  points: 20
+  points: 18
   groups:
   - CivSatchelAU14
   - PaperworkRMC

@@ -65,14 +65,6 @@
   loadouts: [ AU14ColonistLoadoutTacticalEngPouch ]
 
 - type: loadoutGroup
-  id: AU14ColonistSpecialGroupFirearmsEngineer
-  name: loadout-group-au14-colonist-special-firearmsengineer
-  hidden: true
-  minLimit: 0
-  maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutBeanbagBox, AU14ColonistLoadoutHomemadeShotgun ]
-
-- type: loadoutGroup
   id: AU14ColonistSpecialGroupResearch
   name: loadout-group-au14-colonist-special-research
   hidden: true
@@ -352,32 +344,6 @@
     minLevel: 2
 
 - type: loadout
-  id: AU14ColonistLoadoutBeanbagBox
-  cost: 4
-  inhand:
-  - RMCBoxShotgunBeanbag
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 1
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 1
-
-- type: loadout
-  id: AU14ColonistLoadoutHomemadeShotgun
-  cost: 15
-  inhand:
-  - WeaponShotgunCustomBuilt
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 2
-
-- type: loadout
   id: AU14ColonistLoadoutLabCoat
   cost: 1
   equipment:
@@ -523,6 +489,9 @@
   - !type:SkillRequirementLoadoutEffect
     skill: RMCSkillVehicles
     minLevel: 2
+  - !type:SkillRequirementLoadoutEffect
+    skill: RMCSkillEngineer
+    minLevel: 1
 
 - type: loadout
   id: AU14ColonistLoadoutTruckBox
@@ -534,6 +503,9 @@
   - !type:SkillRequirementLoadoutEffect
     skill: RMCSkillVehicles
     minLevel: 2
+  - !type:SkillRequirementLoadoutEffect
+    skill: RMCSkillEngineer
+    minLevel: 1
 
 - type: loadout
   id: AU14ColonistLoadoutAmbulanceBox
@@ -546,6 +518,9 @@
     skill: RMCSkillVehicles
     minLevel: 2
   - !type:SkillRequirementLoadoutEffect
+    skill: RMCSkillEngineer
+    minLevel: 1
+  - !type:SkillRequirementLoadoutEffect
     skill: RMCSkillMedical
     minLevel: 2
   - !type:SkillRequirementLoadoutEffect
@@ -554,7 +529,7 @@
 
 - type: loadout
   id: AU14ColonistLoadoutLogisticsApcBox
-  cost: 20
+  cost: 17
   dummyEntity: VehicleSPPVanLogistics
   inhand:
   - AU14BoxVehicleLogisticsApc
@@ -562,6 +537,9 @@
   - !type:SkillRequirementLoadoutEffect
     skill: RMCSkillVehicles
     minLevel: 2
+  - !type:SkillRequirementLoadoutEffect
+    skill: RMCSkillEngineer
+    minLevel: 1
 
 # Base for boxes that unpack a machine or vehicle when used in hand.
 - type: entity
@@ -732,13 +710,13 @@
 
 - type: loadout
   id: AU14ColonistLoadoutM50Hazops
-  cost: 10
+  cost: 20
   inhand:
   - AU14GunCasePistolM50HAZOPS
   effects:
   - !type:SkillRequirementLoadoutEffect
     skill: RMCSkillFirearms
-    minLevel: 3
+    minLevel: 2
 
 - type: loadout
   id: AU14ColonistLoadoutRXFM
@@ -762,13 +740,13 @@
 
 - type: loadout
   id: AU14ColonistLoadoutZHNK72
-  cost: 7
+  cost: 15
   inhand:
   - RMCGunCasePistolZHNK72
   effects:
   - !type:SkillRequirementLoadoutEffect
     skill: RMCSkillFirearms
-    minLevel: 3
+    minLevel: 2
 
 - type: loadout
   id: AU14ColonistLoadoutHumveeBox
@@ -780,6 +758,9 @@
   - !type:SkillRequirementLoadoutEffect
     skill: RMCSkillVehicles
     minLevel: 2
+  - !type:SkillRequirementLoadoutEffect
+    skill: RMCSkillEngineer
+    minLevel: 1
 
 - type: loadout
   id: AU14ColonistLoadoutRmcFrameBackpack
