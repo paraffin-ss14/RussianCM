@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using Content.Shared._RMC14.Armor;
 using Content.Shared._RMC14.Inventory;
 using Content.Shared._RMC14.UniformAccessories;
+using Content.Shared._RMC14.Webbing;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
@@ -65,15 +66,18 @@ public static class CustomClothingRules
         "RequiresSkill", "Scope", "CursorOffsetRequiresWield", "Handcuff", "RMCDefibrillatorBlocked",
     };
 
-    // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe, gadget, armor or spacesuit items.
+    // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe, gadget, armor, spacesuit, Yautja or xenomorph items.
     private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor", "Ambrosia", "Synth", "AU14Joe", "WorkingJoe",
         "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke", "Armor", "CatEars", "DogEars", "Commando", "ERT",
         "Hardsuit", "Spacesuit", "SpaceSuit", "Softsuit", "SuitEmergency", "HelmetEmergency", "SuitEVA", "HelmetEVA", "CBRN", "Hazmat",
-        "PlagueSuit" };
+        "PlagueSuit", "Towel", "Yautja", "BadBlood", "Xeno", "Parasite", "Facehugger" };
 
     // Commander, captain and leader gear is recognised by its id.
     private static readonly Regex CommandItemPattern =
         new(@"Command(?!o)|Captain|Leader|Teamlead|Lead$|(Coat|Beret|Cap|Jumpsuit)CO(?![a-z])", RegexOptions.Compiled);
+
+    // Uniforms with a rig, webbing, bandolier or drop pouch are recognised by their id.
+    private static readonly Regex RigUniformPattern = new(@"(?<!No)Webbing|Bandolier|Pouch|Harness|Holster|Chestrig|Rig$", RegexOptions.Compiled);
 
     // Police, security, military police and marshal gear is recognised by its id.
     private static readonly Regex LawEnforcementPattern = new(
@@ -141,11 +145,23 @@ public static class CustomClothingRules
             return false;
         }
 
+        // Uniforms sold with a rig, webbing, bandolier or pouch are not offered.
+        if (slot == "jumpsuit" && RigUniformPattern.IsMatch(proto.ID))
+            return false;
+
+        // Anything else that comes with webbing already attached is not offered either.
+        if (proto.TryGetComponent<WebbingClothingComponent>(out var webbing, factory) && webbing.StartingWebbing != null)
+            return false;
+
         if (proto.TryGetComponent<CMItemSlotsComponent>(out var cmSlots, factory) &&
             (cmSlots.StartingItem != null || cmSlots.StartingItems is { Count: > 0 }))
         {
             return false;
         }
+
+        // Anything built on a Yautja or xenomorph component is that species' gear.
+        if (proto.Components.Keys.Any(name => name.StartsWith("Yautja", StringComparison.Ordinal) || name.StartsWith("Xeno", StringComparison.Ordinal)))
+            return false;
 
         foreach (var name in ForbiddenComponents)
         {
