@@ -578,7 +578,7 @@
     size: Huge
   - type: AU14DeployBox
     anchor: false
-    distance: 3
+    distance: 3.3
     entries:
     - prototype: AU14VehicleCivCar
       install:
@@ -594,7 +594,7 @@
     size: Huge
   - type: AU14DeployBox
     anchor: false
-    distance: 3
+    distance: 3.3
     entries:
     - prototype: AU14VehicleCivHippieVan
       install:

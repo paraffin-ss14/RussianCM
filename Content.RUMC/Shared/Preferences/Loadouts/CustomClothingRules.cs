@@ -70,7 +70,7 @@ public static class CustomClothingRules
     private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor", "Ambrosia", "Synth", "AU14Joe", "WorkingJoe",
         "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke", "Armor", "CatEars", "DogEars", "Commando", "ERT",
         "Hardsuit", "Spacesuit", "SpaceSuit", "Softsuit", "SuitEmergency", "HelmetEmergency", "SuitEVA", "HelmetEVA", "CBRN", "Hazmat",
-        "PlagueSuit", "Towel", "Yautja", "BadBlood", "Xeno", "Parasite", "Facehugger",
+        "PlagueSuit", "Towel", "Bedsheet", "Blanket", "LACNGloves", "Yautja", "BadBlood", "Xeno", "Parasite", "Facehugger",
         "Syndicate", "Syndie", "Cybersun", "Operative", "VestWebElite", "Nuke", "PMC", "Merc", "AU14WY", "WYSec" };
 
     // Commander, captain and leader gear is recognised by its id.
@@ -86,6 +86,15 @@ public static class CustomClothingRules
         @"Detective|Det(?![a-z])|Forensic|Engineer|Repairman|Recruit|Genetics|Hydroponics|Botan|Janitor|Janimaid|Journalist|Reporter|Press|Lawyer|Judge|Librarian|" +
         @"Medic|Paramedic|Doctor|Surgcap|Nurse|Sterile|Latex|Nitrile|Senior|Mime|Musician|Performer|Psychologist|Roboticist|Salvage|Sci|Security|Secsoft|" +
         @"Sec(?![a-z])|Swat|MAA|SyndieCap|Warden|Virology|TramDriver|Prisoner|CMO|Cmo|HoP|HOP|Hop|HoS|HOS|Hos|QM|ResearchDirector|RD(?![a-z])|RND|CE(?![a-z])|Merge|Spawner",
+        RegexOptions.Compiled);
+
+    // Vanilla (Clothing...) cloaks, mantles, maid costumes, colored gloves and power gloves are recognised by their id.
+    private static readonly Regex VanillaCloakPattern = new(@"Cloak|Mantle|Maid(?!en)|GlovesColor|Powerglove", RegexOptions.Compiled);
+
+    // Dress and parade uniforms, service jackets and peaked officer caps are recognised by their id.
+    private static readonly Regex DressUniformPattern = new(
+        @"DressBlues|UniformDress|Parade|Peaked|CoatCO(?![A-Za-z])|CoatCOFormal|CoatXOFormal|CoatService|HandsWhiteDress|" +
+        @"HeadCapOfficer|CapOfficer|OfficerCap|CommandingOfficerCap|HeadCapGeneral|HeadCapCMO|SPPPol|ParaCOJacket",
         RegexOptions.Compiled);
 
     // Police, security, military police and marshal gear is recognised by its id.
@@ -124,8 +133,14 @@ public static class CustomClothingRules
         if (CommandItemPattern.IsMatch(proto.ID))
             return false;
 
-        if (proto.ID.StartsWith("Clothing", StringComparison.Ordinal) && VanillaDepartmentPattern.IsMatch(proto.ID))
+        if (DressUniformPattern.IsMatch(proto.ID))
             return false;
+
+        if (proto.ID.StartsWith("Clothing", StringComparison.Ordinal) &&
+            (VanillaDepartmentPattern.IsMatch(proto.ID) || VanillaCloakPattern.IsMatch(proto.ID)))
+        {
+            return false;
+        }
 
         if (!TryGetFlags(slot, out var flags))
             return false;
