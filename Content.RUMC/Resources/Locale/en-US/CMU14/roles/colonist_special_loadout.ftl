@@ -51,7 +51,6 @@ colonist-skill-editor-loadout-AU14ColonistLoadoutMaintenanceJack = Vehicle maint
 colonist-skill-editor-loadout-AU14ColonistLoadoutBlueVanBox = Box: blue van
 colonist-skill-editor-loadout-AU14ColonistLoadoutTruckBox = Box: truck
 colonist-skill-editor-loadout-AU14ColonistLoadoutAmbulanceBox = Box: ambulance
-colonist-skill-editor-loadout-AU14ColonistLoadoutLogisticsApcBox = Box: logistics APC 'Tick'
 colonist-skill-editor-loadout-AU14ColonistLoadoutMedBagBelt = Medical bag belt (filled)
 colonist-skill-editor-loadout-AU14ColonistLoadoutBasiraRifle = Basira rifle case
 colonist-skill-editor-loadout-AU14ColonistLoadoutGlock77Rubber = Glock 77 less-than-lethal pistol case

@@ -1,5 +1,9 @@
 using System.Linq;
+using System.Text.RegularExpressions;
 using Content.Shared._RMC14.Armor;
+using Content.Shared._RMC14.Inventory;
+using Content.Shared._RMC14.UniformAccessories;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences.Loadouts.Effects;
@@ -48,27 +52,36 @@ public static class CustomClothingRules
         "Jetpack", "AntiGravityClothing", "NinjaSuit", "NinjaGloves", "Thieving", 
         "ClothingGrantComponents", "ClothingGrantTag", "ActionGrant", "ItemActionGrant", "ToggleableClothing",
         "ToggleClothing", "ComponentToggler", "SelectableComponentAdder", "IntegratedVisors", "CycleableVisor",
-        "ChameleonClothing", "VoiceMask", "FixedIdentity", "AgentIDCard", "Storage", "StorageFill", "Reflect",
+        "ChameleonClothing", "VoiceMask", "FixedIdentity", "AgentIDCard", "StorageFill", "ContainerFill",
+        "EntityTableContainerFill", "Reflect",
         "Gun", "MeleeWeapon", "ExtraHandsEquipment", "SelfUnremovableClothing", "Unremoveable", "CursedMask",
         "BindItemOnEquip", "ChangelingFleshClothing", "FleetingClothing", "WizardClothes", "YautjaTechItem",
         "YautjaMask", "PilotedClothing", "FactionClothing", "RMCUnstrippable", "RMCSynthItemRestriction",
         "PointLight", "HandheldLight", "RMCSuitLight", "ItemTogglePointLight", "UnpoweredFlashlight", "Blindfold",
         "ClothingBlockBackpack", "ClothingBlockWebbing", "Access", "Battery", "PowerCellSlot",
         "Respirator", "SmartGun", "TargetingLaser", "RMCItemToggleClothingVisuals",
-        "BlockMovement", "EmoteBlocker", "Explosive", "ExplodeOnTrigger", "TimerTrigger", "Sticky", "Defibrillator",
+        "Whistle", "RMCWhistle", "RMCMegaphone", "Clock", "RMCClock", "Instrument", "Stethoscope", "RMCStethoscope", "Smokable",
+        "Cigar", "SmokingPipe", "EmitSoundOnUse", "ActiveListener", "PDTBracelet", "BlockMovement", "EmoteBlocker", "Explosive", "ExplodeOnTrigger", "TimerTrigger", "Sticky", "Defibrillator",
         "RequiresSkill", "Scope", "CursorOffsetRequiresWield", "Handcuff", "RMCDefibrillatorBlocked",
     };
 
-    // Items whose id contains one of these words are test, admin or donor items.
-    private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor" };
+    // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe or gadget items.
+    private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor", "Ambrosia", "Synth", "AU14Joe", "WorkingJoe",
+        "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke" };
 
-    // Items that are always hidden (head cloaks and a few special items).
+    // Commander, captain and leader gear is recognised by its id.
+    private static readonly Regex CommandItemPattern =
+        new(@"Command(?!o)|Captain|Leader|Teamlead|Lead$|(Coat|Beret|Cap|Jumpsuit)CO(?![a-z])", RegexOptions.Compiled);
+
+    // Items that are always hidden (head cloaks, generals' gear and a few special items).
     private static readonly HashSet<string> ForbiddenIds = new()
     {
         "ClothingNeckCloakCap", "ClothingNeckCloakCapFormal", "ClothingNeckCloakPirateCap", "ClothingNeckCloakCe",
         "ClothingCloakCmo", "ClothingNeckCloakHop", "ClothingNeckCloakHos",
         "ClothingNeckCloakQm", "ClothingNeckCloakRd", "ClothingNeckCloakCentcom", "ClothingNeckCloakNanotrasen",
-        "RMCGeneralFormalCloak", "CMU14ClothingHeadWalkerMarker", "Binoculars", "C4",
+        "RMCGeneralFormalCloak", "CMU14ClothingHeadWalkerMarker", "Binoculars", "C4", "RMCHeadMilitiaBucket",
+        "CMJumpsuitGeneral", "CMCoatDressBluesGeneral", "RMCCoatJacketGeneral", "RMCCoatJacketGeneralFilled", "RMCHeadBeretGeneral",
+        "RMCHeadCapGeneral", "RMCMarineUniformDressGeneral", "RMCArmorM3General", "CMArmorHelmetM11CGeneral",
     };
 
     public static bool TryGetFlags(string slot, out SlotFlags flags)
@@ -88,6 +101,9 @@ public static class CustomClothingRules
                 return false;
         }
 
+        if (CommandItemPattern.IsMatch(proto.ID))
+            return false;
+
         if (!TryGetFlags(slot, out var flags))
             return false;
 
@@ -100,11 +116,28 @@ public static class CustomClothingRules
             return false;
         }
 
+        // Storage is fine, but clothing that comes with something inside (filled pockets, loaded holsters) is not offered.
+        if (proto.TryGetComponent<ItemSlotsComponent>(out var itemSlots, factory) &&
+            itemSlots.Slots.Values.Any(itemSlot => itemSlot.StartingItem != null))
+        {
+            return false;
+        }
+
+        // Uniforms that come with patches, emblems or pouches already attached are not offered.
+        if (proto.TryGetComponent<UniformAccessoryHolderComponent>(out var accessories, factory) &&
+            accessories.StartingAccessories is { Count: > 0 })
+        {
+            return false;
+        }
+
+        if (proto.TryGetComponent<CMItemSlotsComponent>(out var cmSlots, factory) &&
+            (cmSlots.StartingItem != null || cmSlots.StartingItems is { Count: > 0 }))
+        {
+            return false;
+        }
+
         foreach (var name in ForbiddenComponents)
         {
-            if (slot == "outerClothing" && name is "Storage" or "StorageFill")
-                continue;
-
             if (proto.Components.ContainsKey(name))
                 return false;
         }
