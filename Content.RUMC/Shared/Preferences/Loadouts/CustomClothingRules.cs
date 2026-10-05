@@ -67,7 +67,7 @@ public static class CustomClothingRules
 
     // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe, gadget or armor items.
     private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor", "Ambrosia", "Synth", "AU14Joe", "WorkingJoe",
-        "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke", "Armor" };
+        "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke", "Armor", "CatEars", "DogEars" };
 
     // Commander, captain and leader gear is recognised by its id.
     private static readonly Regex CommandItemPattern =
