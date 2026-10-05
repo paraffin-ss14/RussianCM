@@ -65,13 +65,18 @@ public static class CustomClothingRules
         "RequiresSkill", "Scope", "CursorOffsetRequiresWield", "Handcuff", "RMCDefibrillatorBlocked",
     };
 
-    // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe or gadget items.
+    // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe, gadget or armor items.
     private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor", "Ambrosia", "Synth", "AU14Joe", "WorkingJoe",
-        "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke" };
+        "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke", "Armor" };
 
     // Commander, captain and leader gear is recognised by its id.
     private static readonly Regex CommandItemPattern =
         new(@"Command(?!o)|Captain|Leader|Teamlead|Lead$|(Coat|Beret|Cap|Jumpsuit)CO(?![a-z])", RegexOptions.Compiled);
+
+    // Police, security, military police and marshal gear is recognised by its id.
+    private static readonly Regex LawEnforcementPattern = new(
+        @"Security|Secsoft|Sec(?![a-z])|Police|Provost|Warden|Marshal|Riot|Detective|Brig|Sheriff|CMB|Bureau|PolKom|SWAT|Swat|Deputy|MP(?![a-z])",
+        RegexOptions.Compiled);
 
     // Items that are always hidden (head cloaks, generals' gear and a few special items).
     private static readonly HashSet<string> ForbiddenIds = new()
@@ -110,10 +115,14 @@ public static class CustomClothingRules
         if (!proto.TryGetComponent<ClothingComponent>(out var clothing, factory) || (clothing.Slots & flags) == 0)
             return false;
 
-        if (proto.TryGetComponent<CMArmorComponent>(out var armor, factory) &&
-            Math.Max(Math.Max(armor.Melee, armor.Bullet), Math.Max(Math.Max(armor.Bio, armor.ExplosionArmor), armor.XenoArmor)) > MaxToleratedArmor)
+        if (proto.TryGetComponent<CMArmorComponent>(out var armor, factory))
         {
-            return false;
+            var strongest = Math.Max(Math.Max(armor.Melee, armor.Bullet), Math.Max(Math.Max(armor.Bio, armor.ExplosionArmor), armor.XenoArmor));
+
+            // Law enforcement gear is only allowed without any armor at all.
+            var limit = LawEnforcementPattern.IsMatch(proto.ID) ? 0 : MaxToleratedArmor;
+            if (strongest > limit)
+                return false;
         }
 
         // Storage is fine, but clothing that comes with something inside (filled pockets, loaded holsters) is not offered.
