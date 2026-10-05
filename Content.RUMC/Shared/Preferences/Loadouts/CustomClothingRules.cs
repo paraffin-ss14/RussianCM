@@ -203,6 +203,11 @@ public static class CustomClothingRules
         return effect != null;
     }
 
+    public static bool IsPaintable(LoadoutPrototype proto)
+    {
+        return proto.Effects.OfType<PaintableLoadoutEffect>().Any();
+    }
+
     // Checks and cleans the custom data of a loadout. False means it must be dropped.
     public static bool Validate(Loadout loadout, LoadoutPrototype proto, IDependencyCollection collection)
     {
@@ -210,7 +215,7 @@ public static class CustomClothingRules
         {
             loadout.CustomEntity = null;
             loadout.CustomName = null;
-            loadout.CustomColor = null;
+            loadout.CustomColor = IsPaintable(proto) ? loadout.CustomColor?.WithAlpha(1f) : null;
             return true;
         }
 

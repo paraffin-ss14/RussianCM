@@ -37,3 +37,6 @@ colonist-skill-editor-category-taken = В этой категории уже в�
 colonist-skill-editor-requires-any = Нужно одно из: { $perks }
 loadouts-perk-requirement-not-met = Нужно одно из: { $perks }
 loadouts-age-requirement-not-met = Нужен возраст от { $age } лет
+colonist-skill-editor-paint-button = Покрасить…
+colonist-skill-editor-paint-apply = Применить цвет
+colonist-skill-editor-paint-reset = Сбросить цвет

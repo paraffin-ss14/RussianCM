@@ -67,3 +67,5 @@ colonist-clothing-color = Colour
 colonist-clothing-clear = Remove
 colonist-clothing-apply = Apply
 colonist-clothing-nothing-picked = Nothing picked
+colonist-skill-editor-loadout-AU14ColonistLoadoutCarBox = Box: car
+colonist-skill-editor-loadout-AU14ColonistLoadoutHippieVanBox = Box: hippie van

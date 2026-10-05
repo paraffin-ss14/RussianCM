@@ -190,6 +190,20 @@ public sealed partial class HumanoidProfileEditor
             SetDirty();
         };
 
+        _colonistSkillWindow.OnSpecialLoadoutColorChanged += (loadoutGroup, loadoutProto, color) =>
+        {
+            if (!specialLoadout.SelectedLoadouts.TryGetValue(loadoutGroup, out var picks) ||
+                picks.All(pick => pick.Prototype != loadoutProto))
+            {
+                return;
+            }
+
+            specialLoadout.SetCustomLoadout(loadoutGroup, new Loadout { Prototype = loadoutProto, CustomColor = color }, _prototypeManager);
+            Profile = Profile!.WithLoadout(specialLoadoutProto.ID, specialLoadout);
+            _colonistSkillWindow.RefreshLoadouts(Profile, roleLoadout, specialLoadout, session, collection);
+            SetDirty();
+        };
+
         _colonistSkillWindow.OnClothingEditorRequested += () => OpenColonistClothingEditor(specialLoadout, specialLoadoutProto, collection);
 
         ReloadPreview();

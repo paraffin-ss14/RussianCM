@@ -102,7 +102,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox ]
+  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox, AU14ColonistLoadoutCarBox, AU14ColonistLoadoutHippieVanBox ]
 
 - type: loadout
   id: AU14ColonistLoadoutD18Case
@@ -444,11 +444,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkDrivingLessons
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkConstructionExperience
-    - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutTruckBox
@@ -460,11 +455,29 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkDrivingLessons
+
+- type: loadout
+  id: AU14ColonistLoadoutCarBox
+  cost: 10
+  dummyEntity: AU14VehicleCivCar
+  inhand:
+  - AU14BoxVehicleCar
+  effects:
   - !type:PerkRequirementLoadoutEffect
     anyOf:
-    - AU14ColonistPerkConstructionExperience
-    - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
+    - AU14ColonistPerkDrivingLessons
+  - !type:PaintableLoadoutEffect
+
+- type: loadout
+  id: AU14ColonistLoadoutHippieVanBox
+  cost: 15
+  dummyEntity: AU14VehicleCivHippieVan
+  inhand:
+  - AU14BoxVehicleHippieVan
+  effects:
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkDrivingLessons
 
 # Base for boxes that unpack a machine or vehicle when used in hand.
 - type: entity
@@ -552,6 +565,38 @@
     distance: 3
     entries:
     - prototype: AU14VehicleCivTruck
+      install:
+        wheel-1: RMCVanWheel
+
+- type: entity
+  parent: AU14DeployBoxBase
+  id: AU14BoxVehicleCar
+  name: car crate
+  description: A passenger car, packed for transport. Wheels included.
+  components:
+  - type: Item
+    size: Huge
+  - type: AU14DeployBox
+    anchor: false
+    distance: 3
+    entries:
+    - prototype: AU14VehicleCivCar
+      install:
+        wheel-1: RMCVanWheel
+
+- type: entity
+  parent: AU14DeployBoxBase
+  id: AU14BoxVehicleHippieVan
+  name: hippie van crate
+  description: A hippie van, packed for transport. Wheels included.
+  components:
+  - type: Item
+    size: Huge
+  - type: AU14DeployBox
+    anchor: false
+    distance: 3
+    entries:
+    - prototype: AU14VehicleCivHippieVan
       install:
         wheel-1: RMCVanWheel
 

@@ -30,6 +30,8 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnSpecialLoadoutPressed;
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnSpecialLoadoutUnpressed;
 
+    public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>, Color?>? OnSpecialLoadoutColorChanged;
+
     public event Action? OnClothingEditorRequested;
 
     private const int ItemIconSize = 40;
@@ -52,12 +54,38 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
 
     private sealed record CheckRow(ProtoId<LoadoutGroupPrototype> Group, ProtoId<LoadoutPrototype> Loadout, CheckBox Box, List<Control> Icons);
 
+    // Paint controls of a special loadout item the player may color.
+    private sealed class PaintRow
+    {
+        public required ProtoId<LoadoutGroupPrototype> Group;
+        public required Button Toggle;
+        public required Control Panel;
+        public required ColorSelectorSliders Selector;
+        public required List<Control> Icons;
+        public Color Color = Color.White;
+    }
+
     private readonly List<CheckRow> _perks = new();
     private readonly List<CheckRow> _specialLoadoutChecks = new();
+    private readonly Dictionary<string, PaintRow> _paintRows = new();
+    private bool _refreshingPaint;
 
     public int PerkRowCount => _perks.Count;
 
     public int SelectedPerkCount { get; private set; }
+
+    public int PaintableLoadoutCount => _paintRows.Count;
+
+    public bool CanPaint(string loadoutId)
+    {
+        return _paintRows.TryGetValue(loadoutId, out var row) && !row.Toggle.Disabled;
+    }
+
+    public void ApplyPaint(string loadoutId, Color color)
+    {
+        if (_paintRows.TryGetValue(loadoutId, out var row))
+            OnSpecialLoadoutColorChanged?.Invoke(row.Group, loadoutId, color.WithAlpha(1f));
+    }
 
     public IReadOnlyList<TextureRect> SpecialLoadoutIcons =>
         _specialLoadoutChecks.SelectMany(row => row.Icons).OfType<TextureRect>().ToList();
@@ -179,6 +207,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
         _specialLoadoutBox.RemoveAllChildren();
         _perks.Clear();
         _specialLoadoutChecks.Clear();
+        _paintRows.Clear();
 
         var unlocks = CollectUnlocks(specialLoadoutProto);
 
@@ -373,6 +402,9 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
         foreach (var requirement in FormatRequirements(loadoutProto))
             textColumn.AddChild(new Label { Text = requirement, FontColorOverride = MutedColor });
 
+        if (CustomClothingRules.IsPaintable(loadoutProto))
+            AddPaintControls(textColumn, groupId, loadoutProto, icons);
+
         rowBox.AddChild(textColumn);
         _specialLoadoutBox.AddChild(rowBox);
         _specialLoadoutChecks.Add(new CheckRow(groupId, loadoutProto.ID, box, icons));
@@ -384,6 +416,101 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
             else
                 OnSpecialLoadoutUnpressed?.Invoke(groupId, loadoutProto.ID);
         };
+    }
+
+    // A button that opens a color picker under the row; the chosen color is saved with the loadout.
+    private void AddPaintControls(
+        BoxContainer column,
+        ProtoId<LoadoutGroupPrototype> groupId,
+        LoadoutPrototype loadoutProto,
+        List<Control> icons)
+    {
+        var toggle = new Button
+        {
+            Text = Loc.GetString("colonist-skill-editor-paint-button"),
+            ToggleMode = true,
+            Disabled = true,
+            HorizontalAlignment = HAlignment.Left,
+            MinWidth = 140,
+        };
+
+        var selector = new ColorSelectorSliders { SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv };
+        selector.Color = Color.White;
+
+        var panel = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Vertical,
+            SeparationOverride = 4,
+            Visible = false,
+            MinWidth = 320,
+        };
+        panel.AddChild(selector);
+
+        var buttons = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Horizontal, SeparationOverride = 6 };
+        var apply = new Button { Text = Loc.GetString("colonist-skill-editor-paint-apply") };
+        var reset = new Button { Text = Loc.GetString("colonist-skill-editor-paint-reset") };
+        buttons.AddChild(apply);
+        buttons.AddChild(reset);
+        panel.AddChild(buttons);
+
+        column.AddChild(toggle);
+        column.AddChild(panel);
+
+        var row = new PaintRow
+        {
+            Group = groupId,
+            Toggle = toggle,
+            Panel = panel,
+            Selector = selector,
+            Icons = icons,
+        };
+        _paintRows[loadoutProto.ID] = row;
+
+        toggle.OnToggled += args => panel.Visible = args.Pressed;
+
+        selector.OnColorChanged += color =>
+        {
+            if (_refreshingPaint)
+                return;
+
+            row.Color = color;
+            TintIcons(row, color);
+        };
+
+        apply.OnPressed += _ => OnSpecialLoadoutColorChanged?.Invoke(groupId, loadoutProto.ID, row.Color.WithAlpha(1f));
+        reset.OnPressed += _ => OnSpecialLoadoutColorChanged?.Invoke(groupId, loadoutProto.ID, null);
+    }
+
+    private static void TintIcons(PaintRow row, Color color)
+    {
+        foreach (var icon in row.Icons.OfType<TextureRect>())
+            icon.Modulate = new Color(color.R, color.G, color.B, icon.Modulate.A);
+    }
+
+    // Shows the saved color of each paintable item and only allows painting items that are picked.
+    private void RefreshPaint(RoleLoadout specialLoadout)
+    {
+        _refreshingPaint = true;
+
+        foreach (var (loadoutId, row) in _paintRows)
+        {
+            var selected = specialLoadout.SelectedLoadouts.TryGetValue(row.Group, out var picks)
+                ? picks.FirstOrDefault(pick => pick.Prototype.Id == loadoutId)
+                : null;
+
+            row.Toggle.Disabled = selected == null;
+            if (selected == null)
+            {
+                row.Toggle.Pressed = false;
+                row.Panel.Visible = false;
+            }
+
+            row.Color = selected?.CustomColor ?? Color.White;
+            row.Selector.Color = row.Color;
+            TintIcons(row, row.Color);
+        }
+
+        _refreshingPaint = false;
     }
 
     // One line per requirement of a special loadout item.
@@ -474,6 +601,7 @@ public sealed class ColonistSkillEditorWindow : DefaultWindow
 
         RefreshPerks(profile, loadout, session, collection);
         RefreshChecks(_specialLoadoutChecks, specialLoadout, profile, session, collection);
+        RefreshPaint(specialLoadout);
     }
 
     private void RefreshPerks(

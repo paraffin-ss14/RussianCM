@@ -22,6 +22,10 @@ public sealed partial class AU14DeployBoxComponent : Component
 
     [DataField]
     public SoundSpecifier? Sound;
+
+    // Paints what the box unpacks, set when the player chose a color for it.
+    [DataField]
+    public Color? Paint;
 }
 
 [DataDefinition]

@@ -37,3 +37,6 @@ colonist-skill-editor-category-taken = Another option in this category is alread
 colonist-skill-editor-requires-any = Needs one of: { $perks }
 loadouts-perk-requirement-not-met = Needs one of: { $perks }
 loadouts-age-requirement-not-met = Requires age { $age }+
+colonist-skill-editor-paint-button = Paint…
+colonist-skill-editor-paint-apply = Apply color
+colonist-skill-editor-paint-reset = Reset color

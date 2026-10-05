@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // Copyright (c) 2026 wray-git
+using Content.Shared.CMU14.Clothing;
 using Content.Shared.CMU14.Logistics;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Interaction.Events;
@@ -50,6 +51,13 @@ public sealed class AU14DeployBoxSystem : EntitySystem
                     Log.Warning($"{ToPrettyString(uid)} couldn't fit {itemProto} into slot {slotId} of {ToPrettyString(spawned)}");
                     QueueDel(item);
                 }
+            }
+
+            if (comp.Paint is { } paint)
+            {
+                var tint = EnsureComp<AU14CustomClothingColorComponent>(spawned);
+                tint.Color = paint;
+                Dirty(spawned, tint);
             }
 
             if (comp.Anchor && Transform(spawned).GridUid != null)

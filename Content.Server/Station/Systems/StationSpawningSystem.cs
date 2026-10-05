@@ -13,6 +13,7 @@ using Content.Server.Station.Components;
 using Content.Server.CMU14.Yautja;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.CMU14.Clothing;
+using Content.Shared.CMU14.Logistics;
 using Content.Shared.CMU14.Roles;
 using Content.Shared._RMC14.Marines;
 using Content.Shared.CMU14.Yautja;
@@ -890,7 +891,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
                 if (CustomClothingRules.TryGetEffect(loadoutProto, out var clothing))
                     GiveCustomClothing(entity, clothing.Slot, selected);
                 else
-                    GiveSpecialLoadoutEntry(entity, loadoutProto);
+                    GiveSpecialLoadoutEntry(entity, loadoutProto, selected);
             }
         }
     }
@@ -966,9 +967,10 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
     }
 
     // Spawns the items of one loadout entry and equips or holds them.
-    private void GiveSpecialLoadoutEntry(EntityUid entity, LoadoutPrototype loadout)
+    private void GiveSpecialLoadoutEntry(EntityUid entity, LoadoutPrototype loadout, Loadout selected)
     {
         var coordinates = Transform(entity).Coordinates;
+        var paint = CustomClothingRules.IsPaintable(loadout) ? selected.CustomColor?.WithAlpha(1f) : null;
 
         foreach (var (slot, protoId) in loadout.Equipment)
         {
@@ -978,7 +980,14 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         }
 
         foreach (var protoId in loadout.Inhand)
-            PickUpOrLeave(entity, Spawn(protoId, coordinates));
+        {
+            var item = Spawn(protoId, coordinates);
+
+            if (paint != null && TryComp<AU14DeployBoxComponent>(item, out var box))
+                box.Paint = paint;
+
+            PickUpOrLeave(entity, item);
+        }
     }
 
     // Equips into the slot (pockets use either one). Other slots keep what is already worn unless they may be replaced.
