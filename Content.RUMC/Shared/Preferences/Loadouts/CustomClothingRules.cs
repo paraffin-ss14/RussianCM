@@ -65,9 +65,11 @@ public static class CustomClothingRules
         "RequiresSkill", "Scope", "CursorOffsetRequiresWield", "Handcuff", "RMCDefibrillatorBlocked",
     };
 
-    // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe, gadget or armor items.
+    // Items whose id contains one of these words are test, admin, donor, ambrosia, synthetic, Working Joe, gadget, armor or spacesuit items.
     private static readonly string[] ForbiddenIdFragments = { "Debug", "Test", "Admin", "StripMerge", "MergeBlocking", "Donor", "Ambrosia", "Synth", "AU14Joe", "WorkingJoe",
-        "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke", "Armor", "CatEars", "DogEars", "Commando" };
+        "Whistle", "Watch", "Cigar", "SmokingPipe", "Dogtag", "Harmonica", "TennisBall", "ToyNuke", "Armor", "CatEars", "DogEars", "Commando", "ERT",
+        "Hardsuit", "Spacesuit", "SpaceSuit", "Softsuit", "SuitEmergency", "HelmetEmergency", "SuitEVA", "HelmetEVA", "CBRN", "Hazmat",
+        "PlagueSuit" };
 
     // Commander, captain and leader gear is recognised by its id.
     private static readonly Regex CommandItemPattern =
