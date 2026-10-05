@@ -22,7 +22,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutMedBelt, AU14ColonistLoadoutMedPouch, AU14ColonistLoadoutMedHud, AU14ColonistLoadoutDefib, AU14ColonistLoadoutChemBox, AU14ColonistLoadoutMedBagBelt ]
+  loadouts: [ AU14ColonistLoadoutMedBelt, AU14ColonistLoadoutMedPouch, AU14ColonistLoadoutMedHud, AU14ColonistLoadoutDefib, AU14ColonistLoadoutMedBagBelt ]
 
 - type: loadoutGroup
   id: AU14ColonistSpecialGroupSurgery
@@ -102,7 +102,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox, AU14ColonistLoadoutAmbulanceBox ]
+  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox ]
 
 - type: loadout
   id: AU14ColonistLoadoutD18Case
@@ -243,17 +243,6 @@
     anyOf:
     - AU14ColonistPerkOrderly
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
-
-- type: loadout
-  id: AU14ColonistLoadoutChemBox
-  cost: 10
-  dummyEntity: RMCChemDispenserGround
-  inhand:
-  - AU14BoxChemDispenser
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
     - AU14ColonistPerkMaestro
 
 - type: loadout
@@ -477,27 +466,6 @@
     - AU14ColonistPerkEnthusiast
     - AU14ColonistPerkEngineer
 
-- type: loadout
-  id: AU14ColonistLoadoutAmbulanceBox
-  cost: 10
-  dummyEntity: AU14VehicleCivEMSAmbulance
-  inhand:
-  - AU14BoxVehicleAmbulance
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkDrivingLessons
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkConstructionExperience
-    - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkOrderly
-    - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
-
 # Base for boxes that unpack a machine or vehicle when used in hand.
 - type: entity
   abstract: true
@@ -512,22 +480,6 @@
   - type: AU14DeployBox
     sound: !type:SoundPathSpecifier
       path: /Audio/Effects/unwrap.ogg
-
-- type: entity
-  parent: AU14DeployBoxBase
-  id: AU14BoxChemDispenser
-  name: chemical dispenser crate
-  description: A chemical dispenser and its storage unit, packed for transport.
-  components:
-  - type: Item
-    size: Large
-  - type: AU14DeployBox
-    anchor: true
-    distance: 2
-    entries:
-    - prototype: RMCChemDispenserGround
-    - prototype: RMCChemStorageGround
-      offset: 1,0
 
 - type: entity
   parent: AU14DeployBoxBase
@@ -600,22 +552,6 @@
     distance: 3
     entries:
     - prototype: AU14VehicleCivTruck
-      install:
-        wheel-1: RMCVanWheel
-
-- type: entity
-  parent: AU14DeployBoxBase
-  id: AU14BoxVehicleAmbulance
-  name: ambulance crate
-  description: An EMS ambulance, packed for transport. Wheels included.
-  components:
-  - type: Item
-    size: Huge
-  - type: AU14DeployBox
-    anchor: false
-    distance: 3
-    entries:
-    - prototype: AU14VehicleCivEMSAmbulance
       install:
         wheel-1: RMCVanWheel
 
