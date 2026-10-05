@@ -250,4 +250,4 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutD18Case, AU14ColonistLoadoutM357Kit, AU14ColonistLoadoutBasiraRifle, AU14ColonistLoadoutGlock77Rubber, AU14ColonistLoadoutM50Hazops, AU14ColonistLoadoutRXFM, AU14ColonistLoadoutT73, AU14ColonistLoadoutZHNK72 ]
+  loadouts: [ AU14ColonistLoadoutD18Case, AU14ColonistLoadoutM357Kit, AU14ColonistLoadoutBasiraRifle, AU14ColonistLoadoutGlock77Rubber, AU14ColonistLoadoutRXFM, AU14ColonistLoadoutT73 ]

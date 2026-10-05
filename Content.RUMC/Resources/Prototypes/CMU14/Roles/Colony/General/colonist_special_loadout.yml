@@ -657,17 +657,6 @@
     - AU14ColonistPerkVeteran
 
 - type: loadout
-  id: AU14ColonistLoadoutM50Hazops
-  cost: 20
-  inhand:
-  - AU14GunCasePistolM50HAZOPS
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
-
-- type: loadout
   id: AU14ColonistLoadoutRXFM
   cost: 7
   inhand:
@@ -689,17 +678,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkHunter
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
-
-- type: loadout
-  id: AU14ColonistLoadoutZHNK72
-  cost: 15
-  inhand:
-  - RMCGunCasePistolZHNK72
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
     - AU14ColonistPerkMarksman
     - AU14ColonistPerkVeteran
 
