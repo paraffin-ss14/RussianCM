@@ -73,22 +73,6 @@
   loadouts: [ AU14ColonistLoadoutLabCoat, AU14ColonistLoadoutVialPouch ]
 
 - type: loadoutGroup
-  id: AU14ColonistSpecialGroupLeadership
-  name: loadout-group-au14-colonist-special-leadership
-  hidden: true
-  minLimit: 0
-  maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutWhistle, AU14ColonistLoadoutMegaphone ]
-
-- type: loadoutGroup
-  id: AU14ColonistSpecialGroupJtac
-  name: loadout-group-au14-colonist-special-jtac
-  hidden: true
-  minLimit: 0
-  maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutBinoculars, AU14ColonistLoadoutRangefinder ]
-
-- type: loadoutGroup
   id: AU14ColonistSpecialGroupDomestics
   name: loadout-group-au14-colonist-special-domestics
   hidden: true
@@ -118,7 +102,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox, AU14ColonistLoadoutAmbulanceBox, AU14ColonistLoadoutHumveeBox ]
+  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox, AU14ColonistLoadoutAmbulanceBox ]
 
 - type: loadout
   id: AU14ColonistLoadoutD18Case
@@ -126,9 +110,12 @@
   inhand:
   - RMCD18Case
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkFirearmsCourse
+    - AU14ColonistPerkHunter
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutM357Kit
@@ -136,9 +123,11 @@
   inhand:
   - AU14KitWeaponM357
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkHunter
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutKnuckles
@@ -146,9 +135,10 @@
   equipment:
     gloves: ClothingHandsKnuckleDusters
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillCqc
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMeleeLessons
+    - AU14ColonistPerkMartialArts
 
 - type: loadout
   id: AU14ColonistLoadoutBayonetM5
@@ -156,9 +146,10 @@
   inhand:
   - RMCM5Bayonet
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMeleeWeapons
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMeleeLessons
+    - AU14ColonistPerkMartialArts
 
 - type: loadout
   id: AU14ColonistLoadoutKnifeDruzhina
@@ -166,9 +157,10 @@
   inhand:
   - RMCCombatUtilityKnifeA
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMeleeWeapons
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMeleeLessons
+    - AU14ColonistPerkMartialArts
 
 - type: loadout
   id: AU14ColonistLoadoutKnifeTanto
@@ -176,9 +168,10 @@
   inhand:
   - RMCTantoA
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMeleeWeapons
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMeleeLessons
+    - AU14ColonistPerkMartialArts
 
 - type: loadout
   id: AU14ColonistLoadoutKnifeTrench
@@ -186,9 +179,10 @@
   inhand:
   - RMCSawtoothDaggerA
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMeleeWeapons
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMeleeLessons
+    - AU14ColonistPerkMartialArts
 
 - type: loadout
   id: AU14ColonistLoadoutMachete
@@ -196,9 +190,9 @@
   inhand:
   - AU14ToolMachete
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMeleeWeapons
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMartialArts
 
 - type: loadout
   id: AU14ColonistLoadoutMedBelt
@@ -206,9 +200,12 @@
   equipment:
     belt: AU14BeltMedical
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkFirstAid
+    - AU14ColonistPerkOrderly
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutMedPouch
@@ -216,9 +213,12 @@
   equipment:
     pocket1: RMCPouchMedical
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkFirstAid
+    - AU14ColonistPerkOrderly
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutMedHud
@@ -226,9 +226,12 @@
   equipment:
     eyes: RMCGlassesMedicalHUDGlasses
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkFirstAid
+    - AU14ColonistPerkOrderly
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutDefib
@@ -236,9 +239,11 @@
   inhand:
   - CMDefibrillator
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkOrderly
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutChemBox
@@ -247,9 +252,9 @@
   inhand:
   - AU14BoxChemDispenser
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 3
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutSurgeryCase
@@ -257,9 +262,11 @@
   inhand:
   - CMSurgicalCaseFilled
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillSurgery
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkOrderly
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutSurgPouchGreen
@@ -267,12 +274,9 @@
   inhand:
   - CMU14DropSurgicalGreen
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 3
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillSurgery
-    minLevel: 3
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutSurgPouchBlue
@@ -280,12 +284,9 @@
   inhand:
   - CMU14DropSurgicalBlue
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 3
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillSurgery
-    minLevel: 3
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutSurgPouchBlack
@@ -293,12 +294,9 @@
   inhand:
   - CMU14DropSurgicalBlack
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 3
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillSurgery
-    minLevel: 3
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutToolBelt
@@ -306,9 +304,11 @@
   equipment:
     belt: AU14BeltUtilityFilled
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkConstructionExperience
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutEngBag
@@ -316,9 +316,10 @@
   equipment:
     back: CMSatchelEngineer
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutConstructionPouch
@@ -326,9 +327,10 @@
   equipment:
     pocket1: AU14PouchConstructionFilled
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillConstruction
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutTacticalEngPouch
@@ -336,12 +338,10 @@
   equipment:
     pocket1: RMCPouchToolsSocFill
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillConstruction
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutLabCoat
@@ -349,9 +349,10 @@
   equipment:
     outerClothing: RMCLabcoat
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillResearch
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutVialPouch
@@ -359,49 +360,10 @@
   equipment:
     pocket2: RMCPouchVialFill
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillResearch
-    minLevel: 1
-
-- type: loadout
-  id: AU14ColonistLoadoutWhistle
-  cost: 2
-  inhand:
-  - RMCWhistle
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillLeadership
-    minLevel: 1
-
-- type: loadout
-  id: AU14ColonistLoadoutMegaphone
-  cost: 2
-  inhand:
-  - RMCMegaphone
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillLeadership
-    minLevel: 2
-
-- type: loadout
-  id: AU14ColonistLoadoutBinoculars
-  cost: 4
-  inhand:
-  - RMCBinocularsCiv
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillJtac
-    minLevel: 1
-
-- type: loadout
-  id: AU14ColonistLoadoutRangefinder
-  cost: 5
-  inhand:
-  - RMCRangefinder
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillJtac
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutMicrowaveBox
@@ -410,9 +372,9 @@
   inhand:
   - AU14BoxMicrowave
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillDomestics
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkCookingLessons
 
 - type: loadout
   id: AU14ColonistLoadoutDinnerwareBox
@@ -421,9 +383,9 @@
   inhand:
   - AU14BoxVendorDinnerware
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillDomestics
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkCookingLessons
 
 - type: loadout
   id: AU14ColonistLoadoutIngredientsBox
@@ -432,9 +394,9 @@
   inhand:
   - AU14BoxVendorIngredients
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillDomestics
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkCookingLessons
 
 - type: loadout
   id: AU14ColonistLoadoutSandals
@@ -442,9 +404,11 @@
   equipment:
     shoes: RMCShoesSandals
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEndurance
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkHunter
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutKimono
@@ -452,9 +416,10 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitKimono
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEndurance
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutKatana
@@ -462,12 +427,13 @@
   inhand:
   - RMCKatana
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEndurance
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMeleeWeapons
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMartialArts
 
 - type: loadout
   id: AU14ColonistLoadoutMaintenanceJack
@@ -475,9 +441,9 @@
   inhand:
   - AU14MaintenanceJack
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillVehicles
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkDrivingLessons
 
 - type: loadout
   id: AU14ColonistLoadoutBlueVanBox
@@ -486,12 +452,14 @@
   inhand:
   - AU14BoxVehicleBlueTruck
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillVehicles
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkDrivingLessons
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkConstructionExperience
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutTruckBox
@@ -500,12 +468,14 @@
   inhand:
   - AU14BoxVehicleTruck
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillVehicles
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkDrivingLessons
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkConstructionExperience
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutAmbulanceBox
@@ -514,18 +484,19 @@
   inhand:
   - AU14BoxVehicleAmbulance
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillVehicles
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 1
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillSurgery
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkDrivingLessons
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkConstructionExperience
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkOrderly
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 # Base for boxes that unpack a machine or vehicle when used in hand.
 - type: entity
@@ -654,9 +625,11 @@
   equipment:
     belt: CMBeltMedicBagFilled
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillMedical
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkOrderly
+    - AU14ColonistPerkDoctor
+    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutBasiraRifle
@@ -664,9 +637,11 @@
   inhand:
   - AU14KitWeaponBasira
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkHunter
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutGlock77Rubber
@@ -674,9 +649,12 @@
   inhand:
   - CMU14KitWeaponGlock77Rubber
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkFirearmsCourse
+    - AU14ColonistPerkHunter
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutM50Hazops
@@ -684,9 +662,10 @@
   inhand:
   - AU14GunCasePistolM50HAZOPS
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutRXFM
@@ -694,9 +673,12 @@
   inhand:
   - AU14KitWeaponRXFM
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkFirearmsCourse
+    - AU14ColonistPerkHunter
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutT73
@@ -704,9 +686,11 @@
   inhand:
   - AU14GunCasePistolT73
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 2
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkHunter
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutZHNK72
@@ -714,23 +698,10 @@
   inhand:
   - RMCGunCasePistolZHNK72
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillFirearms
-    minLevel: 2
-
-- type: loadout
-  id: AU14ColonistLoadoutHumveeBox
-  cost: 15
-  dummyEntity: VehicleHumveeTransport
-  inhand:
-  - AU14BoxVehicleHumveeTransport
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillVehicles
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 1
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkMarksman
+    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutRmcFrameBackpack
@@ -738,23 +709,10 @@
   equipment:
     back: AU14FrameBackpackRMC
   effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 2
-
-- type: entity
-  parent: AU14DeployBoxBase
-  id: AU14BoxVehicleHumveeTransport
-  name: humvee crate
-  description: A transport humvee, packed for transport. Wheels included.
-  components:
-  - type: Item
-    size: Huge
-  - type: AU14DeployBox
-    anchor: false
-    distance: 3
-    entries:
-    - prototype: VehicleHumveeTransport
+  - !type:PerkRequirementLoadoutEffect
+    anyOf:
+    - AU14ColonistPerkEnthusiast
+    - AU14ColonistPerkEngineer
 
 # Free clothing choice: one loadout per inventory slot.
 - type: loadoutGroup

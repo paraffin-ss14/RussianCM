@@ -1,357 +1,227 @@
-# Colonist skills: each skill is a group, each level is a loadout that sets the skill.
+# Colonist skills: each category is a group, each option is a loadout that sets skills; only one option per category.
 
 - type: loadoutGroup
-  id: AU14ColonistSkillGroupConstruction
-  name: loadout-group-au14-colonist-skill-construction
+  id: AU14ColonistPerkGroupFirearms
+  name: loadout-group-au14-colonist-perk-firearms
   hidden: true
   minLimit: 0
   maxLimit: 1
-  loadouts: [ AU14ColonistSkillConstruction1, AU14ColonistSkillConstruction2, AU14ColonistSkillConstruction3 ]
+  loadouts: [ AU14ColonistPerkFirearmsCourse, AU14ColonistPerkHunter, AU14ColonistPerkMarksman, AU14ColonistPerkVeteran ]
+
 - type: loadout
-  id: AU14ColonistSkillConstruction1
+  id: AU14ColonistPerkFirearmsCourse
+  cost: 4
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillFirearms
+    level: 1
+
+- type: loadout
+  id: AU14ColonistPerkHunter
+  cost: 10
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillFirearms
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillEndurance
+    level: 1
+
+- type: loadout
+  id: AU14ColonistPerkMarksman
+  cost: 14
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillEndurance
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillPolice
+    level: 1
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillFirearms
+    level: 2
+
+- type: loadout
+  id: AU14ColonistPerkVeteran
+  cost: 16
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillLeadership
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillFirearms
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillEndurance
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillPolice
+    level: 2
+  - !type:AgeRequirementLoadoutEffect
+    minAge: 30
+
+- type: loadoutGroup
+  id: AU14ColonistPerkGroupMelee
+  name: loadout-group-au14-colonist-perk-melee
+  hidden: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts: [ AU14ColonistPerkMeleeLessons, AU14ColonistPerkMartialArts ]
+
+- type: loadout
+  id: AU14ColonistPerkMeleeLessons
+  cost: 6
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillCqc
+    level: 1
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillMeleeWeapons
+    level: 1
+
+- type: loadout
+  id: AU14ColonistPerkMartialArts
+  cost: 12
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillMeleeWeapons
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillCqc
+    level: 2
+
+- type: loadoutGroup
+  id: AU14ColonistPerkGroupEngineering
+  name: loadout-group-au14-colonist-perk-engineering
+  hidden: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts: [ AU14ColonistPerkConstructionExperience, AU14ColonistPerkEnthusiast, AU14ColonistPerkEngineer ]
+
+- type: loadout
+  id: AU14ColonistPerkConstructionExperience
+  cost: 4
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillConstruction
+    level: 1
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillEngineer
+    level: 1
+
+- type: loadout
+  id: AU14ColonistPerkEnthusiast
+  cost: 6
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillEngineer
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillConstruction
+    level: 2
+
+- type: loadout
+  id: AU14ColonistPerkEngineer
+  cost: 10
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillConstruction
+    level: 4
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillEngineer
+    level: 4
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillFireman
+    level: 2
+
+- type: loadoutGroup
+  id: AU14ColonistPerkGroupMedical
+  name: loadout-group-au14-colonist-perk-medical
+  hidden: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts: [ AU14ColonistPerkFirstAid, AU14ColonistPerkOrderly, AU14ColonistPerkDoctor, AU14ColonistPerkMaestro ]
+
+- type: loadout
+  id: AU14ColonistPerkFirstAid
+  cost: 4
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillMedical
+    level: 1
+
+- type: loadout
+  id: AU14ColonistPerkOrderly
+  cost: 6
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillMedical
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillSurgery
+    level: 1
+
+- type: loadout
+  id: AU14ColonistPerkDoctor
+  cost: 12
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillMedical
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillSurgery
+    level: 2
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillResearch
+    level: 1
+
+- type: loadout
+  id: AU14ColonistPerkMaestro
+  cost: 16
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillSurgery
+    level: 3
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillMedical
+    level: 3
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillResearch
+    level: 2
+  - !type:AgeRequirementLoadoutEffect
+    minAge: 30
+
+- type: loadoutGroup
+  id: AU14ColonistPerkGroupDriving
+  name: loadout-group-au14-colonist-perk-driving
+  hidden: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts: [ AU14ColonistPerkDrivingLessons ]
+
+- type: loadout
+  id: AU14ColonistPerkDrivingLessons
+  cost: 4
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillVehicles
+    level: 1
+
+- type: loadoutGroup
+  id: AU14ColonistPerkGroupCooking
+  name: loadout-group-au14-colonist-perk-cooking
+  hidden: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts: [ AU14ColonistPerkCookingLessons ]
+
+- type: loadout
+  id: AU14ColonistPerkCookingLessons
   cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillConstruction, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillConstruction2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillConstruction, level: 2 } ]
-- type: loadout
-  id: AU14ColonistSkillConstruction3
-  cost: 9
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillConstruction, level: 3 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupCqc
-  name: loadout-group-au14-colonist-skill-cqc
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillCqc1, AU14ColonistSkillCqc2 ]
-- type: loadout
-  id: AU14ColonistSkillCqc1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillCqc, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillCqc2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillCqc, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupDomestics
-  name: loadout-group-au14-colonist-skill-domestics
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillDomestics1, AU14ColonistSkillDomestics2 ]
-- type: loadout
-  id: AU14ColonistSkillDomestics1
-  cost: 1
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillDomestics, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillDomestics2
-  cost: 3
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillDomestics, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupEndurance
-  name: loadout-group-au14-colonist-skill-endurance
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillEndurance1, AU14ColonistSkillEndurance2 ]
-- type: loadout
-  id: AU14ColonistSkillEndurance1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillEndurance, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillEndurance2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillEndurance, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupEngineer
-  name: loadout-group-au14-colonist-skill-engineer
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillEngineer1, AU14ColonistSkillEngineer2, AU14ColonistSkillEngineer3 ]
-- type: loadout
-  id: AU14ColonistSkillEngineer1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillEngineer, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillEngineer2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillEngineer, level: 2 } ]
-- type: loadout
-  id: AU14ColonistSkillEngineer3
-  cost: 9
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillEngineer, level: 3 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupFirearms
-  name: loadout-group-au14-colonist-skill-firearms
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillFirearms1, AU14ColonistSkillFirearms2 ]
-- type: loadout
-  id: AU14ColonistSkillFirearms1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillFirearms, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillFirearms2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillFirearms, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupFireman
-  name: loadout-group-au14-colonist-skill-fireman
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillFireman1, AU14ColonistSkillFireman2 ]
-- type: loadout
-  id: AU14ColonistSkillFireman1
-  cost: 1
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillFireman, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillFireman2
-  cost: 3
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillFireman, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupIntel
-  name: loadout-group-au14-colonist-skill-intel
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillIntel1, AU14ColonistSkillIntel2 ]
-- type: loadout
-  id: AU14ColonistSkillIntel1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillIntel, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillIntel2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillIntel, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupJtac
-  name: loadout-group-au14-colonist-skill-jtac
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillJtac1, AU14ColonistSkillJtac2 ]
-- type: loadout
-  id: AU14ColonistSkillJtac1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillJtac, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillJtac2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillJtac, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupLeadership
-  name: loadout-group-au14-colonist-skill-leadership
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillLeadership1, AU14ColonistSkillLeadership2 ]
-- type: loadout
-  id: AU14ColonistSkillLeadership1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillLeadership, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillLeadership2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillLeadership, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupMedical
-  name: loadout-group-au14-colonist-skill-medical
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillMedical1, AU14ColonistSkillMedical2, AU14ColonistSkillMedical3 ]
-- type: loadout
-  id: AU14ColonistSkillMedical1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillMedical, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillMedical2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillMedical, level: 2 } ]
-- type: loadout
-  id: AU14ColonistSkillMedical3
-  cost: 9
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillMedical, level: 3 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupMeleeWeapons
-  name: loadout-group-au14-colonist-skill-melee-weapons
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillMeleeWeapons1, AU14ColonistSkillMeleeWeapons2 ]
-- type: loadout
-  id: AU14ColonistSkillMeleeWeapons1
-  cost: 1
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillMeleeWeapons, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillMeleeWeapons2
-  cost: 3
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillMeleeWeapons, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupNavigations
-  name: loadout-group-au14-colonist-skill-navigations
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillNavigations1, AU14ColonistSkillNavigations2 ]
-- type: loadout
-  id: AU14ColonistSkillNavigations1
-  cost: 1
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillNavigations, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillNavigations2
-  cost: 3
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillNavigations, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupOverwatch
-  name: loadout-group-au14-colonist-skill-overwatch
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillOverwatch1, AU14ColonistSkillOverwatch2 ]
-- type: loadout
-  id: AU14ColonistSkillOverwatch1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillOverwatch, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillOverwatch2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillOverwatch, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupPilot
-  name: loadout-group-au14-colonist-skill-pilot
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillPilot1, AU14ColonistSkillPilot2 ]
-- type: loadout
-  id: AU14ColonistSkillPilot1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillPilot, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillPilot2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillPilot, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupPolice
-  name: loadout-group-au14-colonist-skill-police
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillPolice1, AU14ColonistSkillPolice2 ]
-- type: loadout
-  id: AU14ColonistSkillPolice1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillPolice, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillPolice2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillPolice, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupPowerLoader
-  name: loadout-group-au14-colonist-skill-power-loader
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillPowerLoader1, AU14ColonistSkillPowerLoader2 ]
-- type: loadout
-  id: AU14ColonistSkillPowerLoader1
-  cost: 1
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillPowerLoader, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillPowerLoader2
-  cost: 3
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillPowerLoader, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupResearch
-  name: loadout-group-au14-colonist-skill-research
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillResearch1, AU14ColonistSkillResearch2 ]
-- type: loadout
-  id: AU14ColonistSkillResearch1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillResearch, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillResearch2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillResearch, level: 2 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupSurgery
-  name: loadout-group-au14-colonist-skill-surgery
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillSurgery1, AU14ColonistSkillSurgery2, AU14ColonistSkillSurgery3 ]
-- type: loadout
-  id: AU14ColonistSkillSurgery1
-  cost: 2
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillSurgery, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillSurgery2
-  cost: 5
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillSurgery, level: 2 } ]
-- type: loadout
-  id: AU14ColonistSkillSurgery3
-  cost: 9
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillSurgery, level: 3 } ]
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupVehicles
-  name: loadout-group-au14-colonist-skill-vehicles
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: [ AU14ColonistSkillVehicles1, AU14ColonistSkillVehicles2 ]
-- type: loadout
-  id: AU14ColonistSkillVehicles1
-  cost: 1
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillVehicles, level: 1 } ]
-- type: loadout
-  id: AU14ColonistSkillVehicles2
-  cost: 3
-  effects: [ !type:SetSkillLoadoutEffect { skill: RMCSkillVehicles, level: 2 } ]
-
-# Empty groups kept so the editor sections stay in place.
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupSpecial
-  name: loadout-group-au14-colonist-skill-special
-  hidden: true
-  minLimit: 0
-  maxLimit: 3
-  loadouts: []
-
-- type: loadoutGroup
-  id: AU14ColonistSkillGroupGear
-  name: loadout-group-au14-colonist-skill-gear
-  hidden: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts: []
+  effects:
+  - !type:SetSkillLoadoutEffect
+    skill: RMCSkillDomestics
+    level: 2
 
 # Special loadout: its own points pool for gear, boxes and clothing.
 - type: roleLoadout
@@ -368,8 +238,6 @@
   - AU14ColonistSpecialGroupConstruction
   - AU14ColonistSpecialGroupEngConstruction
   - AU14ColonistSpecialGroupResearch
-  - AU14ColonistSpecialGroupLeadership
-  - AU14ColonistSpecialGroupJtac
   - AU14ColonistSpecialGroupDomestics
   - AU14ColonistSpecialGroupEndurance
   - AU14ColonistSpecialGroupEnduranceMelee
