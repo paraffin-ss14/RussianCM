@@ -118,7 +118,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox, AU14ColonistLoadoutAmbulanceBox, AU14ColonistLoadoutLogisticsApcBox, AU14ColonistLoadoutHumveeBox ]
+  loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox, AU14ColonistLoadoutAmbulanceBox, AU14ColonistLoadoutHumveeBox ]
 
 - type: loadout
   id: AU14ColonistLoadoutD18Case
@@ -527,20 +527,6 @@
     skill: RMCSkillSurgery
     minLevel: 1
 
-- type: loadout
-  id: AU14ColonistLoadoutLogisticsApcBox
-  cost: 17
-  dummyEntity: VehicleSPPVanLogistics
-  inhand:
-  - AU14BoxVehicleLogisticsApc
-  effects:
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillVehicles
-    minLevel: 2
-  - !type:SkillRequirementLoadoutEffect
-    skill: RMCSkillEngineer
-    minLevel: 1
-
 # Base for boxes that unpack a machine or vehicle when used in hand.
 - type: entity
   abstract: true
@@ -661,22 +647,6 @@
     - prototype: AU14VehicleCivEMSAmbulance
       install:
         wheel-1: RMCVanWheel
-
-- type: entity
-  parent: AU14DeployBoxBase
-  id: AU14BoxVehicleLogisticsApc
-  name: logistics APC crate
-  description: A logistics APC, packed for transport. Wheels included.
-  components:
-  - type: Item
-    size: Huge
-  - type: AU14DeployBox
-    anchor: false
-    distance: 3
-    entries:
-    - prototype: VehicleSPPVanLogistics
-      install:
-        wheel-1: VehicleSPPVanWheel
 
 - type: loadout
   id: AU14ColonistLoadoutMedBagBelt
@@ -842,4 +812,3 @@
   effects:
   - !type:CustomClothingLoadoutEffect
     slot: shoes
-

@@ -41,6 +41,7 @@ using Content.Shared.CMU14.Round.Roles;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
 using Robust.Shared.Configuration;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -75,6 +76,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private PdaSystem _pdaSystem = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private IComponentFactory _componentFactory = default!;
+    [Dependency] private SharedContainerSystem _containers = default!;
     [Dependency] private PlatoonSpawnRuleSystem _platoonSpawnRuleSystem = default!;
     [Dependency] private SquadSystem _squadSystem = default!;
     [Dependency] private NpcFactionSystem _npcFaction = default!;
@@ -904,6 +906,17 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
         }
 
         var item = Spawn(proto.ID, Transform(entity).Coordinates);
+
+        // Chosen clothing must start empty, even if the prototype put something inside.
+        var containers = new List<BaseContainer>();
+        if (HasComp<ContainerManagerComponent>(item))
+        {
+            foreach (var container in _containers.GetAllContainers(item))
+                containers.Add(container);
+        }
+
+        foreach (var container in containers)
+            _containers.CleanContainer(container);
 
         if (CustomClothingRules.SanitizeName(selected.CustomName) is { } name)
             _metaSystem.SetEntityName(item, name);

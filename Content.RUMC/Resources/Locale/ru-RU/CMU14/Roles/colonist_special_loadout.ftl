@@ -51,7 +51,6 @@ colonist-skill-editor-loadout-AU14ColonistLoadoutMaintenanceJack = Ремонт�
 colonist-skill-editor-loadout-AU14ColonistLoadoutBlueVanBox = Ящик с голубым фургоном
 colonist-skill-editor-loadout-AU14ColonistLoadoutTruckBox = Ящик с грузовиком
 colonist-skill-editor-loadout-AU14ColonistLoadoutAmbulanceBox = Ящик с машиной скорой помощи
-colonist-skill-editor-loadout-AU14ColonistLoadoutLogisticsApcBox = Ящик с логистическим БТР «Клещ»
 
 ent-AU14DeployBoxBase = ящик с припасами
     .desc = Упаковано для перевозки — используйте в руке, чтобы распаковать содержимое.
@@ -69,8 +68,6 @@ ent-AU14BoxVehicleTruck = Ящик с грузовиком
     .desc = Гражданский грузовик, упакованный для перевозки. Колёса в комплекте.
 ent-AU14BoxVehicleAmbulance = Ящик с машиной скорой помощи
     .desc = Машина скорой помощи, упакованная для перевозки. Колёса в комплекте.
-ent-AU14BoxVehicleLogisticsApc = Ящик с логистическим БТР «Клещ»
-    .desc = Логистический БТР «Клещ», упакованный для перевозки. Колёса в комплекте.
 colonist-skill-editor-loadout-AU14ColonistLoadoutMedBagBelt = Сумка санитара
 colonist-skill-editor-loadout-AU14ColonistLoadoutBasiraRifle = Кейс винтовки Басира
 colonist-skill-editor-loadout-AU14ColonistLoadoutGlock77Rubber = Кейс пистолета Glock 77 (резиновые пули)
