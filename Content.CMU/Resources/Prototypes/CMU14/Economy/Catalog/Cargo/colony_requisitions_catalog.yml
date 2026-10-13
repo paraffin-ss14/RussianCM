@@ -33,6 +33,8 @@
         crate: CMUCrateEngineeringWiring
       - cost: 350
         crate: RMCCrateMechanicalMaintenance
+      - cost: 150
+        crate: RUMCCrateHandSaws # CMU14: the saw for logs
       - cost: 350
         crate: RMCCrateReplacementLights
       - cost: 350
