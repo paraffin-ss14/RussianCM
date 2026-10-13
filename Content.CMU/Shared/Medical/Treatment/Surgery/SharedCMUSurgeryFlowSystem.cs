@@ -280,6 +280,8 @@ public abstract partial class SharedCMUSurgeryFlowSystem : EntitySystem
             CMUSurgeryStepMetadataEntry? stepMetadata = null;
             metadataByStep?.TryGetValue(stepId, out stepMetadata);
             var label = stepMetadata?.Label ?? stepPrototype.Name;
+            if (Loc.TryGetString(label, out var localizedLabel))
+                label = localizedLabel;
             var toolCategory = stepMetadata is null
                 ? ResolveLegacyStepToolCategory(step)
                 : stepMetadata.ToolCategory;
@@ -310,12 +312,16 @@ public abstract partial class SharedCMUSurgeryFlowSystem : EntitySystem
         var validParts = metadata?.ValidParts.ToFrozenSet() ?? FrozenSet<BodyPartType>.Empty;
         var selfSurgeryValidParts = metadata?.SelfSurgeryValidParts.ToFrozenSet() ?? FrozenSet<BodyPartType>.Empty;
 
+        var displayName = metadata?.DisplayName ?? surgeryPrototype.Name;
+        if (Loc.TryGetString(displayName, out var localizedName))
+            displayName = localizedName;
+
         return new CMUSurgeryDefinition(
             surgeryId,
             surgeryPrototype,
             surgery.Priority,
             requirement,
-            metadata?.DisplayName ?? surgeryPrototype.Name,
+            displayName,
             metadata?.Category ?? string.Empty,
             metadata?.MinSkill ?? 0,
             metadata?.AllowSelfSurgery ?? false,
@@ -793,6 +799,16 @@ public abstract partial class SharedCMUSurgeryFlowSystem : EntitySystem
 
     private bool IsPainControlledForSurgery(EntityUid patient, EntityUid surgeon)
     {
+        // Medicomp wound treatment is designed for conscious Yautja field care.
+        // Other procedures still require the normal pain control or restraint.
+        if (HasComp<YautjaComponent>(patient) &&
+            TryComp<CMUSurgeryArmedStepComponent>(patient, out var armed) &&
+            Prototypes.TryIndex<EntityPrototype>(armed.SurgeryId, out var surgery) &&
+            surgery.TryComp<CMUYautjaMedicompSurgeryConditionComponent>(out _, ComponentFactory))
+        {
+            return true;
+        }
+
         // Someone else pinning the patient still stands in for painkillers.
         if (HoldDown.IsHeldDownFor(patient, surgeon))
             return true;

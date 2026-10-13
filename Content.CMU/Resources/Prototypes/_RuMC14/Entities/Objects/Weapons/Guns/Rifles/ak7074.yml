@@ -1,0 +1,123 @@
+#RuMC modified
+
+- type: entity
+  parent: RMCWeaponRifleAK4047
+  name: AK-7074 assault rifle
+  id: RuMCWeaponRifleAK7074
+  description: The VDV UPP assault rifle was developed based on its predecessor, the AK4047. It is lighter and cheaper, and combines the ability to fire in two calibers - 10×24 and 5.45.
+  components:
+  - type: Sprite
+    sprite: _RuMC14/Objects/Weapons/Guns/Rifles/ak7074.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: ItemMapper
+    mapLayers:
+      mag-0:
+        whitelist:
+          tags:
+          - RMCMagazineRifleAK4047
+          - RMCMagazineRifleAK4047AP
+          - RMCMagazineRifleAK4047Incendiary
+          - RMCMagazineRifleAK4047HEAP
+      mag-1:
+        whitelist:
+          tags:
+          - RuMCMagazineRifleAK4047bakelite
+          - RuMCMagazineRifleAK4047APbakelite
+      mag-2:
+        whitelist:
+          tags:
+          - RuMCMagazineRifleAK4047buben
+  - type: Clothing
+    sprite: _RuMC14/Objects/Weapons/Guns/Rifles/ak7074.rsi
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    soundGunshot:
+      collection: RMCAK4047Shoot
+  - type: RMCSelectiveFire
+    baseFireModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+    recoilUnwielded: 4
+    scatterWielded: 4
+    scatterUnwielded: 11
+    baseFireRate: 4
+    burstScatterMult: 1
+  - type: RMCWeaponAccuracy
+    accuracyMultiplier: 1.3
+    accuracyMultiplierUnwielded: 0.65
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: RMCMagazineRifleAK4047
+        insertSound: /Audio/_RMC14/Weapons/Guns/Reload/m41_reload.ogg
+        ejectSound: /Audio/_RMC14/Weapons/Guns/Reload/m41_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - RMCMagazineRifleAK4047
+          - RMCMagazineRifleAK4047AP
+          - RMCMagazineRifleAK4047Incendiary
+          - RMCMagazineRifleAK4047HEAP
+          - RuMCMagazineRifleAK4047bakelite
+          - RuMCMagazineRifleAK4047APbakelite
+          - RuMCMagazineRifleAK4047buben
+  - type: GunDamageModifier
+    multiplier: 1.1
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - RMCAttachmentBarrelCharger
+          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentExtendedCompensator
+          - RMCAttachmentSuppressor
+          - RMCM5Bayonet
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - RMCAttachmentRailFlashlight
+          - RMCAttachmentMagneticHarness
+          - RMCAttachmentS5RedDotSight
+          - RMCAttachmentS6ReflexSight
+          - RMCAttachmentS84xTelescopicScope
+          - RMCAttachmentS42xTelescopicMiniscope
+      rmc-aslot-stock:
+        startingAttachable: RMCAttachmentAK4047StockCollapsible
+        whitelist:
+          tags:
+          - RMCAttachmentAK4047StockCollapsible
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - RMCAttachmentAngledGrip
+          - RMCAttachmentBipod
+          - RMCAttachmentFlashlightGrip
+          - RMCAttachmentGyroscopicStabilizer
+          - RMCAttachmentLaserSight
+          - RMCAttachmentU1GrenadeLauncher
+          - RMCAttachmentU7UnderbarrelShotgun
+          - RMCAttachmentVerticalGrip
+          - RMCAttachmentExtinguisher
+          - RMCAttachmentFlamer
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-barrel: 0.84, 0
+      rmc-aslot-rail: 0, 0.1
+      rmc-aslot-stock: -0.65, 0
+      rmc-aslot-underbarrel: 0.3, -0.283
+  - type: Tag
+    tags:
+    - RMCWeaponRifleAK4047

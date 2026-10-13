@@ -6,7 +6,7 @@
   name: au14-job-name-govforengineeringtech
   description: au14-job-description-govforengineeringtech
   icon: "AU14JobIconGovCT"
-  spawnMenuRoleName: cmu-spawn-role-engineering-technician-govfor 
+  spawnMenuRoleName: cmu-spawn-role-engineering-technician-govfor
   startingGear: AU14GearGOVFOREngineeringTech
   dummyStartingGear: AU14GearGOVFOREngineeringTechDummy
   playTimeTracker: AU14JobGOVFOREngineeringTech
@@ -45,6 +45,8 @@
     - NoEnglish
     - SlowRunner
     - Anemic
+    - CMUAlcoholic
+    - CMUDrugAddict
   ranks:
     RMCRankCivilian: []
   chevrons:
@@ -77,7 +79,7 @@
     shoes: CMBootsBlackFilled
     head: RMCHardhatOrange
     jumpsuit: CMJumpsuitMaintTech
-    ears: AU14HeadsetGovforMarine
+    ears: CMUHeadsetGovforMarineAuxiliary
 
 - type: startingGear
   id: AU14GearGOVFOREngineeringTechDummy
@@ -86,7 +88,7 @@
     shoes: CMBootsBlackFilled
     head: RMCHardhatOrange
     jumpsuit: CMJumpsuitMaintTech
-    ears: AU14HeadsetGovforMarine
+    ears: CMUHeadsetGovforMarineAuxiliary
 
 - type: entity
   parent: CMSpawnPointJobBase
@@ -142,7 +144,7 @@
     shoes: CMBootsBlackFilled
     head: RMCHardhatOrange
     jumpsuit: CMJumpsuitMaintTech
-    ears: AU14HeadsetOpforMarine
+    ears: CMUHeadsetOpforMarineAuxiliary
 
 - type: startingGear
   id: AU14GearOPFOREngineeringTechDummy
@@ -151,7 +153,7 @@
     shoes: CMBootsBlackFilled
     head: RMCHardhatOrange
     jumpsuit: CMJumpsuitMaintTech
-    ears: AU14HeadsetOpforMarine
+    ears: CMUHeadsetOpforMarineAuxiliary
 
 - type: entity
   parent: CMSpawnPointJobBase

@@ -273,7 +273,7 @@ namespace Content.Server.Preferences.Managers
                 profile.HideMetaInformation,
                 YautjaProfileSerializer.DeserializeYautjaProfile(profile.YautjaProfile)
             )
-            .WithTTSVoice(HumanoidCharacterProfile.ValidateTTSVoice(profile.TTSVoice, _prototypeManager))
+            .WithTTSVoice(HumanoidCharacterProfile.ValidateTTSVoice(profile.TTSVoice, _prototypeManager, sex)) // CMU14: validate saved TTS against sex.
             // CMU14: Force on Force roles, hijacking, announcements and identification.
             .WithForceOnForcePreferences((ForceOnForceSide) profile.FoFSide, (ForceOnForceFallback) profile.FoFFallback);
         }

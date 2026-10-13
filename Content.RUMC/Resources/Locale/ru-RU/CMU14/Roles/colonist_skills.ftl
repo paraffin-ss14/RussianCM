@@ -9,16 +9,13 @@ loadout-group-au14-colonist-special-loadout = Стрельба
 colonist-skill-editor-loadout-AU14ColonistPerkFirearmsCourse = Курсы стрельбы
 colonist-skill-editor-loadout-AU14ColonistPerkHunter = Охотник
 colonist-skill-editor-loadout-AU14ColonistPerkMarksman = Опытный стрелок
-colonist-skill-editor-loadout-AU14ColonistPerkVeteran = Ветеран боевых действий
 colonist-skill-editor-loadout-AU14ColonistPerkMeleeLessons = Уроки ближнего боя
 colonist-skill-editor-loadout-AU14ColonistPerkMartialArts = Мастерство единоборств
 colonist-skill-editor-loadout-AU14ColonistPerkConstructionExperience = Опыт строительства
 colonist-skill-editor-loadout-AU14ColonistPerkEnthusiast = Энтузиаст
-colonist-skill-editor-loadout-AU14ColonistPerkEngineer = Инженер
 colonist-skill-editor-loadout-AU14ColonistPerkFirstAid = Курсы первой помощи
 colonist-skill-editor-loadout-AU14ColonistPerkOrderly = Санитар
 colonist-skill-editor-loadout-AU14ColonistPerkDoctor = Врач
-colonist-skill-editor-loadout-AU14ColonistPerkMaestro = Маэстро
 colonist-skill-editor-loadout-AU14ColonistPerkDrivingLessons = Уроки вождения
 colonist-skill-editor-loadout-AU14ColonistPerkCookingLessons = Уроки готовки
 

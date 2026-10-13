@@ -9,16 +9,13 @@ loadout-group-au14-colonist-special-loadout = Firearms
 colonist-skill-editor-loadout-AU14ColonistPerkFirearmsCourse = Shooting courses
 colonist-skill-editor-loadout-AU14ColonistPerkHunter = Hunter
 colonist-skill-editor-loadout-AU14ColonistPerkMarksman = Experienced marksman
-colonist-skill-editor-loadout-AU14ColonistPerkVeteran = Combat veteran
 colonist-skill-editor-loadout-AU14ColonistPerkMeleeLessons = Melee lessons
 colonist-skill-editor-loadout-AU14ColonistPerkMartialArts = Martial arts mastery
 colonist-skill-editor-loadout-AU14ColonistPerkConstructionExperience = Construction experience
 colonist-skill-editor-loadout-AU14ColonistPerkEnthusiast = Enthusiast
-colonist-skill-editor-loadout-AU14ColonistPerkEngineer = Engineer
 colonist-skill-editor-loadout-AU14ColonistPerkFirstAid = First aid courses
 colonist-skill-editor-loadout-AU14ColonistPerkOrderly = Orderly
 colonist-skill-editor-loadout-AU14ColonistPerkDoctor = Doctor
-colonist-skill-editor-loadout-AU14ColonistPerkMaestro = Maestro
 colonist-skill-editor-loadout-AU14ColonistPerkDrivingLessons = Driving lessons
 colonist-skill-editor-loadout-AU14ColonistPerkCookingLessons = Cooking lessons
 

@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Players.PlayTimeTracking;
+using Content.Server._RMC14.Marines.Roles.Ranks;
 using Content.Shared.GameTicking;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -38,7 +39,8 @@ public sealed partial class ChevronSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        // The selected platoon's insignia overrides the generic job rank, including Civilian fallbacks.
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete, after: new[] { typeof(RankSystem) });
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<DidEquipEvent>(OnJumpsuitEquipped);
     }
@@ -249,7 +251,7 @@ public sealed partial class ChevronSystem : EntitySystem
         if (!TryComp<NpcFactionMemberComponent>(mob, out var factionMember))
             return null;
 
-        var platoonRule = EntitySystem.Get<PlatoonSpawnRuleSystem>();
+        var platoonRule = EntityManager.System<PlatoonSpawnRuleSystem>();
 
         foreach (var faction in factionMember.Factions)
         {

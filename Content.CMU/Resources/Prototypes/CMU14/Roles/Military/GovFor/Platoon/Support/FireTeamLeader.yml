@@ -5,7 +5,7 @@
   name: au14-job-name-radiotelephoneoperator
   description: au14-job-description-radiotelephoneoperator
   icon: "AU14JobIconFTL"
-  spawnMenuRoleName: cmu-spawn-role-fireteam-leader-govfor 
+  spawnMenuRoleName: cmu-spawn-role-fireteam-leader-govfor
   startingGear: AU14GearGOVFORRadioTelephoneOperator
   dummyStartingGear: AU14GearGOVFORRadioTelephoneOperatorDummy
   playTimeTracker: AU14JobGOVFORRadioTelephoneOperator
@@ -75,7 +75,7 @@
   requirements:
   - !type:TotalDepartmentsTimeRequirement
     group: CMUDepartmentsMilitary
-    time: 18000 # 5 hours
+    time: 14400 # 4 hours
   - !type:TraitsRequirement
     inverted: true
     traits:
@@ -89,6 +89,8 @@
     - SlowRunner
     - Anemic
     - Asthmatic
+    - CMUAlcoholic
+    - CMUDrugAddict
   ranks:
     RMCRankCivilian: []
   chevrons:

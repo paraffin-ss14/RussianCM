@@ -122,7 +122,7 @@ public sealed partial class YautjaRadioSystem : EntitySystem
 
         var senderName = FormattedMessage.EscapeText(Name(args.MessageSource));
         var message = FormattedMessage.EscapeText(args.Message);
-        var wrappedMessage = $"[bold]\\[{channelLabel}\\]: {senderName} {verb}, '[bold]{message}[/bold]'.[/bold]";
+        var wrappedMessage = $"[bold]\\[{channelLabel}\\]: \"{message}\"[/bold]";
 
         var chat = new ChatMessage(
             ChatChannel.Radio,

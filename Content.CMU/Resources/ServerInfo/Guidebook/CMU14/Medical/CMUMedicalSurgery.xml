@@ -1,102 +1,102 @@
 <Document>
-  # Surgery
+  # Хирургия
 
-  Some injuries can only be fixed by operating: compound and shattered fractures, internal bleeding, damaged organs, eschar and severed limbs.
+  Некоторые повреждения лечатся лишь операцией: открытые и раздробленные переломы, внутренние кровотечения, органы, струпы, оторванные конечности и оставленные ими кровоточащие культи.
 
   <Box>
-    <GuideEntityEmbed Entity="CMScalpel" Caption="Scalpel"/>
-    <GuideEntityEmbed Entity="CMHemostat" Caption="Hemostat"/>
-    <GuideEntityEmbed Entity="CMRetractor" Caption="Retractor"/>
-    <GuideEntityEmbed Entity="CMCautery" Caption="Cautery"/>
+    <GuideEntityEmbed Entity="CMScalpel" Caption="Скальпель"/>
+    <GuideEntityEmbed Entity="CMHemostat" Caption="Гемостат"/>
+    <GuideEntityEmbed Entity="CMRetractor" Caption="Ретрактор"/>
+    <GuideEntityEmbed Entity="CMCautery" Caption="Каутер"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="CMCircularSaw" Caption="Circular saw"/>
-    <GuideEntityEmbed Entity="CMBonesetter" Caption="Bone setter"/>
-    <GuideEntityEmbed Entity="CMBoneGel" Caption="Bone gel"/>
-    <GuideEntityEmbed Entity="CMUOrganClampItem" Caption="Organ vessel clamp"/>
+    <GuideEntityEmbed Entity="CMCircularSaw" Caption="Циркулярная пила"/>
+    <GuideEntityEmbed Entity="CMBonesetter" Caption="Костоправ"/>
+    <GuideEntityEmbed Entity="CMBoneGel" Caption="Костный гель"/>
+    <GuideEntityEmbed Entity="CMUOrganClampItem" Caption="Зажим сосудов органа"/>
   </Box>
 
-  ## Preparing the Patient
-  - [bold]Lay the patient down.[/bold] You can't operate on someone standing up. An [bold]operating table[/bold] is best.
-  - [bold]Put them under.[/bold] A patient who is asleep, unconscious, on strong enough painkillers or held down by someone keeps still. An awake patient in severe pain screams and thrashes, and steps can't go ahead.
-  - You can operate on yourself if you're buckled into a seat, but it's harder.
+  ## Подготовка пациента
+  - [bold]Уложите пациента.[/bold] Стоящего нельзя оперировать. Лучше всего [bold]операционный стол[/bold].
+  - [bold]Обезбольте.[/bold] Спящий, бессознательный, достаточно обезболенный или удерживаемый пациент неподвижен. Бодрствующий при сильной боли кричит и дёргается, мешая шагам операции.
+  - Самооперация возможна при пристёгивании к сиденью, но сложнее.
 
-  ## Anesthetic
+  ## Анестезия
   <Box>
-    <GuideEntityEmbed Entity="CMAnestheticTankFilled" Caption="Anesthetic tank"/>
+    <GuideEntityEmbed Entity="CMAnestheticTankFilled" Caption="Баллон анестетика"/>
   </Box>
-  The cleanest way to put a patient under is the [bold]anesthetic tank[/bold], which holds nitrous oxide.
-  - Put a breath mask on the patient, attach the anesthetic tank and turn on their internals.
-  - They get drowsy, and about [bold]6 seconds[/bold] later they fall asleep.
-  - They stay asleep for as long as they keep breathing from the tank. Turn off their internals or take the tank away and they wake up.
-  - Anesthetic tanks and medical gas masks are stocked in the medical supply vendor, and come in the surgery crate.
-  - It doesn't work on synthetics.
+  Самый простой способ — [bold]баллон анестетика[/bold] с закисью азота.
+  - Наденьте дыхательную маску, присоедините баллон и включите подачу воздуха.
+  - Пациент засыпает примерно через [bold]6 секунд[/bold].
+  - Спит, пока дышит из баллона. Отключение подачи или снятие баллона будит его.
+  - Баллоны и медицинские противогазы есть в медицинском автомате и хирургическом ящике.
+  - На синтетиков не действует.
 
-  ### Drugs Instead
-  If you don't have a tank, drugs will do:
-  - [bold]Soporific[/bold]: 8 units or more puts the patient to sleep, and it's a strong painkiller as well.
-  - [bold]Oxycodone[/bold] also works. It kills pain well enough to operate, but the patient stays awake, and it makes them [color=#FFA500]loopy[/color]: their vision blurs and darkens at the edges. Over 20 units they start acting drunk and hallucinating, and it begins to poison them.
-  - Tramadol, sleen and fentanyl are also strong enough. Paracetamol isn't.
+  ### Лекарства вместо газа
+  Без баллона используйте препараты:
+  - [bold]Снотворное[/bold]: 8 единиц и больше усыпляют и сильно обезболивают.
+  - [bold]Оксикодон[/bold]: достаточно обезболивает для операции без сна, но вызывает [color=#FFA500]затуманенность[/color]: зрение расплывается и темнеет по краям. Более 20 единиц вызывают опьянение, галлюцинации и отравление.
+  - Трамадол, слин и фентанил тоже достаточно сильны. Парацетамол — нет.
 
-  ### Holding the Patient Down
-  [color=#FFA500]No painkillers? Have someone hold the patient down.[/color] A second person pinning them still counts the same as painkillers: you can operate on an awake patient in severe pain, and they won't thrash when a step goes wrong.
-  - Right-click the patient while they're lying down and choose [bold]Hold down[/bold]. It takes 2 seconds.
-  - Stay right next to them. If you step away, get knocked out or the patient gets up, you let go, and surgery stops until the pain is dealt with.
-  - The surgeon can't hold the patient down themselves.
-  - Choose [bold]Let go[/bold] when you're done.
+  ### Удержание пациента
+  [color=#FFA500]Нет обезболивающих? Попросите удерживать пациента.[/color] Помощник заменяет обезболивание: бодрствующего при сильной боли можно оперировать без дёрганья при ошибке.
+  - Правой кнопкой по лежащему выберите [bold]Удерживать[/bold]. Занимает 2 секунды.
+  - Стойте рядом. Отход, потеря сознания или вставание пациента прекращают удержание, а операция останавливается до устранения боли.
+  - Хирург не может сам удерживать пациента.
+  - Закончив, выберите [bold]Отпустить[/bold].
 
-  It doesn't make steps any less likely to fail. The surface, tools and skill still decide that.
+  Это не уменьшает вероятность ошибки. Её определяют поверхность, инструменты и навык.
 
-  ## Operating
-  1. Use a surgical tool on the patient to open the [bold]Surgical Procedure[/bold] window.
-  2. Pick the body part, then the surgery. The window lists only the surgeries that part needs, grouped by what they fix, along with anything wrong with the part.
-  3. Press [bold]Begin Surgery[/bold]. The window tells you each step and which tool it needs.
-  4. Click the patient with that tool to do the step. Each step takes a couple of seconds, less with more surgical skill.
-  5. When you've finished, you can start another surgery on the same open part, or [bold]Close Up[/bold].
+  ## Операция
+  1. Примените хирургический инструмент, чтобы открыть окно [bold]Хирургическая процедура[/bold].
+  2. Выберите часть тела и операцию. Список содержит только нужные ей операции по категориям и сведения о повреждениях.
+  3. Нажмите [bold]Начать операцию[/bold]. Окно сообщает каждый шаг и инструмент.
+  4. Нажмите этим инструментом по пациенту. Шаг занимает несколько секунд, меньше при высоком навыке.
+  5. Закончив, начните другую операцию на открытой части или [bold]Закройте[/bold].
 
-  Only one body part can be operated on at a time. Finish or abandon a surgery before starting on another part.
+  Одновременно оперируется одна часть тела. Завершите или прервите операцию перед переходом к другой.
 
-  ## When Steps Go Wrong
-  A step can fail and cut the patient. The chance depends on how rough the conditions are:
-  - [bold]Where the patient is[/bold]: an operating table or a proper bed is fine. A roller bed, stretcher or bedroll is rougher. A patient who isn't strapped down at all is roughest.
-  - [bold]Improvised tools[/bold]: some substitutes make a step more likely to fail. See [bold]Improvised Tools[/bold] below.
-  - [bold]Operating on yourself[/bold] makes every step harder.
-  - [bold]Surgical skill[/bold] makes up for bad conditions. An expert surgeon can operate cleanly in the field.
+  ## Ошибки
+  Шаг может провалиться и ранить пациента. Вероятность зависит от условий:
+  - [bold]Поверхность[/bold]: стол и полноценная кровать подходят. Каталка, носилки и спальный мешок хуже; непристёгнутый пациент — хуже всего.
+  - [bold]Подручные инструменты[/bold]: некоторые повышают вероятность ошибки. См. ниже.
+  - [bold]Самооперация[/bold] усложняет каждый шаг.
+  - [bold]Хирургический навык[/bold] компенсирует плохие условия. Эксперт чисто оперирует в поле.
 
-  With good conditions a step never fails. The worse they get, the higher the chance: 5%, then 25%, then 50%.
+  В хороших условиях ошибок нет. С ухудшением вероятность растёт: 5%, затем 25%, затем 50%.
 
-  ## Improvised Tools
-  No surgical kit? Everyday items can stand in for most tools. Every substitute is [bold]slower[/bold] than the real thing, from about half again as long for a blowtorch up to nearly three times as long for a cigarette. Ones marked [color=#FFA500]rough[/color] also make a step more likely to fail. When a step fails, the damage depends on the tool: blades cut, blunt tools bruise, hot tools burn.
+  ## Подручные инструменты
+  Нет хирургического набора? Обычные предметы заменяют большинство инструментов. Все заменители [bold]медленнее[/bold]: от полуторакратного времени для горелки до почти тройного для сигареты. Пометка [color=#FFA500]грубый[/color] означает повышенный риск ошибки. При провале клинки режут, тупые инструменты оставляют ушибы, горячие — ожоги.
 
-  Listed from best to worst:
-  - [bold]Scalpel[/bold]: a knife, or a [color=#FFA500]glass shard (rough)[/color].
-  - [bold]Hemostat[/bold]: surgical line, wire cutters, a fork, cable coil, or gauze.
-  - [bold]Retractor[/bold]: a crowbar, a vehicle maintenance jack [color=#FFA500](rough)[/color], a knife [color=#FFA500](rough)[/color], or a [color=#FFA500]glass shard (rough)[/color].
-  - [bold]Cautery[/bold]: a blowtorch or welder, surgical line, cable coil, a lighter, or a [color=#FFA500]cigarette (rough)[/color].
-  - [bold]Circular saw[/bold]: a hatchet [color=#FFA500](rough)[/color], a machete [color=#FFA500](rough)[/color], a pen [color=#FFA500](rough)[/color], or a [color=#FFA500]metal rod (rough)[/color].
-  - [bold]Bone setter[/bold]: a wrench, or a vehicle maintenance jack [color=#FFA500](rough)[/color].
-  - [bold]Bone gel[/bold]: a screwdriver [color=#FFA500](rough)[/color], or a [color=#FFA500]metal rod (rough)[/color].
-  - [bold]Organ clamp[/bold]: surgical line, cable coil, or a bandana or headband.
-  - [bold]Debriding eschar[/bold]: a burn kit, or ointment.
+  От лучшего к худшему:
+  - [bold]Скальпель[/bold]: нож или [color=#FFA500]осколок стекла (грубый)[/color].
+  - [bold]Гемостат[/bold]: хирургическая нить, кусачки, вилка, кабель или марля.
+  - [bold]Ретрактор[/bold]: лом, ремонтный домкрат [color=#FFA500](грубый)[/color], нож [color=#FFA500](грубый)[/color] или [color=#FFA500]осколок стекла (грубый)[/color].
+  - [bold]Каутер[/bold]: горелка или сварка, хирургическая нить, кабель, зажигалка или [color=#FFA500]сигарета (грубая)[/color].
+  - [bold]Циркулярная пила[/bold]: топорик [color=#FFA500](грубый)[/color], мачете [color=#FFA500](грубое)[/color], ручка [color=#FFA500](грубая)[/color] или [color=#FFA500]металлический прут (грубый)[/color].
+  - [bold]Костоправ[/bold]: гаечный ключ или ремонтный домкрат [color=#FFA500](грубый)[/color].
+  - [bold]Костный гель[/bold]: отвёртка [color=#FFA500](грубая)[/color] или [color=#FFA500]металлический прут (грубый)[/color].
+  - [bold]Зажим органа[/bold]: хирургическая нить, кабель, бандана или головная повязка.
+  - [bold]Удаление струпа[/bold]: противоожоговый набор или мазь.
 
-  Surgical line is the best all-rounder to carry: it covers the hemostat, cautery and organ clamp, and it's nearly as quick as the real tools.
+  Хирургическая нить — лучший универсальный запас: заменяет гемостат, каутер и зажим органа, почти не уступая по скорости.
 
-  ## Surgeries and Their Steps
-  Each type of surgery has its own page with every step and the tool it needs:
-  - [textlink="Opening and Closing" link="CMUGuideSurgeryOpening"]: opening an incision or bone cavity, and closing up.
+  ## Операции и шаги
+  У каждого типа есть страница со всеми шагами и инструментами:
+  - [textlink="Открытие и закрытие" link="CMUGuideSurgeryOpening"]: разрезы, костные полости и закрытие.
 
-  - [textlink="Fracture Surgery" link="CMUGuideSurgeryFractures"]: setting simple, compound and shattered fractures.
+  - [textlink="Операции при переломах" link="CMUGuideSurgeryFractures"]: простые, открытые и раздробленные переломы.
 
-  - [textlink="Bleeding, Burns and Complications" link="CMUGuideSurgeryBleeding"]: internal bleeding, eschar, and complications found in open wounds.
+  - [textlink="Кровотечения, ожоги и осложнения" link="CMUGuideSurgeryBleeding"]: внутренние кровотечения, струпы и осложнения открытых ран.
 
-  - [textlink="Organ Surgery" link="CMUGuideSurgeryOrgans"]: suturing, removing and replacing organs, the brain and eyes, and embryo removal.
+  - [textlink="Операции на органах" link="CMUGuideSurgeryOrgans"]: ушивание, удаление и замена органов, мозга и глаз, удаление эмбриона.
 
-  - [textlink="Limb Surgery" link="CMUGuideSurgeryLimbs"]: amputation, reattachment and replacement limbs.
+  - [textlink="Операции на конечностях" link="CMUGuideSurgeryLimbs"]: закрытие культи, ампутация, пришивание и замена конечностей.
 
-  ## After Surgery
-  - The patient is left [bold]recovering from surgery[/bold] for a while and can't run.
-  - After setting a bone, put a cast on within 5 minutes. See [textlink="Fractures" link="CMUGuideMedicalBones"].
+  ## После операции
+  - Некоторое время пациент [bold]восстанавливается после операции[/bold] и не может бегать.
+  - После вправления кости наложите гипс за 5 минут. См. [textlink="Переломы" link="CMUGuideMedicalBones"].
 
-  ## The Autodoc
-  The [bold]autodoc pod[/bold] operates by itself. A trained surgeon queues procedures from its console, and the pod carries them out on the patient inside. See [textlink="Medical Machines" link="CMUGuideMedicalMachines"], which also covers the body scanner that can make your surgery twice as fast.
+  ## Автодок
+  [bold]Капсула автодока[/bold] оперирует сама. Обученный хирург ставит процедуры в очередь на консоли; капсула выполняет их над пациентом. См. [textlink="Медицинские аппараты" link="CMUGuideMedicalMachines"], включая сканер тела, ускоряющий операции вдвое.
 </Document>

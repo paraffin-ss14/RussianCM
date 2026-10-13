@@ -1,31 +1,43 @@
 <Document>
-  # Limb Surgery
+  # Операции на конечностях
 
   <Box>
-    <GuideEntityEmbed Entity="CMCircularSaw" Caption="Circular saw"/>
-    <GuideEntityEmbed Entity="CMULimbPrinter" Caption="Limb printer"/>
+    <GuideEntityEmbed Entity="CMCircularSaw" Caption="Циркулярная пила"/>
+    <GuideEntityEmbed Entity="CMULimbPrinter" Caption="Принтер конечностей"/>
   </Box>
 
-  These work on arms, hands, legs and feet.
+  Применяются к рукам, кистям, ногам и стопам.
 
-  ## Remove Limb
-  Amputates a limb that can't be saved, such as one killed by a tourniquet left on too long.
-  1. [italic]Open the incision.[/italic]
+  ## Закрытие культи
+  После отрыва конечности культя кровоточит [color=red]артериально[/color] до закрытия. Повязки, травматологические наборы и нить не помогают. Жгут удерживает кровь до операции.
 
-  2. Amputate the limb with a [bold]circular saw[/bold].
+  Оперируйте часть, от которой оторвана конечность: [bold]грудь[/bold] для руки или ноги, [bold]руку[/bold] для кисти, [bold]ногу[/bold] для стопы. Разрез не нужен.
+  1. Зажмите артерию культи [bold]гемостатом[/bold].
 
-  ## Reattach Limb
-  Attaches a severed limb, or a replacement.
-  1. [italic]Open the incision.[/italic]
+  2. Закройте культю прижиганием [bold]каутером[/bold].
 
-  2. Trim the dead tissue off the stump with a [bold]circular saw[/bold].
+  Закрытие навсегда останавливает кровь. Пришивание конечности тоже закрывает культю. Жгут падает на пол. Хирургическая ампутация не оставляет открытой культи.
 
-  3. Prep the socket with a [bold]hemostat[/bold].
+  Открытая культя кровоточит даже после смерти: закройте её или наложите жгут перед оживлением.
 
-  4. Attach the limb: hold it in your hand and use it on the patient. It has to be the right limb for the empty slot.
+  ## Удаление конечности
+  Ампутация неспасаемой конечности, например погибшей от слишком долгого жгута.
+  1. [italic]Откройте разрез.[/italic]
 
-  5. Cauterize the incision shut with a [bold]cautery[/bold].
+  2. Ампутируйте [bold]циркулярной пилой[/bold].
 
-  ## Replacement Limbs
-  The [bold]limb printer[/bold] makes new limbs. It grows human limbs from biogenic matrix, and builds robotic limbs from metal sheets.
+  ## Пришивание конечности
+  Возвращает оторванную или устанавливает замену.
+  1. [italic]Откройте разрез.[/italic]
+
+  2. Удалите мёртвую ткань культи [bold]циркулярной пилой[/bold].
+
+  3. Подготовьте место [bold]гемостатом[/bold].
+
+  4. Примените удерживаемую конечность к пациенту. Она должна соответствовать пустому месту.
+
+  5. Закройте разрез [bold]каутером[/bold].
+
+  ## Запасные конечности
+  [bold]Принтер конечностей[/bold] выращивает человеческие из биогенной матрицы и делает роботизированные из металлических листов.
 </Document>

@@ -77,6 +77,11 @@
       whenToBeginScaling: 50
       benchmark: 2
       maximum: 5 # capped ~140 slots
+    AU14JobGOVFOROfficerIntel:
+      scale: 0.04
+      whenToBeginScaling: 36
+      benchmark: 1
+      maximum: 4
 
 - type: jobScale
   id: DefaultInsurgencyScale
@@ -106,6 +111,12 @@
       scale: 0.01
       whenToBeginScaling: 40
       benchmark: 1
+    # RuMC edit start
+    AU14JobGOVFORWeaponsSpecialist:
+      scale: 0.01
+      whenToBeginScaling: 40
+      benchmark: 1
+    # RuMC edit end
     AU14JobGOVFORMilitaryPoliceMan:
         scale: 0.02
         whenToBeginScaling: 40
@@ -122,7 +133,7 @@
     AU14JobCLFGuerilla:
       scale: 0.025
       whenToBeginScaling: 40
-      benchmark: 6
+      benchmark: 9 # RuMC edit // 6 -> 9
     AU14JobCLFPhysician:
       scale: 0.02
       whenToBeginScaling: 40

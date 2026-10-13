@@ -70,9 +70,9 @@ humanoid-profile-editor-character-description-tab = Персонаж
 humanoid-profile-editor-short-examine-label = Короткое описание при осмотре:
 humanoid-profile-editor-short-examine-tooltip = Короткая строка, показываемая при обычном осмотре вашего персонажа. Должна быть короче 100 символов.
 humanoid-profile-editor-height-label = Рост:
-humanoid-profile-editor-height-tooltip = Рост вашего персонажа, в футах и дюймах (от 4'0 до 6'11).
+humanoid-profile-editor-height-tooltip = Рост вашего персонажа, в футах и дюймах (от 4'0 до 6'11). 1 фут = 30,48 см. 1 дюйм = 2,54 см. Учитывайте это при создании персонажа и переводе в метрическую систему.
 humanoid-profile-editor-weight-label = Вес:
-humanoid-profile-editor-weight-tooltip = Вес вашего персонажа в фунтах, от 90 до 300.
+humanoid-profile-editor-weight-tooltip = Вес вашего персонажа в фунтах, от 90 до 300. 1 фунт = 0,45 кг. Учитывайте это при создании персонажа и переводе в метрическую систему.
 humanoid-profile-editor-build-label = Телосложение:
 humanoid-profile-editor-build-tooltip = Телосложение вашего персонажа.
 humanoid-profile-editor-skin-tone-label = Оттенок кожи:
@@ -104,7 +104,7 @@ humanoid-profile-editor-preference-satchel = Сумка
 humanoid-profile-editor-preference-duffelbag = Спортивная сумка
 humanoid-profile-editor-guidebook-button-tooltip = Нажмите для дополнительной информации
 
-# Spawn priority
+# Приоритет появления
 humanoid-profile-editor-preference-spawn-priority-none = Нет
 humanoid-profile-editor-preference-spawn-priority-arrivals = Прибытие
 humanoid-profile-editor-preference-spawn-priority-cryosleep = Криосон
@@ -123,7 +123,7 @@ humanoid-profile-editor-naming-rules-warning = Внимание: оскорби�
 humanoid-profile-editor-markings-tab = Метки
 humanoid-profile-editor-flavortext-tab = Описание
 
-# Traits
+# Черты
 humanoid-profile-editor-traits-tab = Черты
 humanoid-profile-editor-no-traits = Нет доступных черт
 
@@ -133,7 +133,7 @@ trait-category-disabilities = Инвалидности
 trait-category-speech = Речевые черты
 trait-category-quirks = Причуды
 
-# Armor
+# Броня
 humanoid-profile-editor-preference-armor-random = Случайная
 humanoid-profile-editor-preference-armor-padded = С подкладками
 humanoid-profile-editor-preference-armor-padless = Без подкладок
@@ -151,7 +151,10 @@ humanoid-profile-editor-segment-line = Линейная пехота
 humanoid-profile-editor-segment-officer = Офицеры
 humanoid-profile-editor-segment-leader = Сержантский состав
 
-humanoid-profile-editor-threat-marker-suffix =  (Маркер)
+humanoid-profile-editor-threat-marker-suffix = (Маркер)
+humanoid-profile-editor-threat-jobs-section = Должности угроз
+humanoid-profile-editor-threat-neomorph = Неоморфы
+humanoid-profile-editor-threat-badbloodclan = Клан Плохой Крови
 humanoid-profile-editor-threat-xeno = Ксеноморфы
 humanoid-profile-editor-threat-ape = Обезьяны
 humanoid-profile-editor-threat-cultist = Культисты

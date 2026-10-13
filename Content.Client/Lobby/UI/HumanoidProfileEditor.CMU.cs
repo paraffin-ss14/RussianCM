@@ -876,7 +876,7 @@ public sealed partial class HumanoidProfileEditor
 
     public void RefreshSynthetic()
     {
-        SyntheticContainer.DisposeAllChildren();
+        SyntheticContainer.ReleaseChildren();
         var selector = new RequirementsSelector { Margin = new Thickness(3f, 3f, 3f, 0f) };
         selector.Setup(
             [("humanoid-profile-editor-synthetic-yes-button", 0),
@@ -943,8 +943,8 @@ public sealed partial class HumanoidProfileEditor
 
     public void RefreshThreatPreferences()
     {
-        ColonyThreatPreferenceList.DisposeAllChildren();
-        DistressThreatPreferenceList.DisposeAllChildren();
+        ColonyThreatPreferenceList.ReleaseChildren();
+        DistressThreatPreferenceList.ReleaseChildren();
         _threatPreferenceButtons.Clear();
         PopulateThreatPreferenceList(ColonyThreatPreferenceList, GamemodeColonyFall);
         PopulateThreatPreferenceList(DistressThreatPreferenceList, GamemodeDistressSignal);
@@ -957,7 +957,7 @@ public sealed partial class HumanoidProfileEditor
     {
         target.AddChild(new Label
         {
-            Text = Loc.GetString("humanoid-profile-editor-threats-label"), 
+            Text = Loc.GetString("humanoid-profile-editor-threats-label"),
             Margin = new Thickness(6f, 4f, 0f, 6f),
             StyleClasses = { StyleNano.StyleClassCrtHeading },
         });
@@ -1047,8 +1047,8 @@ public sealed partial class HumanoidProfileEditor
     {
         if (threat.BlacklistedGamemodes.Any(mode => mode.Equals(gamemode, StringComparison.OrdinalIgnoreCase)))
             return false;
-        return threat.whitelistedgamemodes.Count == 0 ||
-               threat.whitelistedgamemodes.Any(mode => mode.Equals(gamemode, StringComparison.OrdinalIgnoreCase));
+        return threat.WhitelistedGamemodes.Count == 0 ||
+               threat.WhitelistedGamemodes.Any(mode => mode.Equals(gamemode, StringComparison.OrdinalIgnoreCase));
     }
 
     private static string GetThreatDisplayName(ThreatPrototype threat)
@@ -1058,11 +1058,11 @@ public sealed partial class HumanoidProfileEditor
         if (id.EndsWith("OnMarker", StringComparison.OrdinalIgnoreCase))
         {
             id = id[..^"OnMarker".Length];
-            suffix = " " + Loc.GetString("humanoid-profile-editor-threat-marker-suffix"); 
+            suffix = " " + Loc.GetString("humanoid-profile-editor-threat-marker-suffix");
         }
 
         if (id.EndsWith("CF", StringComparison.OrdinalIgnoreCase) ||
-            id.EndsWith("DS", StringComparison.OrdinalIgnoreCase)) 
+            id.EndsWith("DS", StringComparison.OrdinalIgnoreCase))
         {
             id = id[..^2];
         }

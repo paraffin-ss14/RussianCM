@@ -6,7 +6,7 @@
   name: au14-job-name-govforsquadcombattech
   description: au14-job-description-govforsquadcombattech
   icon: "AU14JobIconGovCT"
-  spawnMenuRoleName: cmu-spawn-role-combat-technician-govfor 
+  spawnMenuRoleName: cmu-spawn-role-combat-technician-govfor
   playTimeTracker: AU14JobGOVFORSquadCombatTech
   startingGear: AU14GearGOVFORSquadCombatTech
   dummyStartingGear: AU14GearGOVFORCTDummy
@@ -60,7 +60,7 @@
   requirements:
   - !type:TotalDepartmentsTimeRequirement
     group: CMUDepartmentsMilitary
-    time: 18000 # 5 hours
+    time: 7200 # 2 hours
   - !type:TraitsRequirement
     inverted: true
     traits:
@@ -74,6 +74,8 @@
     - SlowRunner
     - Anemic
     - Asthmatic
+    - CMUAlcoholic
+    - CMUDrugAddict
   ranks:
     RMCRankCivilian: []
   chevrons:

@@ -64,12 +64,12 @@ public sealed partial class HumanoidProfileEditor
 
     public void RefreshLoadouts()
     {
-        _loadoutWindow?.Dispose();
+        _loadoutWindow?.Release();
     }
 
     private void OpenLoadout(JobPrototype jobProto, RoleLoadout roleLoadout, RoleLoadoutPrototype roleLoadoutProto)
     {
-        _loadoutWindow?.Dispose();
+        _loadoutWindow?.Release();
         _loadoutWindow = null;
         var collection = IoCManager.Instance;
 
@@ -256,7 +256,7 @@ public sealed partial class HumanoidProfileEditor
     public void RefreshJobs()
     {
         foreach (var list in GetGamemodeJobLists())
-            list.DisposeAllChildren();
+            list.ReleaseChildren();
 
         _jobCategories.Clear();
         _jobPriorities.Clear();
@@ -293,6 +293,8 @@ public sealed partial class HumanoidProfileEditor
                 foreach (var (target, gamemode, sectionKey, sectionTitle) in
                          GetJobSections(department, job, departmentName))
                 {
+                    if (!job.IsAvailableInCharacterSetup(gamemode)) // CMU14: hide training roles outside their preset.
+                        continue;
                     AddJobSelector(
                         target,
                         gamemode,
@@ -615,11 +617,11 @@ public sealed partial class HumanoidProfileEditor
 
         if (!IsRoundStartThreatAssignmentJob(job))
             yield break;
-        // CMU14 hardcode Localization Begin: fix hardcode localization for forks    
+        // CMU14 hardcode Localization Begin: fix hardcode localization for forks
         var threatJobsTitle = Loc.GetString("humanoid-profile-editor-threat-jobs-section");
         yield return (ColonyThreatJobList, GamemodeColonyFall, "colony-threat", threatJobsTitle);
         yield return (DistressThreatJobList, GamemodeDistressSignal, "distress-threat", threatJobsTitle);
-        // CMU14 hardcode Localization End 
+        // CMU14 hardcode Localization End
     }
 
     private static int CompareDepartmentsForCharacterSetup(DepartmentPrototype? x, DepartmentPrototype? y)
@@ -739,9 +741,9 @@ public sealed partial class HumanoidProfileEditor
 
     public void RefreshAntags()
     {
-        InsurgencyAntagList.DisposeAllChildren();
-        ColonyAntagList.DisposeAllChildren();
-        DistressAntagList.DisposeAllChildren();
+        InsurgencyAntagList.ReleaseChildren();
+        ColonyAntagList.ReleaseChildren();
+        DistressAntagList.ReleaseChildren();
         _antagPreferences.Clear();
 
         PopulateAntagPreferences(InsurgencyAntagList, GamemodeInsurgency);
@@ -892,7 +894,7 @@ public sealed partial class HumanoidProfileEditor
 
             platoonOptions.Add(new PlatoonRankOptions(
                 platoon.ID,
-                platoon.Name,
+                Loc.GetString(platoon.Name), // CMU14: Hardcode localization
                 platoon.PlatoonPatch,
                 ranks));
         }

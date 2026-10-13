@@ -80,16 +80,8 @@ public static class CustomClothingRules
     // Uniforms with a rig, webbing, bandolier or drop pouch are recognised by their id.
     private static readonly Regex RigUniformPattern = new(@"(?<!No)Webbing|Bandolier|Pouch|Harness|Holster|Chestrig|Rig$", RegexOptions.Compiled);
 
-    // Vanilla (Clothing...) department, head of department and Centcom gear is recognised by its id.
-    private static readonly Regex VanillaDepartmentPattern = new(
-        @"Captain|CapFormal|MantleCap|Command|Centcom|Nanotrasen|DeathSquad|Atmos|Bartender|Brigmedic|Cargo|Chaplain|Nun|Monastic|Chef|Apron|Chemi|Clown|Curator|" +
-        @"Detective|Det(?![a-z])|Forensic|Engineer|Repairman|Recruit|Genetics|Hydroponics|Botan|Janitor|Janimaid|Journalist|Reporter|Press|Lawyer|Judge|Librarian|" +
-        @"Medic|Paramedic|Doctor|Surgcap|Nurse|Sterile|Latex|Nitrile|Senior|Mime|Musician|Performer|Psychologist|Roboticist|Salvage|Sci|Security|Secsoft|" +
-        @"Sec(?![a-z])|Swat|MAA|SyndieCap|Warden|Virology|TramDriver|Prisoner|CMO|Cmo|HoP|HOP|Hop|HoS|HOS|Hos|QM|ResearchDirector|RD(?![a-z])|RND|CE(?![a-z])|Merge|Spawner",
-        RegexOptions.Compiled);
-
-    // Vanilla (Clothing...) cloaks, mantles, maid costumes, colored gloves and power gloves are recognised by their id.
-    private static readonly Regex VanillaCloakPattern = new(@"Cloak|Mantle|Maid(?!en)|GlovesColor|Powerglove", RegexOptions.Compiled);
+    // Only RMC, CMU and RuCM clothing is offered. CM and AU14 are legacy prefixes used by those projects.
+    private static readonly string[] AllowedIdPrefixes = { "CM", "RMC", "AU14", "RuCM", "RUMC" };
 
     // Dress and parade uniforms, service jackets and peaked officer caps are recognised by their id.
     private static readonly Regex DressUniformPattern = new(
@@ -136,8 +128,9 @@ public static class CustomClothingRules
         if (DressUniformPattern.IsMatch(proto.ID))
             return false;
 
-        if (proto.ID.StartsWith("Clothing", StringComparison.Ordinal) &&
-            (VanillaDepartmentPattern.IsMatch(proto.ID) || VanillaCloakPattern.IsMatch(proto.ID)))
+        // The original RMC marine uniform predates the RMC/CM prefix convention.
+        if (proto.ID != "JumpsuitMarine" &&
+            !AllowedIdPrefixes.Any(prefix => proto.ID.StartsWith(prefix, StringComparison.Ordinal)))
         {
             return false;
         }

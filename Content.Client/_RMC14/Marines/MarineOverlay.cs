@@ -78,11 +78,14 @@ public sealed partial class MarineOverlay : Overlay
     private static readonly TimeSpan MarineIconCacheLifetime = TimeSpan.FromSeconds(0.5);
     private const int MaxCachedTextures = 128;
 
-    public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
+    // CMU14: draw HUD markers above mobs, but below foliage and with world lighting.
+    public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities;
 
     public MarineOverlay()
     {
         IoCManager.InjectDependencies(this);
+
+        ZIndex = (int) Content.Shared.DrawDepth.DrawDepth.OverMobs; // CMU14: below foliage.
 
         _npcFaction = _entity.System<NpcFactionSystem>();
         _container = _entity.System<ContainerSystem>();

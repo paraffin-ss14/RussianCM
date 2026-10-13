@@ -462,6 +462,7 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
+        [Obsolete("Retained for CMUControlLifetime.Release cleanup.")]
         protected override void Dispose(bool disposing)
         {
             _requirements.Updated -= RefreshYautjaTab;
@@ -469,7 +470,7 @@ namespace Content.Client.Lobby.UI
             if (!disposing)
                 return;
 
-            _loadoutWindow?.Dispose();
+            _loadoutWindow?.Release();
             _loadoutWindow = null;
             // cmu edit start
             UnsubscribeDividerColors();

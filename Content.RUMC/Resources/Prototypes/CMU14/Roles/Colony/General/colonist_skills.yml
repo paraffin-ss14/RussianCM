@@ -6,7 +6,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 1
-  loadouts: [ AU14ColonistPerkFirearmsCourse, AU14ColonistPerkHunter, AU14ColonistPerkMarksman, AU14ColonistPerkVeteran ]
+  loadouts: [ AU14ColonistPerkFirearmsCourse, AU14ColonistPerkHunter, AU14ColonistPerkMarksman ]
 
 - type: loadout
   id: AU14ColonistPerkFirearmsCourse
@@ -37,22 +37,6 @@
   - !type:SetSkillLoadoutEffect
     skill: RMCSkillFirearms
     level: 2
-
-- type: loadout
-  id: AU14ColonistPerkVeteran
-  cost: 16
-  effects:
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillLeadership
-    level: 2
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillFirearms
-    level: 2
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillEndurance
-    level: 2
-  - !type:AgeRequirementLoadoutEffect
-    minAge: 30
 
 - type: loadoutGroup
   id: AU14ColonistPerkGroupMelee
@@ -90,7 +74,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 1
-  loadouts: [ AU14ColonistPerkConstructionExperience, AU14ColonistPerkEnthusiast, AU14ColonistPerkEngineer ]
+  loadouts: [ AU14ColonistPerkConstructionExperience, AU14ColonistPerkEnthusiast ]
 
 - type: loadout
   id: AU14ColonistPerkConstructionExperience
@@ -114,27 +98,13 @@
     skill: RMCSkillConstruction
     level: 2
 
-- type: loadout
-  id: AU14ColonistPerkEngineer
-  cost: 10
-  effects:
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillConstruction
-    level: 4
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillEngineer
-    level: 4
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillFireman
-    level: 2
-
 - type: loadoutGroup
   id: AU14ColonistPerkGroupMedical
   name: loadout-group-au14-colonist-perk-medical
   hidden: true
   minLimit: 0
   maxLimit: 1
-  loadouts: [ AU14ColonistPerkFirstAid, AU14ColonistPerkOrderly, AU14ColonistPerkDoctor, AU14ColonistPerkMaestro ]
+  loadouts: [ AU14ColonistPerkFirstAid, AU14ColonistPerkOrderly, AU14ColonistPerkDoctor ]
 
 - type: loadout
   id: AU14ColonistPerkFirstAid
@@ -157,7 +127,7 @@
 
 - type: loadout
   id: AU14ColonistPerkDoctor
-  cost: 12
+  cost: 15
   effects:
   - !type:SetSkillLoadoutEffect
     skill: RMCSkillMedical
@@ -168,22 +138,6 @@
   - !type:SetSkillLoadoutEffect
     skill: RMCSkillResearch
     level: 1
-
-- type: loadout
-  id: AU14ColonistPerkMaestro
-  cost: 16
-  effects:
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillSurgery
-    level: 3
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillMedical
-    level: 3
-  - !type:SetSkillLoadoutEffect
-    skill: RMCSkillResearch
-    level: 2
-  - !type:AgeRequirementLoadoutEffect
-    minAge: 30
 
 - type: loadoutGroup
   id: AU14ColonistPerkGroupDriving
@@ -227,7 +181,6 @@
   - AU14ColonistSpecialGroupMelee
   - AU14ColonistSpecialGroupMedical
   - AU14ColonistSpecialGroupSurgery
-  - AU14ColonistSpecialGroupMedSurgery
   - AU14ColonistSpecialGroupEngineer
   - AU14ColonistSpecialGroupConstruction
   - AU14ColonistSpecialGroupEngConstruction
@@ -244,4 +197,4 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutD18Case, AU14ColonistLoadoutM357Kit, AU14ColonistLoadoutBasiraRifle, AU14ColonistLoadoutGlock77Rubber, AU14ColonistLoadoutRXFM, AU14ColonistLoadoutT73 ]
+  loadouts: [ AU14ColonistLoadoutGlock77Rubber ]

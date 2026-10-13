@@ -15,6 +15,13 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> EnableEvacSfx =
         CVarDef.Create("cmu.game.enable_evac_sfx", false, CVar.SERVERONLY | CVar.ARCHIVE);
 
+    /// <summary>
+    /// Warship fixtures tint, dim or darken with the alert level and hull floodlights go dark on red and black.
+    /// Flipping it restores every managed fixture to its prototype state, turning it on applies each ship's current level.
+    /// </summary>
+    public static readonly CVarDef<bool> EnableWarshipAlertLights =
+        CVarDef.Create("cmu.game.enable_warship_alert_lights", false, CVar.SERVERONLY | CVar.ARCHIVE);
+
     public static readonly CVarDef<float> VoteStartDelay =
         CVarDef.Create("cmu.game.vote_start_delay", 60f, CVar.SERVERONLY | CVar.ARCHIVE);
 
@@ -25,7 +32,7 @@ public sealed partial class CCVars
     /// Excludes the last played gamemode from new preset votes, unless it is the sole eligible option.
     /// </summary>
     public static readonly CVarDef<bool> VoteExcludeLastPlayed =
-        CVarDef.Create("cmu.game.vote_exclude_last_played", true, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("cmu.game.vote_exclude_last_played", false, CVar.SERVERONLY | CVar.ARCHIVE); // RuMC edit
 
     public static readonly CVarDef<bool> MuteScriptedSounds =
         CVarDef.Create("cmu.game.mute_scripted_sfx", false, CVar.CLIENTONLY | CVar.ARCHIVE);

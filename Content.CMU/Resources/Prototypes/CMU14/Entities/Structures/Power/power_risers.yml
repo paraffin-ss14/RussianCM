@@ -86,6 +86,34 @@
     sprite: Structures/Power/substation.rsi
     layers:
     - state: substation_static
+  - type: Damageable # RuMC edit Start
+    damageModifierSet: Metallic
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 60 # RuMC edit End
 
 # Direct build like the pipe riser: the menu only lists isCM recipes and the
 # riser board has no crafting source. Machine still auto-stocks on spawn.

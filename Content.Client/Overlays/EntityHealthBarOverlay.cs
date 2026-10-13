@@ -28,6 +28,7 @@ public sealed class EntityHealthBarOverlay : Overlay
 {
     private readonly IEntityManager _entManager;
     private readonly IPrototypeManager _prototype;
+    private readonly ShaderInstance _shader; // CMU14: HUD lighting.
 
     private readonly SharedTransformSystem _transform;
     private readonly MobStateSystem _mobStateSystem;
@@ -48,7 +49,8 @@ public sealed class EntityHealthBarOverlay : Overlay
     private static readonly TimeSpan HealthProgressCacheLifetime = TimeSpan.FromSeconds(0.25);
     private const int MaxCachedHealthEntities = 512;
 
-    public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
+    // CMU14: keep health bars below foliage and subject to world lighting and FOV.
+    public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities;
     public HashSet<string> DamageContainers = new();
     public ProtoId<HealthIconPrototype>? StatusIcon;
 
@@ -56,6 +58,9 @@ public sealed class EntityHealthBarOverlay : Overlay
     {
         _entManager = entManager;
         _prototype = prototype;
+        // CMU14: shaded HUD bars below foliage.
+        _shader = _prototype.Index<ShaderPrototype>("shaded").Instance();
+        ZIndex = (int) Content.Shared.DrawDepth.DrawDepth.OverMobs;
         _timing = timing;
         _transform = _entManager.System<SharedTransformSystem>();
         _mobStateSystem = _entManager.System<MobStateSystem>();
@@ -73,6 +78,7 @@ public sealed class EntityHealthBarOverlay : Overlay
     protected override void Draw(in OverlayDrawArgs args)
     {
         var handle = args.WorldHandle;
+        handle.UseShader(_shader); // CMU14: HUD lighting.
         var rotation = args.Viewport.Eye?.Rotation ?? Angle.Zero;
         var xformQuery = _entManager.GetEntityQuery<TransformComponent>();
         var metaQuery = _entManager.GetEntityQuery<MetaDataComponent>();
@@ -183,6 +189,7 @@ public sealed class EntityHealthBarOverlay : Overlay
         }
 
         handle.SetTransform(Matrix3x2.Identity);
+        handle.UseShader(null); // CMU14: reset HUD shader.
     }
 
     private (float ratio, bool inCrit)? GetCachedProgress(

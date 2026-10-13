@@ -134,9 +134,10 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<EmoteSoundsPrototype> Voice { get; set; } = DefaultVoice;
 
+        // CMU14 TTS Begin: shared voice preference and validation.
         public const string DefaultTTSVoice = "PUCHKOW";
         [DataField]
-        public string TTSVoice { get; set; } = DefaultTTSVoice;
+        public string TTSVoice { get; set; } = Content.Shared.Corvax.TTS.CMUTTSVoiceSelection.RandomVoice;
 
         public HumanoidCharacterProfile WithTTSVoice(string voice)
         {
@@ -145,20 +146,22 @@ namespace Content.Shared.Preferences
 
         public static bool IsSelectableTTSVoice(Content.Shared.Corvax.TTS.TTSVoicePrototype voice)
         {
-            return voice.RoundStart && !voice.SponsorOnly;
+            return Content.Shared.Corvax.TTS.CMUTTSVoiceSelection.IsSelectable(voice);
         }
 
-        public static string ValidateTTSVoice(string? voice, IPrototypeManager prototypes)
+        public static string ValidateTTSVoice(string? voice, IPrototypeManager prototypes, Sex? sex = null)
         {
             if (Content.Shared.Corvax.TTS.CustomTTSVoice.TryGetSpeaker(voice, out _))
                 return voice!;
 
             return !string.IsNullOrWhiteSpace(voice) &&
                    prototypes.TryIndex<Content.Shared.Corvax.TTS.TTSVoicePrototype>(voice, out var prototype) &&
-                   IsSelectableTTSVoice(prototype)
+                   Content.Shared.Corvax.TTS.CMUTTSVoiceSelection.IsSelectable(prototype, sex)
                 ? voice
-                : DefaultTTSVoice;
+                : Content.Shared.Corvax.TTS.CMUTTSVoiceSelection.RandomVoice;
         }
+
+        // CMU14 End
 
         [DataField]
         public Gender Gender { get; private set; } = Gender.Male;
@@ -699,6 +702,13 @@ namespace Content.Shared.Preferences
 
             profile.Sex = (randomizeCfg & RandomizeCfg.Sex) != 0 ? RandomSex(speciesProto) : baseProfile.Sex;
             profile.Voice = speciesProto.DefaultSoundsBySex[(int)profile.Sex];
+            // CMU14 TTS Begin: give randomized humanoids a voice matching their sex.
+            var ttsVoices = Content.Shared.Corvax.TTS.CMUTTSVoiceSelection.GetRandomVoices(
+                prototypeManager.EnumeratePrototypes<Content.Shared.Corvax.TTS.TTSVoicePrototype>(), profile.Sex);
+            profile.TTSVoice = (randomizeCfg & RandomizeCfg.Sex) != 0 && ttsVoices.Length > 0
+                ? IoCManager.Resolve<IRobustRandom>().Pick(ttsVoices).ID
+                : ValidateTTSVoice(baseProfile.TTSVoice, prototypeManager, profile.Sex);
+            // CMU14 End
             profile.Gender = (randomizeCfg & RandomizeCfg.Gender) != 0 ? RandomGender(profile.Sex) : baseProfile.Gender;
             profile.Name = (randomizeCfg & RandomizeCfg.Name) != 0 ? RandomName(speciesProto, profile.Gender) : baseProfile.Name;
             profile.Age = (randomizeCfg & RandomizeCfg.Age) != 0 ? RandomAge(speciesProto) : baseProfile.Age;
@@ -1342,11 +1352,11 @@ namespace Content.Shared.Preferences
             return true;
         }
 
+        // CMU14 method: validate TTS after normalizing the character's sex.
         public void EnsureValid(ICommonSession session, IDependencyCollection collection)
         {
             var configManager = collection.Resolve<IConfigurationManager>();
             var prototypeManager = collection.Resolve<IPrototypeManager>();
-            TTSVoice = ValidateTTSVoice(TTSVoice, prototypeManager);
             var compFactory = collection.Resolve<IComponentFactory>();
 
             if (!prototypeManager.TryIndex(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
@@ -1540,6 +1550,7 @@ namespace Content.Shared.Preferences
             FlavorText = flavortext;
             Age = age;
             Sex = sex;
+            TTSVoice = ValidateTTSVoice(TTSVoice, prototypeManager, sex);
             Voice = voice;
             Gender = gender;
             Appearance = appearance;

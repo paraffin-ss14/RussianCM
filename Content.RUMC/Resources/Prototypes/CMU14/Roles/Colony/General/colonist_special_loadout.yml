@@ -33,14 +33,6 @@
   loadouts: [ AU14ColonistLoadoutSurgeryCase ]
 
 - type: loadoutGroup
-  id: AU14ColonistSpecialGroupMedSurgery
-  name: loadout-group-au14-colonist-special-medsurgery
-  hidden: true
-  minLimit: 0
-  maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutSurgPouchGreen, AU14ColonistLoadoutSurgPouchBlue, AU14ColonistLoadoutSurgPouchBlack ]
-
-- type: loadoutGroup
   id: AU14ColonistSpecialGroupEngineer
   name: loadout-group-au14-colonist-special-engineer
   hidden: true
@@ -86,7 +78,7 @@
   hidden: true
   minLimit: 0
   maxLimit: 20
-  loadouts: [ AU14ColonistLoadoutSandals, AU14ColonistLoadoutKimono ]
+  loadouts: [ AU14ColonistLoadoutSandals ]
 
 - type: loadoutGroup
   id: AU14ColonistSpecialGroupEnduranceMelee
@@ -103,31 +95,6 @@
   minLimit: 0
   maxLimit: 20
   loadouts: [ AU14ColonistLoadoutMaintenanceJack, AU14ColonistLoadoutBlueVanBox, AU14ColonistLoadoutTruckBox, AU14ColonistLoadoutCarBox, AU14ColonistLoadoutHippieVanBox ]
-
-- type: loadout
-  id: AU14ColonistLoadoutD18Case
-  cost: 5
-  inhand:
-  - RMCD18Case
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkFirearmsCourse
-    - AU14ColonistPerkHunter
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
-
-- type: loadout
-  id: AU14ColonistLoadoutM357Kit
-  cost: 7
-  inhand:
-  - AU14KitWeaponM357
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkHunter
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutKnuckles
@@ -205,7 +172,6 @@
     - AU14ColonistPerkFirstAid
     - AU14ColonistPerkOrderly
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutMedPouch
@@ -218,7 +184,6 @@
     - AU14ColonistPerkFirstAid
     - AU14ColonistPerkOrderly
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutMedHud
@@ -231,7 +196,6 @@
     - AU14ColonistPerkFirstAid
     - AU14ColonistPerkOrderly
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutDefib
@@ -243,7 +207,6 @@
     anyOf:
     - AU14ColonistPerkOrderly
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutSurgeryCase
@@ -255,37 +218,6 @@
     anyOf:
     - AU14ColonistPerkOrderly
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
-
-- type: loadout
-  id: AU14ColonistLoadoutSurgPouchGreen
-  cost: 10
-  inhand:
-  - CMU14DropSurgicalGreen
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkMaestro
-
-- type: loadout
-  id: AU14ColonistLoadoutSurgPouchBlue
-  cost: 10
-  inhand:
-  - CMU14DropSurgicalBlue
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkMaestro
-
-- type: loadout
-  id: AU14ColonistLoadoutSurgPouchBlack
-  cost: 10
-  inhand:
-  - CMU14DropSurgicalBlack
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutToolBelt
@@ -297,7 +229,6 @@
     anyOf:
     - AU14ColonistPerkConstructionExperience
     - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutEngBag
@@ -308,7 +239,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutConstructionPouch
@@ -319,7 +249,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutTacticalEngPouch
@@ -330,7 +259,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
 
 - type: loadout
   id: AU14ColonistLoadoutLabCoat
@@ -341,7 +269,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutVialPouch
@@ -352,7 +279,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
 
 - type: loadout
   id: AU14ColonistLoadoutMicrowaveBox
@@ -397,18 +323,6 @@
     anyOf:
     - AU14ColonistPerkHunter
     - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
-
-- type: loadout
-  id: AU14ColonistLoadoutKimono
-  cost: 2
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitKimono
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutKatana
@@ -419,7 +333,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkMartialArts
@@ -610,23 +523,10 @@
     anyOf:
     - AU14ColonistPerkOrderly
     - AU14ColonistPerkDoctor
-    - AU14ColonistPerkMaestro
-
-- type: loadout
-  id: AU14ColonistLoadoutBasiraRifle
-  cost: 7
-  inhand:
-  - AU14KitWeaponBasira
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkHunter
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutGlock77Rubber
-  cost: 8
+  cost: 10
   inhand:
   - CMU14KitWeaponGlock77Rubber
   effects:
@@ -635,32 +535,6 @@
     - AU14ColonistPerkFirearmsCourse
     - AU14ColonistPerkHunter
     - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
-
-- type: loadout
-  id: AU14ColonistLoadoutRXFM
-  cost: 7
-  inhand:
-  - AU14KitWeaponRXFM
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkFirearmsCourse
-    - AU14ColonistPerkHunter
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
-
-- type: loadout
-  id: AU14ColonistLoadoutT73
-  cost: 7
-  inhand:
-  - AU14GunCasePistolT73
-  effects:
-  - !type:PerkRequirementLoadoutEffect
-    anyOf:
-    - AU14ColonistPerkHunter
-    - AU14ColonistPerkMarksman
-    - AU14ColonistPerkVeteran
 
 - type: loadout
   id: AU14ColonistLoadoutRmcFrameBackpack
@@ -671,7 +545,6 @@
   - !type:PerkRequirementLoadoutEffect
     anyOf:
     - AU14ColonistPerkEnthusiast
-    - AU14ColonistPerkEngineer
 
 # Free clothing choice: one loadout per inventory slot.
 - type: loadoutGroup

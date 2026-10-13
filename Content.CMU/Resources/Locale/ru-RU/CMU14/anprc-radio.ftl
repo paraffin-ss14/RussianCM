@@ -123,3 +123,5 @@ anprc-log-frequency-unknown = ЧАСТОТА НЕИЗВ.
 
 # Языки, которые невозможно передавать по радио
 anprc-language-no-radio = { $language } невозможно передать по радиосети.
+
+anprc-chat-intercept-line = [color={ $color }]\[INT\] "{ $message }"[/color]
