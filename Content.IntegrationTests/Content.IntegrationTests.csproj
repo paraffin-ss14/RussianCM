@@ -14,9 +14,6 @@
     <Compile Include="..\Content.RUMC\Tests\**\*.cs" Link="RUMC\%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Content.RUMC\Tests\**\*.cs" Link="RUMC\%(RecursiveDir)%(Filename)%(Extension)" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="NUnit" />
     <PackageReference Include="NUnit3TestAdapter" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
