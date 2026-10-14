@@ -256,8 +256,15 @@ public sealed class PitDiggingToolSystem : EntitySystem
     {
         foreach (var ent in _lookup.GetLocalEntitiesIntersecting(gridUid, tile, gridComp: grid))
         {
-            if (HasComp<DestructibleComponent>(ent) && !HasComp<ItemComponent>(ent) && !HasComp<MobStateComponent>(ent))
-                return ent;
+            if (!HasComp<DestructibleComponent>(ent) || HasComp<ItemComponent>(ent) || HasComp<MobStateComponent>(ent))
+                continue;
+
+            // The lookup is approximate: a full-tile structure next door (vines, walls) reaches into this tile too.
+            // Only what actually stands on this tile is in the way.
+            if (_map.TileIndicesFor(gridUid, grid, Transform(ent).Coordinates) != tile)
+                continue;
+
+            return ent;
         }
 
         return null;
