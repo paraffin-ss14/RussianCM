@@ -5,6 +5,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._RuCM.Database;
 using Content.Server.Administration.Logs;
 using Content.Server.IP;
 using Content.Server.Preferences.Managers;
@@ -56,7 +57,10 @@ namespace Content.Server.Database
                 if (snapshot)
                     prefsCtx.Database.EnsureCreated();
                 else
+                {
+                    RuCMSqliteMigrationRepair.Run(prefsCtx); // RuCM
                     prefsCtx.Database.Migrate();
+                }
 
                 _dbReadyTask = Task.CompletedTask;
                 prefsCtx.Dispose();
@@ -65,6 +69,7 @@ namespace Content.Server.Database
             {
                 _dbReadyTask = Task.Run(() =>
                 {
+                    RuCMSqliteMigrationRepair.Run(prefsCtx); // RuCM
                     prefsCtx.Database.Migrate();
                     prefsCtx.Dispose();
                 });
