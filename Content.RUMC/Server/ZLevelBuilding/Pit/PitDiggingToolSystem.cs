@@ -95,7 +95,7 @@ public sealed class PitDiggingToolSystem : EntitySystem
 
         if (!ok)
         {
-            _popup.PopupEntity(Loc.GetString(failReason), ent, args.User, PopupType.SmallCaution);
+            _popup.PopupEntity(failReason, ent, args.User, PopupType.SmallCaution);
             return;
         }
 
@@ -135,7 +135,7 @@ public sealed class PitDiggingToolSystem : EntitySystem
 
         if (!TryGetDigTarget(args.User, coords, out var target, out var failReason))
         {
-            _popup.PopupEntity(Loc.GetString(failReason), ent, args.User, PopupType.SmallCaution);
+            _popup.PopupEntity(failReason, ent, args.User, PopupType.SmallCaution);
             return;
         }
 
@@ -155,7 +155,7 @@ public sealed class PitDiggingToolSystem : EntitySystem
     private bool TryGetDigTarget(EntityUid user, EntityCoordinates coords, out EntityCoordinates target, out string failReason)
     {
         target = default;
-        failReason = "au14-pit-tool-no-tile";
+        failReason = Loc.GetString("au14-pit-tool-no-tile");
 
         if (_transform.GetGrid(coords) is not { } gridUid || !_gridQuery.TryComp(gridUid, out var grid))
             return false;
@@ -167,20 +167,20 @@ public sealed class PitDiggingToolSystem : EntitySystem
     private bool TryGetDigUpTarget(EntityUid user, EntityCoordinates front, out EntityCoordinates target, out string failReason)
     {
         target = default;
-        failReason = "au14-pit-tool-no-tile";
+        failReason = Loc.GetString("au14-pit-tool-no-tile");
 
         if (_transform.GetMap(front) is not { } mapUid || _transform.GetGrid(front) is not { } gridUid)
             return false;
 
         if (_building.GetDepth(mapUid) > -1)
         {
-            failReason = "au14-pit-tool-too-shallow";
+            failReason = Loc.GetString("au14-pit-tool-too-shallow");
             return false;
         }
 
         if (!TryComp<CMUZLevelMapComponent>(mapUid, out var zMap) || zMap.MapAbove == null)
         {
-            failReason = "au14-pit-tool-nothing-above";
+            failReason = Loc.GetString("au14-pit-tool-nothing-above");
             return false;
         }
 
@@ -199,18 +199,19 @@ public sealed class PitDiggingToolSystem : EntitySystem
     private bool TryValidateTile(EntityUid user, EntityUid gridUid, MapGridComponent grid, Vector2i tile, bool anyEntity, out EntityCoordinates target, out string failReason)
     {
         target = default;
-        failReason = "au14-pit-tool-no-tile";
+        failReason = Loc.GetString("au14-pit-tool-no-tile");
 
         if (!_map.TryGetTileRef(gridUid, grid, tile, out var tileRef) || tileRef.Tile.IsEmpty)
             return false;
 
-        var occupied = anyEntity
-            ? _lookup.GetLocalEntitiesIntersecting(gridUid, tile, gridComp: grid).Count > 0
-            : _map.GetAnchoredEntitiesEnumerator(gridUid, grid, tile).MoveNext(out _) || HasStructureOnTile(gridUid, grid, tile);
+        var blocker = anyEntity
+            ? FirstEntityOnTile(gridUid, grid, tile)
+            : FirstAnchoredOnTile(gridUid, grid, tile) ?? FindStructureOnTile(gridUid, grid, tile);
 
-        if (occupied)
+        // Name what is in the way: much of it (cables, pipes, markers) cannot be seen on the floor.
+        if (blocker is { } found)
         {
-            failReason = "au14-pit-tool-tile-occupied";
+            failReason = Loc.GetString("au14-pit-tool-tile-occupied-by", ("entity", found));
             return false;
         }
 
@@ -219,7 +220,7 @@ public sealed class PitDiggingToolSystem : EntitySystem
         // The ground under and around a concrete support is held: nothing is dug there.
         if (NoDigBelow.IsHeld(EntityManager, location))
         {
-            failReason = "au14-pit-tool-held";
+            failReason = Loc.GetString("au14-pit-tool-held");
             return false;
         }
 
@@ -228,7 +229,7 @@ public sealed class PitDiggingToolSystem : EntitySystem
             !StairTileRule.Condition(user, location, Direction.South) ||
             _turf.IsTileBlocked(gridUid, tile, CollisionGroup.MobMask, grid))
         {
-            failReason = "au14-pit-tool-tile-blocked";
+            failReason = Loc.GetString("au14-pit-tool-tile-blocked");
             return false;
         }
 
@@ -236,16 +237,30 @@ public sealed class PitDiggingToolSystem : EntitySystem
         return true;
     }
 
+    private EntityUid? FirstEntityOnTile(EntityUid gridUid, MapGridComponent grid, Vector2i tile)
+    {
+        foreach (var ent in _lookup.GetLocalEntitiesIntersecting(gridUid, tile, gridComp: grid))
+            return ent;
+
+        return null;
+    }
+
+    private EntityUid? FirstAnchoredOnTile(EntityUid gridUid, MapGridComponent grid, Vector2i tile)
+    {
+        var anchored = _map.GetAnchoredEntitiesEnumerator(gridUid, grid, tile);
+        return anchored.MoveNext(out var ent) ? ent : null;
+    }
+
     // Loose structures such as bushes are not anchored and have no collision, but nothing should be dug under them.
-    private bool HasStructureOnTile(EntityUid gridUid, MapGridComponent grid, Vector2i tile)
+    private EntityUid? FindStructureOnTile(EntityUid gridUid, MapGridComponent grid, Vector2i tile)
     {
         foreach (var ent in _lookup.GetLocalEntitiesIntersecting(gridUid, tile, gridComp: grid))
         {
             if (HasComp<DestructibleComponent>(ent) && !HasComp<ItemComponent>(ent) && !HasComp<MobStateComponent>(ent))
-                return true;
+                return ent;
         }
 
-        return false;
+        return null;
     }
 
     private bool TryValidateDigTool(Entity<PitDiggingToolComponent> tool, EntityUid user, EntityCoordinates location)
