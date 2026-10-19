@@ -1,0 +1,910 @@
+# The parts of the weapons: for each platform a barrel, a receiver, a bolt and a grip, each crude, standard and fine. Made at the lathe and at the fabricator (part_recipes.yml).
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolBarrelCrude
+  name: crude pistol barrel
+  description: A part of a pistol, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_front
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Crude
+    platform: RUMCPlatformPistol
+    safety: 1.35
+    reliability: 0.95
+    caliber: GunsmithCaliber9mm
+    barrelLengthMm: 110
+    damageMult: 0.85
+    scatterAdd: 3.0
+    fatigueShots: 150
+    heatPerShotK: 12
+    limitTempC: 600
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolBarrelStandard
+  name: standard pistol barrel
+  description: A part of a pistol, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_front
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Standard
+    platform: RUMCPlatformPistol
+    safety: 1.8
+    reliability: 0.98
+    caliber: GunsmithCaliber9mm
+    barrelLengthMm: 110
+    damageMult: 1.0
+    scatterAdd: 1.5
+    fatigueShots: 1500
+    heatPerShotK: 12
+    limitTempC: 700
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolBarrelFine
+  name: fine pistol barrel
+  description: A part of a pistol, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_front
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Fine
+    platform: RUMCPlatformPistol
+    safety: 2.4
+    reliability: 0.995
+    caliber: GunsmithCaliber9mm
+    barrelLengthMm: 110
+    damageMult: 1.12
+    scatterAdd: 0.5
+    fatigueShots: 15000
+    heatPerShotK: 12
+    limitTempC: 800
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolReceiverCrude
+  name: crude pistol receiver
+  description: A part of a pistol, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_mid
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Crude
+    platform: RUMCPlatformPistol
+    safety: 1.3
+    reliability: 0.93
+    scatterAdd: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolReceiverStandard
+  name: standard pistol receiver
+  description: A part of a pistol, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_mid
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Standard
+    platform: RUMCPlatformPistol
+    safety: 1.8
+    reliability: 0.97
+    scatterAdd: 0.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolReceiverFine
+  name: fine pistol receiver
+  description: A part of a pistol, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_mid
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Fine
+    platform: RUMCPlatformPistol
+    safety: 2.4
+    reliability: 0.99
+    scatterAdd: 0.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolBoltCrude
+  name: crude pistol bolt
+  description: A part of a pistol, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Crude
+    platform: RUMCPlatformPistol
+    safety: 1.3
+    reliability: 0.9
+    caliber: GunsmithCaliber9mm
+    fireRateMult: 0.85
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolBoltStandard
+  name: standard pistol bolt
+  description: A part of a pistol, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Standard
+    platform: RUMCPlatformPistol
+    safety: 1.8
+    reliability: 0.96
+    caliber: GunsmithCaliber9mm
+    fireRateMult: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolBoltFine
+  name: fine pistol bolt
+  description: A part of a pistol, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Fine
+    platform: RUMCPlatformPistol
+    safety: 2.4
+    reliability: 0.99
+    caliber: GunsmithCaliber9mm
+    fireRateMult: 1.15
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolGripCrude
+  name: crude pistol grip
+  description: A part of a pistol, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Crude
+    platform: RUMCPlatformPistol
+    safety: 1.2
+    reliability: 0.97
+    recoilMult: 1.25
+    scatterAdd: 1.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolGripStandard
+  name: standard pistol grip
+  description: A part of a pistol, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Standard
+    platform: RUMCPlatformPistol
+    safety: 1.7
+    reliability: 0.99
+    recoilMult: 1.0
+    scatterAdd: 0.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartPistolGripFine
+  name: fine pistol grip
+  description: A part of a pistol, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pistol_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Fine
+    platform: RUMCPlatformPistol
+    safety: 2.3
+    reliability: 1.0
+    recoilMult: 0.85
+    scatterAdd: 0.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineBarrelCrude
+  name: crude carbine barrel
+  description: A part of a carbine, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_front
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Crude
+    platform: RUMCPlatformCarbine
+    safety: 1.35
+    reliability: 0.95
+    caliber: GunsmithCaliber556
+    barrelLengthMm: 410
+    damageMult: 0.85
+    scatterAdd: 3.0
+    fatigueShots: 150
+    heatPerShotK: 9
+    limitTempC: 600
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineBarrelStandard
+  name: standard carbine barrel
+  description: A part of a carbine, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_front
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Standard
+    platform: RUMCPlatformCarbine
+    safety: 1.8
+    reliability: 0.98
+    caliber: GunsmithCaliber556
+    barrelLengthMm: 410
+    damageMult: 1.0
+    scatterAdd: 1.5
+    fatigueShots: 1500
+    heatPerShotK: 9
+    limitTempC: 700
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineBarrelFine
+  name: fine carbine barrel
+  description: A part of a carbine, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_front
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Fine
+    platform: RUMCPlatformCarbine
+    safety: 2.4
+    reliability: 0.995
+    caliber: GunsmithCaliber556
+    barrelLengthMm: 410
+    damageMult: 1.12
+    scatterAdd: 0.5
+    fatigueShots: 15000
+    heatPerShotK: 9
+    limitTempC: 800
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineReceiverCrude
+  name: crude carbine receiver
+  description: A part of a carbine, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_mid
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Crude
+    platform: RUMCPlatformCarbine
+    safety: 1.3
+    reliability: 0.93
+    scatterAdd: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineReceiverStandard
+  name: standard carbine receiver
+  description: A part of a carbine, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_mid
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Standard
+    platform: RUMCPlatformCarbine
+    safety: 1.8
+    reliability: 0.97
+    scatterAdd: 0.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineReceiverFine
+  name: fine carbine receiver
+  description: A part of a carbine, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_mid
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Fine
+    platform: RUMCPlatformCarbine
+    safety: 2.4
+    reliability: 0.99
+    scatterAdd: 0.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineBoltCrude
+  name: crude carbine bolt
+  description: A part of a carbine, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Crude
+    platform: RUMCPlatformCarbine
+    safety: 1.3
+    reliability: 0.9
+    caliber: GunsmithCaliber556
+    fireRateMult: 0.85
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineBoltStandard
+  name: standard carbine bolt
+  description: A part of a carbine, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Standard
+    platform: RUMCPlatformCarbine
+    safety: 1.8
+    reliability: 0.96
+    caliber: GunsmithCaliber556
+    fireRateMult: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineBoltFine
+  name: fine carbine bolt
+  description: A part of a carbine, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Fine
+    platform: RUMCPlatformCarbine
+    safety: 2.4
+    reliability: 0.99
+    caliber: GunsmithCaliber556
+    fireRateMult: 1.15
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineGripCrude
+  name: crude carbine stock
+  description: A part of a carbine, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Crude
+    platform: RUMCPlatformCarbine
+    safety: 1.2
+    reliability: 0.97
+    recoilMult: 1.25
+    scatterAdd: 1.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineGripStandard
+  name: standard carbine stock
+  description: A part of a carbine, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Standard
+    platform: RUMCPlatformCarbine
+    safety: 1.7
+    reliability: 0.99
+    recoilMult: 1.0
+    scatterAdd: 0.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartCarbineGripFine
+  name: fine carbine stock
+  description: A part of a carbine, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: carbine_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Fine
+    platform: RUMCPlatformCarbine
+    safety: 2.3
+    reliability: 1.0
+    recoilMult: 0.85
+    scatterAdd: 0.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunBarrelCrude
+  name: crude shotgun barrel
+  description: A part of a shotgun, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: hunting_front
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Crude
+    platform: RUMCPlatformShotgun
+    safety: 1.35
+    reliability: 0.95
+    caliber: GunsmithCaliber12ga
+    barrelLengthMm: 600
+    damageMult: 0.85
+    scatterAdd: 3.0
+    fatigueShots: 150
+    heatPerShotK: 14
+    limitTempC: 600
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunBarrelStandard
+  name: standard shotgun barrel
+  description: A part of a shotgun, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: hunting_front
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Standard
+    platform: RUMCPlatformShotgun
+    safety: 1.8
+    reliability: 0.98
+    caliber: GunsmithCaliber12ga
+    barrelLengthMm: 600
+    damageMult: 1.0
+    scatterAdd: 1.5
+    fatigueShots: 1500
+    heatPerShotK: 14
+    limitTempC: 700
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunBarrelFine
+  name: fine shotgun barrel
+  description: A part of a shotgun, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: hunting_front
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBarrel
+  - type: WeaponPart
+    kind: Barrel
+    grade: Fine
+    platform: RUMCPlatformShotgun
+    safety: 2.4
+    reliability: 0.995
+    caliber: GunsmithCaliber12ga
+    barrelLengthMm: 600
+    damageMult: 1.12
+    scatterAdd: 0.5
+    fatigueShots: 15000
+    heatPerShotK: 14
+    limitTempC: 800
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunReceiverCrude
+  name: crude shotgun receiver
+  description: A part of a shotgun, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_mid
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Crude
+    platform: RUMCPlatformShotgun
+    safety: 1.3
+    reliability: 0.93
+    scatterAdd: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunReceiverStandard
+  name: standard shotgun receiver
+  description: A part of a shotgun, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_mid
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Standard
+    platform: RUMCPlatformShotgun
+    safety: 1.8
+    reliability: 0.97
+    scatterAdd: 0.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunReceiverFine
+  name: fine shotgun receiver
+  description: A part of a shotgun, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_mid
+    noRot: true
+  - type: Item
+    size: Normal
+  - type: Tag
+    tags:
+    - RUMCWeaponPartReceiver
+  - type: WeaponPart
+    kind: Receiver
+    grade: Fine
+    platform: RUMCPlatformShotgun
+    safety: 2.4
+    reliability: 0.99
+    scatterAdd: 0.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunBoltCrude
+  name: crude shotgun bolt
+  description: A part of a shotgun, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Crude
+    platform: RUMCPlatformShotgun
+    safety: 1.3
+    reliability: 0.9
+    caliber: GunsmithCaliber12ga
+    fireRateMult: 0.85
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunBoltStandard
+  name: standard shotgun bolt
+  description: A part of a shotgun, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Standard
+    platform: RUMCPlatformShotgun
+    safety: 1.8
+    reliability: 0.96
+    caliber: GunsmithCaliber12ga
+    fireRateMult: 1.0
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunBoltFine
+  name: fine shotgun bolt
+  description: A part of a shotgun, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_mid
+    noRot: true
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartBolt
+  - type: WeaponPart
+    kind: Bolt
+    grade: Fine
+    platform: RUMCPlatformShotgun
+    safety: 2.4
+    reliability: 0.99
+    caliber: GunsmithCaliber12ga
+    fireRateMult: 1.15
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunGripCrude
+  name: crude shotgun stock
+  description: A part of a shotgun, made roughly. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Crude
+    platform: RUMCPlatformShotgun
+    safety: 1.2
+    reliability: 0.97
+    recoilMult: 1.25
+    scatterAdd: 1.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunGripStandard
+  name: standard shotgun stock
+  description: A part of a shotgun, made to the usual standard. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Standard
+    platform: RUMCPlatformShotgun
+    safety: 1.7
+    reliability: 0.99
+    recoilMult: 1.0
+    scatterAdd: 0.5
+
+- type: entity
+  parent: BaseItem
+  id: RUMCPartShotgunGripFine
+  name: fine shotgun stock
+  description: A part of a shotgun, made with great care. It goes into the slot of its kind in the weapon assembly bench.
+  components:
+  - type: Sprite
+    sprite: CMU14/Objects/Weapons/Gunsmith/parts.rsi
+    state: pump_rear
+    noRot: true
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - RUMCWeaponPartGrip
+  - type: WeaponPart
+    kind: Grip
+    grade: Fine
+    platform: RUMCPlatformShotgun
+    safety: 2.3
+    reliability: 1.0
+    recoilMult: 0.85
+    scatterAdd: 0.0

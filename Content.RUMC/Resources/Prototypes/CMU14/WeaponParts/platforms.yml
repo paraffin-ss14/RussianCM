@@ -1,0 +1,52 @@
+- type: Tag
+  id: RUMCWeaponPartBarrel
+
+- type: Tag
+  id: RUMCWeaponPartReceiver
+
+- type: Tag
+  id: RUMCWeaponPartBolt
+
+- type: Tag
+  id: RUMCWeaponPartGrip
+
+# The platforms of the weapons made of parts: what the receiver is, the action that works it, the caliber and the feed, and what the weapon is before the parts change it.
+
+- type: cmuWeaponPlatform
+  id: RUMCPlatformPistol
+  name: weaponparts-platform-pistol
+  action: GunsmithActionSemi
+  caliber: GunsmithCaliber9mm
+  feed: Magazine
+  feedCapacity: 6
+  stock: None
+  baseDamage: 18
+  baseVelocity: 330
+  baseScatter: 3.5
+  baseRecoil: 1.5
+
+- type: cmuWeaponPlatform
+  id: RUMCPlatformCarbine
+  name: weaponparts-platform-carbine
+  action: GunsmithActionSemi
+  caliber: GunsmithCaliber556
+  feed: Magazine
+  feedCapacity: 6
+  stock: Fixed
+  baseDamage: 26
+  baseVelocity: 850
+  baseScatter: 2.0
+  baseRecoil: 2.0
+
+- type: cmuWeaponPlatform
+  id: RUMCPlatformShotgun
+  name: weaponparts-platform-shotgun
+  action: GunsmithActionPump
+  caliber: GunsmithCaliber12ga
+  feed: Internal
+  feedCapacity: 6
+  stock: Fixed
+  baseDamage: 22
+  baseVelocity: 420
+  baseScatter: 3.5
+  baseRecoil: 3.0

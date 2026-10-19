@@ -1,0 +1,91 @@
+# The weapon assembly bench: four slots for the parts, and a verb that puts a weapon together of them. A craft of the menu, of steel, wood and rods.
+- type: entity
+  id: RUMCWeaponAssemblyBench
+  name: weapon assembly bench
+  description: A bench with a vice and a rack. Put a barrel, a receiver, a bolt and a grip made for one platform into its slots, then use the verb to assemble the weapon. The weapon is as good as its worst part.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Structures/Machines/autolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+    color: "#7a6a3a"
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Anchorable
+  - type: Pullable
+  - type: WeaponAssemblyBench
+  - type: ItemSlots
+    slots:
+      weapon_barrel:
+        whitelist:
+          tags:
+          - RUMCWeaponPartBarrel
+        insertOnInteract: true
+      weapon_receiver:
+        whitelist:
+          tags:
+          - RUMCWeaponPartReceiver
+        insertOnInteract: true
+      weapon_bolt:
+        whitelist:
+          tags:
+          - RUMCWeaponPartBolt
+        insertOnInteract: true
+      weapon_grip:
+        whitelist:
+          tags:
+          - RUMCWeaponPartGrip
+        insertOnInteract: true
+  - type: ContainerContainer
+    containers:
+      weapon_barrel: !type:ContainerSlot {}
+      weapon_receiver: !type:ContainerSlot {}
+      weapon_bolt: !type:ContainerSlot {}
+      weapon_grip: !type:ContainerSlot {}
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: craftRecipe
+  id: RUMCCraftWeaponAssemblyBench
+  name: au14-craft-recipe-weaponassemblybench
+  output: RUMCWeaponAssemblyBench
+  time: 15
+  tools:
+  - Hammering
+  consumables:
+  - stack: CMSteel
+    amount: 6
+  - stack: RMCWood
+    amount: 4
+  - stack: RUMCIronRod
+    amount: 4

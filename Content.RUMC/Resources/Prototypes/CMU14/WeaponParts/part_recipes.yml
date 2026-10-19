@@ -1,0 +1,361 @@
+# The recipes of the parts of the weapons: barrels and bolts at the lathe, receivers and grips at the fabricator. The finer the part, the dearer: a rod, a screw, a plated sheet, a gear, a strap of leather.
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolBarrelCrude
+  machine: lathe
+  inputs:
+    CMSteel: 2
+  itemOutputs:
+    RUMCPartPistolBarrelCrude: 1
+  duration: 4
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolBarrelStandard
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCIronRod: 1
+  itemOutputs:
+    RUMCPartPistolBarrelStandard: 1
+  duration: 6
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolBarrelFine
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCChromedSheet: 1
+  itemOutputs:
+    RUMCPartPistolBarrelFine: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolReceiverCrude
+  machine: fabricator
+  inputs:
+    CMSteel: 3
+  itemOutputs:
+    RUMCPartPistolReceiverCrude: 1
+  duration: 4
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolReceiverStandard
+  machine: fabricator
+  inputs:
+    CMSteel: 3
+    RUMCIronRod: 2
+  itemOutputs:
+    RUMCPartPistolReceiverStandard: 1
+  duration: 6
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolReceiverFine
+  machine: fabricator
+  inputs:
+    CMSteel: 3
+    RUMCChromedSheet: 1
+    RUMCIronGear: 1
+  itemOutputs:
+    RUMCPartPistolReceiverFine: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolBoltCrude
+  machine: lathe
+  inputs:
+    CMSteel: 1
+    RUMCIronRod: 1
+  itemOutputs:
+    RUMCPartPistolBoltCrude: 1
+  duration: 4
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolBoltStandard
+  machine: lathe
+  inputs:
+    CMSteel: 1
+    RUMCIronRod: 1
+    RUMCIronScrew: 1
+  itemOutputs:
+    RUMCPartPistolBoltStandard: 1
+  duration: 6
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolBoltFine
+  machine: lathe
+  inputs:
+    CMSteel: 1
+    RUMCIronRod: 1
+    RUMCChromedSheet: 1
+  itemOutputs:
+    RUMCPartPistolBoltFine: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolGripCrude
+  machine: fabricator
+  inputs:
+    RMCWood: 2
+  itemOutputs:
+    RUMCPartPistolGripCrude: 1
+  duration: 4
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolGripStandard
+  machine: fabricator
+  inputs:
+    RMCWood: 2
+    Cloth: 1
+  itemOutputs:
+    RUMCPartPistolGripStandard: 1
+  duration: 6
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartPistolGripFine
+  machine: fabricator
+  inputs:
+    RMCWood: 2
+    RUMCLeather: 1
+  itemOutputs:
+    RUMCPartPistolGripFine: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineBarrelCrude
+  machine: lathe
+  inputs:
+    CMSteel: 4
+  itemOutputs:
+    RUMCPartCarbineBarrelCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineBarrelStandard
+  machine: lathe
+  inputs:
+    CMSteel: 4
+    RUMCIronRod: 2
+  itemOutputs:
+    RUMCPartCarbineBarrelStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineBarrelFine
+  machine: lathe
+  inputs:
+    CMSteel: 4
+    RUMCChromedSheet: 2
+  itemOutputs:
+    RUMCPartCarbineBarrelFine: 1
+  duration: 16
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineReceiverCrude
+  machine: fabricator
+  inputs:
+    CMSteel: 6
+  itemOutputs:
+    RUMCPartCarbineReceiverCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineReceiverStandard
+  machine: fabricator
+  inputs:
+    CMSteel: 6
+    RUMCIronRod: 4
+  itemOutputs:
+    RUMCPartCarbineReceiverStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineReceiverFine
+  machine: fabricator
+  inputs:
+    CMSteel: 6
+    RUMCChromedSheet: 2
+    RUMCIronGear: 2
+  itemOutputs:
+    RUMCPartCarbineReceiverFine: 1
+  duration: 16
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineBoltCrude
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCIronRod: 2
+  itemOutputs:
+    RUMCPartCarbineBoltCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineBoltStandard
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCIronRod: 2
+    RUMCIronScrew: 2
+  itemOutputs:
+    RUMCPartCarbineBoltStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineBoltFine
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCIronRod: 2
+    RUMCChromedSheet: 2
+  itemOutputs:
+    RUMCPartCarbineBoltFine: 1
+  duration: 16
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineGripCrude
+  machine: fabricator
+  inputs:
+    RMCWood: 4
+  itemOutputs:
+    RUMCPartCarbineGripCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineGripStandard
+  machine: fabricator
+  inputs:
+    RMCWood: 4
+    Cloth: 2
+  itemOutputs:
+    RUMCPartCarbineGripStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartCarbineGripFine
+  machine: fabricator
+  inputs:
+    RMCWood: 4
+    RUMCLeather: 2
+  itemOutputs:
+    RUMCPartCarbineGripFine: 1
+  duration: 16
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunBarrelCrude
+  machine: lathe
+  inputs:
+    CMSteel: 4
+  itemOutputs:
+    RUMCPartShotgunBarrelCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunBarrelStandard
+  machine: lathe
+  inputs:
+    CMSteel: 4
+    RUMCIronRod: 2
+  itemOutputs:
+    RUMCPartShotgunBarrelStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunBarrelFine
+  machine: lathe
+  inputs:
+    CMSteel: 4
+    RUMCChromedSheet: 2
+  itemOutputs:
+    RUMCPartShotgunBarrelFine: 1
+  duration: 16
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunReceiverCrude
+  machine: fabricator
+  inputs:
+    CMSteel: 6
+  itemOutputs:
+    RUMCPartShotgunReceiverCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunReceiverStandard
+  machine: fabricator
+  inputs:
+    CMSteel: 6
+    RUMCIronRod: 4
+  itemOutputs:
+    RUMCPartShotgunReceiverStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunReceiverFine
+  machine: fabricator
+  inputs:
+    CMSteel: 6
+    RUMCChromedSheet: 2
+    RUMCIronGear: 2
+  itemOutputs:
+    RUMCPartShotgunReceiverFine: 1
+  duration: 16
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunBoltCrude
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCIronRod: 2
+  itemOutputs:
+    RUMCPartShotgunBoltCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunBoltStandard
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCIronRod: 2
+    RUMCIronScrew: 2
+  itemOutputs:
+    RUMCPartShotgunBoltStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunBoltFine
+  machine: lathe
+  inputs:
+    CMSteel: 2
+    RUMCIronRod: 2
+    RUMCChromedSheet: 2
+  itemOutputs:
+    RUMCPartShotgunBoltFine: 1
+  duration: 16
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunGripCrude
+  machine: fabricator
+  inputs:
+    RMCWood: 4
+  itemOutputs:
+    RUMCPartShotgunGripCrude: 1
+  duration: 8
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunGripStandard
+  machine: fabricator
+  inputs:
+    RMCWood: 4
+    Cloth: 2
+  itemOutputs:
+    RUMCPartShotgunGripStandard: 1
+  duration: 12
+
+- type: cmuMachineRecipe
+  id: RUMCMRPartShotgunGripFine
+  machine: fabricator
+  inputs:
+    RMCWood: 4
+    RUMCLeather: 2
+  itemOutputs:
+    RUMCPartShotgunGripFine: 1
+  duration: 16
